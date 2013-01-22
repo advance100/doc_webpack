@@ -32,6 +32,10 @@
 
 [[chunks]]
 
+[[webpack-dev-server]]
+
+[[webpack-dev-middleware]]
+
 ### Advanced
 
 [[webpack plugins]]
