@@ -8,9 +8,13 @@
 
 ## Basics
 
-[[loaders]]
+[[CommonJs]]
+
+[[AMD]]
 
 [[resolving]]
+
+[[loaders]]
 
 [[require.context]]
 
