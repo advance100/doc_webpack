@@ -8,6 +8,7 @@
 --output-file <string>
 --output-chunk-file <string>
 --output-public-path <string>
+--output-path-info
 --output-library <string>
 --output-library-target <var|window|this|commonjs|commonjs2>
 --console
