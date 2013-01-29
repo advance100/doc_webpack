@@ -4,6 +4,15 @@
 module.exports = {
   context: "/home/proj",
   entry: "./entry",
+  module: {
+    loaders: [
+      test: /\.coffee$/,
+      include: /lib/, exclude: /test/,
+      loader: "coffee"
+    ],
+    preLoaders: [/*...*/],
+    postLoaders: [/*...*/]
+  },
   output: {
     path: "/home/proj/assets",
     filename: "[hash].bunde.js",
