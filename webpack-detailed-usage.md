@@ -4,6 +4,9 @@
 --config <file>
 --context <directory>
 --entry <string>, -e
+--module-bind <string|string=string>
+--module-post <string>
+--module-bind-pre <string|string=string>
 --output-path <directory>
 --output-file <string>
 --output-chunk-file <string>
