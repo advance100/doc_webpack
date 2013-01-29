@@ -59,3 +59,15 @@
 [[enhanced-require plugins]]
 
 [[writing enhanced-require plugins]]
+
+## enhanced-resolve
+
+### Basics
+
+[[enhanced-resolve detailed usage]]
+
+### Advanced
+
+[[enhanced-resolve plugins]]
+
+[[writing enhanced-resolve plugins]]
