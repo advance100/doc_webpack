@@ -2,7 +2,7 @@
 
 ```
 // environment
-NodeEnvironmentPlugin
+node/NodeEnvironmentPlugin
 
 // compiler
 CachePlugin
@@ -22,15 +22,15 @@ APIPlugin
 CompatibilityPlugin
 ConsolePlugin
 ConstPlugin
-NodeSourcePlugin
-AMDPlugin
-CommonJsPlugin
-RequireContextPlugin
-RequireEnsurePlugin
+node/NodeSourcePlugin
+dependencies/AMDPlugin
+dependencies/CommonJsPlugin
+dependencies/RequireContextPlugin
+dependencies/RequireEnsurePlugin
 
 // optimize
-LimitChunkCountPlugin
-MergeDuplicateChunksPlugin
-RemoveEmptyChunksPlugin
-RemoveParentModulesPlugin
+optimize/LimitChunkCountPlugin
+optimize/MergeDuplicateChunksPlugin
+optimize/RemoveEmptyChunksPlugin
+optimize/RemoveParentModulesPlugin
 ```
