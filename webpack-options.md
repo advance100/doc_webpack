@@ -11,6 +11,7 @@ module.exports = {
     namedChunkFilename: "[name].[hash].js",
     publicPath: "/assets/",
     jsonpFunction: "webpackJsonp",
+    pathInfo: true,
     library: "Lib",
     libraryTarget: "commonjs"
   },
