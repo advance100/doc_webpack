@@ -14,6 +14,7 @@
 --console
 --cache
 --watch, -w
+--watch-delay <number>
 --debug, -d
 --devtool eval
 --progress
@@ -22,4 +23,13 @@
 --optimize-max-chunks <number>
 --optimize-minimize
 --plugin <file>
+--bail
+
+--json, -j
+--colors, -c
+--sort-modules-by <id|size|name>
+--sort-chunks-by <id|size>
+--sort-assets-by <name|size>
+--display-chunks
+--display-reasons, --verbose, -v
 ```
