@@ -15,9 +15,11 @@ module.exports = {
     library: "Lib",
     libraryTarget: "commonjs"
   },
+  bail: true,
   console: true,
   cache: true,
   watch: true,
+  watchDelay: 200,
   debug: true,
   devtool: "eval",
   amd: { jQuery: true },
