@@ -6,6 +6,8 @@ after-plugins
 after-resolvers
 
 // compiler
+run
+watch-run
 compilation
 normal-module-factory
 context-module-factory
@@ -46,7 +48,6 @@ after-optimize-assets
 
 // modules
 build-module
-parse-module
 succeed-module
 failed-module
 ```
