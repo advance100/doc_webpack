@@ -15,6 +15,7 @@
 [[resolving]]
 
 [[loaders]]
+[[loader list]]
 
 [[require.context]]
 
@@ -71,3 +72,11 @@
 [[enhanced-resolve plugins]]
 
 [[writing enhanced-resolve plugins]]
+
+## Organization
+
+[[changelog]]
+
+[[roadmap]]
+
+[[ideas]]
