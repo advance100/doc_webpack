@@ -10,6 +10,7 @@
 --output-path <directory>
 --output-file <string>
 --output-chunk-file <string>
+--output-named-chunk-file <string>
 --output-public-path <string>
 --output-path-info
 --output-library <string>
