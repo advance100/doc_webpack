@@ -32,7 +32,6 @@ module.exports = {
   debug: true,
   devtool: "eval",
   amd: { jQuery: true },
-  progressCallback: function(percentage, msg) { },
   resolve: {
     alias: {
       module: "other-module",
