@@ -42,7 +42,8 @@ module.exports = {
   },
   resolveLoader: {/*...*/},
   optimize: {
-    maxChunks: 5
+    maxChunks: 5,
+    minimize: true
   },
   plugins: [
     new MyPlugin()
