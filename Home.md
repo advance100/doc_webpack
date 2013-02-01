@@ -14,7 +14,7 @@
 
 [[resolving]]
 
-[[loaders]]
+[[loaders]],
 [[loader list]]
 
 [[require.context]]
