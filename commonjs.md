@@ -23,7 +23,7 @@ delete require.cache[id];
 var newDependency = require("./dependency");
 // newDependency !== dependency;
 
-if(typeof require !== "function) {
+if(typeof require !== "function") {
   // This code is removed when bundled and minimized
 }
 ```
