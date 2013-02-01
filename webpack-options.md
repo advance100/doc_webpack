@@ -82,3 +82,27 @@ output: {
 ## `module`
 
 Options affecting the normal modules (`NormalModuleFactory`)
+
+### `module.loaders`
+
+A array of automatically applied loaders.
+
+Each item can have this properties:
+
+* `test`: A condition that must be met
+* `exclude`: A condition that must not be met
+* `include`: A condition that must be met
+* `loader`: A string of "!" separated loaders
+* `loaders`: A array of loaders as string
+
+A condition can be a RegExp, or a array of RegExps combound with "and".
+
+If the request starts with `!`, automatic loaders are not applied.
+
+### `module.preLoaders`, `module.postLoaders`
+
+Syntax like `module.loaders`.
+
+A array of applied pre and post loaders.
+
+If the request starts with `!!`, pre and post loaders are not applied.
