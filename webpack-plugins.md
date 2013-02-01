@@ -33,4 +33,8 @@ optimize/LimitChunkCountPlugin
 optimize/MergeDuplicateChunksPlugin
 optimize/RemoveEmptyChunksPlugin
 optimize/RemoveParentModulesPlugin
+
+// config
+NormalModuleReplacementPlugin
+ContextReplacementPlugin
 ```
