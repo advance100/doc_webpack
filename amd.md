@@ -12,7 +12,7 @@ define(["./dependency1", "./dependency2"], function(dep1, dep2) {
   // more dependencies on demand
   require(["./dependency4"], function(dep4) {
     // the async version of require load more dependencies asynchronously.
-    // see more in capter chunks
+    // see more in chapter chunks
     // dep4 is the export of dependency4
   });
 
