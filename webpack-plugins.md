@@ -10,11 +10,13 @@ ProgressPlugin
 
 // entry
 SingleEntryPlugin
+MultiEntryPlugin
 
 // output
 FunctionModulePlugin
 JsonpTemplatePlugin
 LibraryTemplatePlugin
+WebWorkerTemplatePlugin
 EvalDevToolModulePlugin
 
 // source
@@ -33,6 +35,7 @@ optimize/LimitChunkCountPlugin
 optimize/MergeDuplicateChunksPlugin
 optimize/RemoveEmptyChunksPlugin
 optimize/RemoveParentModulesPlugin
+optimize/UglifyJsPlugin
 
 // config
 NormalModuleReplacementPlugin
