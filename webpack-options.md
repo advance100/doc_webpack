@@ -142,3 +142,43 @@ The filename of named chunks as relative path inside the `output.path` directory
 
 `[hash]` is replace by the hash of the compilation.
 
+### `output.publicPath`
+
+The `output.path` from the view of the javascript.
+
+``` javascript
+// Example
+output: {
+  path: "/home/proj/public/assets",
+  publicPath: "/assets"
+}
+// Example CDN
+output: {
+  path: "/home/proj/cdn/assets/[hash]",
+  publicPath: "http://cdn.example.com/assets/[hash]/"
+}
+```
+
+### `output.jsonpFunction`
+
+The JSONP function used by webpack for asnyc loading of chunks
+
+### `output.pathInfo`
+
+Include comments with information about the modules.
+
+### `output.library`
+
+If set, export the bundle as library. `output.library` is the name.
+
+### `output.libraryTarget`
+
+Kind of exporting as library.
+
+`var` - Export by setting a variable: `var Library = xxx`
+
+`this` - Export by setting a property of `this`: `this["Library"] = xxx`
+
+`commonjs` - Export by setting a property of `exports`: `exports["Library"] = xxx`
+
+`commonjs2` - Export by setting `module.exports`: `module.exports = xxx`
