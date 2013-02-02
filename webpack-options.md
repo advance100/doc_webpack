@@ -234,3 +234,23 @@ Look of module in this directories.
 ### `resolve.extensions`
 
 Resolve to files by adding this extensions.
+
+## `resolveLoader`
+
+Like `resolve` but for loaders.
+
+## `optimize`
+
+Options affecting the optimization of the compilation.
+
+### `optimize.maxChunks`
+
+Limit the chunk count to a defined value. Chunks are merged until it fits.
+
+### `optimize.minimize`
+
+Mimimize all javascript output of chunks. Loaders are switched into minimizing mode.
+
+### `plugins`
+
+Add additional plugins to the compiler.
