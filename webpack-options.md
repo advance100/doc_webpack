@@ -107,3 +107,38 @@ Syntax like `module.loaders`.
 A array of applied pre and post loaders.
 
 If the request starts with `!!`, pre and post loaders are not applied.
+
+## `output`
+
+Options affecting the output.
+
+### `output.path`
+
+The output directory as absolute path.
+
+`[hash]` is replace by the hash of the compilation.
+
+### `output.filename`
+
+The filename of the entry chunk as relative path inside the `output.path` directory.
+
+`[name]` is replaced by the name of the chunk.
+
+`[hash]` is replace by the hash of the compilation.
+
+### `output.chunkFilename`
+
+The filename of non-entry chunks as relative path inside the `output.path` directory.
+
+`[id]` is replaced by the id of the chunk.
+
+`[hash]` is replace by the hash of the compilation.
+
+### `output.namedChunkFilename`
+
+The filename of named chunks as relative path inside the `output.path` directory.
+
+`[name]` is replaced by the name of the chunk.
+
+`[hash]` is replace by the hash of the compilation.
+
