@@ -212,3 +212,25 @@ Switch loaders to debug mode.
 Choose a developer tool to enhance debugging.
 
 `eval` - Each module is executed with `eval` and `//@ sourceURL`.
+
+## `amd`
+
+Set the value of `require.amd` and `define.amd`.
+
+Example: `amd: { jQuery: true }`
+
+## `resolve`
+
+Options affecting the resolving of modules.
+
+### `resolve.alias`
+
+Replace modules by other modules or paths.
+
+### `resolve.modulesDirectories`
+
+Look of module in this directories.
+
+### `resolve.extensions`
+
+Resolve to files by adding this extensions.
