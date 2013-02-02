@@ -182,3 +182,33 @@ Kind of exporting as library.
 `commonjs` - Export by setting a property of `exports`: `exports["Library"] = xxx`
 
 `commonjs2` - Export by setting `module.exports`: `module.exports = xxx`
+
+## `bail`
+
+Report the first error als hard error instead of tolerating it.
+
+## `console`
+
+Include `console` polyfill.
+
+## `cache`
+
+Cache generated modules to improve performance for multiple builds.
+
+## `watch`
+
+Enter watch mode, which rebuilds on file change.
+
+## `watchDelay`
+
+Delay the rebuilt of this time after the first change.
+
+## `debug`
+
+Switch loaders to debug mode.
+
+## `devtool`
+
+Choose a developer tool to enhance debugging.
+
+`eval` - Each module is executed with `eval` and `//@ sourceURL`.
