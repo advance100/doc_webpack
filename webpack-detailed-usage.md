@@ -40,6 +40,10 @@
 
 See [[webpack options]] for the most arguments.
 
+## `--progress`
+
+Display a compilation progress to stderr.
+
 ## `--json`
 
 Write JSON to stdout instead of a human readable format.
