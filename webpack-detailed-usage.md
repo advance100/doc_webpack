@@ -37,3 +37,25 @@
 --display-chunks
 --display-reasons, --verbose, -v
 ```
+
+See [[webpack options]] for the most arguments.
+
+## `--json`
+
+Write JSON to stdout instead of a human readable format.
+
+## `--colors`
+
+Use colors to display the statistics.
+
+## `--sort-modules-by`, `--sort-chunks-by`, `--sort-assets-by`
+
+Sort the modules/chunks/assets list by a column.
+
+## `--display-chunks`
+
+Display the separation of the modules into chunks.
+
+## `--display-reasons`
+
+Show more information about the reasons why a module is included.
