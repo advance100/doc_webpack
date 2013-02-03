@@ -41,7 +41,7 @@ require(["b", "c"], function(b2, c) {
 });
 ```
 
-This creates a entry chunks containing `entry.js`, `a` and `b`, and a normal chunk with `c` and `d`. Dependencies of `a` and `b` are included in the entry chunks and dependencies of `c` and `d` in the additional chunk.
+This creates a entry chunks containing `entry.js`, `a` and `b`, and a normal chunk with `c` and `d`. Dependencies of `a` and `b` are included in the entry chunk and dependencies of `c` and `d` in the additional chunk.
 
 ## more complex example
 
@@ -69,12 +69,12 @@ require(["a"], function(a) {}); // load chunk 2
 
 ``` text
 entry chunk
-  entry.js
-  x
-  b
+ - entry.js
+ - x
+ - b
 chunk 1
-  c
-  y
+ - c
+ - y
 chunk 2
-  a
+ - a
 ```
