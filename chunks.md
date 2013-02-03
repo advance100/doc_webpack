@@ -78,3 +78,9 @@ chunk 1
 chunk 2
  - a
 ```
+
+## Optimizing the chunk count
+
+If your codebase is splitted into too much chunks, there are options to merge multiple chunks into one file.
+
+> @sokra: I recommend to set many split points and let webpack merge them, because it has a good overall view of the compilation (with the chunk contents and sizes).
