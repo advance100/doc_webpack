@@ -15,7 +15,7 @@ module.exports = {
   },
   output: {
     path: "/home/proj/assets",
-    filename: "[hash].bunde.js",
+    filename: "[hash].bundle.js",
     chunkFilename: "[id].[hash].bundle.js",
     namedChunkFilename: "[name].[hash].js",
     publicPath: "/assets/",
