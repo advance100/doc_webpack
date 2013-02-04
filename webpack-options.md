@@ -5,11 +5,11 @@ module.exports = {
   context: "/home/proj",
   entry: "./entry",
   module: {
-    loaders: [
+    loaders: [{
       test: /\.coffee$/,
       include: /lib/, exclude: /test/,
       loader: "coffee"
-    ],
+    }],
     preLoaders: [/*...*/],
     postLoaders: [/*...*/]
   },
