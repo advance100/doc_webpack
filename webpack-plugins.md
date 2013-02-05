@@ -25,6 +25,7 @@ CompatibilityPlugin
 ConsolePlugin
 ConstPlugin
 node/NodeSourcePlugin
+node/NodeSourceRealPathsPlugin
 dependencies/AMDPlugin
 dependencies/CommonJsPlugin
 dependencies/RequireContextPlugin
