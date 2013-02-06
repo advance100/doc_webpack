@@ -1,6 +1,6 @@
 # writing webpack plugins
 
-A (webpack) plugins is a object that has a `apply` method with one parameter, the compiler. I. e. a function is a plugin, because the function prototype defines a `apply` method. But you also can define a "class" with the `apply` method.
+A (webpack) plugin is a object that has a `apply` method with one parameter, the compiler. I. e. a function is a plugin, because the function prototype defines a `apply` method. But you also can define a "class" with the `apply` method.
 
 Many objects in webpack extends the Tapable class, which mean they expose a `plugin` method, which plugins can use to bind custom stuff.
 
@@ -83,37 +83,40 @@ There are multiple types of plugin interfaces.
 
 ## Compilation
 
-### `seal`
+### `seal()`
 
-### `optimize`
+### `optimize()`
 
-### `optimize-modules`
+### `optimize-modules(modules: Module[])`
 
-### `after-optimize-modules`
+### `after-optimize-modules(modules: Module[])`
 
-### `optimize-chunks`
+### `optimize-chunks(chunks: Chunk[])`
 
-### `after-optimize-chunks`
+### `after-optimize-chunks(chunks: Chunk[])`
 
-### `optimize-chunk-assets`
+### `optimize-chunk-assets(chunks: Chunk[])` async
 
-### `optimize-assets`
+### `optimize-assets(assets: Object{name: Source})`
 
-### `after-optimize-assets`
+### `after-optimize-assets(assets: Object{name: Source})`
 
-## TODO 
+### `build-module`
 
-``` javascript
-// parser
-call <identifier>
-expression <identifier>
-evaluate <expression type>
-evaluate typeof <identifier>
-typeof <identifier>
-statement if
+### `succeed-module`
 
-// modules
-build-module
-succeed-module
-failed-module
-```
+### `failed-module`
+
+## Parser `compiler.parser`
+
+### `call <identifier>`
+
+### `expression <identifier>`
+
+### `evaluate <expression type>`
+
+### `evaluate typeof <identifier>`
+
+### `typeof <identifier>`
+
+### `statement if`
