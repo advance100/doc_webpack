@@ -229,9 +229,13 @@ Options affecting the resolving of modules.
 
 Replace modules by other modules or paths.
 
+### `resolve.root`
+
+Look of modules in this directory (or directories if you pass an array).
+
 ### `resolve.modulesDirectories`
 
-Look of module in this directories.
+Look of modules in this directories. It'll check these directories in current directory and each parent directory.
 
 ### `resolve.extensions`
 
