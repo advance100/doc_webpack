@@ -37,7 +37,9 @@ module.exports = {
       module: "other-module",
       module2: "/home/proj/shim-module.js"
     },
+    root: "/home/proj/app",
     modulesDirectories: ["module", "node_modules"],
+    fallback: "/home/proj/fallback",
     extensions: ["", ".client.js", ".js"]
   },
   resolveLoader: {/*...*/},
