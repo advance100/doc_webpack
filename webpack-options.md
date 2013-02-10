@@ -43,6 +43,10 @@ module.exports = {
     extensions: ["", ".client.js", ".js"]
   },
   resolveLoader: {/*...*/},
+  provide: {
+    $: "jquery",
+    jQuery: "jquery"
+  },
   optimize: {
     maxChunks: 5,
     minimize: true
