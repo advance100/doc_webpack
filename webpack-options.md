@@ -237,6 +237,10 @@ Look of modules in this directory (or directories if you pass an array).
 
 Look of modules in this directories. It'll check these directories in current directory and each parent directory.
 
+### `resolve.fallback`
+
+Look of modules in this directory (or directories if you pass an array), if no module found in `resolve.root` and `resolve.modulesDirectories`.
+
 ### `resolve.extensions`
 
 Resolve to files by adding this extensions.
