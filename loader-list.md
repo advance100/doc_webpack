@@ -9,6 +9,7 @@
 * [`script`](https://github.com/webpack/script-loader): Executes a javascript file once in global context (like in script tag), requires are not parsed.
 * [`imports`](https://github.com/webpack/imports-loader): imports stuff to the module
 * [`exports`](https://github.com/webpack/exports-loader): exports stuff from the module
+* [`expose`](https://github.com/webpack/expose-loader): expose exports from a module to the global context
 
 
 ## packaging
