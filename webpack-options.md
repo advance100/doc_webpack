@@ -264,3 +264,46 @@ Mimimize all javascript output of chunks. Loaders are switched into minimizing m
 ### `plugins`
 
 Add additional plugins to the compiler.
+
+# Good start config (example)
+
+``` javascript
+var path = require("path");
+module.exports = {
+  context: __dirname,
+  entry: "./app/app.js",
+  module: {
+    loaders: [
+      { test: /\.json$/,   loader: "json-loader" },
+      { test: /\.coffee$/, loader: "coffee-loader" },
+      { test: /\.css$/,    loader: "style-loader!css-loader" },
+      { test: /\.less$/,   loader: "style-loader!css-loader!less-loader" },
+      { test: /\.jade$/,   loader: "jade-loader" },
+      { test: /\.png$/,    loader: "url-loader?limit=10000&postfix=.png&minetype=image/png" },
+      { test: /\.jpg$/,    loader: "url-loader?limit=10000&postfix=.jpg&minetype=image/jpg" },
+      { test: /\.gif$/,    loader: "url-loader?limit=10000&postfix=.gif&minetype=image/gif" },
+      { test: /\.woff$/,   loader: "url-loader?limit=10000&postfix=.woff&minetype=application/font-woff" }
+    ],
+    preLoaders: [
+      {
+        test: /\.js$/,
+        include: pathToRegExp(path.join(__dirname, "app")),
+        loader: "jshint-loader"
+      }
+    ]
+  },
+  resolve: {
+    fallback: path.join(__dirname, "app")
+  },
+  console: true,
+  cache: true,
+  amd: { jQuery: true },
+  optimize: {
+    maxChunks: 20,
+  },
+  plugins: [
+  ]
+};
+function escapeRegExpString(str) { return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&"); }
+function pathToRegExp(p) { return new RegExp("^" + escapeRegExpString(p)); }
+```
