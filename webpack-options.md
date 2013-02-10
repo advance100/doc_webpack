@@ -288,10 +288,10 @@ module.exports = {
       { test: /\.css$/,    loader: "style-loader!css-loader" },
       { test: /\.less$/,   loader: "style-loader!css-loader!less-loader" },
       { test: /\.jade$/,   loader: "jade-loader" },
-      { test: /\.png$/,    loader: "url-loader?limit=10000&postfix=.png&minetype=image/png" },
-      { test: /\.jpg$/,    loader: "url-loader?limit=10000&postfix=.jpg&minetype=image/jpg" },
-      { test: /\.gif$/,    loader: "url-loader?limit=10000&postfix=.gif&minetype=image/gif" },
-      { test: /\.woff$/,   loader: "url-loader?limit=10000&postfix=.woff&minetype=application/font-woff" }
+      { test: /\.png$/,    loader: "url-loader?limit=10000&minetype=image/png" },
+      { test: /\.jpg$/,    loader: "url-loader?limit=10000&minetype=image/jpg" },
+      { test: /\.gif$/,    loader: "url-loader?limit=10000&minetype=image/gif" },
+      { test: /\.woff$/,   loader: "url-loader?limit=10000&minetype=application/font-woff" }
     ],
     preLoaders: [
       {
