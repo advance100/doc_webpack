@@ -272,6 +272,11 @@ var path = require("path");
 module.exports = {
   context: __dirname,
   entry: "./app/app.js",
+  output: {
+    path: path.join(__dirname, "public", "assets"),
+    publicPath: "/assets",
+    filename: "[hash].js"
+  },
   module: {
     loaders: [
       { test: /\.json$/,   loader: "json-loader" },
@@ -306,4 +311,15 @@ module.exports = {
 };
 function escapeRegExpString(str) { return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&"); }
 function pathToRegExp(p) { return new RegExp("^" + escapeRegExpString(p)); }
+```
+
+``` sh
+# development: compile and watch
+webpack --output-path-info --debug --devtool eval --watch --progress --colors
+
+# development: server
+webpack-dev-server --output-path-info --debug --devtool eval --colors
+
+# production: compile
+webpack --optimize-minimize --progress --colors
 ```
