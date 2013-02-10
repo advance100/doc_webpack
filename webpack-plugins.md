@@ -24,6 +24,7 @@ APIPlugin
 CompatibilityPlugin
 ConsolePlugin
 ConstPlugin
+ProvidePlugin
 node/NodeSourcePlugin
 node/NodeSourceRealPathsPlugin
 dependencies/AMDPlugin
