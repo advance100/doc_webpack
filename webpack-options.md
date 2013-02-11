@@ -48,6 +48,7 @@ module.exports = {
     jQuery: "jquery"
   },
   optimize: {
+    minChunkSize: 20000,
     maxChunks: 5,
     minimize: true
   },
@@ -257,6 +258,10 @@ Like `resolve` but for loaders.
 
 Options affecting the optimization of the compilation.
 
+### `optimize.minChunkSize`
+
+Merge small chunks that are lower than this min size (chars). Size is approximated.
+
 ### `optimize.maxChunks`
 
 Limit the chunk count to a defined value. Chunks are merged until it fits.
@@ -308,6 +313,7 @@ module.exports = {
   cache: true,
   amd: { jQuery: true },
   optimize: {
+    minChunkSize: 10000,
     maxChunks: 20,
   },
   plugins: [
