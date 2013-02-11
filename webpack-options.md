@@ -278,7 +278,7 @@ module.exports = {
   entry: "./app/app.js",
   output: {
     path: path.join(__dirname, "public", "assets"),
-    publicPath: "/assets",
+    publicPath: "/assets/",
     filename: "[hash].js"
   },
   module: {
