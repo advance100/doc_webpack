@@ -5,6 +5,7 @@
 ``` javascript
 ModuleAliasPlugin
 ModulesInDirectoriesPlugin
+ModulesInRootPlugin
 
 ModuleTemplatesPlugin
 ModuleAsDirectoryPlugin
