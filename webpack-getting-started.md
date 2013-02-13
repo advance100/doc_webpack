@@ -146,14 +146,46 @@ webpack
 
 to compile.
 
+## A more pretty output
+
+If the project grows the compilation may take a bit longer. So we want to display some kind of progress bar. And we want colors...
+
+We can archive this with
+
+``` text
+webpack --progress --colors
+```
+
 ## Watch mode
 
-> --watch
+We don't want to manually recompile after every change...
 
-## Caching
+``` text
+webpack --progress --colors --watch
+```
 
-> --cache
+Webpack can cache unchanged modules between compiltions. Just add `--cache` or insert it into your config file: 
+
+``` javascript
+module.exports = {
+  cache: true,
+  // ...
+```
 
 ## Development server
 
+Even better it is with the development server.
+
+``` text
+npm install webpack-dev-server -g
+```
+
+``` text
+webpack-dev-server --progress --colors
+```
+
+It binds a small express server on [http://localhost:8080](http://localhost:8080) which hosts a content page and the bundle. It automatically updates the browser page when a bundle is recompiled (socket.io).
+
 ## Using modules
+
+> `require("module"); require("module/file");`
