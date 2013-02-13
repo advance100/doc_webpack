@@ -35,6 +35,8 @@
 
 [[webpack options]]
 
+[webpack with grunt](https://github.com/webpack/grunt-webpack)
+
 [[chunks]]
 
 [[webpack-dev-server]]
