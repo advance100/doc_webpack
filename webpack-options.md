@@ -254,13 +254,21 @@ Resolve to files by adding this extensions.
 
 Like `resolve` but for loaders.
 
+### `resolveLoader.moduleTemplates`
+
+That's a `resolveLoader` only property.
+
+It describes alternatives for the module name that are tried.
+
+The default value is: `["*-webpack-loader", "*-web-loader", "*-loader", "*"]`
+
 ## `optimize`
 
 Options affecting the optimization of the compilation.
 
 ### `optimize.minChunkSize`
 
-Merge small chunks that are lower than this min size (chars). Size is approximated.
+Merge small chunks that are lower than this min size (in chars). Size is approximated.
 
 ### `optimize.maxChunks`
 
