@@ -1,4 +1,4 @@
-# Hot Code Replacement Spec
+# hot code replacement
 
 "Hot Code Replacement" (HCR) is an opt-in feature, so you need to put some code at choosen points of your application. The dependencies are handled by the module system.
 
