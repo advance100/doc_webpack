@@ -158,6 +158,10 @@ Chunks with the same modules are merged.
 
 Modules that are included in every parent chunk are removed from the chunk.
 
+### `optimize/MinChunkSizePlugin(minChunkSize)`
+
+Merges chunks until each chunk has the minimum size of `minChunkSize`.
+
 ### `optimize/UglifyJsPlugin(options)`
 
 Minimizes the chunks with `uglify.js`.
