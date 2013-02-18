@@ -21,6 +21,8 @@
 
 [[require.ensure]]
 
+[[require.include]]
+
 ## Advanced
 
 [[writing loaders]]
