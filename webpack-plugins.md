@@ -20,7 +20,11 @@ Create bundles with translations baked in. Then you can serve the translated bun
 
 Use [rewire](https://github.com/jhnns/rewire) in webpack.
 
-# Internal
+
+
+---
+
+# Internals
 
 These is a list of plugins, which are internally used by webpack. You should only care about them if you are building a own compiler based on webpack, or introspec the internals.
 
