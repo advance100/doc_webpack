@@ -20,9 +20,9 @@ Use [rewire](https://github.com/jhnns/rewire) in webpack.
 
 ### [`I18nPlugin(translations: Object, fnName = "__": String)`](https://github.com/webpack/i18n-webpack-plugin)
 
-## other
-
 Create bundles with translations baked in. Then you can serve the translated bundle to your clients.
+
+## other
 
 ---
 
