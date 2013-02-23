@@ -21,8 +21,6 @@
 
 [[require.ensure]]
 
-[[require.include]]
-
 ## Advanced
 
 [[writing loaders]]
@@ -46,6 +44,8 @@
 [[webpack-dev-middleware]]
 
 ### Advanced
+
+[[require.include]]
 
 [[webpack plugins]]
 
