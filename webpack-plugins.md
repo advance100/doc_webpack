@@ -24,7 +24,7 @@ Use [rewire](https://github.com/jhnns/rewire) in webpack.
 
 ---
 
-# Internals
+# internal plugins
 
 These is a list of plugins, which are internally used by webpack. You should only care about them if you are building a own compiler based on webpack, or introspec the internals.
 
