@@ -95,6 +95,14 @@ There are multiple types of plugin interfaces.
 
 ### `after-optimize-chunks(chunks: Chunk[])`
 
+### `optimize-module-ids(modules: Module[])`
+
+### `after-optimize-module-ids(modules: Module[])`
+
+### `optimize-chunk-ids(chunks: Chunk[])`
+
+### `after-optimize-chunk-ids(chunks: Chunk[])`
+
 ### `optimize-chunk-assets(chunks: Chunk[])` async
 
 ### `optimize-assets(assets: Object{name: Source})`
