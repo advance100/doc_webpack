@@ -173,6 +173,10 @@ Modules that are included in every parent chunk are removed from the chunk.
 
 Merges chunks until each chunk has the minimum size of `minChunkSize`.
 
+### `optimize/FlagIncludedChunksPlugin`
+
+Adds chunk ids of chunks which are included in the chunk. This eliminates unnessary chunk loads.
+
 ### `optimize/UglifyJsPlugin(options)`
 
 Minimizes the chunks with `uglify.js`.
