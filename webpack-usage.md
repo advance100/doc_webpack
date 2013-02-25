@@ -18,7 +18,7 @@ webpack <entry> <output>
 
 For more options see [[webpack detailed usage]]
 
-The executable tries to read a file `webpack.config.js` in the current directory. More [[webpack options]] are extracted from this file.
+The executable tries to read a file `webpack.config.js` in the current directory. More [[webpack options]] are extracted from this file. You may simply execute `webpack` if you configured all options in that file.
 
 ## as module in node.js
 
