@@ -4,6 +4,8 @@
 * as module in node.js
 * [with grunt](https://github.com/webpack/grunt-webpack)
 
+Try to read to [[webpack getting started]] for the basic stuff.
+
 ## executable
 
 ``` text
