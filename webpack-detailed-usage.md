@@ -1,6 +1,9 @@
 # webpack detailed usage
 
+# executable
+
 ```
+webpack <entry> <entry> <entry> <output-filename>
 --config <file>
 --context <directory>
 --entry <string>, -e
