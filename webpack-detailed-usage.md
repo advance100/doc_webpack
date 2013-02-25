@@ -41,6 +41,10 @@ webpack <entry> <entry> <entry> <output-file>
 --display-reasons, --verbose, -v
 ```
 
+`<entry>` can be a require expression than it's added to the `main` entry chunk.
+
+`<entry>` can be `<name>=<require expression>` than it's added to the `<name>` entry chunk.
+
 See [[webpack options]] for the most arguments.
 
 ## `--progress`
