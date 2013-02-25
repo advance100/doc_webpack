@@ -31,6 +31,8 @@
 
 ### Basics
 
+[[webpack usage]]
+
 [[webpack detailed usage]]
 
 [[webpack options]]
