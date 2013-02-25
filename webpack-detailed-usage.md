@@ -3,7 +3,7 @@
 # executable
 
 ```
-webpack <entry> <entry> <entry> <output-filename>
+webpack <entry> <entry> <entry> <output-file>
 --config <file>
 --context <directory>
 --entry <string>, -e
