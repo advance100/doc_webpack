@@ -25,13 +25,19 @@ module.exports = {
     libraryTarget: "commonjs"
   },
   bail: true,
-  console: true,
   cache: true,
   watch: true,
   watchDelay: 200,
   debug: true,
   devtool: "eval",
   amd: { jQuery: true },
+  node: {
+    process: "mock",
+    http: "mock",
+    console: true,
+    __filename: "mock",
+    __dirname: "mock"
+  },
   resolve: {
     alias: {
       module: "other-module",
@@ -194,10 +200,6 @@ Kind of exporting as library.
 
 Report the first error als hard error instead of tolerating it.
 
-## `console`
-
-Include `console` polyfill.
-
 ## `cache`
 
 Cache generated modules to improve performance for multiple builds.
@@ -219,6 +221,16 @@ Switch loaders to debug mode.
 Choose a developer tool to enhance debugging.
 
 `eval` - Each module is executed with `eval` and `//@ sourceURL`.
+
+## `node`
+
+Include polyfills or mocks for various node stuff:
+
+* `console`: `true` or `false`
+* `process`: `true`, `"mock"` or `false`
+* `__filename`: `true` (real filename), `"mock"` (`"/index.js"`) or `false`
+* `__dirname`: `true` (real dirname), `"mock"` (`"/"`) or `false`
+* `<node buildin>`: `true`, `"mock"` or `false`
 
 ## `amd`
 
