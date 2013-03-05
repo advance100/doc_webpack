@@ -339,7 +339,7 @@ module.exports = {
   plugins: [
   ]
 };
-function escapeRegExpString(str) { return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&"); }
+function escapeRegExpString(str) { return str.replace(/[\-\[\]\/\{\}\(\)\*\\+\?\.\\\\\^\$\|]/g, "\\\\$&"); }
 function pathToRegExp(p) { return new RegExp("^" + escapeRegExpString(p)); }
 ```
 
