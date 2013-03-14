@@ -196,6 +196,8 @@ Kind of exporting as library.
 
 `commonjs2` - Export by setting `module.exports`: `module.exports = xxx`
 
+`umd` - Export to AMD, CommonJS2 or as property in root
+
 ## `bail`
 
 Report the first error als hard error instead of tolerating it.
@@ -329,7 +331,6 @@ module.exports = {
   resolve: {
     fallback: path.join(__dirname, "app")
   },
-  console: true,
   cache: true,
   amd: { jQuery: true },
   optimize: {
