@@ -322,7 +322,10 @@ module.exports = {
     ],
     preLoaders: [
       {
-        test: /\.js$/,
+        test: [
+          /\.js$/,
+          /\.json$/,
+        ],
         include: pathToRegExp(path.join(__dirname, "app")),
         loader: "jshint-loader"
       }
