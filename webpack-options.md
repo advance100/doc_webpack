@@ -24,6 +24,7 @@ module.exports = {
     library: "Lib",
     libraryTarget: "commonjs"
   },
+  target: "web",
   bail: true,
   cache: true,
   watch: true,
@@ -197,6 +198,12 @@ Kind of exporting as library.
 `commonjs2` - Export by setting `module.exports`: `module.exports = xxx`
 
 `umd` - Export to AMD, CommonJS2 or as property in root
+
+## `target`
+
+* `"web"` Compile for usage in a browser-like environment (default)
+* `"webworker"` Compile as WebWorker
+* `"node"` Compile for usage in a node.js-like environment
 
 ## `bail`
 
