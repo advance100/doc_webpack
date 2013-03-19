@@ -18,7 +18,7 @@ webpack <entry> <entry> <entry> <output-file>
 --output-path-info
 --output-library <string>
 --output-library-target <var|window|this|commonjs|commonjs2>
---console
+--target <string>
 --cache
 --watch, -w
 --watch-delay <number>
@@ -29,6 +29,7 @@ webpack <entry> <entry> <entry> <output-file>
 --resolve-loader-alias <string=string>
 --optimize-max-chunks <number>
 --optimize-minimize
+--provide <string|string=string>
 --plugin <file>
 --bail
 
