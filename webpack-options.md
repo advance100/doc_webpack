@@ -18,6 +18,7 @@ module.exports = {
     filename: "[hash].bundle.js",
     chunkFilename: "[id].[hash].bundle.js",
     namedChunkFilename: "[name].[hash].js",
+    sourceMapFilename: "[file].map", // 0.10
     publicPath: "/assets/",
     jsonpFunction: "webpackJsonp",
     pathInfo: true,
@@ -130,7 +131,7 @@ Options affecting the output.
 
 The output directory as absolute path.
 
-`[hash]` is replace by the hash of the compilation.
+`[hash]` is replaced by the hash of the compilation.
 
 ### `output.filename`
 
@@ -138,7 +139,7 @@ The filename of the entry chunk as relative path inside the `output.path` direct
 
 `[name]` is replaced by the name of the chunk.
 
-`[hash]` is replace by the hash of the compilation.
+`[hash]` is replaced by the hash of the compilation.
 
 ### `output.chunkFilename`
 
@@ -146,13 +147,23 @@ The filename of non-entry chunks as relative path inside the `output.path` direc
 
 `[id]` is replaced by the id of the chunk.
 
-`[hash]` is replace by the hash of the compilation.
+`[hash]` is replaced by the hash of the compilation.
 
 ### `output.namedChunkFilename`
 
 The filename of named chunks as relative path inside the `output.path` directory.
 
 `[name]` is replaced by the name of the chunk.
+
+`[hash]` is replaced by the hash of the compilation.
+
+### `output.sourceMapFilename` (0.10)
+
+The filename of the SourceMaps for the Javascript files. They are inside the `output.path` directory.
+
+`[file]` is replaced by the filename of the Javascript file.
+
+`[id]` is replaced by the id of the chunk.
 
 `[hash]` is replace by the hash of the compilation.
 
@@ -230,6 +241,10 @@ Switch loaders to debug mode.
 Choose a developer tool to enhance debugging.
 
 `eval` - Each module is executed with `eval` and `//@ sourceURL`.
+
+`source-map` - A SourceMap is emitted. See also `output.sourceMapFilename`. (0.10)
+
+`inline-source-map` - A SourceMap is added as DataUrl to the Javascript file. (0.10)
 
 ## `node`
 
