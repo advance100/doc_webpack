@@ -33,6 +33,9 @@ webpack <entry> <entry> <entry> <output-file>
 --plugin <file>
 --bail
 
+-d
+-p
+
 --json, -j
 --colors, -c
 --sort-modules-by <id|size|name>
@@ -47,6 +50,14 @@ webpack <entry> <entry> <entry> <output-file>
 `<entry>` can be `<name>=<require expression>` than it's added to the `<name>` entry chunk.
 
 See [[webpack options]] for the most arguments.
+
+## `-d`
+
+Development shortcut: `--debug` `--devtool source-map` `--output-pathinfo`
+
+## `-p`
+
+Production shortcut: `--optimize-minimize`
 
 ## `--progress`
 
