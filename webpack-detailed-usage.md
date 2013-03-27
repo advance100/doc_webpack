@@ -14,6 +14,7 @@ webpack <entry> <entry> <entry> <output-file>
 --output-file <string>
 --output-chunk-file <string>
 --output-named-chunk-file <string>
+--output-source-map-file <string>
 --output-public-path <string>
 --output-path-info
 --output-library <string>
