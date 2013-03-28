@@ -2,7 +2,7 @@
 
 ## basic
 
-* [`json`](https://github.com/webpack/json-loader) (default at `.json`): Loads file as JSON
+* [`json`](https://github.com/webpack/json-loader): Loads file as JSON
 * [`raw`](https://github.com/webpack/raw-loader): Loads raw content of a file (as utf-8)
 * [`bundle`](https://github.com/webpack/bundle-loader): Wraps request in a `require.ensure` block
 * [`val`](https://github.com/webpack/val-loader): Excutes code as module and consider exports as javascript code
@@ -21,13 +21,14 @@
 
 ## dialects
 
-* [`coffee`](https://github.com/webpack/coffee-loader) (default at `.coffee`): Loads coffee-script like javascript
+* [`coffee`](https://github.com/webpack/coffee-loader): Loads coffee-script like javascript
+* [`coffee-redux`](https://github.com/webpack/coffee-redux-loader): Loads coffee-script like javascript
 * [`json5`](https://github.com/webpack/json5-loader): Like json, but not so strict.
 
 
 ## templating
 
-* [`jade`](https://github.com/webpack/jade-loader) (default at `.jade`): Loads jade template and returns a function
+* [`jade`](https://github.com/webpack/jade-loader): Loads jade template and returns a function
 
 
 ## styling
