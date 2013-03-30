@@ -117,7 +117,7 @@ document.write(require("./content.js"));
 Run the compilation with:
 
 ``` text
-webpack ./entry.js bundle.js --bind css=style!css
+webpack ./entry.js bundle.js --module-bind css=style!css
 ```
 
 You should see the same result.
