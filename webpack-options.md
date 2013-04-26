@@ -70,6 +70,8 @@ module.exports = {
 
 The base directory for resolving the `entry` option. If `output.pathinfo` is set, the included pathinfo is shortened to this directory.
 
+> Default: `process.cwd()`
+
 ## `entry`
 
 The entry point for the bundle.
@@ -167,6 +169,8 @@ The filename of the SourceMaps for the Javascript files. They are inside the `ou
 
 `[hash]` is replace by the hash of the compilation.
 
+> Default: `"[file].map"`
+
 ### `output.publicPath`
 
 The `output.path` from the view of the javascript.
@@ -188,9 +192,13 @@ output: {
 
 The JSONP function used by webpack for asnyc loading of chunks
 
+> Default: `"webpackJsonp"`
+
 ### `output.pathInfo`
 
 Include comments with information about the modules.
+
+> Default: `false`
 
 ### `output.library`
 
@@ -200,7 +208,7 @@ If set, export the bundle as library. `output.library` is the name.
 
 Kind of exporting as library.
 
-`var` - Export by setting a variable: `var Library = xxx`
+`var` - Export by setting a variable: `var Library = xxx` (default)
 
 `this` - Export by setting a property of `this`: `this["Library"] = xxx`
 
@@ -251,10 +259,24 @@ Choose a developer tool to enhance debugging.
 Include polyfills or mocks for various node stuff:
 
 * `console`: `true` or `false`
+* `global`: `true` or `false`
 * `process`: `true`, `"mock"` or `false`
+* `buffer`: `true`, `"mock"` or `false`
 * `__filename`: `true` (real filename), `"mock"` (`"/index.js"`) or `false`
 * `__dirname`: `true` (real dirname), `"mock"` (`"/"`) or `false`
 * `<node buildin>`: `true`, `"mock"` or `false`
+
+``` javascript
+// Default:
+{
+  console: false,
+  process: true,
+  global: true,
+  buffer: true,
+  __filename: "mock",
+  __dirname: "mock"
+}
+```
 
 ## `amd`
 
@@ -278,6 +300,8 @@ Look of modules in this directory (or directories if you pass an array).
 
 Look of modules in this directories. It'll check these directories in current directory and each parent directory.
 
+> Default: `["web_modules", "node_modules"]`
+
 ### `resolve.fallback`
 
 Look of modules in this directory (or directories if you pass an array), if no module found in `resolve.root` and `resolve.modulesDirectories`.
@@ -286,9 +310,26 @@ Look of modules in this directory (or directories if you pass an array), if no m
 
 Resolve to files by adding this extensions.
 
+> Default: `["", ".webpack.js", ".web.js", ".js"]`
+
+### `resolve.packageMains`
+
+Check these fields in the `package.json` for suitable files.
+
+> Default: `["webpack", "browser", "web", "main"]`
+
 ## `resolveLoader`
 
 Like `resolve` but for loaders.
+
+``` javascript
+// Default:
+{
+  modulesDirectories: ["web_loaders", "web_modules", "node_loaders", "node_modules"],
+  extensions: ["", ".webpack-loader.js", ".web-loader.js", ".loader.js", ".js"],
+  packageMains: ["webpackLoader", "webLoader", "loader", "main"]
+}
+```
 
 ### `resolveLoader.moduleTemplates`
 
@@ -296,7 +337,7 @@ That's a `resolveLoader` only property.
 
 It describes alternatives for the module name that are tried.
 
-The default value is: `["*-webpack-loader", "*-web-loader", "*-loader", "*"]`
+> Defaul: `["*-webpack-loader", "*-web-loader", "*-loader", "*"]`
 
 ## `optimize`
 
