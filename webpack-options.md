@@ -27,6 +27,7 @@ module.exports = {
   },
   target: "web",
   bail: true,
+  profile: true,
   cache: true,
   watch: true,
   watchDelay: 200,
@@ -58,7 +59,9 @@ module.exports = {
   optimize: {
     minChunkSize: 20000,
     maxChunks: 5,
-    minimize: true
+    minimize: true,
+    occurenceOrder: true, // 0.10
+    occurenceOrderPreferEntry: true // 0.10
   },
   plugins: [
     new MyPlugin()
@@ -228,6 +231,10 @@ Kind of exporting as library.
 
 Report the first error als hard error instead of tolerating it.
 
+## `profile`
+
+Capture timing information for each module.
+
 ## `cache`
 
 Cache generated modules to improve performance for multiple builds.
@@ -354,6 +361,18 @@ Limit the chunk count to a defined value. Chunks are merged until it fits.
 ### `optimize.minimize`
 
 Mimimize all javascript output of chunks. Loaders are switched into minimizing mode.
+
+### `optimize.occurenceOrder`
+
+Assign the module and chunk ids by occurence count. Ids that are used often get lower (shorter) ids. This make ids predictable and is recommended. (It is availible as option since 0.10, but was ever activated prior to 0.10)
+
+> Default: false
+
+### `optimize.occurenceOrderPreferEntry`
+
+Only availible if `optimize.occurenceOrder` is set. Occurences in entry chunks have higher priority. This make entry chunks smaller but increases the overall size.
+
+> Default: true
 
 ### `plugins`
 
