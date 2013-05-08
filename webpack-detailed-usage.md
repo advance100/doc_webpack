@@ -30,9 +30,11 @@ webpack <entry> <entry> <entry> <output-file>
 --resolve-loader-alias <string=string>
 --optimize-max-chunks <number>
 --optimize-minimize
+--optimize-occurence-order
 --provide <string|string=string>
 --plugin <file>
 --bail
+--profile
 
 -d
 -p
@@ -58,7 +60,7 @@ Development shortcut: `--debug` `--devtool source-map` `--output-pathinfo`
 
 ## `-p`
 
-Production shortcut: `--optimize-minimize`
+Production shortcut: `--optimize-minimize` `--optimize-occurence-order`
 
 ## `--progress`
 
