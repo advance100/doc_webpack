@@ -63,6 +63,9 @@ module.exports = {
     occurenceOrder: true, // 0.10
     occurenceOrderPreferEntry: true // 0.10
   },
+  prefetch: [ // 0.10
+    "./folder/file"
+  ],
   plugins: [
     new MyPlugin()
   ]
@@ -373,6 +376,10 @@ Assign the module and chunk ids by occurence count. Ids that are used often get 
 Only availible if `optimize.occurenceOrder` is set. Occurences in entry chunks have higher priority. This make entry chunks smaller but increases the overall size.
 
 > Default: true
+
+### `prefetch`
+
+A list of requests for normal modules, which are resolved and built even before a require to them occur. This can boost performance. Try to profile the built first to determine clever prefetching points.
 
 ### `plugins`
 
