@@ -31,6 +31,7 @@ webpack <entry> <entry> <entry> <output-file>
 --optimize-max-chunks <number>
 --optimize-minimize
 --optimize-occurence-order
+--prefetch <string>
 --provide <string|string=string>
 --plugin <file>
 --bail
