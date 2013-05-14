@@ -85,6 +85,14 @@ Chunks are loaded by `importScripts`. Else it's similar to `JsonpTemplatePlugin`
 
 Decorates the module template by wrapping each module in a `eval` annotated with `// @sourceURL`.
 
+### `SourceMapDevToolPlugin(context, sourceMapFilename)`
+
+Decorates the templates by generating a SourceMap for each chunk.
+
+`context` Names are shorted in the SourceMap according to this directory
+
+`sourceMapFilename` the filename template of the SourceMap. `[hash]`, `[name]`, `[id]`, `[file]` and `[filebase]` are replaced. If this argument is missing, the SourceMap will be inlined as DataUrl.
+
 ## source
 
 Plugins affecting the source code of modules.
