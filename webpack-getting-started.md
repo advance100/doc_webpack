@@ -105,7 +105,7 @@ Recompile and update your browser to see your application with yellow background
 
 ## Binding loaders
 
-We don't want to write such long requires `require("!style!css!style.css");`.
+We don't want to write such long requires `require("!style!css!./style.css");`.
 
 We can bind file extentions to loaders so we just need to write in the `entry.js`:
 
