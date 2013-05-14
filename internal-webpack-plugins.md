@@ -45,6 +45,10 @@ Adds a entry chunk on compilation. The chunk is named `chunkName` and contains o
 
 Adds a entry chunk on compilation. The chunk is named `chunkName` and contains a module for each item in the `requests` array (plus dependencies). Each item in `requests` is resolved in `context` (absolute path).
 
+### `PrefetchPlugin(context, request)`
+
+Prefetches `request` and dependencies to enables more parallel compilation. It doesn't create any chunk. The module is resolved from `request` in `context` (absolute path).
+
 ## output
 
 ### `FunctionModulePlugin(context, options)`
