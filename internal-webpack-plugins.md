@@ -111,9 +111,15 @@ If `name` is used in a module it is filled by a module loaded by `require(<reque
 
 ### `NodeStuffPlugin(options, context)`
 
-Provide stuff that is normally avalible in node.js modules.
+Provide stuff that is normally available in node.js modules.
 
 It also ensures that `module` is filled with some node.js stuff if you use it.
+
+### `RequireJsStuffPlugin`
+
+Provide stuff that is normally available in require.js.
+
+`require[js].config` is removed. `require.version` is `0.0.0`. `requirejs.onError` is mapped to `require.onError`.
 
 ### `node/NodeSourcePlugin`
 
