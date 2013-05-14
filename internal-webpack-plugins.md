@@ -182,3 +182,9 @@ Adds chunk ids of chunks which are included in the chunk. This eliminates unness
 Minimizes the chunks with `uglify.js`.
 
 `options` are uglifyjs options.
+
+### `optimize/OccurenceOrderPlugin(preferEntry)`
+
+Order the modules and chunks by occurence. This saves space, because often referenced modules and chunks get smaller ids.
+
+`preferEntry` If true, references in entry chunks have higher priority
