@@ -105,19 +105,11 @@ Try to evaluate expressions in `if(...)` and replace it with `true`/`false`.
 
 If `name` is used in a module it is filled by a module loaded by `require(<request>)`.
 
-### `NodeStuffPlugin`
+### `NodeStuffPlugin(options, context)`
 
 Provide stuff that is normally avalible in node.js modules.
 
-`__filename` is constant `"/index.js"`. `__dirname` is constant `"/"`. `require.main` is the `module` of your entry module.
-
 It also ensures that `module` is filled with some node.js stuff if you use it.
-
-### `NodeStuffRealPathsPlugin`
-
-The `NodeStuffPlugin` only provides pseudo `__filename` and `__dirname`. This plugin provide the real `__filename` and `__dirname` of the modules.
-
-Include this plugins before `NodeStuffPlugin`.
 
 ### `node/NodeSourcePlugin`
 
