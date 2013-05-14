@@ -71,6 +71,14 @@ Chunks are wrapped into JSONP-calls. A loading algorithm is included in entry ch
 
 `options.chunkFilename` is the filename under that chunks are expected.
 
+### `node/NodeTemplatePlugin(options)`
+
+Chunks are wrapped into node.js modules exporting the bundled modules. The entry chunks loads chunks by requiring them.
+
+`options` are the output options.
+
+`options.chunkFilename` is the filename under that chunks are expected.
+
 ### `LibraryTemplatePlugin(name, target)`
 
 The entries chunks are decorated to form a library `name` of type `type`.
@@ -129,11 +137,11 @@ Provide stuff that is normally available in require.js.
 
 `require[js].config` is removed. `require.version` is `0.0.0`. `requirejs.onError` is mapped to `require.onError`.
 
-### `node/NodeSourcePlugin`
+### `node/NodeSourcePlugin(options)`
 
 This module adds stuff from node.js that is not avalible in non-node.js environments.
 
-It adds polyfills for `process` and `global` if used. It also binds the buildin node.js replacement modules.
+It adds polyfills for `process`, `console`, `Buffer` and `global` if used. It also binds the buildin node.js replacement modules.
 
 ### `node/NodeTargetPlugin`
 
