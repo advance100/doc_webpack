@@ -29,6 +29,7 @@
 ## templating
 
 * [`jade`](https://github.com/webpack/jade-loader): Loads jade template and returns a function
+* [`handlebars`](https://github.com/altano/handlebars-loader): Loads handlebars template and returns a function
 
 
 ## styling
