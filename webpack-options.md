@@ -63,7 +63,7 @@ module.exports = {
     occurenceOrder: true, // 0.10
     occurenceOrderPreferEntry: true // 0.10
   },
-  prefetch: [ // 0.10
+  prefetch: [ // 0.10 experimental
     "./folder/file"
   ],
   plugins: [
