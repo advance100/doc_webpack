@@ -11,9 +11,9 @@ Small changes:
 
 * assets are only emitted if they changed
 * added `--profile`
-* added `--prefetch` [expermimental]
+* added `--prefetch` [experimental]
 * added `BannerPlugin`
-* added `[chunkhash]` [expermimental]
+* added `[chunkhash]` [experimental]
 * added `hashDigestLength`
 * increased filesystem caching to 60s
 * purge only changed files in watch mode
