@@ -28,3 +28,19 @@ webpack({ /* webpack options */ }, function(err, stats) {
   // ...
 });
 ```
+
+or
+
+``` javascript
+var webpack = require("webpack");
+var compiler = webpack({ /* webpack options */ });
+
+compiler.run(function(err, stats) {
+  // ...
+});
+// or
+compiler.watch(function(err, stats) {
+  // ...
+});
+```
+
