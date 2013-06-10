@@ -135,6 +135,8 @@ If the request starts with `!!`, pre and post loaders are not applied.
 
 Options affecting the output.
 
+If you use any hashing (`[hash]` or `[chunkhash]`) make sure to have a consistent ordering of modules. Use `optimize.occurenceOrder` or `recordsPath`.
+
 ### `output.path`
 
 The output directory as absolute path.
@@ -156,6 +158,8 @@ The filename of non-entry chunks as relative path inside the `output.path` direc
 `[id]` is replaced by the id of the chunk.
 
 `[hash]` is replaced by the hash of the compilation.
+
+`[chunkhash]` is replaced by the hash of the chunk.
 
 ### `output.namedChunkFilename`
 
