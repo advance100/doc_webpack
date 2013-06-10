@@ -159,7 +159,7 @@ The filename of non-entry chunks as relative path inside the `output.path` direc
 
 `[hash]` is replaced by the hash of the compilation.
 
-`[chunkhash]` is replaced by the hash of the chunk.
+`[chunkhash]` is replaced by the hash of the chunk. (0.10)
 
 ### `output.namedChunkFilename`
 
