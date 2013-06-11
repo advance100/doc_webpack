@@ -19,6 +19,9 @@ webpack <entry> <entry> <entry> <output-file>
 --output-path-info
 --output-library <string>
 --output-library-target <var|window|this|commonjs|commonjs2>
+--records-input-path <file>
+--records-output-path <file>
+--records-path <file>
 --target <string>
 --cache
 --watch, -w
