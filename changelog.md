@@ -4,6 +4,7 @@
 
 * node 0.10 support
 * whole chunks can now be cached
+* store state in json file (records) `--records-path`
 * added `--devtool source-map` and `--devtool inline-source-map`
 * added option `--optimize-occurence-order`
 
