@@ -25,6 +25,9 @@ module.exports = {
     library: "Lib",
     libraryTarget: "commonjs"
   },
+  recordsInputPath: "/home/proj/records.json", // 0.10
+  recordsOutputPath: "/home/proj/records.json", // 0.10
+  recordsPath: "/home/proj/records.json", // 0.10
   target: "web",
   bail: true,
   profile: true,
@@ -227,6 +230,12 @@ Kind of exporting as library.
 `commonjs2` - Export by setting `module.exports`: `module.exports = xxx`
 
 `umd` - Export to AMD, CommonJS2 or as property in root
+
+## `recordsPath`, `recordsInputPath`, `recordsOutputPath`
+
+Store/Load compiler state from/to a json file. This will result in persistent ids of modules and chunks.
+
+An absolute path is excepted. `recordsPath` is used for `recordsInputPath` and `recordsOutputPath` if they left undefined.
 
 ## `target`
 
