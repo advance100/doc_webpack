@@ -39,7 +39,7 @@ Small changes:
 * added "node" template: bundle can run on node.js host (experimental)
 
 
-## Version 0.7.6
+# 0.7.6
 
 * API: added experimental chunk merging via `options.maxChunks`
 
