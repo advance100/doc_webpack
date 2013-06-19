@@ -19,6 +19,7 @@ module.exports = {
     chunkFilename: "[id].[hash].bundle.js",
     namedChunkFilename: "[name].[hash].js",
     sourceMapFilename: "[file].map", // 0.10
+    hotUpdateChunkFilename: "[id].[hash].bundle-update.js", // 0.11
     publicPath: "/assets/",
     jsonpFunction: "webpackJsonp",
     pathInfo: true,
@@ -181,9 +182,19 @@ The filename of the SourceMaps for the Javascript files. They are inside the `ou
 
 `[id]` is replaced by the id of the chunk.
 
-`[hash]` is replace by the hash of the compilation.
+`[hash]` is replaced by the hash of the compilation.
 
 > Default: `"[file].map"`
+
+### `output.hotUpdateChunkFilename` (0.11)
+
+The filename of the Hot Update Chunks. They are inside the `output.path` directory.
+
+`[id]` is replaced by the id of the chunk.
+
+`[hash]` is replaced by the hash of the compilation. (The last hash stored in the records)
+
+> Default: `"[id].[hash].hot-update.js"`
 
 ### `output.publicPath`
 
