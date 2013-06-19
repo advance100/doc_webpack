@@ -36,7 +36,7 @@ module.exports = {
   watchDelay: 200,
   debug: true,
   devtool: "eval",
-  hot: true, // 0.11
+  hot: true, // 0.11 experimental
   amd: { jQuery: true },
   node: {
     process: "mock",
