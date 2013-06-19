@@ -36,6 +36,7 @@ module.exports = {
   watchDelay: 200,
   debug: true,
   devtool: "eval",
+  hot: true, // 0.11
   amd: { jQuery: true },
   node: {
     process: "mock",
@@ -276,6 +277,12 @@ Choose a developer tool to enhance debugging.
 `source-map` - A SourceMap is emitted. See also `output.sourceMapFilename`. (0.10)
 
 `inline-source-map` - A SourceMap is added as DataUrl to the Javascript file. (0.10)
+
+## `hot`
+
+Enables Hot Module Replacement. (This requires records data if not in dev-server mode, `recordsPath`)
+
+Generates Hot Update Chunks of each chunk in the records. It also enables the [API](https://github.com/webpack/docs/wiki/hot-code-replacement).
 
 ## `node`
 
