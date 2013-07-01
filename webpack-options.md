@@ -20,8 +20,10 @@ module.exports = {
     namedChunkFilename: "[name].[hash].js",
     sourceMapFilename: "[file].map", // 0.10
     hotUpdateChunkFilename: "[id].[hash].bundle-update.js", // 0.11
+    hotUpdateMainFilename: "[hash].bundle-update.json", // 0.11
     publicPath: "/assets/",
     jsonpFunction: "webpackJsonp",
+    hotUpdateFunction: "webpackHotUpdate", // 0.11
     pathInfo: true,
     library: "Lib",
     libraryTarget: "commonjs"
@@ -196,6 +198,14 @@ The filename of the Hot Update Chunks. They are inside the `output.path` directo
 
 > Default: `"[id].[hash].hot-update.js"`
 
+### `output.hotUpdateChunkFilename` (0.11)
+
+The filename of the Hot Update Main File. It is inside the `output.path` directory.
+
+`[hash]` is replaced by the hash of the compilation. (The last hash stored in the records)
+
+> Default: `"[hash].hot-update.json"`
+
 ### `output.publicPath`
 
 The `output.path` from the view of the javascript.
@@ -218,6 +228,12 @@ output: {
 The JSONP function used by webpack for asnyc loading of chunks
 
 > Default: `"webpackJsonp"`
+
+### `output.hotUpdateFunction`
+
+The JSONP function used by webpack for asnyc loading of hot update chunks
+
+> Default: `"webpackHotUpdate"`
 
 ### `output.pathInfo`
 
