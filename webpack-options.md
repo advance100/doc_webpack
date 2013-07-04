@@ -306,6 +306,8 @@ Choose a developer tool to enhance debugging.
 
 `inline-source-map` - A SourceMap is added as DataUrl to the Javascript file. (0.10)
 
+Prefixing `@`, `#` or `#@` will enforce a pragma style. (0.11)
+
 ## `hot`
 
 Enables Hot Module Replacement. (This requires records data if not in dev-server mode, `recordsPath`)
