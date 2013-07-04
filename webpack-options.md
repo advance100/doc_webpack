@@ -57,7 +57,7 @@ module.exports = {
     modulesDirectories: ["module", "node_modules"],
     fallback: "/home/proj/fallback",
     extensions: ["", ".client.js", ".js"],
-    unsafeCache: /^\/home\/proj\/app\/node_modules\//
+    unsafeCache: /^\/home\/proj\/app\/node_modules\// // 0.11
   },
   resolveLoader: {/*...*/},
   provide: {
