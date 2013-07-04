@@ -54,7 +54,7 @@ module.exports = {
       module2: "/home/proj/shim-module.js"
     },
     root: "/home/proj/app",
-    modulesDirectories: ["module", "node_modules"],
+    modulesDirectories: ["modules", "node_modules"],
     fallback: "/home/proj/fallback",
     extensions: ["", ".client.js", ".js"],
     unsafeCache: /^\/home\/proj\/app\/node_modules\// // 0.11
