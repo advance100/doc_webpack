@@ -56,7 +56,8 @@ module.exports = {
     root: "/home/proj/app",
     modulesDirectories: ["module", "node_modules"],
     fallback: "/home/proj/fallback",
-    extensions: ["", ".client.js", ".js"]
+    extensions: ["", ".client.js", ".js"],
+    unsafeCache: /^\/home\/proj\/app\/node_modules\//
   },
   resolveLoader: {/*...*/},
   provide: {
@@ -374,6 +375,12 @@ Resolve to files by adding this extensions.
 Check these fields in the `package.json` for suitable files.
 
 > Default: `["webpack", "browser", "web", "main"]`
+
+### `resolve.unsafeCache`
+
+Enable aggressive but unsafe cache for the resolving of a part of your files. Changes to cached paths may cause failure. An array of RegExps, only a RegExp or `true` (all files) is expected. If the resolved path matches, it'll be cached.
+
+> Default: `[]`
 
 ## `resolveLoader`
 
