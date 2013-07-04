@@ -378,7 +378,7 @@ Check these fields in the `package.json` for suitable files.
 
 ### `resolve.unsafeCache`
 
-Enable aggressive but unsafe cache for the resolving of a part of your files. Changes to cached paths may cause failure. An array of RegExps, only a RegExp or `true` (all files) is expected. If the resolved path matches, it'll be cached.
+Enable aggressive but unsafe caching for the resolving of a part of your files. Changes to cached paths may cause failure (in rar cases). An array of RegExps, only a RegExp or `true` (all files) is expected. If the resolved path matches, it'll be cached.
 
 > Default: `[]`
 
