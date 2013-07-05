@@ -41,3 +41,5 @@ If you visit [http://localhost:8080](http://localhost:8080) you should see the p
 Wolla... The background updates but without full page refresh. Text and selection in the input box should stay.
 
 Read more about how to write you own hot replacement (management) code: [[hot code replacement]]
+
+Check the [example-app](http://webpack.github.io/example-app/) for a demo without coding
