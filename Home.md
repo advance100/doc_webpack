@@ -55,6 +55,8 @@
 
 [[optimizing]]
 
+[[hot code replacement with webpack]]
+
 ## enhanced-require
 
 ### Basics
