@@ -4,6 +4,8 @@ For big web apps it's not efficent to put all code into a single file. Especiall
 
 The splitting points are choosen by the developer. By default the AMD `require` and `require.ensure` functions set a split point.
 
+For a demo see the [example-app](http://webpack.github.io/example-app/). Check Network in DevTools.
+
 ## chunk types
 
 There are these types of chunks:
