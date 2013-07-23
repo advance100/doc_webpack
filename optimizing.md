@@ -14,6 +14,14 @@ As you already know (if you've read the remaining docs) webpack give your module
 
 The entry chunks have higher priority for file size.
 
+## Deduplication
+
+If you use some libraries with cool dependency trees, it may occur that some files are identical. Webpack can find these files and deduplicate them. This prevent to include duplicate code into your bundle and instead copy the function at runtime. It doesn't affect semantics. You can enable it with:
+
+`--optimize-dedupe` resp. `optimize: { dedupe: true }`
+
+The feature add some overhead to the entry chunk.
+
 ## Caching
 
 To effectivly cache your files, they should have a hash or version in their url. You can emit or move the output files manually in a folder called `v1.3`. But this has several disadvantages: Extra work for the developer and not changed files are not loaded from cache.
