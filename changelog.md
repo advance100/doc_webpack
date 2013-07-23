@@ -1,12 +1,20 @@
 # changelog
 
-# 0.10 (beta)
+# 0.11 (beta)
+
+* added Hot Code Replacement `--hot` [experimental]
+* added `unsafeCache` option for performance
+* support new `sourceMappingURL` and `sourceURL` syntax
+* `--profile --progress` now display process timings
+
+# 0.10
 
 * node 0.10 support
 * whole chunks can now be cached
 * store state in json file (records) `--records-path`
 * added `--devtool source-map` and `--devtool inline-source-map`
 * added option `--optimize-occurence-order`
+* added `--optimize-dedupe`
 
 Small changes:
 
@@ -20,6 +28,7 @@ Small changes:
 * purge only changed files in watch mode
 * purge all files on compiling in not-watch mode
 * in-memory filesystem now supports windows-like paths too
+* merging chunk is more clever
 
 # 0.9
 
