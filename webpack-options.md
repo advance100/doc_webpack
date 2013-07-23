@@ -69,7 +69,8 @@ module.exports = {
     maxChunks: 5,
     minimize: true,
     occurenceOrder: true, // 0.10
-    occurenceOrderPreferEntry: true // 0.10
+    occurenceOrderPreferEntry: true, // 0.10
+    dedupe: true // 0.10 experimental
   },
   prefetch: [ // 0.10 experimental
     "./folder/file"
@@ -432,6 +433,14 @@ Assign the module and chunk ids by occurence count. Ids that are used often get 
 Only availible if `optimize.occurenceOrder` is set. Occurences in entry chunks have higher priority. This make entry chunks smaller but increases the overall size.
 
 > Default: true
+
+### `optimize.dedupe`
+
+Search for equal or similar files and deduplicate them in the output. This comes with some overhead for the entry chunk, but can reduce file size effectivly.
+
+This is experimental and may crash, because of some missing implementations. (Report an issue)
+
+> Default: false
 
 ### `prefetch`
 
