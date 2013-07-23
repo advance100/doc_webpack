@@ -59,4 +59,36 @@ Webpack will take care of it by merging chunks (It will prefer merging chunk whi
 
 ## Single-Page-App
 
+A Single-Page-App is the web app type webpack is designed and optimized for.
+
+You may have splitted the app into multiple chunks, which are loaded at your router. The entry chunk only contains the router and some libraries, but no content. This works great while your user is navigating through your app, but for initial page load you need 2 round trips: One for the router and one for the current content page.
+
+If you use the HTML5 History API to reflect the current content page in the URL, your server can know which content page will be requested by the client code. To save roud trips the server can include the content chunk in the response: This is possible by just adding it as script tag. The browser will load both chunks parallel.
+
+``` html
+<script src="entry-chunk.js" type="text/javascript" charset="utf-8"></script>
+<script src="3.chunk.js" type="text/javascript" charset="utf-8"></script>
+```
+
+You can extract the chunk filename from the stats.
+
 ## Multi-Page-App
+
+When you compile a (real) multi page app, you want to share common code between the pages. In fact this is really easy with webpack: Just compile with multiple entry points:
+
+`webpack p1=./page1 p2=./page2 p3=./page3 [name].entry-chunk.js`
+
+``` javascript
+module.exports = {
+  entry: {
+    p1: "./page1",
+    p2: "./page2",
+    p3: "./page3"
+  },
+  output: {
+    filename: "[name].entry.chunk.js"
+  }
+}
+```
+
+This will generate multiple entry chunks: `p1.entry.chunk.js`, `p2.entry.chunk.js` and `p3.entry.chunk.js`. But additional chunks can be shared by them.
