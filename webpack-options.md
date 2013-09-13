@@ -48,6 +48,9 @@ module.exports = {
     __filename: "mock",
     __dirname: "mock"
   },
+  define: { // 0.11
+    MY_CONST: "value of my const"
+  },
   resolve: {
     alias: {
       module: "other-module",
@@ -344,6 +347,17 @@ Include polyfills or mocks for various node stuff:
 Set the value of `require.amd` and `define.amd`.
 
 Example: `amd: { jQuery: true }`
+
+## `define`
+
+Define constant values. The values will be inlined into the code. String, Number, Array, Object, Date, RegExp and Function is allowed.
+
+Example: `define: { VERSION: "5fa3b9", BROWSER_SUPPORTS_HTML5: true }`
+
+``` javascript
+console.log("Running App version " + VERSION);
+if(!BROWSER_SUPPORTS_HTML5) require("html5shiv");
+```
 
 ## `resolve`
 
