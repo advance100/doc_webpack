@@ -420,7 +420,7 @@ Limit the chunk count to a defined value. Chunks are merged until it fits.
 
 ### `optimize.minimize`
 
-Mimimize all javascript output of chunks. Loaders are switched into minimizing mode.
+Mimimize all javascript output of chunks. Loaders are switched into minimizing mode. You can pass `false`, `true` or an object containing UglifyJs options.
 
 ### `optimize.occurenceOrder`
 
