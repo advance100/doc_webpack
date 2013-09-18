@@ -1,6 +1,6 @@
 # roadmap
 
-## 1.0 [mid 2013]
+## 1.0 [end 2013]
 
 * Bugfixes
 * updates to loaders
