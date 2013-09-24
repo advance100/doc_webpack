@@ -49,7 +49,8 @@ module.exports = {
     __dirname: "mock"
   },
   define: { // 0.11
-    MY_CONST: "value of my const"
+    TRUE: true,
+    MY_CONST: JSON.stringify("value of my const")
   },
   resolve: {
     alias: {
@@ -350,9 +351,16 @@ Example: `amd: { jQuery: true }`
 
 ## `define`
 
-Define constant values. The values will be inlined into the code. String, Number, Array, Object, Date, RegExp and Function is allowed.
+Define values. The values will be inlined into the code. 
 
-Example: `define: { VERSION: "5fa3b9", BROWSER_SUPPORTS_HTML5: true }`
+Example:
+```
+define: {
+  VERSION: JSON.stringify("5fa3b9"),
+  BROWSER_SUPPORTS_HTML5: true,
+  TWO: "1+1"
+}
+```
 
 ``` javascript
 console.log("Running App version " + VERSION);
