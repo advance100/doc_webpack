@@ -20,3 +20,22 @@ dir.keys()
 require.context("./dir", false, /^\.\/[^\.]$/).keys()
 // => ["./file"]
 ```
+
+### webpack
+
+``` javascript
+// webpack automatically creates a "context" when using expressions in the require/define call.
+var someFile = "file.js";
+require("./dir/" + someFile);
+// => is equal to require.context("./dir")("./" + someFile);
+
+// It can transform complex expressions to reguar expressions
+var x = "il";
+require("./dir/f" + x + "e")
+// => require.context("./dir", true, /^\.\/f.*e$/)("./f" + x + "e")
+
+// It the case you assign the require function to an variable or use it in some unexpected way
+//  webpack automatically creates a context for the current directory
+var x = require; // => var x = require.context(".");
+x("./dir/file");
+```
