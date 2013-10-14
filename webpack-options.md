@@ -12,7 +12,7 @@ module.exports = {
     }],
     preLoaders: [/*...*/],
     postLoaders: [/*...*/],
-    noParse: [/jquery.min.js/]
+    noParse: [/jquery.min.js/] // 0.11
   },
   output: {
     path: "/home/proj/assets",
@@ -145,7 +145,7 @@ A array of applied pre and post loaders.
 
 If the request starts with `!!`, pre and post loaders are not applied.
 
-### `module.noParse`
+### `module.noParse` (0.11)
 
 A RegExp or an array of RegExps. Don't parse files matching.
 
