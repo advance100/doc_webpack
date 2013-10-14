@@ -66,6 +66,7 @@ require("!!raw!./script.coffee"); // no loaders from configuration are applied
 6. done
 
 If request matches `/^!/` omit step 3.
+
 If request matches `/^!!/` omit step 2. and 5.
 
 # recommendations
@@ -79,6 +80,11 @@ It is recommended to **stay in the same language in pre and post loaders**.
 Source code that want to override the non-js to js transformation should use the `!` prefix.
 
 The `!!` prefix should only be used by loaders.
+
+* Example for a preLoader: Image compression
+* Example for a loader (in config): coffee-script transformation
+* Example for a loader (in request): bundle loader
+* Example for a postLoader: Code coverage instrumenting
 
 # writing loaders
 
