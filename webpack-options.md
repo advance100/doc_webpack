@@ -11,7 +11,8 @@ module.exports = {
       loader: "coffee"
     }],
     preLoaders: [/*...*/],
-    postLoaders: [/*...*/]
+    postLoaders: [/*...*/],
+    noParse: [/jquery.min.js/]
   },
   output: {
     path: "/home/proj/assets",
@@ -143,6 +144,14 @@ Syntax like `module.loaders`.
 A array of applied pre and post loaders.
 
 If the request starts with `!!`, pre and post loaders are not applied.
+
+### `module.noParse`
+
+A RegExp or an array of RegExps. Don't parse files matching.
+
+This can boost performance when ignoring big libraries.
+
+The files are expected to have no call to `require`, `define` or similar. They are allowed to use `exports` and `module.exports`.
 
 ## `output`
 
