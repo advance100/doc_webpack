@@ -112,6 +112,8 @@ entry: {
   page2: ["./entry1", "./entry2"]
 },
 output: {
+  // Make sure to use [name] or [id] in output.filename
+  //  when using multiple entry points
   filename: "[name].bundle.js",
   chunkFilename: "[id].bundle.js"
 }
@@ -125,7 +127,7 @@ Options affecting the normal modules (`NormalModuleFactory`)
 
 A array of automatically applied loaders.
 
-Each item can have this properties:
+Each item can have these properties:
 
 * `test`: A condition that must be met
 * `exclude`: A condition that must not be met
@@ -135,15 +137,13 @@ Each item can have this properties:
 
 A condition can be a RegExp, or a array of RegExps combound with "and".
 
-If the request starts with `!`, automatic loaders are not applied.
+See more: [[loaders]]
 
 ### `module.preLoaders`, `module.postLoaders`
 
 Syntax like `module.loaders`.
 
 A array of applied pre and post loaders.
-
-If the request starts with `!!`, pre and post loaders are not applied.
 
 ### `module.noParse` (0.11)
 
@@ -240,13 +240,15 @@ output: {
 
 ### `output.jsonpFunction`
 
-The JSONP function used by webpack for asnyc loading of chunks
+The JSONP function used by webpack for asnyc loading of chunks.
+
+A shorter function may reduce the filesize a bit. Use different identifier, when having multiple webpack instances on a single page.
 
 > Default: `"webpackJsonp"`
 
 ### `output.hotUpdateFunction`
 
-The JSONP function used by webpack for asnyc loading of hot update chunks
+The JSONP function used by webpack for asnyc loading of hot update chunks.
 
 > Default: `"webpackHotUpdate"`
 
@@ -254,11 +256,17 @@ The JSONP function used by webpack for asnyc loading of hot update chunks
 
 Include comments with information about the modules.
 
+`require(/* ./test */23)`
+
+Do not use this in production.
+
 > Default: `false`
 
 ### `output.library`
 
 If set, export the bundle as library. `output.library` is the name.
+
+Use this, if you are writing a library and want to publish it as single file.
 
 ### `output.libraryTarget`
 
@@ -274,11 +282,15 @@ Kind of exporting as library.
 
 `umd` - Export to AMD, CommonJS2 or as property in root
 
-## `recordsPath`, `recordsInputPath`, `recordsOutputPath`
+> Default: `var`
+
+## `recordsPath`, `recordsInputPath`, `recordsOutputPath` (0.11)
 
 Store/Load compiler state from/to a json file. This will result in persistent ids of modules and chunks.
 
 An absolute path is excepted. `recordsPath` is used for `recordsInputPath` and `recordsOutputPath` if they left undefined.
+
+This is required, when using Hot Code Replacement between multiple calls to the compiler.
 
 ## `target`
 
@@ -294,17 +306,23 @@ Report the first error als hard error instead of tolerating it.
 
 Capture timing information for each module.
 
+> Hint: Use the [analyse tool](http://webpack.github.io/analyse) to visualize it.
+
 ## `cache`
 
-Cache generated modules to improve performance for multiple builds.
+Cache generated modules and chunks to improve performance for multiple incremental builds.
 
 ## `watch`
 
 Enter watch mode, which rebuilds on file change.
 
+Only use it with the node.js javascript api `webpack(options, fn)`.
+
 ## `watchDelay`
 
-Delay the rebuilt of this time after the first change.
+Delay the rebuilt after the first change. Value is a time in ms.
+
+> Default: 200
 
 ## `debug`
 
@@ -356,13 +374,18 @@ Include polyfills or mocks for various node stuff:
 
 Set the value of `require.amd` and `define.amd`.
 
-Example: `amd: { jQuery: true }`
+Example: `amd: { jQuery: true }` (for old 1.x AMD versions of jquery)
 
 ## `define`
 
-Define values. The values will be inlined into the code. 
+Define free variables. The values will be inlined into the code.
+
+A key is a identifier or mutliple identifier joined with `.`. If the value is a string it'll be used a code fragment. If the value isn't a string, it'll be stringified (including functions).
+
+If the value is an object all keys are defined the same way.
 
 Example:
+
 ```
 define: {
   VERSION: JSON.stringify("5fa3b9"),
