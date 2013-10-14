@@ -56,4 +56,27 @@ require("!!raw!./script.coffee"); // no loaders from configuration are applied
 // The last case should only be used in generated code (by loaders generated)
 ```
 
+# loader order
+
+1. The file is read from filesystem
+2. `options.module.preLoaders` are applied
+3. `options.module.loaders` are applied
+4. loaders from request are applied
+5. `options.module.postLoaders` are applied
+6. done
+
+If request matches `/^!/` omit step 3.
+If request matches `/^!!/` omit step 2. and 5.
+
+# recommendations
+
+It is recommended that the result is **javascript after step 3**.
+It is recommended to applied **non-js to js transformations in step 2** (or step 3 when they don't apply globally).
+It is recommended to **stay in the same language in pre and post loaders**.
+
+Source code that want to override the non-js to js transformation should use the `!` prefix.
+The `!!` prefix should only be used by loaders.
+
+# writing loaders
+
 Read more about [[writing loaders]].
