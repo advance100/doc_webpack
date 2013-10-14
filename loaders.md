@@ -71,10 +71,13 @@ If request matches `/^!!/` omit step 2. and 5.
 # recommendations
 
 It is recommended that the result is **javascript after step 3**.
+
 It is recommended to applied **non-js to js transformations in step 2** (or step 3 when they don't apply globally).
+
 It is recommended to **stay in the same language in pre and post loaders**.
 
 Source code that want to override the non-js to js transformation should use the `!` prefix.
+
 The `!!` prefix should only be used by loaders.
 
 # writing loaders
