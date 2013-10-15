@@ -1,5 +1,3 @@
-# commonjs
-
 ``` javascript
 // require a module
 var dependency = require("./dependency");
