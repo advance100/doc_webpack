@@ -4,10 +4,10 @@
 * [`raw`](https://github.com/webpack/raw-loader): Loads raw content of a file (as utf-8)
 * [`bundle`](https://github.com/webpack/bundle-loader): Wraps request in a `require.ensure` block
 * [`val`](https://github.com/webpack/val-loader): Excutes code as module and consider exports as javascript code
-* [`script`](https://github.com/webpack/script-loader): Executes a javascript file once in global context (like in script tag), requires are not parsed.
 * [`imports`](https://github.com/webpack/imports-loader): imports stuff to the module
 * [`exports`](https://github.com/webpack/exports-loader): exports stuff from the module
 * [`expose`](https://github.com/webpack/expose-loader): expose exports from a module to the global context
+* [`script`](https://github.com/webpack/script-loader): Executes a javascript file once in global context (like in script tag), requires are not parsed.
 
 
 ## packaging
