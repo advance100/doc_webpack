@@ -1,5 +1,3 @@
-# Home
-
 ## Getting started
 
 [[webpack getting started]]
