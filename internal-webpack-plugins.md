@@ -1,5 +1,3 @@
-# internal webpack plugins
-
 These is a list of plugins, which are internally used by webpack. You should only care about them if you are building a own compiler based on webpack, or introspec the internals.
 
 categories of internal plugins:
