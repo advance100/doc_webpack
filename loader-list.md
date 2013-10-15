@@ -1,5 +1,3 @@
-# loader list
-
 ## basic
 
 * [`json`](https://github.com/webpack/json-loader): Loads file as JSON
