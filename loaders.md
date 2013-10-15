@@ -1,5 +1,3 @@
-# loaders
-
 Loaders are transformations you can apply on files. They are linked to the compiler, so they are executed in node.js.
 
 They resolve similar to modules.
