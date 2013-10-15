@@ -31,6 +31,10 @@ You can pass an `cache` object, where the modules are cached. Elsewise one is cr
 
 Hook into the compiler to extract progress information. The `handler` must have the signature `function(percentage, message)`. It's called with `0 <= percentage <= 1`. `percentage == 0` indicates the start. `percentage == 1` indicates the end.
 
+### `RecordIdsPlugin()`
+
+Saves and restores module and chunk ids from records.
+
 ## entry
 
 Plugins, which add entry chunks to the compilation.
@@ -99,6 +103,20 @@ Decorates the templates by generating a SourceMap for each chunk.
 
 `sourceMapFilename` the filename template of the SourceMap. `[hash]`, `[name]`, `[id]`, `[file]` and `[filebase]` are replaced. If this argument is missing, the SourceMap will be inlined as DataUrl.
 
+### `NoHotModuleReplacementPlugin()`
+
+Defines `module.hot` as `false` to remove hot module replacement code.
+
+### `HotModuleReplacementPlugin(options)`
+
+Add support for hot module replacement. Decorates the templates to add runtime code. Adds `module.hot` API.
+
+`options.hotUpdateChunkFilename` The filename for hot update chunks
+
+`options.hotUpdateMainFilename` The filename for the hot update manifest
+
+`options.hotUpdateFunction` JSON function name for the hot update
+
 ## source
 
 Plugins affecting the source code of modules.
@@ -155,6 +173,10 @@ Provides AMD-style `define` and `require` to modules. Also bind `require.amd`, `
 
 Provides CommonJs-style `require` to modules.
 
+### `dependencies/LabeledModulesPlugin`
+
+Provide labels `require:` and `exports:` to modules.
+
 ### `dependencies/RequireContextPlugin(modulesDirectories, extensions)`
 
 Provides `require.context`. The parameter `modulesDirectories` and `extensions` are used to find alternative requests for files. It's useful to provide the same arrays as you provide to the resolver.
@@ -166,6 +188,12 @@ Provides `require.ensure`.
 ### `dependencies/RequireIncludePlugin`
 
 Provides `require.include`.
+
+### `DefinePlugin(definitions)`
+
+Define constants for identifier.
+
+`definitions` is an object.
 
 ## optimize
 
@@ -204,3 +232,7 @@ Minimizes the chunks with `uglify.js`.
 Order the modules and chunks by occurence. This saves space, because often referenced modules and chunks get smaller ids.
 
 `preferEntry` If true, references in entry chunks have higher priority
+
+### `optimize/DedupePlugin`
+
+Deduplicates modules and adds runtime code.
