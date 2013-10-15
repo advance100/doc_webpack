@@ -6,6 +6,8 @@ The resolving process have three entry points. Depending on the shape for the re
 
 > Even while this description suggest a serial process, the process is running completly async and parallel.
 
+> The process is simplified.
+
 ## absolute path
 
 ``` text
