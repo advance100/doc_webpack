@@ -1,5 +1,3 @@
-# amd
-
 ``` javascript
 define(["./dependency1", "./dependency2"], function(dep1, dep2) {
   // dep1 and dep2 are the exports of the files dependency1 and dependency1
