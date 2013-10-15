@@ -1,5 +1,3 @@
-# webpack getting started
-
 Welcome to the **Getting Started** of webpack.
 
 This is a wiki page, which isn't finished/polished. If you have read it **please** do enhance some parts of it. With your help a good guide can be created...
