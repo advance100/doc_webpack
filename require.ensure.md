@@ -1,5 +1,3 @@
-# require.ensure
-
 ``` javascript
 // load stuff asynchronously
 require.ensure(["./dependency1"], function(require) {
