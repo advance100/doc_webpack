@@ -15,6 +15,8 @@ You need to have node.js installed.
 npm install webpack -g
 ```
 
+> This makes the `webpack` command availible.
+
 ## Setup the compilation
 
 Start with a empty directory.
@@ -56,6 +58,8 @@ bundle.js   982       0  main
 
 Open `index.js` in your browser. It should display `It works.`
 
+> webpack creates a javascript file `bundle.js` with your entry file
+
 ## The second file
 
 We will move some of code into a extra file.
@@ -75,6 +79,8 @@ document.write(require("./content.js"));
 And recompile with `webpack ./entry.js bundle.js`.
 
 Update your browser window and you should see the text `It works from content.js.`.
+
+> webpack analyse your entry file for dependencies to other files. These files (called modules) are included in your `bundle.js` too. webpack give each module a unique id and save all modules accessable by id in the `bundle.js` file. Only the entry module is executed on startup. A small runtime provides the `require` function and execute the dependencies when required.
 
 ## The first loader
 
@@ -102,6 +108,8 @@ document.write(require("./content.js"));
 ```
 
 Recompile and update your browser to see your application with yellow background.
+
+> By prefixing loaders to a module request, the module went through a loader pipeline. These loader transform the file content in specific ways. After these transformations are applied, the result is a javascript module.
 
 ## Binding loaders
 
@@ -150,6 +158,8 @@ webpack
 
 to compile.
 
+> The webpack commandline try to load the file `webpack.config.js` in the current directory.
+
 ## A more pretty output
 
 If the project grows the compilation may take a bit longer. So we want to display some kind of progress bar. And we want colors...
@@ -176,6 +186,8 @@ module.exports = {
   // ...
 ```
 
+> When using watch mode, webpack installs file watchers to all files, which were used in the compilation process. If any change is detected, it'll run the compiliation again. When caching is enabled, webpack keeps each module in memory and will reuse it if it isn't changed.
+
 ## Development server
 
 Even better it is with the development server.
@@ -190,6 +202,10 @@ webpack-dev-server --progress --colors
 
 It binds a small express server on [http://localhost:8080](http://localhost:8080) which hosts a content page and the bundle. It automatically updates the browser page when a bundle is recompiled (socket.io).
 
+> The dev server uses webpack's watch mode. It also prevents webpack from emitting the result files to disk. Instead it keep and serve result files from memory.
+
 ## Using modules
+
+TODO
 
 > `require("module"); require("module/file");`
