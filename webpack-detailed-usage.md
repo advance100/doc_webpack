@@ -16,24 +16,28 @@ webpack <entry> <entry> <entry> <output-file>
 --output-named-chunk-file <string>
 --output-source-map-file <string>
 --output-public-path <string>
+--output-jsonp-function <string>
 --output-path-info
 --output-library <string>
 --output-library-target <var|window|this|commonjs|commonjs2>
 --records-input-path <file>
 --records-output-path <file>
 --records-path <file>
+--define <string=string>
 --target <string>
 --cache
 --watch, -w
 --watch-delay <number>
---debug, -d
---devtool eval
+--hot, -h
+--debug
+--devtool <string>
 --progress
 --resolve-alias <string=string>
 --resolve-loader-alias <string=string>
 --optimize-max-chunks <number>
 --optimize-minimize
 --optimize-occurence-order
+--optimize-dedupe
 --prefetch <string>
 --provide <string|string=string>
 --plugin <file>
