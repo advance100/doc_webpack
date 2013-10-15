@@ -17,6 +17,8 @@ module.exports = function doStuff() {};
 // the value of module.exports is returned by the require
 //  function when require this module.
 
+//// Advanded stuff ////
+
 // unload module
 var id = require.resolve("./dependency");
 delete require.cache[id];
