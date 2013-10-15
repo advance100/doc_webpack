@@ -1,5 +1,3 @@
-# webpack detailed usage
-
 # executable
 
 ```
