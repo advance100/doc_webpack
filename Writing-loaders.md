@@ -1,5 +1,3 @@
-# writing loaders
-
 TODO
 
 ## examples
