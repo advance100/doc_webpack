@@ -1,5 +1,3 @@
-# require.context
-
 ``` javascript
 var dir = require.context("./dir");
 // returns a context function, which behaves like a require
