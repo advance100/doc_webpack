@@ -25,14 +25,16 @@ compiler.plugin("compilation", function(compilation) {
 
 There are multiple types of plugin interfaces.
 
-* sync (default): As seen above. Use return.
-* async: Last parameter is a callback. Signature: function(err, result)
-* parallel: The handlers are invoked parallel (async).
+* Timing
+ * sync (default): As seen above. Use return.
+ * async: Last parameter is a callback. Signature: function(err, result)
+ * parallel: The handlers are invoked parallel (async).
 
-* not bailing (default): No return value.
-* bailing: The handlers are invoked in order until one handler return something.
-* parallel bailing: The handlers are invoked parallel (async). The first (by order) returned value is significant.
-* waterfall: Each handler get the result value of the last handler as argument.
+* Return value
+ * not bailing (default): No return value.
+ * bailing: The handlers are invoked in order until one handler return something.
+ * parallel bailing: The handlers are invoked parallel (async). The first (by order) returned value is significant.
+ * waterfall: Each handler get the result value of the last handler as argument.
 
 ## Compiler
 
