@@ -132,9 +132,9 @@ After the factory has resolved the request. The `data` object has this propertie
 
 ## Compilation
 
-### `seal()`
+### `seal`
 
-### `optimize()`
+### `optimize`
 
 ### `optimize-modules(modules: Module[])`
 
@@ -144,17 +144,41 @@ After the factory has resolved the request. The `data` object has this propertie
 
 ### `after-optimize-chunks(chunks: Chunk[])`
 
+### `revive-modules(modules: Module[], records)`
+
+### `optimize-module-order(modules: Module[])`
+
 ### `optimize-module-ids(modules: Module[])`
 
 ### `after-optimize-module-ids(modules: Module[])`
+
+### `record-modules(modules: Module[], records)`
+
+### `revive-chunks(chunks: Chunk[], records)`
+
+### `optimize-chunk-order(chunks: Chunk[])`
 
 ### `optimize-chunk-ids(chunks: Chunk[])`
 
 ### `after-optimize-chunk-ids(chunks: Chunk[])`
 
+### `record-chunks(chunks: Chunk[], records)`
+
+### `before-hash`
+
+### `after-hash`
+
+### `before-chunk-assets`
+
+### `additional-chunk-assets(chunks: Chunk[])`
+
+### `record(compilation, records)
+
 ### `optimize-chunk-assets(chunks: Chunk[])` async
 
-### `optimize-assets(assets: Object{name: Source})`
+### `after-optimize-chunk-assets(chunks: Chunk[])`
+
+### `optimize-assets(assets: Object{name: Source})` async
 
 ### `after-optimize-assets(assets: Object{name: Source})`
 
@@ -163,6 +187,7 @@ After the factory has resolved the request. The `data` object has this propertie
 ### `succeed-module`
 
 ### `failed-module`
+
 
 ## Parser `compiler.parser`
 
