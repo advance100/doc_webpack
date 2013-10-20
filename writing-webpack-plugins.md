@@ -191,17 +191,28 @@ After the factory has resolved the request. The `data` object has this propertie
 
 ## Parser `compiler.parser`
 
-### `call <identifier>`
+### `call <identifier>(expr: Expression)` bailing
 
-### `expression <identifier>`
+### `expression <identifier>(expr: Expression)` bailing
 
-### `evaluate <expression type>`
+### `expression ?:(expr: Expression)` bailing
 
-### `evaluate typeof <identifier>`
+### `evaluate <expression type>(expr: Expression)` bailing
 
-### `typeof <identifier>`
+### `evaluate typeof <identifier>(expr: Expression)` bailing
 
-### `statement if`
+### `evaluate Identifier <identifier>(expr: Expression)` bailing
+
+### `evaluate CallExpression .<property>(expr: Expression)` bailing
+
+### `typeof <identifier>(expr: Expression)` bailing
+
+### `statement if(statement: Statement)` bailing
+
+### `label <labelname>(statement: Statement)` bailing
+
+### `var <name>(statement: Statement)` bailing
+
 
 ## Resolver
 
