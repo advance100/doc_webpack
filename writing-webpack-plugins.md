@@ -205,9 +205,9 @@ After the factory has resolved the request. The `data` object has this propertie
 
 ## Resolver
 
-* `compiler.resolvers.normal` resolves a normal module
-* `compiler.resolvers.context` resolves a context module
-* `compiler.resolvers.loader` resolves a loader
+* `compiler.resolvers.normal` Resolver for a normal module
+* `compiler.resolvers.context` Resolver for a context module
+* `compiler.resolvers.loader` Resolver for a loader
 
 Any plugin should use `this.fileSystem` as fileSystem, as it's cached. It only has async named functions, but they may behave sync, if the user uses a sync file system implementation.
 
