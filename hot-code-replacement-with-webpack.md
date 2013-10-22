@@ -1,5 +1,3 @@
-# hot code replacement with webpack
-
 To use hot code replacement with webpack you need to four things:
 
 * records (`--records-path`, `recordsPath: ...`)
