@@ -4,11 +4,11 @@
 
 8abea1f129e7ef529cb3a2b7f3bd40fdd0ef745b
 
+* **`this` in modules is now `exports` (if this breaks a library, try prefixing `imports?this=>window!`)**
 * added Hot Code Replacement `--hot` [experimental]
 * added `define` option
 * support new `sourceMappingURL` and `sourceURL` syntax
 * added `unsafeCache` and `noParse` option for performance
-* this in modules is now exports
 * `--profile --progress` now display process timings
 
 # 0.10
