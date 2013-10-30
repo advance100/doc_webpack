@@ -1,8 +1,6 @@
 # changelog
 
-# 0.11 (beta)
-
-8abea1f129e7ef529cb3a2b7f3bd40fdd0ef745b
+# 0.11
 
 * **`this` in modules is now `exports` (if this breaks a library, try prefixing `imports?this=>window!`)**
 * added Hot Code Replacement `--hot` [experimental]
@@ -10,6 +8,8 @@
 * support new `sourceMappingURL` and `sourceURL` syntax
 * added `unsafeCache` and `noParse` option for performance
 * `--profile --progress` now display process timings
+* added `loaderContext.loadModule`
+* automatically remove require.ensure when no chunk was generated.
 
 # 0.10
 
