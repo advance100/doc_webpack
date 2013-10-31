@@ -1,5 +1,3 @@
-# changelog
-
 # 0.11
 
 * **`this` in modules is now `exports` (if this breaks a library, try prefixing `imports?this=>window!`)**
