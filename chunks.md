@@ -1,8 +1,8 @@
 # chunks
 
-For big web apps it's not efficent to put all code into a single file. Especially if some blocks of code are only required under some circumstances. Webpack has a feature to split you codebase into so called chunks which are loaded on demand. This feature is also called "code splitting". Names for similar features in other bundlers: layers, rollups, fragments.
+For big web apps it's not efficient to put all code into a single file. Especially if some blocks of code are only required under some circumstances. Webpack has a feature to split you codebase into so called chunks which are loaded on demand. This feature is also called "code splitting". Names for similar features in other bundlers: layers, rollups, fragments.
 
-The splitting points are choosen by the developer. By default the AMD `require` and `require.ensure` functions set a split point.
+The splitting points are chosen by the developer. By default the AMD `require` and `require.ensure` functions set a split point.
 
 For a demo see the [example-app](http://webpack.github.io/example-app/). Check Network in DevTools.
 
@@ -16,7 +16,7 @@ This type of chunk contains the module system, a entry module and load the entry
 
 The file of this chunk should be included in the HTML page.
 
-There can be mutliple entry chunks, but only one is loaded per page.
+There can be multiple entry chunks, but only one is loaded per page.
 
 ### normal chunk
 
@@ -30,7 +30,7 @@ There is a good chance that there are multiple normal chunks but they are not re
 
 Entry chunks and normal chunks can optionally have names. If they have, they emit an additional file with a special filename.
 
-The additional file can be included in the HTML page to inject additional modules, which are otherwise loaded on demand. If injected, these modules are requested with the page load and do not require an additonal round trip.
+The additional file can be included in the HTML page to inject additional modules, which are otherwise loaded on demand. If injected, these modules are requested with the page load and do not require an additional round trip.
 
 ## code splitting example
 
@@ -83,6 +83,6 @@ chunk 2
 
 ## Optimizing the chunk count
 
-If your codebase is splitted into too much chunks, there are options to merge multiple chunks into one file.
+If your codebase is split into too much chunks, there are options to merge multiple chunks into one file.
 
 > @sokra: I recommend to set many split points and let webpack merge them, because it has a good overall view of the compilation (with the chunk contents and sizes).
