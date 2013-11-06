@@ -1,7 +1,7 @@
 ``` javascript
 // load stuff asynchronously
 require.ensure(["./dependency1"], function(require) {
-  // dependency1 is perpared to be required synchronously.
+  // dependency1 is prepared to be required synchronously.
   // but dependency1 is not executed
 
   var dep2 = require("./dependency2");
