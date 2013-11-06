@@ -135,7 +135,7 @@ Each item can have these properties:
 * `loader`: A string of "!" separated loaders
 * `loaders`: A array of loaders as string
 
-A condition can be a RegExp, or a array of RegExps combound with "and".
+A condition can be a RegExp, or a array of RegExps combined with "and".
 
 See more: [[loaders]]
 
@@ -300,7 +300,7 @@ This is required, when using Hot Code Replacement between multiple calls to the 
 
 ## `bail`
 
-Report the first error als hard error instead of tolerating it.
+Report the first error at a hard error instead of tolerating it.
 
 ## `profile`
 
@@ -380,7 +380,7 @@ Example: `amd: { jQuery: true }` (for old 1.x AMD versions of jquery)
 
 Define free variables. The values will be inlined into the code.
 
-A key is a identifier or mutliple identifier joined with `.`. If the value is a string it'll be used a code fragment. If the value isn't a string, it'll be stringified (including functions).
+A key is a identifier or multiple identifier joined with `.`. If the value is a string it'll be used a code fragment. If the value isn't a string, it'll be stringified (including functions).
 
 If the value is an object all keys are defined the same way.
 
@@ -481,7 +481,7 @@ That's a `resolveLoader` only property.
 
 It describes alternatives for the module name that are tried.
 
-> Defaul: `["*-webpack-loader", "*-web-loader", "*-loader", "*"]`
+> Default: `["*-webpack-loader", "*-web-loader", "*-loader", "*"]`
 
 ## `optimize`
 
@@ -497,23 +497,23 @@ Limit the chunk count to a defined value. Chunks are merged until it fits.
 
 ### `optimize.minimize`
 
-Mimimize all javascript output of chunks. Loaders are switched into minimizing mode. You can pass `false`, `true` or an object containing UglifyJs options.
+Minimize all javascript output of chunks. Loaders are switched into minimizing mode. You can pass `false`, `true` or an object containing UglifyJs options.
 
 ### `optimize.occurenceOrder`
 
-Assign the module and chunk ids by occurence count. Ids that are used often get lower (shorter) ids. This make ids predictable and is recommended. (It is availible as option since 0.10, but was ever activated prior to 0.10)
+Assign the module and chunk ids by occurrence count. Ids that are used often get lower (shorter) ids. This make ids predictable and is recommended. (It is available as option since 0.10, but was ever activated prior to 0.10)
 
 > Default: false
 
 ### `optimize.occurenceOrderPreferEntry`
 
-Only availible if `optimize.occurenceOrder` is set. Occurences in entry chunks have higher priority. This make entry chunks smaller but increases the overall size.
+Only available if `optimize.occurenceOrder` is set. Occurrences in entry chunks have higher priority. This make entry chunks smaller but increases the overall size.
 
 > Default: true
 
 ### `optimize.dedupe`
 
-Search for equal or similar files and deduplicate them in the output. This comes with some overhead for the entry chunk, but can reduce file size effectivly.
+Search for equal or similar files and deduplicate them in the output. This comes with some overhead for the entry chunk, but can reduce file size effectively.
 
 This is experimental and may crash, because of some missing implementations. (Report an issue)
 
