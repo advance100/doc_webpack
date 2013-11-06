@@ -3,7 +3,7 @@ Welcome to the **Getting Started** of webpack.
 This is a wiki page, which isn't finished/polished. If you have read it **please** do enhance some parts of it. With your help a good guide can be created...
 
 > Missing stuff:
-> * Explaination
+> * Explanation
 
 ## Installing webpack
 
@@ -13,7 +13,7 @@ You need to have node.js installed.
 npm install webpack -g
 ```
 
-> This makes the `webpack` command availible.
+> This makes the `webpack` command available.
 
 ## Setup the compilation
 
@@ -78,7 +78,7 @@ And recompile with `webpack ./entry.js bundle.js`.
 
 Update your browser window and you should see the text `It works from content.js.`.
 
-> webpack analyse your entry file for dependencies to other files. These files (called modules) are included in your `bundle.js` too. webpack give each module a unique id and save all modules accessable by id in the `bundle.js` file. Only the entry module is executed on startup. A small runtime provides the `require` function and execute the dependencies when required.
+> webpack will analyze your entry file for dependencies to other files. These files (called modules) are included in your `bundle.js` too. webpack give each module a unique id and save all modules accessible by id in the `bundle.js` file. Only the entry module is executed on startup. A small runtime provides the `require` function and execute the dependencies when required.
 
 ## The first loader
 
@@ -113,7 +113,7 @@ Recompile and update your browser to see your application with yellow background
 
 We don't want to write such long requires `require("!style!css!./style.css");`.
 
-We can bind file extentions to loaders so we just need to write in the `entry.js`:
+We can bind file extensions to loaders so we just need to write in the `entry.js`:
 
 ``` javascript
 require("./style.css");
@@ -176,7 +176,7 @@ We don't want to manually recompile after every change...
 webpack --progress --colors --watch
 ```
 
-Webpack can cache unchanged modules between compiltions. Just add `--cache` or insert it into your config file: 
+Webpack can cache unchanged modules between compilations. Just add `--cache` or insert it into your config file: 
 
 ``` javascript
 module.exports = {
@@ -184,7 +184,7 @@ module.exports = {
   // ...
 ```
 
-> When using watch mode, webpack installs file watchers to all files, which were used in the compilation process. If any change is detected, it'll run the compiliation again. When caching is enabled, webpack keeps each module in memory and will reuse it if it isn't changed.
+> When using watch mode, webpack installs file watchers to all files, which were used in the compilation process. If any change is detected, it'll run the compilation again. When caching is enabled, webpack keeps each module in memory and will reuse it if it isn't changed.
 
 ## Development server
 
