@@ -224,7 +224,7 @@ Any plugin should use `this.fileSystem` as fileSystem, as it's cached. It only h
 
 To join paths any plugin should use `this.join`. It normalize the paths. There is a `this.normalize` too.
 
-A bailing async for each implementation is availible on `this.forEachBail(array, iterator, callback)`.
+A bailing async for each implementation is available on `this.forEachBail(array, iterator, callback)`.
 
 To pass the request to other resolving plugins use the `this.doResolve(types: String|String[], request: Request, callback)` method. `types` are multiple possible request types that are tested in preference of order.
 
