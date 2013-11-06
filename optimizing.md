@@ -24,7 +24,7 @@ The feature add some overhead to the entry chunk.
 
 ## Caching
 
-To effectivly cache your files, they should have a hash or version in their url. You can emit or move the output files manually in a folder called `v1.3`. But this has several disadvantages: Extra work for the developer and not changed files are not loaded from cache.
+To effectively cache your files, they should have a hash or version in their url. You can emit or move the output files manually in a folder called `v1.3`. But this has several disadvantages: Extra work for the developer and not changed files are not loaded from cache.
 
 Webpack can add hashes for the files to the filename. Loaders that emit files (worker-loader, file-loader) already do this. For the chunks you have to enable it. There a two levels:
 
@@ -69,9 +69,9 @@ Webpack will take care of it by merging chunks (It will prefer merging chunk whi
 
 A Single-Page-App is the web app type webpack is designed and optimized for.
 
-You may have splitted the app into multiple chunks, which are loaded at your router. The entry chunk only contains the router and some libraries, but no content. This works great while your user is navigating through your app, but for initial page load you need 2 round trips: One for the router and one for the current content page.
+You may have aplit the app into multiple chunks, which are loaded at your router. The entry chunk only contains the router and some libraries, but no content. This works great while your user is navigating through your app, but for initial page load you need 2 round trips: One for the router and one for the current content page.
 
-If you use the HTML5 History API to reflect the current content page in the URL, your server can know which content page will be requested by the client code. To save roud trips the server can include the content chunk in the response: This is possible by just adding it as script tag. The browser will load both chunks parallel.
+If you use the HTML5 History API to reflect the current content page in the URL, your server can know which content page will be requested by the client code. To save round trips the server can include the content chunk in the response: This is possible by just adding it as script tag. The browser will load both chunks parallel.
 
 ``` html
 <script src="entry-chunk.js" type="text/javascript" charset="utf-8"></script>
