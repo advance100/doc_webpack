@@ -22,7 +22,7 @@
 * [`coffee`](https://github.com/webpack/coffee-loader): Loads coffee-script like javascript
 * [`coffee-redux`](https://github.com/webpack/coffee-redux-loader): Loads coffee-script like javascript
 * [`json5`](https://github.com/webpack/json5-loader): Like json, but not so strict.
-
+* [`es6-module`](https://github.com/shama/es6-module-loader): Loads ES6 modules.
 
 ## templating
 
