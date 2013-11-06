@@ -1,6 +1,6 @@
 # hot code replacement
 
-"Hot Code Replacement" (HCR) is an opt-in feature, so you need to put some code at choosen points of your application. The dependencies are handled by the module system.
+"Hot Code Replacement" (HCR) is an opt-in feature, so you need to put some code at chosen points of your application. The dependencies are handled by the module system.
 
 I. e. you place your hot replacement code in module A. Module A requires module B and B requires C. If module C is updated, and module B cannot handle the update, modules B and C become outdated. Module A can handle the update and new modules B and C are injected.
 
@@ -80,7 +80,7 @@ Flag the current module as not updateable. If updated the update code would fail
 
 ### `dispose/addDisposeHandler(callback: (data: object) => void) => void`
 
-Add a one time handler, which is executed when the current module code is replaced. Here you should destroy/remove any persistant resource you have claimed/created. If you want to transfer state to the new module, add it to `data` object. The `data` will be availible at `module.hot.data` on the new module.
+Add a one time handler, which is executed when the current module code is replaced. Here you should destroy/remove any persistent resource you have claimed/created. If you want to transfer state to the new module, add it to `data` object. The `data` will be available at `module.hot.data` on the new module.
 
 ### `removeDisposeHandler(callback: (data: object) => void) => void`
 
@@ -143,7 +143,7 @@ The HCR is prepare stuff for the update. This may means that it's downloading so
 
 `ready`
 
-An update is availible and prepared. Call `apply()` to continue.
+An update is available and prepared. Call `apply()` to continue.
 
 `dispose`
 
@@ -159,13 +159,13 @@ A update cannot apply, but the system is still in a (old) consistent state.
 
 `fail`
 
-A update has throwed an exception in the middle of the process, and the system is (maybe) in a inconsistent state. The system should be restarted.
+A update has thrown an exception in the middle of the process, and the system is (maybe) in a inconsistent state. The system should be restarted.
 
 ### `status/addStatusHandler(callback: (status: string) => void) => void`
 
 Register a callback on status change.
 
-### `removeStatusHandler(callbkac: (status: string) => void) => void`
+### `removeStatusHandler(callback: (status: string) => void) => void`
 
 Remove a registered status change handler.
 
