@@ -1,5 +1,0 @@
-[[Home]]
-
-[[webpack options]]
-
-[[ideas]]
