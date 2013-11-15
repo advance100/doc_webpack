@@ -551,7 +551,7 @@ module.exports = {
       { test: /\.gif$/,    loader: "url-loader?limit=10000&minetype=image/gif" },
       { test: /\.woff$/,   loader: "url-loader?limit=10000&minetype=application/font-woff" }
       { test: /\.ttf$/,    loader: "url-loader?limit=10000&minetype=application/octet-stream" },
-      { test: /\.eot$/,    loader: "file-loader?minetype=application/vnd.ms-fontobject" },
+      { test: /\.eot$/,    loader: "file-loader" },
       { test: /\.svg$/,    loader: "url-loader?limit=10000&minetype=image/svg+xml" },
     ],
     preLoaders: [
