@@ -19,7 +19,7 @@ var myModule = require("my-module");
 
 #### `define([name: String], [dependencies: String[]], factoryMethod: function(...))`
 
-The name argument is ignored. If the dependencies array is provided, the factoryMethod will be called with the exports of each dependency (in the same order). If the factoryMethod returns a value, this value is exported by the module. The call is sync. No request to the server is fired. The compiler ensures that each dependency is available.
+The name argument is ignored. If the `dependencies` array is provided, the factoryMethod will be called with the exports of each dependency (in the same order). If `dependencies` is not provided the factoryMethod is called with `require`, `exports` and `module` (for compatibility!). If the factoryMethod returns a value, this value is exported by the module. The call is sync. No request to the server is fired. The compiler ensures that each dependency is available.
 
 Style: AMD
 
@@ -71,6 +71,63 @@ exports.aFunction = function doSomething() {
 
 ---
 
+#### `define(value: !Function)`
+
+Just exports the provided `value`. The `value` cannot be a function.
+
+Style: AMD (for compatibility!)
+
+Example: 
+
+``` javascript
+define({
+  answer: 42
+});
+```
+
+---
+
+#### `export: value`
+
+Export the defined value. The label can occur before a function declaration or a variable declaration. The function name or variable name is the identifier under which the value is exported.
+
+Style: Labeled modules
+
+Example:
+
+``` javascript
+export: var answer = 42;
+export: function method(value) {
+  // Do something
+};
+
+```
+
+---
+
+#### `require: "dependency"`
+
+Make all exports from the dependency available in the current scope. The `require` label can occur before a string. The dependency must export values with the `export` label. CommonJs or AMD modules cannot be consumed.
+
+Style: Labeled modules
+
+Example:
+
+``` javascript
+// in dependency
+export: var answer = 42;
+export: function method(value) {
+  // Do something
+};
+```
+
+``` javascript
+require: "dependency";
+method(answer);
+```
+
+---
+
 #### `require.resolve(dependency: String)`
 
 Returns the module id of a dependency. The call is sync. No request to the server is fired. The compiler ensures that the dependency is available.
@@ -109,7 +166,7 @@ module.id === require.resolve("./file.js")
 
 #### `require.cache`
 
-Multiple requires to the same module result in only one module execution and only one export. Therefore a cache in the runtime exists. Removing values from this cache cause new module execution and a new export. This is only needed in rar cases.
+Multiple requires to the same module result in only one module execution and only one export. Therefore a cache in the runtime exists. Removing values from this cache cause new module execution and a new export. This is only needed in rar cases (for compatibility!).
 
 Style: CommonJs
 
@@ -132,52 +189,168 @@ require.cache[module.id] !== module
 
 ---
 
-#### `require.ensure(dependencies: String[], callback: function(require), [chunkName: String])`
+#### `require.ensure(dependencies: String[], callback: function([require]), [chunkName: String])`
+
+Download additional dependencies on demand. The `dependencies` array lists modules that should be available. When they are, `callback` is called. If the callback is a function expression, dependencies in that source part are extracted and also loaded on demand. A single request is fired to the server, if not all modules are already available.
+
+This creates a chunk. The chunk can be named. If a chunk with this name already exists, the dependecies are merged into that chunk and that chunks is used.
+
+Style: CommonJs
+
+Example:
+
+``` javascript
+// in file.js
+var a = require("a");
+require.ensure(["b"], function(require) {
+  var c = require("c");
+});
+require.ensure(["d"], function() {
+  var e = require("e");
+}, "my chunk");
+require.ensure([], function() {
+  var f = require("f");
+}, "my chunk");
+/* This results in:
+   * entry chunk
+     - file.js
+     - a
+   * anonymous chunk
+     - b
+     - c
+   * "my chunk"
+     - d
+     - e
+     - f
+*/
+```
 
 ---
 
-#### `require(dependencies: String[], callback: function(...))`
+#### `require(dependencies: String[], [callback: function(...)])`
+
+Behaves similar to `require.ensure`, but the callback is called with the exports of each dependency in the `dependencies` array. There is no option to provide a chunk name.
+
+Style: AMD
+
+Example:
+
+``` javascript
+// in file.js
+var a = require("a");
+require(["b"], function(b) {
+  var c = require("c");
+});
+/* This results in:
+   * entry chunk
+     - file.js
+     - a
+   * anonymous chunk
+     - b
+     - c
+*/
+```
 
 ---
 
 #### `require.include(dependency: String)`
 
+Ensures that the dependency is available, but don't execute it. This can be use for optimizing the position of a module in the chunks.
+
+Style: webpack
+
+Example:
+
+``` javascript
+// in file.js
+require.include("a");
+require.ensure(["a", "b"], function(require) {
+  // Do something
+});
+require.ensure(["a", "c"], function(require) {
+  // Do something
+});
+/* This results in:
+   * entry chunk
+     - file.js
+     - a
+   * anonymous chunk
+     - b
+   * anonymous chunk
+     - c
+Without require.include "a" would be in both anonymous chunks.
+The runtime behavior isn't changed.
+*/
+```
+
 ---
 
 #### `module.loaded`
+
+Style: node.js (for compatibility!)
 
 ---
 
 #### `module.hot`
 
+Style: webpack
+
+---
+
+#### `global`
+
+Style: node.js
+
+---
+
+#### `process`
+
+Style: node.js
+
 ---
 
 #### `__dirname`
+
+Style: node.js (for compatibility!)
 
 ---
 
 #### `__filename`
 
+Style: node.js (for compatibility!)
+
 ---
 
 #### `__resourceQuery`
+
+Style: webpack
 
 ---
 
 #### `__webpack_public_path__`
 
+Style: webpack
+
 ---
 
 #### `__webpack_require__`
+
+Style: webpack
 
 ---
 
 #### `__webpack_chunk_load__`
 
+Style: webpack
+
 ---
 
 #### `__webpack_modules__`
 
+Style: webpack
+
 ---
 
 #### `DEBUG`
+
+Style: webpack
