@@ -191,7 +191,7 @@ require.cache[module.id] !== module
 
 #### `require.ensure(dependencies: String[], callback: function([require]), [chunkName: String])`
 
-Download additional dependencies on demand. The `dependencies` array lists modules that should be available. When they are, `callback` is called. If the callback is a function expression, dependencies in that source part are extracted and also loaded on demand. A single request is fired to the server, if not all modules are already available.
+Download additional dependencies on demand. The `dependencies` array lists modules that should be available. When they are, `callback` is called. If the callback is a function expression, dependencies in that source part are extracted and also loaded on demand. A single request is fired to the server, except if all modules are already available.
 
 This creates a chunk. The chunk can be named. If a chunk with this name already exists, the dependecies are merged into that chunk and that chunks is used.
 
