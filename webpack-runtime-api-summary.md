@@ -183,7 +183,7 @@ require.cache[module.id] === module
 require("./file.js") === module.exports
 delete require.cache[module.id];
 require.cache[module.id] === undefined
-require("./file.js") !== module.exports
+require("./file.js") !== module.exports // in theory; in praxis this causes a stack overflow
 require.cache[module.id] !== module
 ```
 
