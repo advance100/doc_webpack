@@ -24,6 +24,7 @@
 | [[writing webpack plugins]]                 | bad       | low       |
 | [[optimizing]]                              | solid     | middle    |
 | [[hot code replacement with webpack]]       | ok        | very low  |
+| [[webpack runtime api summary]]             | bad       | middle    |
 | [[enhanced-require detailed usage]]         | missing   | very low  |
 | [[enhanced-require plugins]]                | missing   | very low  |
 | [[writing enhanced-require plugins]]        | missing   | very low  |
