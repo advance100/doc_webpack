@@ -189,6 +189,12 @@ require.cache[module.id] !== module
 
 ---
 
+### `require.context(directory: String, [includeSubdirs: Boolean, [filter: RegExp]])`
+
+Style: webpack
+
+---
+
 #### `require.ensure(dependencies: String[], callback: function([require]), [chunkName: String])`
 
 Download additional dependencies on demand. The `dependencies` array lists modules that should be available. When they are, `callback` is called. If the callback is a function expression, dependencies in that source part are extracted and also loaded on demand. A single request is fired to the server, except if all modules are already available.
