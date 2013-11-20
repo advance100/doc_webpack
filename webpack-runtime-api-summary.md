@@ -1,4 +1,4 @@
-A quick summary of all methods and variables availible in code compiled with webpack.
+A quick summary of all methods and variables available in code compiled with webpack.
 
 ## Basic
 
