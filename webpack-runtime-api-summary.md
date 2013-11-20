@@ -132,7 +132,7 @@ method(answer);
 
 Returns the module id of a dependency. The call is sync. No request to the server is fired. The compiler ensures that the dependency is available.
 
-The module id is a number in webpack (in constast to node.js where it is a string, the filename).
+The module id is a number in webpack (in contrast to node.js where it is a string, the filename).
 
 Style: CommonJs
 
