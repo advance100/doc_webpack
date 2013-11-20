@@ -55,6 +55,8 @@
 
 [[hot code replacement with webpack]]
 
+[[webpack methods summary]]
+
 ## enhanced-require
 
 ### Basics
