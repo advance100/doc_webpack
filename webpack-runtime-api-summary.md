@@ -141,7 +141,7 @@ Example:
 ``` javascript
 var id = require.resolve("dependency");
 typeof id === "number";
-id === 0 // if dependecy is the entry point
+id === 0 // if dependency is the entry point
 id > 0 // elsewise
 ```
 
@@ -199,7 +199,7 @@ Style: webpack
 
 Download additional dependencies on demand. The `dependencies` array lists modules that should be available. When they are, `callback` is called. If the callback is a function expression, dependencies in that source part are extracted and also loaded on demand. A single request is fired to the server, except if all modules are already available.
 
-This creates a chunk. The chunk can be named. If a chunk with this name already exists, the dependecies are merged into that chunk and that chunks is used.
+This creates a chunk. The chunk can be named. If a chunk with this name already exists, the dependencies are merged into that chunk and that chunks is used.
 
 Style: CommonJs
 
