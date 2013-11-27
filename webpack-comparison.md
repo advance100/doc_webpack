@@ -15,7 +15,7 @@
 | indirect require `var r = require; r("./file")` | warning (include too much) | no* | no |
 | expressions in require (guided) `require("./templates/" + template)` | **yes (all files matching included)** | no* | no |
 | expressions in require (free) `require(moduleName)` | with manual configuration | no* | no |
-| requirable files | filessystem | **web** | filesystem |
+| requirable files | file system | **web** | file system |
 | plugins | **yes** | yes* | **yes** |
 | preprocessing | **loaders, [transforms](https://github.com/webpack/transform-loader)** | loaders | transforms |
 | watch mode | yes | not required | yes |
