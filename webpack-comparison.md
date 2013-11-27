@@ -20,7 +20,7 @@
 | preprocessing | **loaders, [transforms](https://github.com/webpack/transform-loader)** | loaders | transforms |
 | watch mode | yes | not required | yes |
 | debugging support | **SourceUrl, SourceMaps** | not required | SourceMaps |
-| node.js buildin libs `require("path")` | **yes** | no | **yes** |
+| node.js built-in libs `require("path")` | **yes** | no | **yes** |
 | other node.js stuff | process, __dir/filename, global | - | process, __dir/filename, global |
 | replacement for browser | `web_modules`, `.web.js`, package.json field, alias config option | alias option | package.json field, alias option
 | minimizing | uglify | uglify, closure compiler | no |
