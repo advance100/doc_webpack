@@ -29,10 +29,10 @@ And create a file `index.html` with this content:
 
 ``` html
 <html>
-  <head>
+  <head></head>
+  <body>
     <script type="text/javascript" src="bundle.js" charset="utf-8"></script>
-  </head>
-  <body></body>
+  </body>
 </html>
 ```
 
