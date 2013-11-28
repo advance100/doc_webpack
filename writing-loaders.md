@@ -83,11 +83,9 @@ Loader API version.
 
 ### `context: string`
 
-The directory of the requiring module.
+The directory of the module. Can be used as context for resolving other stuff.
 
-Keep in mind that a module can be used multiple times and `context` is only the directory of the *first* found dependency to this module.
-
-In the example: `/abc` because `file.js` is in this directory
+In the example: `/abc` because `resource.js` is in this directory
 
 ### `request: string`
 
