@@ -4,7 +4,7 @@ By default an empty html page is server, which references `/bundle.js`. You can 
 
 The webpack-dev-server has a CLI and a node.js API.
 
-All [[webpack CLI options | webpack advanced usage]] and [[webpack API options | webpack options]] are valid for the dev-server too. Read [[webpack-dev-middleware]] for more information. CLI: A `webpack.config.js` is accepted too.
+All [[webpack CLI options | webpack detailed usage]] and [[webpack API options | webpack options]] are valid for the dev-server too. Read [[webpack-dev-middleware]] for more information. CLI: A `webpack.config.js` is accepted too.
 
 ## CLI
 
