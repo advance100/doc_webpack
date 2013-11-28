@@ -13,7 +13,7 @@ Just edit the pages, I'll review your changes. So you needed be feared of adding
 | [[loader list]]                             | good      | high      |
 | [[require.context]]                         | ok        | low       |
 | [[require.ensure]]                          | ok        | middle    |
-| [[writing loaders]]                         | bad       | low       |
+| [[writing loaders]]                         | ok        | low       |
 | [[hot code replacement]]                    | bad       | very low  |
 | [[webpack usage]]                           | ok        | high      |
 | [[webpack detailed usage]]                  | bad       | middle    |
