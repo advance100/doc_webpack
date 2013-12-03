@@ -100,3 +100,46 @@ module.exports = {
 ```
 
 This will generate multiple entry chunks: `p1.entry.chunk.js`, `p2.entry.chunk.js` and `p3.entry.chunk.js`. But additional chunks can be shared by them.
+
+If your entry chunks have some modules in common, there is a cool plugin for this. The `CommonsChunkPlugin` identifies common modules and put them into a commons chunk. You need to add two script tags to your page, one for the commons chunk and one for the entry chunk.
+
+``` javascript
+var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
+module.exports = {
+  entry: {
+    p1: "./page1",
+    p2: "./page2",
+    p3: "./page3"
+  },
+  output: {
+    filename: "[name].entry.chunk.js"
+  },
+  plugins: [
+    new CommonsChunkPlugin("commons.chunk.js")
+  ]
+}
+```
+
+This will generate multiple entry chunks: `p1.entry.chunk.js`, `p2.entry.chunk.js` and `p3.entry.chunk.js`, plus one `commons.chunk.js`. Frist load `commons.chunk.js` and than one of the `xx.entry.chunk.js`.
+
+You can generate multiple commons chunks, by selecting the entry chunks. And you can nest commons chunks.
+
+``` javascript
+var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
+module.exports = {
+  entry: {
+    p1: "./page1",
+    p2: "./page2",
+    p3: "./page3",
+    p4: "./page4"
+  },
+  output: {
+    filename: "[name].entry.chunk.js"
+  },
+  plugins: [
+    new CommonsChunkPlugin("commons-a.chunk.js", ["p1", "p2"]),
+    new CommonsChunkPlugin("commons-b.chunk.js", ["p3", "p4"]),
+    new CommonsChunkPlugin("commons.chunks.js", ["commons-a.chunk.js", "commons-b.chunk.js"])
+  ]
+}
+```
