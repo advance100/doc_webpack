@@ -24,6 +24,21 @@ Adds a banner to the top of each generated chunk.
 
 `options.entryOnly` if true, the banner will only be added to the entry chunks.
 
+### `webpack/lib/optimize/CommonsChunkPlugin(filename, [entryPoints], [minChunks])`
+
+Generates a extra chunk, which contains common modules shared between at least `minChunks` entry points. You need to load the generated chunk before the entry point:
+
+``` html
+<script src="commons.js" charset="utf-8"></script>
+<script src="entry.bundle.js" charset="utf-8"></script>
+```
+
+`filename` the filename of the commons chunk (like `output.filename`). Accepts `[hash]`, `[chunkhash]`, etc.
+
+`entryPoints` an array of entry points that should be used to generate these commons chunk. By default all entry points will be used.
+
+`minChunks` the number of entry point that need to have a module in common. By default it need to be in all entry points. Allowed values are >= 2, <= entry points count.
+
 ## module styles
 
 ### [`ComponentPlugin`](https://github.com/webpack/component-webpack-plugin)
