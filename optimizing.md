@@ -10,7 +10,7 @@ That's a pretty simply but effective way to optimize your web app.
 
 As you already know (if you've read the remaining docs) webpack give your modules and chunks ids to identify them. Webpack can vary the distribution of the ids to get the smallest id length for often used ids with a simple option:
 
-`--optimize-occurence-order resp. `optimize: { occurenceOrder: true }`
+`--optimize-occurence-order` resp. `optimize: { occurenceOrder: true }`
 
 The entry chunks have higher priority for file size.
 
