@@ -26,7 +26,7 @@ Adds a banner to the top of each generated chunk.
 
 #### `webpack/lib/optimize/CommonsChunkPlugin(filename, [entryPoints], [minChunks])`
 
-Generates a extra chunk, which contains common modules shared between at least `minChunks` entry points. You must load the generated chunk before the entry point:
+Generates an extra chunk, which contains common modules shared between at least `minChunks` entry points. You must load the generated chunk before the entry point:
 
 ``` html
 <script src="commons.js" charset="utf-8"></script>
