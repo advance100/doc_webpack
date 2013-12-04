@@ -45,19 +45,19 @@ Generates an extra chunk, which contains common modules shared between at least 
 
 ## module styles
 
-### [`ComponentPlugin`](https://github.com/webpack/component-webpack-plugin)
+#### [`ComponentPlugin`](https://github.com/webpack/component-webpack-plugin)
 
 Use [component](https://github.com/component/component) with webpack.
 
 ## dependency injection
 
-### [`RewirePlugin`](https://github.com/jhnns/rewire-webpack)
+#### [`RewirePlugin`](https://github.com/jhnns/rewire-webpack)
 
 Use [rewire](https://github.com/jhnns/rewire) in webpack.
 
 ## localization
 
-### [`I18nPlugin(translations: Object, fnName = "__": String)`](https://github.com/webpack/i18n-webpack-plugin)
+#### [`I18nPlugin(translations: Object, fnName = "__": String)`](https://github.com/webpack/i18n-webpack-plugin)
 
 Create bundles with translations baked in. Then you can serve the translated bundle to your clients.
 
