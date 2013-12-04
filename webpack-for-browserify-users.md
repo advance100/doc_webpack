@@ -162,7 +162,14 @@ module.exports = {
 $ browserify --ignore file.js
 ```
 
-TODO
+``` javascript
+var IgnorePlugin = require("webpack/lib/IgnorePlugin");
+module.exports = {
+  plugins: [
+    new IgnorePlugin(/file\.js$/)
+  ]
+};
+```
 
 ## node globals
 
