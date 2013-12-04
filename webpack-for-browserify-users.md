@@ -307,5 +307,5 @@ webpack({
 | beefy | [[webpack-dev-server]] |
 | deAMDify | `webpack` |
 | decomponentify | [component-webpack-plugin](https://github.com/webpack/component-webpack-plugin) |
-| list of source transforms | [[loaders list]], [transform-loader](https://github.com/webpack/transform-loader) |
+| list of source transforms | [[loader list]], [transform-loader](https://github.com/webpack/transform-loader) |
 | 
