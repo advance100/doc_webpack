@@ -69,6 +69,9 @@ module.exports = {
     $: "jquery",
     jQuery: "jquery"
   },
+  loader: {
+    configStuff: 123
+  },
   optimize: {
     minChunkSize: 20000,
     maxChunks: 5,
@@ -482,6 +485,22 @@ That's a `resolveLoader` only property.
 It describes alternatives for the module name that are tried.
 
 > Default: `["*-webpack-loader", "*-web-loader", "*-loader", "*"]`
+
+## `provide`
+
+A object of automatically loaded modules. Module (value) is loaded when the identifier (key) is used as free variable in a module. The identifier is filled with the exports of the loaded module.
+
+Example: `provide: { $: "jquery" }`
+
+``` javascript
+// in a module
+$("#item") // <= just works
+// $ is automatically set to the exports of module "jquery"
+```
+
+## `loader`
+
+Custom values available in the loader context.
 
 ## `optimize`
 
