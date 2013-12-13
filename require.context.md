@@ -19,7 +19,7 @@ require.context("./dir", false, /^\.\/[^\.]$/).keys()
 // => ["./file"]
 ```
 
-### webpack
+## webpack
 
 ``` javascript
 // webpack automatically creates a "context" when using expressions in the require/define call.
@@ -37,3 +37,34 @@ require("./dir/f" + x + "e")
 var x = require; // => var x = require.context(".");
 x("./dir/file");
 ```
+
+### Internals
+
+webpack reads the directory content and filter it by the provided RegExp. All possible request strings are calculated and resolved like normal requires. As result we have mappings from "possible request" to "module id". webpack generates a module (called context module) that contains that map and exports a require-like function.
+
+Example:
+
+We start with `require("./template/" + templateName + ".jade"`.
+
+While parsing we extract the directory "/some/path/template" and the RegExp `/^\.\/.*\.jade$/`.
+
+The directory is read and filtered by RegExp. As result we get these three possible request strings: `"./templateA.jade" "./templateB.jade" "./more/templateC.jade"`.
+
+After resolving these modules we have a map:
+
+``` javascript
+{
+    "./templateA.jade": 23,
+    "./templateB.jade": 24,
+    "./more/templateC.jade": 25
+}
+// 23, 24, 25 are module ids
+```
+
+Given that the context module get the id `22`. The original require is rewritten to:
+
+``` javascript
+require(22)("./" + templateName + ".jade")
+```
+
+See [full example here](https://github.com/webpack/webpack/tree/master/examples/require.context#examplejs).
