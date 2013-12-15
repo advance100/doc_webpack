@@ -1,36 +1,42 @@
 # 0.11
 
-* **`this` in modules is now `exports` (if this breaks a library, try prefixing `imports?this=>window!`)**
-* added Hot Code Replacement `--hot` [experimental]
-* added `define` option
-* support new `sourceMappingURL` and `sourceURL` syntax
-* added `unsafeCache` and `noParse` option for performance
-* `--profile --progress` now display process timings
-* added `loaderContext.loadModule`
-* automatically remove require.ensure when no chunk was generated.
+`4b9472b24d7eaa9acac8b1da74e6f4992ef0a90c`
+
+* API: **`this` in modules is now `exports` (if this breaks a library, try prefixing `imports?this=>window!`)**
+* API: added Hot Code Replacement `--hot` [experimental]
+* API: added `define` option
+* API: support new `sourceMappingURL` and `sourceURL` syntax
+* API: added `CommonsChunkPlugin`
+* API: `--profile --progress` now display process timings
+* API: added `loaderContext.loadModule`
+* PERFORMANCE: added `unsafeCache` and `noParse` option for performance
+* SIZE: automatically remove require.ensure when no chunk was generated.
+* SIZE: generate (sparse) array instead of object as module container when appropriate
+* SUPPORT: extract dependencies from a bound callback
+* SUPPORT: support evaluating of .replace and .split
 
 # 0.10
 
-* node 0.10 support
-* whole chunks can now be cached
-* store state in json file (records) `--records-path`
-* added `--devtool source-map` and `--devtool inline-source-map`
-* added option `--optimize-occurence-order`
-* added `--optimize-dedupe`
+* SUPPORT: node 0.10 support
+* PERFORMANCE: whole chunks can now be cached
+* API: store state in json file (records) `--records-path`
+* API: added `--devtool source-map` and `--devtool inline-source-map`
+* SIZE: added option `--optimize-occurence-order`
+* SIZE: added `--optimize-dedupe`
 
 Small changes:
 
-* assets are only emitted if they changed
-* added `--profile`
-* added `--prefetch` [experimental]
-* added `BannerPlugin`
-* added `[chunkhash]` [experimental]
-* added `hashDigestLength`
-* increased filesystem caching to 60s
-* purge only changed files in watch mode
-* purge all files on compiling in not-watch mode
-* in-memory filesystem now supports windows-like paths too
-* merging chunk is more clever
+* PERFORMANCE: assets are only emitted if they changed
+* API: added `--profile`
+* PERFORMANCE: added `--prefetch` [experimental]
+* API: added `BannerPlugin`
+* API: added `[chunkhash]` [experimental]
+* API: added `hashDigestLength`
+* PERFORMANCE: increased filesystem caching to 60s
+* PERFORMANCE: purge only changed files in watch mode
+* PERFORMANCE: purge all files on compiling in not-watch mode
+* SUPPORT: in-memory filesystem now supports windows-like paths too
+* SIZE: merging chunk is more clever
 
 # 0.9
 
