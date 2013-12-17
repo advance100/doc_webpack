@@ -140,7 +140,7 @@ The files are expected to have no call to `require`, `define` or similar. They a
 
 Options affecting the output.
 
-If you use any hashing (`[hash]` or `[chunkhash]`) make sure to have a consistent ordering of modules. Use `optimize.occurenceOrder` or `recordsPath`.
+If you use any hashing (`[hash]` or `[chunkhash]`) make sure to have a consistent ordering of modules. Use the `OccurenceOrderPlugin` or `recordsPath`.
 
 ### `output.path`
 
