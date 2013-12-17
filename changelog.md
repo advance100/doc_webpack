@@ -3,7 +3,7 @@
 `4b9472b24d7eaa9acac8b1da74e6f4992ef0a90c`
 
 * API: **`this` in modules is now `exports` (if this breaks a library, try prefixing `imports?this=>window!`)**
-* API: added Hot Code Replacement `--hot` [experimental]
+* API: added Hot Code Replacement `--hot` (web and node target) [experimental]
 * API: added `define` option
 * API: support new `sourceMappingURL` and `sourceURL` syntax
 * API: added `CommonsChunkPlugin`
