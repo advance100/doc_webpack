@@ -1,6 +1,21 @@
-# 0.11
+# 1.0
 
-`4b9472b24d7eaa9acac8b1da74e6f4992ef0a90c`
+* API: The following options are now DEPRECATED and superseeded by plugins:
+ * `define` -> `DefinePluging`
+ * `prefetch` -> `PrefetchPlugin`
+ * `provide` -> `ProvidePlugin`
+ * `hot` -> `HotModuleReplacementPlugin`
+ * `optimize.dedupe` -> `optimize.DedupePlugin`
+ * `optimize.minimize` -> `optimize.UglifyJsPlugin`
+ * `optimize.maxChunks` -> `optimize.LimitChunkCountPlugin`
+ * `optimize.minChunkSize` -> `optimize.MinChunkSizePlugin`
+ * `optimize.occurenceOrder` -> `optimize.OccurenceOrderPlugin`
+* Warnings are emitted when using deprecated options
+* API: plugins are now exported by webpack: `require("webpack").DefinePlugin`
+* API: Labeled Modules are now disabled by default, use the `dependencies.LabeledModulesPlugin`
+* API: Internal plugin arguments simplified
+
+# 0.11
 
 * API: **`this` in modules is now `exports` (if this breaks a library, try prefixing `imports?this=>window!`)**
 * API: added Hot Code Replacement `--hot` (web and node target) [experimental]
@@ -14,6 +29,7 @@
 * SIZE: generate (sparse) array instead of object as module container when appropriate
 * SUPPORT: extract dependencies from a bound callback
 * SUPPORT: support evaluating of .replace and .split
+* TEST: added many of the browsertest to the node.js tests
 
 # 0.10
 
