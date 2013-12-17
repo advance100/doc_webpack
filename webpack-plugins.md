@@ -83,6 +83,10 @@ Generates an extra chunk, which contains common modules shared between at least 
 
 ## module styles
 
+#### `webpack.dependencies.LabeledModules()`
+
+Support Labeled Modules.
+
 #### [`ComponentPlugin`](https://github.com/webpack/component-webpack-plugin)
 
 Use [component](https://github.com/component/component) with webpack.
@@ -141,6 +145,12 @@ Use [rewire](https://github.com/jhnns/rewire) in webpack.
 Create bundles with translations baked in. Then you can serve the translated bundle to your clients.
 
 ## other
+
+#### `webpack.HotModuleReplacementPlugin()`
+
+Enables Hot Module Replacement. (This requires records data if not in dev-server mode, `recordsPath`)
+
+Generates Hot Update Chunks of each chunk in the records. It also enables the [API](https://github.com/webpack/docs/wiki/hot-code-replacement).
 
 ---
 
