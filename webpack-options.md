@@ -40,7 +40,6 @@ module.exports = {
   watchDelay: 200,
   debug: true,
   devtool: "eval",
-  hot: true, // 0.11 experimental
   amd: { jQuery: true },
   node: {
     process: "mock",
@@ -48,10 +47,6 @@ module.exports = {
     console: true,
     __filename: "mock",
     __dirname: "mock"
-  },
-  define: { // 0.11
-    TRUE: true,
-    MY_CONST: JSON.stringify("value of my const")
   },
   resolve: {
     alias: {
@@ -65,24 +60,9 @@ module.exports = {
     unsafeCache: /^\/home\/proj\/app\/node_modules\// // 0.11
   },
   resolveLoader: {/*...*/},
-  provide: {
-    $: "jquery",
-    jQuery: "jquery"
-  },
   loader: {
     configStuff: 123
   },
-  optimize: {
-    minChunkSize: 20000,
-    maxChunks: 5,
-    minimize: true,
-    occurenceOrder: true, // 0.10
-    occurenceOrderPreferEntry: true, // 0.10
-    dedupe: true // 0.10 experimental
-  },
-  prefetch: [ // 0.10 experimental
-    "./folder/file"
-  ],
   plugins: [
     new MyPlugin()
   ]
@@ -299,7 +279,8 @@ This is required, when using Hot Code Replacement between multiple calls to the 
 
 * `"web"` Compile for usage in a browser-like environment (default)
 * `"webworker"` Compile as WebWorker
-* `"node"` Compile for usage in a node.js-like environment
+* `"node"` Compile for usage in a node.js-like environment (use `require` to load chunks)
+* `"async-node"` Compile for usage in a node.js-like environment (use `fs` and `vm` to load chunks asnyc)
 
 ## `bail`
 
@@ -343,12 +324,6 @@ Choose a developer tool to enhance debugging.
 
 Prefixing `@`, `#` or `#@` will enforce a pragma style. (0.11)
 
-## `hot`
-
-Enables Hot Module Replacement. (This requires records data if not in dev-server mode, `recordsPath`)
-
-Generates Hot Update Chunks of each chunk in the records. It also enables the [API](https://github.com/webpack/docs/wiki/hot-code-replacement).
-
 ## `node`
 
 Include polyfills or mocks for various node stuff:
@@ -378,29 +353,6 @@ Include polyfills or mocks for various node stuff:
 Set the value of `require.amd` and `define.amd`.
 
 Example: `amd: { jQuery: true }` (for old 1.x AMD versions of jquery)
-
-## `define`
-
-Define free variables. The values will be inlined into the code.
-
-A key is a identifier or multiple identifier joined with `.`. If the value is a string it'll be used a code fragment. If the value isn't a string, it'll be stringified (including functions).
-
-If the value is an object all keys are defined the same way.
-
-Example:
-
-```
-define: {
-  VERSION: JSON.stringify("5fa3b9"),
-  BROWSER_SUPPORTS_HTML5: true,
-  TWO: "1+1"
-}
-```
-
-``` javascript
-console.log("Running App version " + VERSION);
-if(!BROWSER_SUPPORTS_HTML5) require("html5shiv");
-```
 
 ## `resolve`
 
@@ -486,61 +438,9 @@ It describes alternatives for the module name that are tried.
 
 > Default: `["*-webpack-loader", "*-web-loader", "*-loader", "*"]`
 
-## `provide`
-
-A object of automatically loaded modules. Module (value) is loaded when the identifier (key) is used as free variable in a module. The identifier is filled with the exports of the loaded module.
-
-Example: `provide: { $: "jquery" }`
-
-``` javascript
-// in a module
-$("#item") // <= just works
-// $ is automatically set to the exports of module "jquery"
-```
-
 ## `loader`
 
 Custom values available in the loader context.
-
-## `optimize`
-
-Options affecting the optimization of the compilation.
-
-### `optimize.minChunkSize`
-
-Merge small chunks that are lower than this min size (in chars). Size is approximated.
-
-### `optimize.maxChunks`
-
-Limit the chunk count to a defined value. Chunks are merged until it fits.
-
-### `optimize.minimize`
-
-Minimize all javascript output of chunks. Loaders are switched into minimizing mode. You can pass `false`, `true` or an object containing UglifyJs options.
-
-### `optimize.occurenceOrder`
-
-Assign the module and chunk ids by occurrence count. Ids that are used often get lower (shorter) ids. This make ids predictable and is recommended. (It is available as option since 0.10, but was ever activated prior to 0.10)
-
-> Default: false
-
-### `optimize.occurenceOrderPreferEntry`
-
-Only available if `optimize.occurenceOrder` is set. Occurrences in entry chunks have higher priority. This make entry chunks smaller but increases the overall size.
-
-> Default: true
-
-### `optimize.dedupe`
-
-Search for equal or similar files and deduplicate them in the output. This comes with some overhead for the entry chunk, but can reduce file size effectively.
-
-This is experimental and may crash, because of some missing implementations. (Report an issue)
-
-> Default: false
-
-### `prefetch`
-
-A list of requests for normal modules, which are resolved and built even before a require to them occur. This can boost performance. Try to profile the built first to determine clever prefetching points.
 
 ### `plugins`
 
@@ -589,10 +489,6 @@ module.exports = {
   },
   cache: true,
   amd: { jQuery: true },
-  optimize: {
-    minChunkSize: 10000,
-    maxChunks: 20,
-  },
   plugins: [
   ]
 };
