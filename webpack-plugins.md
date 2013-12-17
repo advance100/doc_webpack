@@ -91,7 +91,44 @@ Use [component](https://github.com/component/component) with webpack.
 
 #### `webpack.DefinePlugin(definitions)`
 
+Define free variables. The values will be inlined into the code.
+
+A key is a identifier or multiple identifier joined with `.`. If the value is a string it'll be used a code fragment. If the value isn't a string, it'll be stringified (including functions).
+
+If the value is an object all keys are defined the same way.
+
+Example:
+
+```
+new webpack.DefinePlugin({
+  VERSION: JSON.stringify("5fa3b9"),
+  BROWSER_SUPPORTS_HTML5: true,
+  TWO: "1+1"
+})
+```
+
+``` javascript
+console.log("Running App version " + VERSION);
+if(!BROWSER_SUPPORTS_HTML5) require("html5shiv");
+```
+
 #### `webpack.ProvidePlugin(definitions)`
+
+Automatically loaded modules. Module (value) is loaded when the identifier (key) is used as free variable in a module. The identifier is filled with the exports of the loaded module.
+
+Example: 
+
+``` javascript
+new webpack.ProvidePlugin({
+  $: "jquery"
+})
+```
+
+``` javascript
+// in a module
+$("#item") // <= just works
+// $ is automatically set to the exports of module "jquery"
+```
 
 #### [`RewirePlugin`](https://github.com/jhnns/rewire-webpack)
 
