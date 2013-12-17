@@ -469,7 +469,7 @@ module.exports = {
       { test: /\.jpg$/,    loader: "url-loader?limit=10000&minetype=image/jpg" },
       { test: /\.gif$/,    loader: "url-loader?limit=10000&minetype=image/gif" },
       { test: /\.woff$/,   loader: "url-loader?limit=10000&minetype=application/font-woff" }
-      { test: /\.ttf$/,    loader: "url-loader?limit=10000&minetype=application/octet-stream" },
+      { test: /\.ttf$/,    loader: "file-loader" },
       { test: /\.eot$/,    loader: "file-loader" },
       { test: /\.svg$/,    loader: "url-loader?limit=10000&minetype=image/svg+xml" },
     ],
@@ -488,7 +488,6 @@ module.exports = {
     fallback: path.join(__dirname, "app")
   },
   cache: true,
-  amd: { jQuery: true },
   plugins: [
   ]
 };
