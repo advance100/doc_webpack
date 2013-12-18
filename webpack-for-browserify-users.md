@@ -252,7 +252,7 @@ module.exports = function(module) {
 
 ## multiple bundles
 
-With browserify you can create a commons bundle that you can use in combination with bundles on multiple pages. To generate these bundles you exclude the common stuff with the `--exclude` option. Here is the example from the browserify README:
+With browserify you can create a commons bundle that you can use in combination with bundles on multiple pages. To generate these bundles you exclude the common stuff with the `--exclude` `-x` option. Here is the example from the browserify README:
 
 ``` sh
 $ browserify -r ./robot > static/common.js
@@ -263,7 +263,7 @@ $ browserify -x ./robot.js boop.js > static/boop.js
 webpack supports multi-page compilation and has a plugin for the automatic extraction of common modules:
 
 ``` javascript
-var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
+var webpack = require("webpack");
 module.exports = {
   entry: {
     beep: "./beep.js",
@@ -275,7 +275,7 @@ module.exports = {
   },
   plugins: [
     // ./robot is automatically detected as common module and extracted
-    new CommonsChunkPlugin("common.js")
+    new webpack.optimize.CommonsChunkPlugin("common.js")
   ]
 };
 ```
