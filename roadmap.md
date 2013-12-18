@@ -1,5 +1,9 @@
 # roadmap
 
+## 1.1
+
+* documentation
+
 ## 1.0 [end 2013]
 
 * Bugfixes
