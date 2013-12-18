@@ -91,7 +91,7 @@ define({
 
 Export the defined value. The label can occur before a function declaration or a variable declaration. The function name or variable name is the identifier under which the value is exported.
 
-Style: Labeled modules
+Style: Labeled modules `dependencies.LabeledModulesPlugin`
 
 Example:
 
@@ -109,7 +109,7 @@ export: function method(value) {
 
 Make all exports from the dependency available in the current scope. The `require` label can occur before a string. The dependency must export values with the `export` label. CommonJs or AMD modules cannot be consumed.
 
-Style: Labeled modules
+Style: Labeled modules `dependencies.LabeledModulesPlugin`
 
 Example:
 
@@ -189,7 +189,7 @@ require.cache[module.id] !== module
 
 ---
 
-### `require.context(directory: String, [includeSubdirs: Boolean, [filter: RegExp]])`
+#### `require.context(directory: String, [includeSubdirs: Boolean, [filter: RegExp]])`
 
 Style: webpack
 
