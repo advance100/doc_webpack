@@ -10,7 +10,7 @@ var server = require("http").createServer();
 server.on("request", requestHandler);
 server.listen(8080);
 
-// check if HCR is enabled
+// check if HMR is enabled
 if(module.hot) {
   // accept update of dependency
   module.hot.accept("./handler.js", function() {
@@ -31,7 +31,7 @@ var addStyleTag = require("./addStyleTag");
 var element = addStyleTag(".rule { attr: name }");
 module.exports = null;
 
-// check if HCR is enabled
+// check if HMR is enabled
 if(module.hot) {
 
   // accept itself
@@ -50,7 +50,7 @@ if(module.hot) {
 
 ## API
 
-If HCR is enabled for a module `module.hot` is an object containing these properties:
+If HMR is enabled for a module `module.hot` is an object containing these properties:
 
 ### `accept(dependencies: string[], callback: (updatedDependencies) => void) => void`
 
@@ -123,21 +123,21 @@ Return one of `idle`, `check`, `watch`, `watch-delay`, `prepare`, `ready`, `disp
 
 `idle`
 
-The HCR is waiting for your call the `check()`. When you call it the status will change to `check`.
+The HMR is waiting for your call the `check()`. When you call it the status will change to `check`.
 
 `check`
 
-The HCR is checking for updates. If it doesn't find updates it will change back to `idle`.
+The HMR is checking for updates. If it doesn't find updates it will change back to `idle`.
 
 If updates where found it will go through the steps `prepare`, `dispose` and `apply`. Than back to `idle`.
 
 `watch`
 
-The HCR is in watch mode and will automatically be notified about changes. After the first change it will change to `watch-delay` and wait for a specified time to start the update process. Any change will reset the timeout, to accumulate more changes. When the update process is started it will go through the steps `prepare`, `dispose` and `apply`. Than back to `watch` or `watch-delay` if changes where detected while updating.
+The HMR is in watch mode and will automatically be notified about changes. After the first change it will change to `watch-delay` and wait for a specified time to start the update process. Any change will reset the timeout, to accumulate more changes. When the update process is started it will go through the steps `prepare`, `dispose` and `apply`. Than back to `watch` or `watch-delay` if changes where detected while updating.
 
 `prepare`
 
-The HCR is prepare stuff for the update. This may means that it's downloading something.
+The HMR is prepare stuff for the update. This may means that it's downloading something.
 
 `ready`
 
@@ -145,11 +145,11 @@ An update is available and prepared. Call `apply()` to continue.
 
 `dispose`
 
-The HCR is calling the dispose handlers of modules that will be replaced.
+The HMR is calling the dispose handlers of modules that will be replaced.
 
 `apply`
 
-The HCR is calling the accept handlers of the parents of replaced modules, than it requires the self accepted modules.
+The HMR is calling the accept handlers of the parents of replaced modules, than it requires the self accepted modules.
 
 `abort`
 
