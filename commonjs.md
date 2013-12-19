@@ -18,27 +18,34 @@ The mandatory hello world example:
 We will define a value in a script file named `salute.js`.
 This script will contain just a value that will be used in other scripts:  
 
-	//salute.js
-	var MySalute = "Hello";
-
+``` javascript
+//salute.js
+var MySalute = "Hello";
+```
 
 Now, in a second file named `world.js`, we are
 going to use the value defined in `salute.js`.  
-	
-	//world.js
-    var Result = MySalute + " world!";
+
+``` javascript	
+//world.js
+var Result = MySalute + " world!";
+```
 
 #### Module definitions
 As it is, `world.js` will not work as `MySalute` is not defined.
 We need to define each script as a module:  
 
-	//salute.js
-	var MySalute = "Hello";
-	module.exports = MySalute;
+``` javascript
+//salute.js
+var MySalute = "Hello";
+module.exports = MySalute;
+```
 
-	//world.js
-	var Result = MySalute + "world!";
-	module.exports = Result;
+``` javascript
+//world.js
+var Result = MySalute + "world!";
+module.exports = Result;
+```
 
 Here we make use of the special object `module` and place a reference of our
 variable into `module.exports` so the CommonJS module system nows this is 
@@ -50,14 +57,18 @@ We're near but there's still a step missing: dependency definition.
 We've already defined every script as an independent module, but `world.js`
 still needs to now who defines `MySalute`:
 
-	//salute.js
-	var MySalute = "Hello";
-	module.exports = MySalute;
+``` javascript
+//salute.js
+var MySalute = "Hello";
+module.exports = MySalute;
+```
 
-	//world.js
-	var MySalute = require("salute");
-	var Result = MySalute + "world!";
-	module.exports = Result;
+``` javascript
+//world.js
+var MySalute = require("salute");
+var Result = MySalute + "world!";
+module.exports = Result;
+```
 
 Note that we didn't use the full filename `salute.js` but `salute` when calling 
 `require`, so you must omit the extension of your scripts.
@@ -65,15 +76,17 @@ Note that we didn't use the full filename `salute.js` but `salute` when calling
 
 
 ### Functions example
-
-	// moduleA.js
-	module.exports = function( value ){
-		return value*2;
-	}
-
-	// moduleB.js
-	var multiplyBy2 = require('moduleA');
-	var result = multiplyBy2( 4 );
+``` javascript
+// moduleA.js
+module.exports = function( value ){
+    return value*2;
+}
+```
+``` javascript
+// moduleB.js
+var multiplyBy2 = require('moduleA');
+var result = multiplyBy2( 4 );
+```
 
 
 
