@@ -81,3 +81,25 @@ it("should read the config option", function(done) {
 	result.should.be.eql({ value: 1234 });
 });
 ```
+
+
+
+---
+
+# from commonjs
+
+## Differences between CommonJS and RequireJS
+
+There are two main differences between CommonJS and RequireJS.
+
+The first one is how modules are defined. 
+While CommonJS uses its own method (seen above), RequireJS implements
+the AMD (Asynchronous Module Definitions) specification.
+
+The second difference is how dependencies are loaded.
+While CommonJS expects `require` calls to behave synchronously, 
+RequireJS loads its modules asynchronously, behaving more
+accordingly as how the browser works.
+This heavily marks where to use each of these two module systems, 
+CommonJS is used mainly in server JavaScript implementations (Nodejs),
+while RequireJS is headed to be used in the browser.
