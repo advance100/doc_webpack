@@ -1,6 +1,4 @@
-# hot code replacement
-
-"Hot Code Replacement" (HCR) is an opt-in feature, so you need to put some code at chosen points of your application. The dependencies are handled by the module system.
+"Hot Module Replacement" (HMR) is an opt-in feature, so you need to put some code at chosen points of your application. The dependencies are handled by the module system.
 
 I. e. you place your hot replacement code in module A. Module A requires module B and B requires C. If module C is updated, and module B cannot handle the update, modules B and C become outdated. Module A can handle the update and new modules B and C are injected.
 
