@@ -79,7 +79,7 @@ Generates an extra chunk, which contains common modules shared between at least 
 
 `entryPoints` an array of entry points that should be used to generate these commons chunk. By default all entry points will be used.
 
-`minChunks` the number of entry point that need to have a module in common. By default it need to be in all entry points. Allowed values are >= 2, <= entry points count.
+`minChunks` the number of entry point that need to have a module in common. By default it need to be in all entry points. Allowed values are `2` <= `minChunks` <= entry points count or `Infinitiy`.
 
 ## module styles
 
