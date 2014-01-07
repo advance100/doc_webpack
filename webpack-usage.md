@@ -1,5 +1,3 @@
-# webpack usage
-
 * executable (node.js)
 * as module in node.js
 * [with grunt](https://github.com/webpack/grunt-webpack)
