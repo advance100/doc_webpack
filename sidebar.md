@@ -9,7 +9,7 @@
     * [[webpack usage]]
         * [[webpack detailed usage]]
         * [[webpack options]]
-        * [[webpack with grunt]]
+        * [webpack with grunt](https://github.com/webpack/grunt-webpack)
         * [[webpack plugins]]
     * [[chunks]]
     * [[resolving]]
