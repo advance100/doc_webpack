@@ -1,5 +1,3 @@
-# webpack options
-
 ``` javascript
 module.exports = {
   context: "/home/proj",
