@@ -27,5 +27,5 @@
 | mangle path names | **yes** | no | partial |
 | Runtime overhead | **243b + 20b per module + 4b per dependency** | 14.7kb + 0b per module + (3b + X) per dependency | 415b + 25b per module + (6b + 2X) per dependency |
 
-* in production mode (opposite in development mode)
-X is the length of the path string
+* * in production mode (opposite in development mode)
+* X is the length of the path string
