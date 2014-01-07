@@ -1,5 +1,3 @@
-# webpack plugins
-
 ## config
 
 #### `webpack.NormalModuleReplacementPlugin(resourceRegExp, newResource)`
