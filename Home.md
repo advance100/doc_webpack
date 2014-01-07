@@ -23,7 +23,7 @@
 
 [[writing loaders]]
 
-[[hot code replacement]]
+[[hot modules replacement]]
 
 ## webpack
 
