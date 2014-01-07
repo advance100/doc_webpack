@@ -1,5 +1,3 @@
-# chunks
-
 For big web apps it's not efficient to put all code into a single file. Especially if some blocks of code are only required under some circumstances. Webpack has a feature to split you codebase into so called chunks which are loaded on demand. This feature is also called "code splitting". Names for similar features in other bundlers: layers, rollups, fragments.
 
 The splitting points are chosen by the developer. By default the AMD `require` and `require.ensure` functions set a split point.
