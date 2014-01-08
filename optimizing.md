@@ -1,5 +1,3 @@
-# optimizing
-
 ## Minimize
 
 To minimize your scripts (and your css, if you use the css-loader) webpack supports a simple option:
