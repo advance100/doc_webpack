@@ -88,7 +88,7 @@ webpack can only handle js natively, so we need the `css-loader` to process css 
 
 Create a empty `node_modules` folder.
 
-Run `npm install css-loader style-loader` to install the loaders.
+Run `npm install css-loader style-loader` to install the loaders. (They need to be installed locally, without `-g`)
 
 Create a file `style.css` with this content:
 
