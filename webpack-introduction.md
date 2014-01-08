@@ -8,6 +8,8 @@ The best features are:
 
 Almost everything can be added by plugins. In fact the most core features are added through internal plugins.
 
+Loaders define proprocessors for files. So any file type can be processed by the bundler.
+
 ### support
 
 A clever parser does static analysic on javascript to find relevant code fragments.
