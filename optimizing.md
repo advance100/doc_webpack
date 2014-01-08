@@ -2,13 +2,13 @@
 
 To minimize your scripts (and your css, if you use the css-loader) webpack supports a simple option:
 
-`--optimize-minimize` resp. `optimize: { minimize: true }`
+`--optimize-minimize` resp. `new webpack.optimize.UglifyJsPlugin()`
 
 That's a pretty simply but effective way to optimize your web app.
 
 As you already know (if you've read the remaining docs) webpack give your modules and chunks ids to identify them. Webpack can vary the distribution of the ids to get the smallest id length for often used ids with a simple option:
 
-`--optimize-occurence-order` resp. `optimize: { occurenceOrder: true }`
+`--optimize-occurence-order` resp. `new webpack.optimize.OccurenceOrderPlugin()`
 
 The entry chunks have higher priority for file size.
 
@@ -16,7 +16,7 @@ The entry chunks have higher priority for file size.
 
 If you use some libraries with cool dependency trees, it may occur that some files are identical. Webpack can find these files and deduplicate them. This prevent to include duplicate code into your bundle and instead copy the function at runtime. It doesn't affect semantics. You can enable it with:
 
-`--optimize-dedupe` resp. `optimize: { dedupe: true }`
+`--optimize-dedupe` resp. `new webpack.optimize.DeduplicationPlugin()`
 
 The feature add some overhead to the entry chunk.
 
@@ -58,8 +58,8 @@ In combination with Hot Code Replacement your must use option 1, but not on the 
 
 While writing your code you have already added many code split points to load stuff on demand. After compiling you may notice that there are too many of them and your chunks are so small that the HTTP overhead is big. That's no problem. Webpack can postprocess your chunks by merging them cleverly. You can provide two options:
 
-* Limit the maximum chunk count with `--optimize-max-chunks 15` `optimize: { maxChunks: 15 }`
-* Limit the minimum chunk size with `--optimize-min-chunk-size 10000` `optimize: { minChunkSize: 10000 }`
+* Limit the maximum chunk count with `--optimize-max-chunks 15` `new webpack.optimize.LimitChunkCountPlugin(15)`
+* Limit the minimum chunk size with `--optimize-min-chunk-size 10000` `new webpack.optimize.MinChunkSizePlugin(10000)`
 
 Webpack will take care of it by merging chunks (It will prefer merging chunk which have duplicate modules). Nothing will be merged into the entry chunk to not impact initial page loading time.
 
