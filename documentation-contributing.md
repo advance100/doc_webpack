@@ -1,6 +1,6 @@
 Just edit the pages, I'll review your changes. So you needed be feared of adding incorrect information.
 
-## state of the documentaion pages
+## state of the documentation pages
 
 | page                                        | state     | priority  |
 |---------------------------------------------|-----------|-----------|

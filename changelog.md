@@ -1,6 +1,6 @@
 # 1.0
 
-* API: The following options are now DEPRECATED and superseeded by plugins:
+* API: The following options are now DEPRECATED and superseded by plugins:
  * `define` -> `DefinePluging`
  * `prefetch` -> `PrefetchPlugin`
  * `provide` -> `ProvidePlugin`

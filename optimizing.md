@@ -120,7 +120,7 @@ module.exports = {
 }
 ```
 
-This will generate multiple entry chunks: `p1.entry.chunk.js`, `p2.entry.chunk.js` and `p3.entry.chunk.js`, plus one `commons.chunk.js`. Frist load `commons.chunk.js` and than one of the `xx.entry.chunk.js`.
+This will generate multiple entry chunks: `p1.entry.chunk.js`, `p2.entry.chunk.js` and `p3.entry.chunk.js`, plus one `commons.chunk.js`. First load `commons.chunk.js` and than one of the `xx.entry.chunk.js`.
 
 You can generate multiple commons chunks, by selecting the entry chunks. And you can nest commons chunks.
 

@@ -3,7 +3,7 @@
 * [`json`](https://github.com/webpack/json-loader): Loads file as JSON
 * [`raw`](https://github.com/webpack/raw-loader): Loads raw content of a file (as utf-8)
 * [`bundle`](https://github.com/webpack/bundle-loader): Wraps request in a `require.ensure` block
-* [`val`](https://github.com/webpack/val-loader): Excutes code as module and consider exports as javascript code
+* [`val`](https://github.com/webpack/val-loader): Executes code as module and consider exports as javascript code
 * [`imports`](https://github.com/webpack/imports-loader): imports stuff to the module
 * [`exports`](https://github.com/webpack/exports-loader): exports stuff from the module
 * [`expose`](https://github.com/webpack/expose-loader): expose exports from a module to the global context

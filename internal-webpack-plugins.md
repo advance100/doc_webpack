@@ -25,7 +25,7 @@ Plugins affecting the compiler
 
 Adds a cache to the compiler, where modules are cached.
 
-You can pass an `cache` object, where the modules are cached. Elsewise one is created per plugin instance.
+You can pass a `cache` object, where the modules are cached. Otherwise one is created per plugin instance.
 
 ### `ProgressPlugin(handler)`
 
@@ -127,11 +127,11 @@ Make `__webpack_public_path__`, `__webpack_require__`, `__webpack_modules__`, `_
 
 ### `CompatibilityPlugin`
 
-Currently useless. Ensures compatiblitly with other module loaders.
+Currently useless. Ensures compatibility with other module loaders.
 
 ### `ConsolePlugin`
 
-Offers a pseudo `console` if it is not availible.
+Offers a pseudo `console` if it is not available.
 
 ### `ConstPlugin`
 
@@ -219,7 +219,7 @@ Merges chunks until each chunk has the minimum size of `minChunkSize`.
 
 ### `optimize/FlagIncludedChunksPlugin`
 
-Adds chunk ids of chunks which are included in the chunk. This eliminates unnessary chunk loads.
+Adds chunk ids of chunks which are included in the chunk. This eliminates unnecessary chunk loads.
 
 ### `optimize/UglifyJsPlugin(options)`
 
@@ -229,7 +229,7 @@ Minimizes the chunks with `uglify.js`.
 
 ### `optimize/OccurenceOrderPlugin(preferEntry)`
 
-Order the modules and chunks by occurence. This saves space, because often referenced modules and chunks get smaller ids.
+Order the modules and chunks by occurrence. This saves space, because often referenced modules and chunks get smaller ids.
 
 `preferEntry` If true, references in entry chunks have higher priority
 

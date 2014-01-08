@@ -11,7 +11,7 @@
 
 # Usage
 
-Like browserify webpack analyse all the node-style `require()` calls in your app and build a bundle that you can serve up to the browser using a `<script>` tag.
+Like browserify webpack analyze all the node-style `require()` calls in your app and build a bundle that you can serve up to the browser using a `<script>` tag.
 
 Instead of doing
 
@@ -86,7 +86,7 @@ module.exports = {
 
 ## transform
 
-browserify uses *transforms* to preprocess files. webpack uses *loaders*. Loaders are functions that take source code as argument and return (modified) source code. Like transforms thay run in node.js, can be chained and can be async. Loader can take additional parameters by query strings. Loaders can be used from `require()` call. Transforms can be specified in the `package.json`. browserify apply configurated transforms for each module, in webpack config you select the modules by RegExp. In the common case you specify loaders in the `webpack.config.js`:
+browserify uses *transforms* to preprocess files. webpack uses *loaders*. Loaders are functions that take source code as argument and return (modified) source code. Like transforms that run in node.js, can be chained and can be async. Loader can take additional parameters by query strings. Loaders can be used from `require()` call. Transforms can be specified in the `package.json`. browserify apply configured transforms for each module, in webpack config you select the modules by RegExp. In the common case you specify loaders in the `webpack.config.js`:
 
 ``` sh
 $ browserify --transform coffeeify

@@ -4,7 +4,7 @@ The resolving process have three entry points. Depending on the shape for the re
 * resolve a **relative path** (shape: `./xyz` or `../xyz`)
 * resolve a **module path** (shape: `xyz` or `xyz/abc`)
 
-> Even while this description suggest a serial process, the process is running completly async and parallel.
+> Even while this description suggest a serial process, the process is running completely async and parallel.
 
 > The process is simplified.
 

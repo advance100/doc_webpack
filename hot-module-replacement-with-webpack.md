@@ -36,7 +36,7 @@ The `style-loader` already includes hot replacement code.
 
 If you visit [http://localhost:8080](http://localhost:8080) you should see the page with a red background and a input box. Type some text into the input box and edit `style.css` to have another background color. 
 
-Wolla... The background updates but without full page refresh. Text and selection in the input box should stay.
+Voilà... The background updates but without full page refresh. Text and selection in the input box should stay.
 
 Read more about how to write you own hot replacement (management) code: [[hot code replacement]]
 
