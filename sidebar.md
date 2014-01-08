@@ -29,3 +29,10 @@
     * [[Hot Module Replacement]]
     * [[Hot Module Replacement with webpack]]
     * [[webpack runtime api summary]]
+
+---
+
+* [[changelog]]
+* [[roadmap]]
+* [[ideas]]
+* [[documentation contributing]]
