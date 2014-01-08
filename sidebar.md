@@ -3,7 +3,7 @@
 # webpack
 
 * [[webpack Getting Started]]
-* Basic
+* Basics
     * [[CommonJS]]
     * [[AMD]]
     * [[webpack usage]]
@@ -29,7 +29,3 @@
     * [[Hot Module Replacement]]
     * [[Hot Module Replacement with webpack]]
     * [[webpack runtime api summary]]
-
-# enhanced-require
-
-Coming soon...
