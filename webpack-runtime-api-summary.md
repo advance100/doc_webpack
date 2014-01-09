@@ -293,11 +293,15 @@ The runtime behavior isn't changed.
 
 #### `module.loaded`
 
+This is `false` if the module is currently executing, and `false` if the sync execution has finished.
+
 Style: node.js (for compatibility!)
 
 ---
 
 #### `module.hot`
+
+See [[Hot Module Replacement]].
 
 Style: webpack
 
@@ -305,11 +309,15 @@ Style: webpack
 
 #### `global`
 
+See [node.js global](http://nodejs.org/api/globals.html#globals_global)
+
 Style: node.js
 
 ---
 
 #### `process`
+
+See [node.js process](http://nodejs.org/api/process.html)
 
 Style: node.js
 
@@ -317,11 +325,27 @@ Style: node.js
 
 #### `__dirname`
 
+Depending on the config option `node.dirname`:
+
+* `false`: Not defined
+* `mock`: equal "/"
+* `true`: [node.js __dirname](http://nodejs.org/api/globals.html#globals_dirname)
+
+If used inside a expression that is parsed by the Parser, the config option is threaded as `true`.
+
 Style: node.js (for compatibility!)
 
 ---
 
 #### `__filename`
+
+Depending on the config option `node.filename`:
+
+* `false`: Not defined
+* `mock`: equal "/index.js"
+* `true`: [node.js __dirname](http://nodejs.org/api/globals.html#globals_filename)
+
+If used inside a expression that is parsed by the Parser, the config option is threaded as `true`.
 
 Style: node.js (for compatibility!)
 
@@ -329,11 +353,22 @@ Style: node.js (for compatibility!)
 
 #### `__resourceQuery`
 
+The resource query of the current module.
+
 Style: webpack
+
+Example:
+
+``` javascript
+// Inside "file.js?test":
+__resourceQuery === "?test"
+```
 
 ---
 
 #### `__webpack_public_path__`
+
+Equals the config options `output.publicPath`.
 
 Style: webpack
 
@@ -341,11 +376,18 @@ Style: webpack
 
 #### `__webpack_require__`
 
+The raw require function. This expression isn't parsed by the Parser for dependencies.
+
 Style: webpack
 
 ---
 
 #### `__webpack_chunk_load__`
+
+The internal chunk loading function. Takes two arguments:
+
+* `chunkId` The id for the chunk to load.
+* `callback(require)` A callback function called once the chunk is loaded.
 
 Style: webpack
 
@@ -353,10 +395,14 @@ Style: webpack
 
 #### `__webpack_modules__`
 
+Access to the internal object of all modules.
+
 Style: webpack
 
 ---
 
 #### `DEBUG`
+
+Equals the config option `debug`
 
 Style: webpack
