@@ -25,7 +25,7 @@ var server = new Server(webpack({
   // webpack options
 }), {
   // webpack-dev-server options
-  contentBase: "/path/to/direcotry",
+  contentBase: "/path/to/directory",
   // or: contentBase: "http://localhost/",
   
   // webpack-dev-middleware options
