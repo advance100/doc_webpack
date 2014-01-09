@@ -1,6 +1,6 @@
 The webpack-dev-server is a little node.js express server, which uses the [[webpack-dev-middleware]] to serve a webpack bundle. It also has a little runtime which is connected to the server via socket.io. The server emit information about the compilation state to the client, which reacts on that events.
 
-By default an empty html page is server, which references `/bundle.js`. You can specify a custom html page or pass an url to your server page (if you have some server logic).
+It serves static assets from the current directory. If the file isn't found a empty HTML page is generated whichs references the corresponding javascript file. If `/webpack-dev-server/` is prefixed to the path, it serves a small runtime which connects to the server with socket.io and automatically updates the page.
 
 The webpack-dev-server has a CLI and a node.js API.
 
@@ -10,8 +10,7 @@ All [[webpack CLI options | webpack detailed usage]] and [[webpack API options |
 
 There are some additional options:
 
-* `--content-page <file>`: Path to a custom html page
-* `--content-url <url>`: Url to your server page
+* `--content-base <file/directory/url>`: Base path for the content
 * `--quiet`: Don't output anything to the console
 * `--no-info`: Suppress boring information
 * `--port <number>`
@@ -26,8 +25,8 @@ var server = new Server(webpack({
   // webpack options
 }), {
   // webpack-dev-server options
-  content: "/path/to/index.html",
-  // or: contentUrl: "http://localhost/",
+  contentBase: "/path/to/direcotry",
+  // or: contentBase: "http://localhost/",
   
   // webpack-dev-middleware options
   quite: false,
