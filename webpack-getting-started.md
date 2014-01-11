@@ -54,7 +54,7 @@ bundle.js   982       0  main
    [0] ./entry.js 28 [built] {0}
 ```
 
-Open `index.js` in your browser. It should display `It works.`
+Open `index.html` in your browser. It should display `It works.`
 
 > webpack creates a javascript file `bundle.js` with your entry file
 
