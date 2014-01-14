@@ -444,7 +444,7 @@ Custom values available in the loader context.
 
 Add additional plugins to the compiler.
 
-# Good start config (example)
+## Good start config (example)
 
 ``` javascript
 var path = require("path");
