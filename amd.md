@@ -73,7 +73,7 @@ define(['jquery'], function($){
 **Using require to load dependencies**
 
 ```javascript
-define(function($){
+define(function(require){
 	var $ = require('jquery');
 	$('body').text('hello world');
 });
