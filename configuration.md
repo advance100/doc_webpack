@@ -258,7 +258,7 @@ Options affecting the resolving of modules.
 
 Replace modules by other modules or paths.
 
-Expected is a object with keys being module names. The value can be either something that resolve to a file or something that resolve to a directory. If it resolve to a file, only the direct require to the module will resolve to that file. If it resolve to a directory all requires to that module or children will resolve relative to that value.
+Expected is a object with keys being module names. The value is the new path. It's similar to a replace but a bit more clever. If the the key ends with `$` only the exact match (without the `$`) will be replaced.
 
 If the value is a relative path it will be relative to the file containing the require.
 
@@ -267,14 +267,19 @@ Examples: Calling a require from `/abc/entry.js` with different alias settings.
 | `alias:` | `require("xyz")` | `require("xyz/file.js")` |
 |---|---|---|
 | `{}` | `/abc/node_modules/xyz/index.js` | `/abc/node_modules/xyz/file.js` |
-| `{ xyz: "/absolute/path/to/file.js" }` | `/absolute/path/to/file.js` | `/abc/node_modules/xyz/file.js` |
-| `{ xyz: "./dir/file.js" }` | `/abc/dir/file.js` | `/abc/node_modules/xyz/file.js` |
+| `{ xyz: "/absolute/path/to/file.js" }` | `/absolute/path/to/file.js` | error |
+| `{ xyz$: "/absolute/path/to/file.js" }` | `/absolute/path/to/file.js` | `/abc/node_modules/xyz/file.js` |
+| `{ xyz: "./dir/file.js" }` | `/abc/dir/file.js` | error |
+| `{ xyz$: "./dir/file.js" }` | `/abc/dir/file.js` | `/abc/node_modules/xyz/file.js` |
 | `{ xyz: "/some/dir" }` | `/some/dir/index.js` | `/some/dir/file.js` |
+| `{ xyz$: "/some/dir" }` | `/some/dir/index.js` | `/abc/node_modules/xyz/file.js` |
 | `{ xyz: "./dir" }` | `/abc/dir/index.js` | `/abc/dir/file.js` |
 | `{ xyz: "modu" }` | `/abc/node_modules/modu/index.js` | `/abc/node_modules/modu/file.js` |
-| `{ xyz: "modu/some/file.js" }` | `/abc/node_modules/modu/some/file.js` | `/abc/node_modules/xyz/file.js` |
+| `{ xyz$: "modu" }` | `/abc/node_modules/modu/index.js` | `/abc/node_modules/xyz/file.js` |
+| `{ xyz: "modu/some/file.js" }` | `/abc/node_modules/modu/some/file.js` | error |
 | `{ xyz: "modu/dir" }` | `/abc/node_modules/modu/dir/index.js` | `/abc/node_modules/dir/file.js` |
 | `{ xyz: "xyz/dir" }` | `/abc/node_modules/xyz/dir/index.js` | `/abc/node_modules/xyz/dir/file.js` |
+| `{ xyz$: "xyz/dir" }` | `/abc/node_modules/xyz/dir/index.js` | `/abc/node_modules/xyz/file.js` |
 
 `index.js` may resolve to another file if defined in the `package.json`.
 
