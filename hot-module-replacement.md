@@ -48,6 +48,8 @@ if(module.hot) {
 }
 ```
 
+
+
 ## API
 
 If HMR is enabled for a module `module.hot` is an object containing these properties:
@@ -85,6 +87,8 @@ Add a one time handler, which is executed when the current module code is replac
 Remove a handler.
 
 This can useful to add a temporary dispose handler. You could i. e. replace code while in the middle of a multi-step async function.
+
+
 
 
 ## Management API
@@ -166,6 +170,8 @@ Register a callback on status change.
 ### `removeStatusHandler(callback: (status: string) => void) => void`
 
 Remove a registered status change handler.
+
+
 
 
 ## How to care with ...

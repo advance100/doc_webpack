@@ -1,6 +1,6 @@
 A quick summary of all methods and variables available in code compiled with webpack.
 
-## Basic
+### Basic
 
 #### `require(dependency: String)`
 
@@ -162,7 +162,7 @@ module.id === require.resolve("./file.js")
 
 ---
 
-## Advanced
+### Advanced
 
 #### `require.cache`
 

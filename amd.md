@@ -6,23 +6,25 @@ AMD specifies a solution for modular Javascript such that modules can load its d
 
 Modules are defined using the `define` function.
 
-### define
+### `define`
 
 The define function is how modules are defined with AMD. It is just a function that has this signature
 
-     define(id?: String, dependencies?: String[], factory: Function|Object);
+``` javascript
+define(id?: String, dependencies?: String[], factory: Function|Object);
+```
 
-#### id
+#### `id`
 
 Specifies the module name. It is optional.
 
-#### dependencies
+#### `dependencies`
 
 This argument specifies which module dependencies the module being defined has.
 It is an array containing module identifiers.
 It is optional, but if omitted, it defaults to ["require", "exports", "module"].
 
-#### factory
+#### `factory`
 
 The last argument is the one who defines the module. It can be a function (which should be called once), or an object.
 If the factory is a function, the value returned will be the exported value for the module.
@@ -33,8 +35,8 @@ Let's see some examples:
 
 ```javascript
 define('myModule', ['jquery'], function($){
-     // $ is the export of the jquery module.
-     $('body').text('hello world');
+	// $ is the export of the jquery module.
+	$('body').text('hello world');
 });
 ```
 
@@ -42,7 +44,7 @@ define('myModule', ['jquery'], function($){
 
 ```javascript
 define(['jquery'], function($){
-    $('body').text('hello world');
+	$('body').text('hello world');
 });
 ```
 
@@ -50,8 +52,8 @@ define(['jquery'], function($){
 
 ```javascript
 define(['jquery', './math.js'], function($, math){
-    // $ and math are the exports of the jquery module.
-    $('body').text('hello world');
+	// $ and math are the exports of the jquery module.
+	$('body').text('hello world');
 });
 ```
 
@@ -60,9 +62,9 @@ define(['jquery', './math.js'], function($, math){
 ```javascript
 define(['jquery'], function($){
 
-     var HelloWorldize = function(selector){
-     	$(selector).text('hello world');
-     };
+	var HelloWorldize = function(selector){
+		$(selector).text('hello world');
+	};
 
      return HelloWorldize;
 });
@@ -75,48 +77,4 @@ define(function($){
 	var $ = require('jquery');
 	$('body').text('hello world');
 });
-```
-
-### define.amd property
-
-The AMD specification requires that any `define` function implementation for AMD should have a property named `amd` to indicate that it conforms with the AMD API.
-
-
-
-
-## Advanced example
-
-``` javascript
-define(["./dependency1", "./dependency2"], function(dep1, dep2) {
-  // dep1 and dep2 are the exports of the files dependency1 and dependency1
-
-  // more dependencies
-  var dep3 = require("./dependency3");
-  // you can require more dependencies with a sync require.
-  // (This is internally acutually threaded like commonjs require.)
-
-  // more dependencies on demand
-  require(["./dependency4"], function(dep4) {
-    // the async version of require load more dependencies asynchronously.
-    // see more in chapter chunks
-    // dep4 is the export of dependency4
-  });
-
-  // the returned value is exported
-  return function doStuff() {};
-});
-
-define(function(require, exports, module) {
-  // the commonjs wrapping style is also supported
-});
-
-define(["exports", "require", "./dependency"], function(exports, require, dep) {
-  // the strings "exports", "module" and "require" have special meaning in AMD define/require
-});
-
-require(["./file"]);
-// without function is possible to just load the files.
-
-define("name", ...)
-// named defines are allowed and will behave like anon defines. The name is ignored.
 ```

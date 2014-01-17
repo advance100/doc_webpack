@@ -1,71 +1,53 @@
-The resolving process have three entry points. Depending on the shape for the request it enters at one of these. 
+The resolving process is pretty simple. We distinguish three types of requests:
 
-* resolve an **absolute path** (shape: `/home/xyz` or `C:\Home\xyz`)
-* resolve a **relative path** (shape: `./xyz` or `../xyz`)
-* resolve a **module path** (shape: `xyz` or `xyz/abc`)
+* absolute path: `require("/home/me/file")` `require("C:\Home\me\file")`
+* relative path: `require("../src/file")` `require("./file")`
+* module path: `require("module")` `require("module/lib/file")`
 
-> Even while this description suggest a serial process, the process is running completely async and parallel.
+## Resolving an absolute path
 
-> The process is simplified.
+We first check if the path points to a directory. For a directory we need to find the main file in this directory. Therefore the `main` field in the `package.json` is joined to the path. If there is no `package.json` or no `main` field, `index` is used as filename.
 
-## absolute path
+We have a absolute to a file now. We try to append all extensions (configuration option `resolve.extensions`). The first exisiting file is used as result.
 
-``` text
-path is a directory:
-  directory contains a package description file (package.json):
-    read the main file from the package description file and continue with this path.
-  directory doesn't contain a package description file:
-    continue with the "index" path,
-try the append all possible extensions until one file exists
-```
+## Resolving an relative path
 
-## relative path
+The context directory is the directory of the resource file that contains the `require` statement. If there is no resource file the configuration option `context` is used as context directory. (This can occur for entry points or with loader generated files).
 
-``` text
-resolve the relative path relative to the current directory
-continue with the "absolute path" entry
-```
+The relative path is joined to the context directory and the resulting absolute file is resolved according to "Resolving an absolute path".
 
-## module path
+## Resolving a module path
 
-``` text
-find all possible paths where the module can be in
-  1. root
-  2. moduleDirectories starting in the current directory
-  3. fallback
-for each possible path:
-  prepend the path to the request
-  try to resolve the file with the "absolute path" entry
-```
+For resolving a module we first gather all search directories for modules from the context directory. This process is similar to the [node.js resolving process](http://nodejs.org/api/modules.html), but the search directories are configurable with the configuration option `resolve.moduleDirectories`. In addition the this directories in the configuration option `resolve.root` are prepended and directories in the configuration option `resolve.fallback` are appended.
 
-### alias
+The module is looked up in each module directory and resolved according to "Resolving an absolute path". If the first match has no success, the second is tried and so on.
 
-``` text
-before trying to resolve a "module path":
-  if the module name matches an alias:
-    if the value is an module name: continue with this module name
-    if the value resolves to an directory:
-      concat the remaining path with the value
-      continue with "relative path" or "absolute path" entry
-    if the value resolves to an file and there is no remaining path
-      continue with "relative path" or "absolute path" entry
-```
+## Aliasing
 
-## unsafeCache
+There is a configuration option `resolve.alias` which renames modules.
 
-``` text
-before resolving anything:
-  if request matches option value:
-    lookup the directory request pair in the cache
-after resolving anything:
-  if request matches option value:
-    store the directory request pair in the cache
-```
+When trying to "resolve a module path" the module name is matched to the `resolve.alias` option and on match it gets replaced with the aliasing value.
 
-## loaders
+## Caching
 
-``` text
-when trying to resolve a "module path":
-  apply all moduleTemplates to the module name
-  try the resolve all possible module names using the "module path" entry
-```
+Every filesystem access is cached so that multiple parallel or serial requests to the same thing are merged. In watching mode only cached files are removed from cache (the watcher knows which files got changed). In non-watching mode the cache is purged before every compilation.
+
+## Unsafe caching
+
+There is a configuration option `resolve.unsafeCache` which boosts performance by aggressive caching.
+
+Every resolve process is cached and isn't every purged. This is correct in the most cases, but incorrect in edge cases. Boosts performance.
+
+## Context
+
+When trying to resolve a [[context]] "Resolving an absolute path" ends when a directory is found.
+
+## Loaders
+
+For loaders the configuration options in `resolveLoader` are used.
+
+In addition to that when trying to "resolve a module path" all modules name variations in the configuration option `resolveLoader.moduleTemplates` are tried.
+
+## Asynchronous
+
+The above description sugguest a serial process, but in the implementation the process is completely ssynchronous and parallel. This may causes more filesystem access than required.

@@ -4,9 +4,13 @@ It serves static assets from the current directory. If the file isn't found a em
 
 The webpack-dev-server has a CLI and a node.js API.
 
-All [[webpack CLI options | webpack detailed usage]] and [[webpack API options | webpack options]] are valid for the dev-server too. Read [[webpack-dev-middleware]] for more information. CLI: A `webpack.config.js` is accepted too.
-
 ## CLI
+
+``` sh
+$ webpack-dev-server <entry>
+```
+
+All [[CLI]] options are valid for the dev-server too, but there is no `<output>` default argument. For the [[CLI]] is a `webpack.config.js` accepted too.
 
 There are some additional options:
 
@@ -21,22 +25,42 @@ There are some additional options:
 var WebpackDevServer = require("webpack-dev-server");
 var webpack = require("webpack");
 
-var server = new Server(webpack({
-  // webpack options
-}), {
-  // webpack-dev-server options
-  contentBase: "/path/to/directory",
-  // or: contentBase: "http://localhost/",
-  
-  // webpack-dev-middleware options
-  quite: false,
-  noInfo: false,
-  lazy: true,
-  watchDelay: 300,
-  publicPath: "/assets/",
-  headers: { "X-Custom-Header": "yes" },
-  stats: { colors: true }
-}
+var compiler = webpack({
+	// configuration
+});
+var server = new WebpackDevServer(compiler, {
+	// webpack-dev-server options
+	contentBase: "/path/to/directory",
+	// or: contentBase: "http://localhost/",
+	
+	hot: true,
+	// Enable special support for Hot Module Replacement
+	// Page is no longer updated, but a "webpackHotUpdate" message is send to the content
+	// Use "webpack/hot/dev-server" as additional module in your entry point
+
+	// webpack-dev-middleware options
+	quite: false,
+	noInfo: false,
+	lazy: true,
+	watchDelay: 300,
+	publicPath: "/assets/",
+	headers: { "X-Custom-Header": "yes" },
+	stats: { colors: true }
+});
+server.listen(8080, "localhost", function() {});
 ```
 
 See [[webpack-dev-middleware]] for documentation on middleware options.
+
+## Combining with an existing server
+
+You can run the webpack-dev-server parallel to the existing server. Just use the complete path to the dev server in the `<script>` and the `publicPath`. Pass the URL to the existing server as `contentBase`.
+
+Example:
+
+* webpack-dev-server on port 8090.
+* existing server on port 8080.
+* `<script src="http://localhost:8090/assets/bundle.js">`
+* `publicPath = "http://localhost:8090/assets/"`
+* `contentBase = "http://localhost:8080/"`
+* open `http://localhost:8090/webpack-dev-server/index.html`

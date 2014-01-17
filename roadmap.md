@@ -1,5 +1,3 @@
-# roadmap
-
 ## 1.1
 
 * documentation

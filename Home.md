@@ -1,4 +1,4 @@
-Welcome to the documentation of `webpack` and `enhanced-require`.
+Welcome to the documentation of webpack.
 
 # Browse the [documentation website](http://webpack.github.io/docs/)
 

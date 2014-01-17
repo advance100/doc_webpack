@@ -1,3 +1,9 @@
+## wiki
+
+[[hot-module-replacement-with-webpack]]
+
+[[internal-webpack-plugins]]
+
 ## Create a enhanced require function
 
 ``` javascript

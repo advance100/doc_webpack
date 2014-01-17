@@ -76,7 +76,7 @@ module.exports = Result;
 ```
 
 Note that we didn't use the full filename `salute.js` but `./salute` when calling 
-`require`, so you must omit the extension of your scripts. `./` means that the `salute` module is in the same directory as the `world` module.
+`require`, so you can omit the extension of your scripts. `./` means that the `salute` module is in the same directory as the `world` module.
 
 
 
@@ -88,41 +88,10 @@ module.exports = function( value ){
     return value*2;
 }
 ```
+
 ``` javascript
 // moduleB.js
 var multiplyBy2 = require('moduleA');
 var result = multiplyBy2( 4 );
 ```
 
-
-## Advanced
-
-``` javascript
-// require a module
-var dependency = require("./dependency");
-// each module is only executed once and the same
-//  exports are returned
-// require("./dependency") === require("./dependency")
-
-// export stuff
-exports.stuff = 42;
-// exports is a object that is returned by the require
-//  function when require this module.
-
-// choose to not use the exports object
-module.exports = function doStuff() {};
-// the value of module.exports is returned by the require
-//  function when require this module.
-
-//// Advanced stuff ////
-
-// unload module
-var id = require.resolve("./dependency");
-delete require.cache[id];
-var newDependency = require("./dependency");
-// newDependency !== dependency;
-
-if(typeof require !== "function") {
-  // This code is removed when bundled and minimized
-}
-```

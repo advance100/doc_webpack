@@ -6,8 +6,8 @@ I. e. the Compiler expose the `"compile"` plugin interface, which is called when
 
 ``` javascript
 compiler.plugin("compile", function(params) {
-  // Just print a text
-  console.log("Compiling...");
+	// Just print a text
+	console.log("Compiling...");
 });
 ```
 
@@ -15,9 +15,9 @@ A plugin only gets a reference to the compiler object, so if it want to plugin s
 
 ``` javascript
 compiler.plugin("compilation", function(compilation) {
-  compilation.plugin("optimize", function() {
-    console.log("The compilation is now optimizing your stuff");
-  });
+	compilation.plugin("optimize", function() {
+		console.log("The compilation is now optimizing your stuff");
+	});
 });
 ```
 
@@ -26,15 +26,15 @@ compiler.plugin("compilation", function(compilation) {
 There are multiple types of plugin interfaces.
 
 * Timing
- * sync (default): As seen above. Use return.
- * async: Last parameter is a callback. Signature: function(err, result)
- * parallel: The handlers are invoked parallel (async).
+	* sync (default): As seen above. Use return.
+	* async: Last parameter is a callback. Signature: function(err, result)
+	* parallel: The handlers are invoked parallel (async).
 
 * Return value
- * not bailing (default): No return value.
- * bailing: The handlers are invoked in order until one handler return something.
- * parallel bailing: The handlers are invoked parallel (async). The first (by order) returned value is significant.
- * waterfall: Each handler get the result value of the last handler as argument.
+	* not bailing (default): No return value.
+	* bailing: The handlers are invoked in order until one handler return something.
+	* parallel bailing: The handlers are invoked parallel (async). The first (by order) returned value is significant.
+	* waterfall: Each handler get the result value of the last handler as argument.
 
 ## Compiler
 
@@ -134,84 +134,196 @@ After the factory has resolved the request. The `data` object has this propertie
 
 ### `seal`
 
+The sealing to the compilation has started.
+
 ### `optimize`
+
+Optimize the compilation.
 
 ### `optimize-modules(modules: Module[])`
 
+Optimize the modules.
+
 ### `after-optimize-modules(modules: Module[])`
+
+Optimizing the modules has finished.
 
 ### `optimize-chunks(chunks: Chunk[])`
 
+Optimize the chunks.
+
 ### `after-optimize-chunks(chunks: Chunk[])`
+
+Optimizing the chunks has finished.
 
 ### `revive-modules(modules: Module[], records)`
 
+Restore module info from records.
+
 ### `optimize-module-order(modules: Module[])`
+
+Sort the modules in order of importance. The first is the most important module. It will get the smallest id.
 
 ### `optimize-module-ids(modules: Module[])`
 
+Optimize the module ids.
+
 ### `after-optimize-module-ids(modules: Module[])`
+
+Optimizing the module ids has finished.
 
 ### `record-modules(modules: Module[], records)`
 
+Store module info to the records.
+
 ### `revive-chunks(chunks: Chunk[], records)`
+
+Restore chunk info from records.
 
 ### `optimize-chunk-order(chunks: Chunk[])`
 
+Sort the chunks in order of importance. The first is the most important chunk. It will get the smallest id.
+
 ### `optimize-chunk-ids(chunks: Chunk[])`
+
+Optimize the chunk ids.
 
 ### `after-optimize-chunk-ids(chunks: Chunk[])`
 
+Optimizing the chunk ids has finished.
+
 ### `record-chunks(chunks: Chunk[], records)`
+
+Store chunk info to the records.
 
 ### `before-hash`
 
+Before the compilation is hashed.
+
 ### `after-hash`
+
+After the compilation is hashed.
 
 ### `before-chunk-assets`
 
+Before creating the chunk assets.
+
 ### `additional-chunk-assets(chunks: Chunk[])`
 
-### `record(compilation, records)
+Create additional assets for the chunks.
+
+### `record(compilation, records)`
+
+Store info about the compilation to the records
 
 ### `optimize-chunk-assets(chunks: Chunk[])` async
 
+Optimize the assets for the chunks.
+
+The assets are stored in `this.assets`, but not all of them are chunk assets. A `Chunk` has a property `files` which points to all files created by this chunk. The additional chunk assets are stored in `this.additionalChunkAssets`.
+
 ### `after-optimize-chunk-assets(chunks: Chunk[])`
+
+The chunk assets has been optimized.
 
 ### `optimize-assets(assets: Object{name: Source})` async
 
+Optimize all assets.
+
+The assets are stored in `this.assets`.
+
 ### `after-optimize-assets(assets: Object{name: Source})`
+
+The assets has been optimized.
 
 ### `build-module`
 
+Before a module build has started.
+
 ### `succeed-module`
 
+A module has been build successfully.
+
 ### `failed-module`
+
+The module build has been failed.
+
+### `module-asset(module, filename)`
+
+An assets from a module was added to the compilation.
+
+### `chunk-asset(chunk, filename)`
+
+An assets from a chunk was added to the compilation.
 
 
 ## Parser `compiler.parser`
 
+### `programm(ast)` bailing
+
+General purpose plugin interface for the while AST of a code fragment.
+
+### `statement(statement: Statement)` bailing
+
+General purpose plugin interface for every statement of the code fragment.
+
 ### `call <identifier>(expr: Expression)` bailing
+
+`abc(1)` => `call abc`
+
+`a.b.c(1)` => `call a.b.c`
 
 ### `expression <identifier>(expr: Expression)` bailing
 
+`abc` => `expression abc`
+
+`a.b.c` => `expression a.b.c`
+
 ### `expression ?:(expr: Expression)` bailing
 
-### `evaluate <expression type>(expr: Expression)` bailing
+`(abc ? 1 : 2)` => `expression ?!`
 
-### `evaluate typeof <identifier>(expr: Expression)` bailing
-
-### `evaluate Identifier <identifier>(expr: Expression)` bailing
-
-### `evaluate CallExpression .<property>(expr: Expression)` bailing
+Return a boolean value to omit parsing of the wrong path.
 
 ### `typeof <identifier>(expr: Expression)` bailing
 
+`typeof a.b.c` => `typeof a.b.c`
+
 ### `statement if(statement: Statement)` bailing
+
+`if(abc) {}` => `statement if`
+
+Return a boolean value to omit parsing of the wrong path.
 
 ### `label <labelname>(statement: Statement)` bailing
 
+`xyz: abc` => `label xyz`
+
 ### `var <name>(statement: Statement)` bailing
+
+`var abc, def` => `var abc` + `var def`
+
+Return `false` to not add the variable to the known definitions.
+
+### `evaluate <expression type>(expr: Expression)` bailing
+
+Evaluate an expression.
+
+### `evaluate typeof <identifier>(expr: Expression)` bailing
+
+Evaluate the type of an identifier.
+
+### `evaluate Identifier <identifier>(expr: Expression)` bailing
+
+Evaluate a identifier that is a free var.
+
+### `evaluate defined Identifier <identifier>(expr: Expression)` bailing
+
+Evaluate a identifier that is a defined var.
+
+### `evaluate CallExpression .<property>(expr: Expression)` bailing
+
+Evaluate a call to a member function of a successfully evaluated expression.
 
 
 ## Resolver
@@ -220,39 +332,39 @@ After the factory has resolved the request. The `data` object has this propertie
 * `compiler.resolvers.context` Resolver for a context module
 * `compiler.resolvers.loader` Resolver for a loader
 
-Any plugin should use `this.fileSystem` as fileSystem, as it's cached. It only has async named functions, but they may behave sync, if the user uses a sync file system implementation.
+Any plugin should use `this.fileSystem` as fileSystem, as it's cached. It only has async named functions, but they may behave sync, if the user uses a sync file system implementation (i. e. in enhanced-require).
 
 To join paths any plugin should use `this.join`. It normalize the paths. There is a `this.normalize` too.
 
-A bailing async for each implementation is available on `this.forEachBail(array, iterator, callback)`.
+A bailing async forEach implementation is available on `this.forEachBail(array, iterator, callback)`.
 
 To pass the request to other resolving plugins use the `this.doResolve(types: String|String[], request: Request, callback)` method. `types` are multiple possible request types that are tested in preference of order.
 
 ``` javascript
 interface Request {
-  path: String // The current directory of the request
-  request: String // The current request string
-  query: String // The querystring of the request, if any
-  module: boolean // request begins with a module
-  directory: boolean // The request points to a directory
-  file: boolean // The request points to a file
-  resolved: boolean // The request is resolved/done
-  // undefined means false for boolean fields
+	path: String // The current directory of the request
+	request: String // The current request string
+	query: String // The querystring of the request, if any
+	module: boolean // request begins with a module
+	directory: boolean // The request points to a directory
+	file: boolean // The request points to a file
+	resolved: boolean // The request is resolved/done
+	// undefined means false for boolean fields
 }
 
 // Examples
 // from /home/user/project/file.js: require("../test?charset=ascii")
 {
-  path: "/home/user/project",
-  request: "../test",
-  query: "?charset=ascii"
+	path: "/home/user/project",
+	request: "../test",
+	query: "?charset=ascii"
 }
 // from /home/user/project/file.js: require("test/test/")
 {
-  path: "/home/user/project",
-  request: "test/test/",
-  module: true,
-  directory: true
+	path: "/home/user/project",
+	request: "test/test/",
+	module: true,
+	directory: true
 }
 ```
 

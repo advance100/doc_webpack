@@ -40,13 +40,12 @@ $ browserify --entry main.js --outfile bundle.js
 Maps to `webpack` with this config:
 
 ``` javascript
-// webpack.config.js
-module.exports = {
-  entry: "./main.js",
-  output: {
-    filename: "bundle.js"
-  }
-};
+{
+	entry: "./main.js",
+	output: {
+		filename: "bundle.js"
+	}
+}
 ```
 
 ---
@@ -60,13 +59,12 @@ $ browserify --outfile js/bundle.js
 ```
 
 ``` javascript
-var path = require("path");
-module.exports = {
-  output: {
-    path: path.join(__dirname, "js"),
-    filename: "bundle.js"
-  }
-};
+{
+	output: {
+		path: path.join(__dirname, "js"),
+		filename: "bundle.js"
+	}
+}
 ```
 
 ## entry
@@ -76,12 +74,12 @@ $ browserify --entry a.js --entry b.js
 ```
 
 ``` javascript
-module.exports = {
-  entry: [
-    "./a.js",
-    "./b.js"
-  ]
-};
+{
+	entry: [
+		"./a.js",
+		"./b.js"
+	]
+}
 ```
 
 ## transform
@@ -93,13 +91,13 @@ $ browserify --transform coffeeify
 ```
 
 ``` javascript
-module.exports = {
-  module: {
-    loaders: [
-      { test: /\.coffee$/, loader: "coffee-loader" }
-    ]
-  }
-};
+{
+	module: {
+		loaders: [
+			{ test: /\.coffee$/, loader: "coffee-loader" }
+		]
+	}
+}
 ```
 
 ## debug
@@ -133,11 +131,11 @@ $ browserify --extension coffee
 ```
 
 ``` javascript
-module.exports = {
-  resolve: {
-    extensions: ["", ".js", ".coffee"]
-  }
-};
+{
+	resolve: {
+		extensions: ["", ".js", ".coffee"]
+	}
+}
 ```
 
 ## standalone
@@ -147,12 +145,12 @@ browserify --standalone MyLibrary
 ```
 
 ``` javascript
-module.exports = {
-  output: {
-    library: "MyLibrary",
-    libraryTarget: "umd"
-  }
-};
+{
+	output: {
+		library: "MyLibrary",
+		libraryTarget: "umd"
+	}
+}
 // webpack --output-library MyLibrary --output-library-target umd
 ```
 
@@ -163,12 +161,11 @@ $ browserify --ignore file.js
 ```
 
 ``` javascript
-var IgnorePlugin = require("webpack/lib/IgnorePlugin");
-module.exports = {
-  plugins: [
-    new IgnorePlugin(/file\.js$/)
-  ]
-};
+{
+	plugins: [
+		new webpack.IgnorePlugin(/file\.js$/)
+	]
+}
 ```
 
 ## node globals
@@ -181,14 +178,14 @@ $ browserify --detect-globals
 You can enable/disable these node globals individually:
 
 ``` javascript
-module.exports = {
-  node: {
-    filename: true,
-    dirname: "mock",
-    process: false,
-    global: true
-  }
-};
+{
+	node: {
+		filename: true,
+		dirname: "mock",
+		process: false,
+		global: true
+	}
+}
 ```
 
 ## ignore-missing
@@ -207,11 +204,11 @@ $ browserify --noparse=file.js
 
 ``` javascript
 module.expors = {
-  module: {
-    noParse: [
-      /file\.js$/
-    ]
-  }
+	module: {
+		noParse: [
+			/file\.js$/
+		]
+	}
 };
 ```
 
@@ -231,22 +228,22 @@ $ webpack --json
 webpack do not support external requires. You cannot expose the `require` function to other scripts. Just use webpack for all scripts on a page or do it like this:
 
 ``` javascript
-module.exports = {
-  output: {
-    library: "require",
-    libraryTarget: "var"
-  }
-};
+{
+	output: {
+		library: "require",
+		libraryTarget: "var"
+	}
+}
 ```
 
 ``` javascript
 // entry point
 module.exports = function(module) {
-  switch(module) {
-  case "through": return require("through");
-  case "duplexer": return require("duplexer");
-  }
-  throw new Error("Module '" + module + "' not found");
+	switch(module) {
+	case "through": return require("through");
+	case "duplexer": return require("duplexer");
+	}
+	throw new Error("Module '" + module + "' not found");
 };
 ```
 
@@ -264,20 +261,20 @@ webpack supports multi-page compilation and has a plugin for the automatic extra
 
 ``` javascript
 var webpack = require("webpack");
-module.exports = {
-  entry: {
-    beep: "./beep.js",
-    boop: "./boop.js",
-  },
-  output: {
-    path: "static",
-    filename: "[name].js"
-  },
-  plugins: [
-    // ./robot is automatically detected as common module and extracted
-    new webpack.optimize.CommonsChunkPlugin("common.js")
-  ]
-};
+{
+	entry: {
+		beep: "./beep.js",
+		boop: "./boop.js",
+	},
+	output: {
+		path: "static",
+		filename: "[name].js"
+	},
+	plugins: [
+		// ./robot is automatically detected as common module and extracted
+		new webpack.optimize.CommonsChunkPlugin("common.js")
+	]
+}
 ```
 
 ``` html
@@ -293,15 +290,15 @@ No need to learn much more. Just pass the config object to the `webpack` API:
 var webpack = require("webpack");
 
 webpack({
-  entry: "./main.js",
-  output: {
-    filename: "bundle.js"
-  }
+	entry: "./main.js",
+	output: {
+		filename: "bundle.js"
+	}
 }, function(err, stats) {
-  err // => fatal compiler error (rar)
-  var json = stats.toJson() // => webpack --json
-  json.errors // => array of errors
-  json.warnings // => array of warnings
+	err // => fatal compiler error (rar)
+	var json = stats.toJson() // => webpack --json
+	json.errors // => array of errors
+	json.warnings // => array of warnings
 });
 ```
 
@@ -315,4 +312,3 @@ webpack({
 | deAMDify | `webpack` |
 | decomponentify | [component-webpack-plugin](https://github.com/webpack/component-webpack-plugin) |
 | list of source transforms | [[loader list]], [transform-loader](https://github.com/webpack/transform-loader) |
-| 

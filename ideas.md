@@ -1,1 +1,1 @@
-# ideas
+A list of open ideas.
