@@ -29,38 +29,48 @@ It is optional, but if omitted, it defaults to ["require", "exports", "module"].
 The last argument is the one who defines the module. It can be a function (which should be called once), or an object.
 If the factory is a function, the value returned will be the exported value for the module.
 
+## Examples
+
 Let's see some examples:
 
-**Named module:** Defines a module named `myModule` that requires `jQuery`.
+### Named module
+
+Defines a module named `myModule` that requires `jQuery`.
 
 ```javascript
-define('myModule', ['jquery'], function($){
+define('myModule', ['jquery'], function($) {
 	// $ is the export of the jquery module.
 	$('body').text('hello world');
 });
 ```
 
-**Anonymous module:** Define the previous module without specifying it's id.
+### Anonymous module
+
+Define the previous module without specifying it's id.
 
 ```javascript
-define(['jquery'], function($){
+define(['jquery'], function($) {
 	$('body').text('hello world');
 });
 ```
 
-**Multiple dependencies:** Define a module with multiple dependencies. Note that each dependency export will be passed to the factory function.
+### Multiple dependencies
+
+Define a module with multiple dependencies. Note that each dependency export will be passed to the factory function.
 
 ```javascript
-define(['jquery', './math.js'], function($, math){
+define(['jquery', './math.js'], function($, math) {
 	// $ and math are the exports of the jquery module.
 	$('body').text('hello world');
 });
 ```
 
-**Export value:** Define a module that exports itself.
+### Export value
+
+Define a module that exports itself.
 
 ```javascript
-define(['jquery'], function($){
+define(['jquery'], function($) {
 
 	var HelloWorldize = function(selector){
 		$(selector).text('hello world');
@@ -70,10 +80,10 @@ define(['jquery'], function($){
 });
 ```
 
-**Using require to load dependencies**
+## Using require to load dependencies
 
 ```javascript
-define(function(require){
+define(function(require) {
 	var $ = require('jquery');
 	$('body').text('hello world');
 });
