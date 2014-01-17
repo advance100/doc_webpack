@@ -287,17 +287,17 @@ Examples: Calling a require from `/abc/entry.js` with different alias settings.
 
 ### `resolve.root`
 
-Look of modules in this directory (or directories if you pass an array).
+The directory that contains your modules. May also be an array of directories. This setting should be used to add individual directories to the search path.
 
 ### `resolve.modulesDirectories`
 
-Look of modules in this directories. It'll check these directories in current directory and each parent directory.
+An array of directory names to be resolved to the current directory as well as its ancestors, and searched for modules. This functions similarly to how node finds "node_modules" directories. For example, if the value is `["mydir"]`, webpack will look in "./mydir", "../mydir", "../../mydir", etc.
 
 > Default: `["web_modules", "node_modules"]`
 
 ### `resolve.fallback`
 
-Look of modules in this directory (or directories if you pass an array), if no module found in `resolve.root` and `resolve.modulesDirectories`.
+A directory (or array of directories), in which webpack should look for modules that weren't fount in `resolve.root` or `resolve.modulesDirectories`.
 
 ### `resolve.extensions`
 
