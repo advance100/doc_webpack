@@ -14,7 +14,7 @@ To achieve this CommonJS give you two tools:
 
 The mandatory hello world example:
 
-#### Plain Simple JavaScript
+## Plain Simple JavaScript
 
 Here is an examples without CommonJS:
 
@@ -34,7 +34,7 @@ going to use the value defined in `salute.js`.
 var Result = MySalute + " world!";
 ```
 
-#### Module definitions
+## Module definitions
 
 As it is, `world.js` will not work as `MySalute` is not defined.
 We need to define each script as a module:  
@@ -56,20 +56,20 @@ variable into `module.exports` so the CommonJS module system nows this is
 the object of our module we want to show to the world.
 `salute.js` discloses `MySalute`, and `world.js` discloses `Result`.
 
-#### Module dependency
+## Module dependency
 
 We're near but there's still a step missing: dependency definition.
 We've already defined every script as an independent module, but `world.js`
 still needs to now who defines `MySalute`:
 
 ``` javascript
-//salute.js
+// salute.js
 var MySalute = "Hello";
 module.exports = MySalute;
 ```
 
 ``` javascript
-//world.js
+// world.js
 var MySalute = require("./salute");
 var Result = MySalute + "world!";
 module.exports = Result;
@@ -79,8 +79,9 @@ Note that we didn't use the full filename `salute.js` but `./salute` when callin
 `require`, so you can omit the extension of your scripts. `./` means that the `salute` module is in the same directory as the `world` module.
 
 
+## Examples
 
-### Functions example
+### Functions
 
 ``` javascript
 // moduleA.js
