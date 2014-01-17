@@ -80,7 +80,7 @@ define(['jquery'], function($) {
 });
 ```
 
-## Using require to load dependencies
+### Using require to load dependencies
 
 ```javascript
 define(function(require) {
