@@ -10,7 +10,7 @@ There are two ways to test web applications:
 The mocha-loader executes your code with the mocha framework. If you run the code it'll show the results in the web page.
 
 ``` sh
-webpack mocha!./test.js testBundle.js
+webpack "mocha!./test.js" testBundle.js
 # index.html is a HTML page which loads testBundle.js
 open index.html
 ```
@@ -20,7 +20,7 @@ open index.html
 The webpack-dev-server do automatically create a HTML page which loads the script. It also reexecutes the tests when files have changed.
 
 ``` sh
-webpack-dev-server mocha!./test.js --output-file test.js
+webpack-dev-server "mocha!./test.js" --output-file test.js
 open http://localhost:8080/webpack-dev-server/test
 ```
 
@@ -43,7 +43,7 @@ mocha test/*
 
 ### Compile and test
 
-If you use webpack-specific features it may not possible to run the code with node.js. webpack allows you to configure a target system: i. e. you can compile code to run in node.js (configuration option `target: "node"`). Than use a node.js testing framework to run the bundle.
+If you use webpack-specific features it may not possible to run the code with node.js. webpack allows to configure a target system: i. e. you can compile code so that it can run in node.js (configuration option `target: "node"`). Than use a node.js testing framework to run the bundle.
 
 ``` sh
 webpack test.js /tmp/testBundle.js --target node
