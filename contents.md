@@ -19,6 +19,7 @@
   * How to write a loader (WIP)
   * How to write a plugin (WIP)
   * Shimming modules (WIP)
+  * Testing (WIP)
   * [[Comparison]]
 * Lists
   * [[List of loaders]]
