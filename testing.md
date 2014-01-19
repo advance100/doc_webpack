@@ -28,7 +28,7 @@ Hint: Use `--hot` and it'll only execute tests which have changed or have change
 
 ### karma and webpack
 
-You can use webpack with karma. Add [`"webpack"` as preprocessor](https://github.com/webpack/karma-webpack-plugin) to your karam config.
+You can use webpack with karma. Add [`"webpack"` as preprocessor](https://github.com/webpack/karma-webpack) to your karma config.
 
 
 ## node.js testing
