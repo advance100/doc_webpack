@@ -39,10 +39,14 @@ A request for a normal module, which is resolved and built even before a require
 ### `ResolverPlugin`
 
 ``` javascript
-new webpack.ResolverPlugin(plugins, [types], [afterDefaults])
+new webpack.ResolverPlugin(plugins, [types])
 ```
 
-Apply a plugin (or array of `plugins`) to one or more resolvers (as specified in `types`). Plugins can be applied before or after the default plugins (`afterDefaults`).
+Apply a plugin (or array of `plugins`) to one or more resolvers (as specified in `types`).
+
+`plugins` a plugin or an array of plugins that should be applied to the resolver(s).
+
+`types` a resolver type or an array of resolver types (default: `["normal"]`, resolver types: `normal`, `context`, `loader`)
 
 All plugins from [enhanced-resolve](https://github.com/webpack/enhanced-resolve) are exported as properties for the `ResolverPlugin`.
 
