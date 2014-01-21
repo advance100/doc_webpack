@@ -36,6 +36,24 @@ A request for a normal module, which is resolved and built even before a require
 
 `request` a request string for a normal module
 
+### `ResolverPlugin`
+
+``` javascript
+new webpack.ResolverPlugin(plugins, [types], [afterDefaults])
+```
+
+Apply a plugin (or array of `plugins`) to one or more resolvers (as specified in `types`). Plugins can be applied before or after the default plugins (`afterDefaults`).
+
+All plugins from [enhanced-resolve](https://github.com/webpack/enhanced-resolve) are exported as properties for the `ResolverPlugin`.
+
+Example:
+
+``` javascript
+new webpack.ResolverPlugin([
+  new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
+], ["normal", "loader"])
+```
+
 
 
 
