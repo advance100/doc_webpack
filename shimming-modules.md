@@ -62,11 +62,13 @@ Examples:
 `require("imports?window=>{}!exports?window.XModule!./file.js`
 
 
+
+
 # Fixing broking module styles
 
 Some files use a module style wrong. You may want to fix this by teaching webpack to not use this style.
 
-## Display some module styles
+## Disable some module styles
 
 Examples:
 
@@ -94,6 +96,8 @@ Example:
 	}
 }
 ```
+
+> Note: `require`, `exports` and `module` are still available as variables. `exports` and `module` are still usable, `require` is not usable. You may want to undefine them with the `imports-loader`.
 
 ## [`script-loader`](https://github.com/webpack/script-loader)
 
