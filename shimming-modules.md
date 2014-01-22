@@ -57,6 +57,51 @@ Examples:
 
 `require("imports?XModule=>undefined!exports?XModule!./file.js")` (import to not leak to the global context)
 
+##### The file sets a property on `window` `window.XModule = ...`.
+
+`require("imports?window=>{}!exports?window.XModule!./file.js`
+
+
+# Fixing broking module styles
+
+Some files use a module style wrong. You may want to fix this by teaching webpack to not use this style.
+
+## Display some module styles
+
+Examples:
+
+##### Broken AMD
+
+`require("imports?define=>false!./file.js")`
+
+##### Broken CommonJs
+
+`require("imports?require=>false!./file.js")`
+
+## [[configuration]] option `module.noParse`
+
+This disables parsing by webpack. Therefore you cannot use dependencies. This may be useful for prepackaged libraries.
+
+Example:
+
+``` javascript
+{
+	module: {
+		noParse: [
+			/XModule[\\\/]file\.js$/,
+			pathToRegExp(path.join(__dirname, "web_modules", "XModule2"))
+		]
+	}
+}
+```
+
+## [`script-loader`](https://github.com/webpack/script-loader)
+
+This loader evaluates code in the global context, just like you would add the code into a script tag. In this mode every normal library should work. `require`, `module`, etc. are undefined.
+
+> Note: The file is added as string to the bundle. It is not minimized by webpack, so use a minimized version. There is also no dev tool support for libraries added by this loader.
+
+
 
 
 # Exposing
