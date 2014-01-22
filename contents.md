@@ -4,7 +4,7 @@
   * Usage
   * Require Modules
   * Vendor Modules
-  * Using Loaders
+  * [[Using Loaders]]
 * Step-by-step tutorials
   * [Getting started](http://webpack.github.io/docs/tutorials/getting-started/welcome.html)
 * Guides
