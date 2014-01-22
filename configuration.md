@@ -458,6 +458,6 @@ This is required, when using Hot Code Replacement between multiple calls to the 
 
 
 
-### `plugins`
+## `plugins`
 
 Add additional plugins to the compiler.
