@@ -18,7 +18,7 @@
   * [[Long-time Caching]]
   * How to write a loader (WIP)
   * How to write a plugin (WIP)
-  * Shimming modules (WIP)
+  * [[Shimming modules]]
   * [[Testing]]
   * [[Comparison]]
 * Lists
