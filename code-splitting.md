@@ -95,9 +95,40 @@ A initial chunk is a normal chunk. The only difference is that optimization thre
 
 
 
+## Multiple entry chunks
+
+It's possible to [[configure | configuration]] multiple entry points that will result in multiple entry chunks. The entry chunk contains the runtime and there must only be one runtime on a page (there are exceptions).
+
+### Running multiple entry points
+
+With the `CommonsChunkPlugin` the runtime is moved to the commons chunk. The entry points are now in initial chunks. While only one entry chunk can be loaded, multiple initial chunks can be loaded. This exposes the possibility to run multiple entry points in a single page.
+
+Example:
+
+``` javascript
+{
+	entry: { a: "./a", b: "./b" },
+	output: { filename: "[name].js" },
+	plugins: [ new webpack.CommonsChunkPlugin("init.js") ]
+}
+```
+
+``` html
+<script src="init.js"></script>
+<script src="a.js"></script>
+<script src="b.js"></script>
+```
+
+
+
+
+
 ## Optimization 
 
 There are optimizing plugins that can merge chunks depending on specific criteria. See [[list of plugins]].
+
+* `LimitChunkCountPlugin`
+* `MinChunkSizePlugin`
 
 
 
@@ -136,13 +167,13 @@ require.ensure([], function(require) {
 
 ## Examples
 
-For a running demo see the [example-app](http://webpack.github.io/example-app/). Check Network in DevTools.
-
 * [Simple](https://github.com/webpack/webpack/tree/master/examples/code-splitting)
 * [with bundle-loader](https://github.com/webpack/webpack/tree/master/examples/code-splitting-bundle-loader)
 * [with context](https://github.com/webpack/webpack/tree/master/examples/code-splitted-require.context)
 * [with amd and context](https://github.com/webpack/webpack/tree/master/examples/code-splitted-require.context-amd)
 * [with deduplication](https://github.com/webpack/webpack/tree/master/examples/code-splitted-dedupe)
-* [named-chunks](https://github.com/webpack/webpack/tree/master/examples/named-chucks)
+* [named-chunks](https://github.com/webpack/webpack/tree/master/examples/named-chunks)
 * [multiple entry chunks](https://github.com/webpack/webpack/tree/master/examples/multiple-entry-points)
 * [multiple commons chunks](https://github.com/webpack/webpack/tree/master/examples/multiple-commons-chunks)
+
+For a running demo see the [example-app](http://webpack.github.io/example-app/). Check Network in DevTools.
