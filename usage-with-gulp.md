@@ -47,3 +47,13 @@ gulp.task("webpack-dev-server", function(callback) {
 	});
 });
 ```
+
+## Example
+
+Take a look at a example gulpfile. It covers three modes:
+
+* webpack-dev-server
+* build - watch cycle
+* production build
+
+[Example gulpfile](https://github.com/webpack/webpack-with-common-libs/blob/master/gulpfile.js)
