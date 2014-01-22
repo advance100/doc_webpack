@@ -121,6 +121,10 @@ Example:
 
 
 
+## Commons chunk
+
+The `CommonsChunkPlugin` can move modules that occur in multiple entry chunks to a new entry chunk (the commons chunk). The runtime is moved to the commons chunk too. This means the old entry chunks are initial chunks now. See all options in the [[list of plugins]].
+
 
 
 ## Optimization 
