@@ -2,7 +2,9 @@
 
 * documentation
 
-## 1.0 [end 2013]
+## 1.0
+
+beta: end 2013, stable: early 2014
 
 * Bugfixes
 * updates to loaders
