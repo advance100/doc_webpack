@@ -18,7 +18,7 @@ See the [[amd configuration option|configuration#amd]] for more information.
 
 ## How do I use CoffeeScript (or [other compile-to-js languages](https://github.com/jashkenas/coffee-script/wiki/List-of-languages-that-compile-to-JS)?
 
-altJS languages can be loaded by using special loaders. For example,
+webpack can load altJS languages with special loaders. For example,
 
 ```javascript
 require('coffee-loader!mymodule.coffee')
