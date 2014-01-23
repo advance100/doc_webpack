@@ -66,9 +66,9 @@ require("!!raw!./script.coffee"); // no loaders from configuration are applied
 
 If request matches `/^!/` omit step 3.
 
-If request matches `/^!!/` omit step 2. and 5.
+If request matches `/^!!/` omit step 2., 3. and 5.
 
-If request matches `/^-!/` omit step 2.
+If request matches `/^-!/` omit step 2. and 3.
 
 ## recommendations
 
