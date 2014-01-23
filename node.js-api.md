@@ -65,6 +65,8 @@ You can specify the whished information by the `options` argument: (Boolean)
 
 `options.errorDetails` add details to errors (like resolving log)
 
+`options.chunkOrigins` add the origins of chunks and chunk merging info
+
 `options.modulesSort` (string) sort the modules by that field
 
 `options.chunksSort` (string) sort the chunks by that field
