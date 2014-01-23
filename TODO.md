@@ -10,6 +10,13 @@ support for path-to-regexp
 
 moment.js
 
+so i have a couple of things i think should probably be in the docs: 1) best practice for shimming browser js (i.e. a jquery plugin), 2) how to configure for altjs languages, 3) how to configure webpack for browser package managers like bower.
+1) => http://webpack.github.io/docs/shimming-modules.html
+2) => How to write a loader; http://webpack.github.io/docs/using-loaders.html
+3) => Vendor Modules
+Some of them are still work in progress
+dontkry may be a good start for 3)
+
 ## Create a enhanced require function
 
 ``` javascript
