@@ -16,7 +16,7 @@ If you're using 1.9 or less, you'll need to explicitly tell jQuery that webpack 
 See the [[amd configuration option|configuration#amd]] for more information.
 
 
-## How do I use CoffeeScript (or [other compile-to-js languages](https://github.com/jashkenas/coffee-script/wiki/List-of-languages-that-compile-to-JS)?
+## How do I use CoffeeScript (or [other compile-to-js languages](https://github.com/jashkenas/coffee-script/wiki/List-of-languages-that-compile-to-JS))?
 
 webpack can load altJS languages with special loaders. For example,
 
