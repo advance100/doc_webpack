@@ -4,7 +4,7 @@ For versions of jQuery greater than or equal to 1.10, you shouldn't need to do a
 
 If you're using 1.9 or less, you'll need to explicitly tell jQuery that webpack wants it to expose itself as an AMD module by adding this to your config:
 
-```
+```javascript
 {
     amd: {
         jQuery: true
