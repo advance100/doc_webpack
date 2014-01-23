@@ -4,6 +4,12 @@
 
 [[internal-webpack-plugins]]
 
+imports-loader and window.jQuery
+
+support for path-to-regexp
+
+moment.js
+
 ## Create a enhanced require function
 
 ``` javascript
