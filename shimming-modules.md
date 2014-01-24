@@ -1,5 +1,15 @@
 In some cases webpack cannot parse some file, because it has a unsupported module format or isn't even in a module format. Therefore you have many options to convert the file into a module.
 
+# [[Using loaders]]
+
+On this page all examples with loaders are inlined into `require` calls. This is just for demonstration. You may want to configurate them in your configuration. Read [[Using loaders]] for more details how to do this.
+
+# Order of loaders
+
+In rar cases when you have to apply more than one technique, you need to use the correct order of loaders:
+
+inlined: `expose!imports!exports`, configuration: expose before imports before exports.
+
 # Importing
 
 The file has dependencies that are not required.
@@ -18,7 +28,9 @@ Examples:
 
 `require("imports?xConfig=>{value:123}!./file.js")`
 
-> Note: you can also configure the loaders in your [[configuration]].
+##### `file.js` expect that `this` is the global context.
+
+`require("imports?this=>window")` or `require("imports?this=>global")`
 
 ## [[plugin | list of plugins]] `ProvidePlugin`
 
