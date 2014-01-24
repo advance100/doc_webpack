@@ -14,6 +14,10 @@
 * API: plugins are now exported by webpack: `require("webpack").DefinePlugin`
 * API: Labeled Modules are now disabled by default, use the `dependencies.LabeledModulesPlugin`
 * API: Internal plugin arguments simplified
+* API: added `ResolverPlugin`
+* API: added chunk origin tracking and resolve logging (for finding compile bugs)
+* SUPPORT: free vars are tracked over IIFEs.
+* bug fixes
 
 # 0.11
 
