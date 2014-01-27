@@ -13,5 +13,5 @@ I could write a loader that compiles the template from source, execute it and re
 Instead I should write loaders for every task in this usecase and apply them all (pipeline):
 
 * jade-loader: Convert template to a module that exports a function.
-* apply-loader: Takes a function exporting module and returns raw result.
+* apply-loader: Takes a function exporting module and returns raw result by applying query parameters.
 * html-loader: Takes HTML and exports a string exporting module.
