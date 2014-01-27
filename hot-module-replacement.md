@@ -2,7 +2,9 @@
 
 I. e. you place your hot replacement code in module A. Module A requires module B and B requires C. If module C is updated, and module B cannot handle the update, modules B and C become outdated. Module A can handle the update and new modules B and C are injected.
 
-## Example 1: hot replace request handler of http server
+## Examples
+
+#### Example 1: hot replace request handler of http server
 
 ``` javascript
 var requestHandler = require("./handler.js");
@@ -22,7 +24,7 @@ if(module.hot) {
 }
 ```
 
-## Example 2: hot replace css
+#### Example 2: hot replace css
 
 ``` javascript
 // addStyleTag(css: string) => HTMLStyleElement
