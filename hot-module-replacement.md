@@ -54,35 +54,50 @@ if(module.hot) {
 
 If HMR is enabled for a module `module.hot` is an object containing these properties:
 
-### `accept(dependencies: string[], callback: (updatedDependencies) => void) => void`
+### `accept`
+
+``` javascript
+accept(dependencies: string[], callback: (updatedDependencies) => void) => void
+accept(dependency: string, callback: () => void) => void
+```
 
 Accept code updates for the specified dependencies. The callback is called when dependencies were replaced.
 
-### `accept(dependency: string, callback: () => void) => void`
-
-See above.
-
-### `accept() => void`
+``` javascript
+accept() => void
+```
 
 Accept code updates for this module without notification of parents. This should only be used if the module doesn't export anything.
 
-### `decline(dependencies: string[]) => void`
+### `decline`
+
+``` javascript
+decline(dependencies: string[]) => void
+decline(dependency: string) => void
+```
 
 Do not accept updates for the specified dependencies. If any dependencies is updated, the code update fails with code `"decline"`.
 
-### `decline(dependency: string) => void`
-
-See above.
-
-### `decline() => void`
+``` javascript
+decline() => void
+```
 
 Flag the current module as not updateable. If updated the update code would fail with code `"decline"`.
 
-### `dispose/addDisposeHandler(callback: (data: object) => void) => void`
+### `dispose/addDisposeHandler`
+
+``` javascript
+dispose(callback: (data: object) => void) => void
+addDisposeHandler(callback: (data: object) => void) => void
+```
 
 Add a one time handler, which is executed when the current module code is replaced. Here you should destroy/remove any persistent resource you have claimed/created. If you want to transfer state to the new module, add it to `data` object. The `data` will be available at `module.hot.data` on the new module.
 
-### `removeDisposeHandler(callback: (data: object) => void) => void`
+### `removeDisposeHandler`
+
+``` javascript
+removeDisposeHandler(callback: (data: object) => void) => void
+```
 
 Remove a handler.
 
@@ -95,7 +110,11 @@ This can useful to add a temporary dispose handler. You could i. e. replace code
 
 Also on the `module.hot` object.
 
-### `setApplyOnUpdate(flag: boolean) => void`
+### `setApplyOnUpdate`
+
+``` javascript
+setApplyOnUpdate(flag: boolean) => void
+```
 
 `flag == false` means you have to have to manually call `apply()` if an update is ready.
 
@@ -103,7 +122,11 @@ Also on the `module.hot` object.
 
 Default should be `true`.
 
-### `check(callback: (err: Error, outdatedModules: Module[]) => void`
+### `check`
+
+``` javascript
+check(callback: (err: Error, outdatedModules: Module[]) => void
+```
 
 Throws an exceptions if `status()` is not `idle`.
 
@@ -115,13 +138,21 @@ If applyOnUpdate is set the callback will be called with all modules that were d
 
 If applyOnUpdate is not set the callback will be called with all modules that will be disposed on `apply()`.
 
-### `apply(callback: (err: Error, outdatedModules: Module[]) => void`
+### `apply`
+
+``` javascript
+apply(callback: (err: Error, outdatedModules: Module[]) => void
+```
 
 If `status() != "ready"` it throws an error.
 
 Continue the update process.
 
-### `status() => string`
+### `status`
+
+``` javascript
+status() => string
+```
 
 Return one of `idle`, `check`, `watch`, `watch-delay`, `prepare`, `ready`, `dispose`, `apply`, `abort` or `fail`.
 
@@ -163,11 +194,20 @@ A update cannot apply, but the system is still in a (old) consistent state.
 
 A update has thrown an exception in the middle of the process, and the system is (maybe) in a inconsistent state. The system should be restarted.
 
-### `status/addStatusHandler(callback: (status: string) => void) => void`
+### `status/addStatusHandler`
+
+``` javascript
+status(callback: (status: string) => void) => void
+addStatusHandler(callback: (status: string) => void) => void
+```
 
 Register a callback on status change.
 
-### `removeStatusHandler(callback: (status: string) => void) => void`
+### `removeStatusHandler`
+
+``` javascript
+removeStatusHandler(callback: (status: string) => void) => void
+```
 
 Remove a registered status change handler.
 
@@ -176,24 +216,24 @@ Remove a registered status change handler.
 
 ## How to care with ...
 
-### ... a module without side effects (the standard case)
+#### ... a module without side effects (the standard case)
 
 Nothing to do in the module. Any parent can accept it.
 
-### ... a module with side effects
+#### ... a module with side effects
 
 The module needs a dispose handler, than any parent can accept it.
 
-### ... a module with only side effects and no exports
+#### ... a module with only side effects and no exports
 
 The module needs a dispose handler and can accept itself. No action is required in the parent.
 
 If the module's code is not in your hand, the parent can accept the module with some custom dispose logic.
 
-### ... the application entry module
+#### ... the application entry module
 
 As it doesn't export it can accept itself. A dispose handler can pass the application state on replacement.
 
-### ... external module with not handleable side effects
+#### ... external module with not handleable side effects
 
 In the nearest parent you decline the dependency. This makes your application throw on update. But as it's an external module, an update is very rar.
