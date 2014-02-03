@@ -1,8 +1,12 @@
 A quick summary of all methods and variables available in code compiled with webpack.
 
-### Basic
+## Basic
 
-#### `require(dependency: String)`
+### `require` (CommonJs)
+
+``` javascript
+require(dependency: String)
+```
 
 Returns the exports from a dependency. The call is sync. No request to the server is fired. The compiler ensures that the dependency is available.
 
@@ -17,7 +21,11 @@ var myModule = require("my-module");
 
 ---
 
-#### `define([name: String], [dependencies: String[]], factoryMethod: function(...))`
+### `define` (with factory)
+
+``` javascript
+define([name: String], [dependencies: String[]], factoryMethod: function(...))
+```
 
 The name argument is ignored. If the `dependencies` array is provided, the factoryMethod will be called with the exports of each dependency (in the same order). If `dependencies` is not provided the factoryMethod is called with `require`, `exports` and `module` (for compatibility!). If the factoryMethod returns a value, this value is exported by the module. The call is sync. No request to the server is fired. The compiler ensures that each dependency is available.
 
@@ -37,7 +45,7 @@ define(["jquery", "my-module"], function($, myModule) {
 
 ---
 
-#### `module.exports`
+### `module.exports`
 
 This value is returned, when that module is required. It's default value is a new object.
 
@@ -53,7 +61,7 @@ module.exports = function doSomething() {
 
 ---
 
-#### `exports`
+### `exports`
 
 The exported object. It's the default value of `module.exports`. If `module.exports` gets overwritten, `exports` will no longer be exported.
 
@@ -71,7 +79,11 @@ exports.aFunction = function doSomething() {
 
 ---
 
-#### `define(value: !Function)`
+### `define` (with value)
+
+``` javascript
+define(value: !Function)
+```
 
 Just exports the provided `value`. The `value` cannot be a function.
 
@@ -87,7 +99,11 @@ define({
 
 ---
 
-#### `export: value`
+### `export` (label)
+
+``` javascript
+export: value
+```
 
 Export the defined value. The label can occur before a function declaration or a variable declaration. The function name or variable name is the identifier under which the value is exported.
 
@@ -105,7 +121,11 @@ export: function method(value) {
 
 ---
 
-#### `require: "dependency"`
+### `require` (label)
+
+``` javascript
+require: "dependency"
+```
 
 Make all exports from the dependency available in the current scope. The `require` label can occur before a string. The dependency must export values with the `export` label. CommonJs or AMD modules cannot be consumed.
 
@@ -128,7 +148,11 @@ method(answer);
 
 ---
 
-#### `require.resolve(dependency: String)`
+### `require.resolve`
+
+``` javascript
+require.resolve(dependency: String)
+```
 
 Returns the module id of a dependency. The call is sync. No request to the server is fired. The compiler ensures that the dependency is available.
 
@@ -147,7 +171,7 @@ id > 0 // elsewise
 
 ---
 
-#### `module.id`
+### `module.id`
 
 The module id of the current module.
 
@@ -162,9 +186,9 @@ module.id === require.resolve("./file.js")
 
 ---
 
-### Advanced
+## Advanced
 
-#### `require.cache`
+### `require.cache`
 
 Multiple requires to the same module result in only one module execution and only one export. Therefore a cache in the runtime exists. Removing values from this cache cause new module execution and a new export. This is only needed in rar cases (for compatibility!).
 
@@ -189,13 +213,21 @@ require.cache[module.id] !== module
 
 ---
 
-#### `require.context(directory: String, [includeSubdirs: Boolean, [filter: RegExp]])`
+### `require.context`
+
+``` javascript
+require.context(directory: String, [includeSubdirs: Boolean, [filter: RegExp]])
+```
 
 Style: webpack
 
 ---
 
-#### `require.ensure(dependencies: String[], callback: function([require]), [chunkName: String])`
+### `require.ensure`
+
+``` javascript
+require.ensure(dependencies: String[], callback: function([require]), [chunkName: String])
+```
 
 Download additional dependencies on demand. The `dependencies` array lists modules that should be available. When they are, `callback` is called. If the callback is a function expression, dependencies in that source part are extracted and also loaded on demand. A single request is fired to the server, except if all modules are already available.
 
@@ -233,7 +265,11 @@ require.ensure([], function() {
 
 ---
 
-#### `require(dependencies: String[], [callback: function(...)])`
+### `require` (AMD)
+
+``` javascript
+require(dependencies: String[], [callback: function(...)])
+```
 
 Behaves similar to `require.ensure`, but the callback is called with the exports of each dependency in the `dependencies` array. There is no option to provide a chunk name.
 
@@ -259,7 +295,11 @@ require(["b"], function(b) {
 
 ---
 
-#### `require.include(dependency: String)`
+### `require.include`
+
+``` javascript
+require.include(dependency: String)
+```
 
 Ensures that the dependency is available, but don't execute it. This can be use for optimizing the position of a module in the chunks.
 
@@ -291,7 +331,7 @@ The runtime behavior isn't changed.
 
 ---
 
-#### `module.loaded`
+### `module.loaded`
 
 This is `false` if the module is currently executing, and `false` if the sync execution has finished.
 
@@ -299,7 +339,7 @@ Style: node.js (for compatibility!)
 
 ---
 
-#### `module.hot`
+### `module.hot`
 
 See [[Hot Module Replacement]].
 
@@ -307,7 +347,7 @@ Style: webpack
 
 ---
 
-#### `global`
+### `global`
 
 See [node.js global](http://nodejs.org/api/globals.html#globals_global)
 
@@ -315,7 +355,7 @@ Style: node.js
 
 ---
 
-#### `process`
+### `process`
 
 See [node.js process](http://nodejs.org/api/process.html)
 
@@ -323,7 +363,7 @@ Style: node.js
 
 ---
 
-#### `__dirname`
+### `__dirname`
 
 Depending on the config option `node.dirname`:
 
@@ -337,7 +377,7 @@ Style: node.js (for compatibility!)
 
 ---
 
-#### `__filename`
+### `__filename`
 
 Depending on the config option `node.filename`:
 
@@ -351,7 +391,7 @@ Style: node.js (for compatibility!)
 
 ---
 
-#### `__resourceQuery`
+### `__resourceQuery`
 
 The resource query of the current module.
 
@@ -366,7 +406,7 @@ __resourceQuery === "?test"
 
 ---
 
-#### `__webpack_public_path__`
+### `__webpack_public_path__`
 
 Equals the config options `output.publicPath`.
 
@@ -374,7 +414,7 @@ Style: webpack
 
 ---
 
-#### `__webpack_require__`
+### `__webpack_require__`
 
 The raw require function. This expression isn't parsed by the Parser for dependencies.
 
@@ -382,7 +422,7 @@ Style: webpack
 
 ---
 
-#### `__webpack_chunk_load__`
+### `__webpack_chunk_load__`
 
 The internal chunk loading function. Takes two arguments:
 
@@ -393,7 +433,7 @@ Style: webpack
 
 ---
 
-#### `__webpack_modules__`
+### `__webpack_modules__`
 
 Access to the internal object of all modules.
 
@@ -401,7 +441,7 @@ Style: webpack
 
 ---
 
-#### `DEBUG`
+### `DEBUG`
 
 Equals the config option `debug`
 
