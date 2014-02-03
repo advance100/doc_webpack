@@ -98,6 +98,10 @@ req.keys();
 
 Note: `keys` depends on `Object.keys`. You may need to polyfill it for older browsers.
 
+## `ContextReplacementPlugin`
+
+This plugin can overwrite the RegExp for a context. See [[list of plugins]].
+
 ## Critial depenendencies
 
 If the module source contains an `require` that cannot be statically analysed, it's threaded a context to the current directory.
