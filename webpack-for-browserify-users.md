@@ -29,7 +29,7 @@ $ webpack main.js bundle.js
 
 ---
 
-The best way to configure webpack is with a `webpack.config.js` file. It's loaded from current directory, when running the executable.
+The best way to [[configure | configuration]] webpack is with a `webpack.config.js` file. It's loaded from current directory, when running the [[executable | CLI]].
 
 So
 
@@ -47,6 +47,8 @@ Maps to `webpack` with this config:
 	}
 }
 ```
+
+> Note: A `webpack.config.js` should **export** the configuration. I. e. in this way: `module.exports = {...}`.
 
 ---
 
