@@ -81,7 +81,7 @@ You can bind loaders to a RegExp via configuration:
 
 Loader can be passed query parameters via a query string (just like in the web). The query string is appended to the loader with `?`. I. e. `url-loader?mimetype=image/png`.
 
-Note: The format of the query string is up to the loader. See format in the loader documentation. The most loaders accept parameters in the normal query format (`?key=value&key2=value2`) and as JSON object (`?{"key":"value","key2":"value2"}`.
+Note: The format of the query string is up to the loader. See format in the loader documentation. The most loaders accept parameters in the normal query format (`?key=value&key2=value2`) and as JSON object (`?{"key":"value","key2":"value2"}`).
 
 ### in `require`
 
