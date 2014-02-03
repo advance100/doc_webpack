@@ -42,7 +42,11 @@ define('myModule', ['jquery'], function($) {
 	// $ is the export of the jquery module.
 	$('body').text('hello world');
 });
+// and use it
+define(['myModule'], function(myModule) {});
 ```
+
+Note: In webpack a named module is only locally available. In require.js a named module is globally available.
 
 ### Anonymous module
 
