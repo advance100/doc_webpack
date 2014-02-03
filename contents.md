@@ -1,9 +1,10 @@
-* Getting Started (WIP)
-  * What is webpack?
-  * Installation
-  * Usage
-  * Require Modules
-  * Vendor Modules
+* Getting Started
+  * [[Motivation]]
+  * What is webpack? (WIP)
+  * Installation (WIP)
+  * Usage (WIP)
+  * Require Modules (WIP)
+  * Vendor Modules (WIP)
   * [[Using Loaders]]
 * Step-by-step tutorials
   * [Getting started](http://webpack.github.io/docs/tutorials/getting-started/)
