@@ -6,7 +6,7 @@
   * Vendor Modules
   * [[Using Loaders]]
 * Step-by-step tutorials
-  * [Getting started](http://webpack.github.io/docs/tutorials/getting-started/welcome.html)
+  * [Getting started](http://webpack.github.io/docs/tutorials/getting-started/)
 * Guides
   * [[CommonJs]]
   * [[AMD]]
@@ -31,7 +31,7 @@
   * [[API in modules]]
   * [[Loaders]]
   * [[Plugins]]
-  * [[context]]
+  * [[Context]]
   * [[Resolving]]
   * [[Hot Module Replacement]]
   * Dev Tools
