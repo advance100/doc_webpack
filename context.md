@@ -98,6 +98,14 @@ req.keys();
 
 Note: `keys` depends on `Object.keys`. You may need to polyfill it for older browsers.
 
+## Critial depenendencies
+
+If the module source contains an `require` that cannot be statically analysed, it's threaded a context to the current directory.
+
+In this case a warning `Critial depenendencies` is emitted.
+
+Examples: `someFn(require)` `require.bind(null)`
+
 ## Example
 
 See [an example here](https://github.com/webpack/webpack/tree/master/examples/require.context#examplejs).
