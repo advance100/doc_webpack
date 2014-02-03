@@ -136,6 +136,8 @@ Note: The [idea is from Google's GWT](https://developers.google.com/web-toolkit/
 
 Read more about [[Code Splitting]].
 
+---
+
 # Why only javascript?
 
 Why should a module system only help the developer with javascript? There are many other static resources that need to the handled:
