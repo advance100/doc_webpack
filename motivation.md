@@ -6,7 +6,7 @@ Today websites are evolving into web apps:
 
 As a result there is **much** code on client side!
 
-A big code base need to be organized. Module systems offer the option to split your code base into modules. There care for dependencies and exports of the module.
+A big code base needs to be organized. Module systems offer the option to split your code base into modules. There care for dependencies and exports of the module.
 
 # Module system styles
 
