@@ -29,7 +29,7 @@
 * [`html`](https://github.com/webpack/html-loader): Exports HTML as string, require references to static resources.
 * [`jade`](https://github.com/webpack/jade-loader): Loads jade template and returns a function
 * [`jade-html`](https://github.com/bline/jade-html-loader): Loads jade template and returns generated HTML
-* [`template-html`](https://github.com/jtangelder/template-html-loader): Loads any template and returns generated HTML
+* [`template-html`](https://github.com/jtangelder/template-html-loader): Loads any template with consolidate.js and returns generated HTML
 * [`handlebars`](https://github.com/altano/handlebars-loader): Loads handlebars template and returns a function
 
 
