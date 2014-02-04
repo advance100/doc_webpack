@@ -202,3 +202,8 @@ When compiling all the modules a static analysis tries to find dependencies.
 
 Traditionally this could only find simple stuff without expression, but i. e. `require("./template/" + templateName + ".jade")` is a common construct.
 
+Many libraries are written in different styles. Some of them are very weird...
+
+## Strategy
+
+A clever parser would allow most existing code to run. If the developer does something weird try to find the most compatible solution.
