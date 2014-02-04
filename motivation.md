@@ -99,6 +99,30 @@ define("mymodule", ["dep1", "dep2"], function(d1, d2) {
 
 Read more about [[CommonJs]] and [[AMD]].
 
+## ES6 modules
+
+EcmaScript6 adds same language contructs to Javascript, which form another module system.
+
+``` javascript
+import "jquery";
+export function doStuff() {}
+module "localModule" {}
+```
+
+#### Pro
+
+* Static analysis is easy
+* Future-prove as ES standard
+
+#### Contra
+
+* Native browser support will take time
+* Very few modules in this style
+
+## Unbiased solution
+
+Give the developer the choice of the module style. Allow existing code to work. Make it easy to add custom module styles.
+
 ---
 
 # Transferring
