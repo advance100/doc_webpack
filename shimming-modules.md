@@ -101,7 +101,7 @@ Example:
 	module: {
 		noParse: [
 			/XModule[\\\/]file\.js$/,
-			pathToRegExp(path.join(__dirname, "web_modules", "XModule2"))
+			path.join(__dirname, "web_modules", "XModule2")
 		]
 	}
 }
