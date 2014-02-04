@@ -5,13 +5,18 @@ Loaders are transformations that are applied on a resource file of your app. The
 ## Loader features
 
 * Loaders can be chained. They are applied in a pipeline to the resource. The final loader is expected to return javascript, the other can return arbitrary format (which is passed to the next loader)
-* Loaders can be async.
+* Loaders can be synchron and asynchron.
 * Loaders run in node.js and can do everything thats possible there.
 * Loaders accept query parameters. This can be used to pass configuration to the loader.
+* Loaders can be bound to extension / RegExps in the configuration.
+* Loaders can be published / installed through `npm`.
 * Normal modules can export a loader in addition to the normal `main` via `package.json` `loader`.
 * Loaders can access the configuration.
+* Plugins can give loaders more features.
 * Loaders can emit additional arbitrary files.
 * [[etc. | loaders]]
+
+If you are interessed in some loader examples head of to the [[list of loaders]].
 
 # Resolving loaders
 
