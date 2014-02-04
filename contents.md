@@ -6,6 +6,7 @@
   * Require Modules (WIP)
   * Vendor Modules (WIP)
   * [[Using Loaders]]
+  * Dev Tools (WIP)
 * Step-by-step tutorials
   * [Getting started](http://webpack.github.io/docs/tutorials/getting-started/)
 * Guides
