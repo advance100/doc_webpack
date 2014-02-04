@@ -16,6 +16,17 @@ require("loader1/main!./loader2!module");
 
 When using multiple loaders they are applied in a pipeline.
 
+## features
+
+* A loader is a javascript function, which runs in `node.js`.
+* Mutliple loaders can be piped together.
+* A loader can be passed options through query string. It also can access the configuration.
+* Loaders can be published / installed through `npm`.
+* Loaders can be synchron and asynchron.
+* Loaders can be bound to extension / RegExps in the configuration.
+* Loaders can emit additional files.
+* Plugins can give loaders more features.
+
 ## parameters
 
 Loaders accept query parameters:
