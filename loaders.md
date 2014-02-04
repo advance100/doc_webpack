@@ -27,6 +27,8 @@ When using multiple loaders they are applied in a pipeline.
 * Loaders can emit additional files.
 * Plugins can give loaders more features.
 
+If you are interessed in some loader examples head of to the [[list of loaders]].
+
 ## parameters
 
 Loaders accept query parameters:
@@ -134,6 +136,8 @@ module.exports = function(content) {
   });
 };
 ```
+
+> Note: It's recommended to give an asnychron loader and fallback sync mode. This isn't required for webpack, but allows to run the loader sync in enhanced-require.
 
 ### raw loader
 
