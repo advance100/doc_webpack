@@ -4,7 +4,7 @@ Today websites are evolving into web apps:
 * You can do more stuff in modern browsers.
 * Fewer full page reloads → even more code in a page.
 
-As a result there is **much** code on client side!
+As a result there is a **lot** of code on the client side!
 
 A big code base needs to be organized. Module systems offer the option to split your code base into modules. There care for dependencies and exports of the module.
 
