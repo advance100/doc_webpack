@@ -151,6 +151,19 @@ Generates an extra chunk, which contains common modules shared between at least 
 
 `minChunks` the number of entry point that need to have a module in common. By default it need to be in all entry points. Allowed values are `2` <= `minChunks` <= entry points count or `Infinitiy`.
 
+### `AggressiveMergingPlugin`
+
+``` javascript
+new webpack.optimize.AggressiveMergingPlugin(options)
+```
+
+A plugin for a more aggressive chunk merging strategy. Even similar chunks are merged if the total size is reduced enough. As an option modules that are not common in these chunks can be moved up the chunk tree to the parents.
+
+`options.minSizeReduce` A factor which defines the minimal required size reduction for chunk merging. Defaults to `1.5` which means that the total size need to be reduce by 50% for chunk merging.
+
+`options.moveToParents` When set, modules that are not in both merged chunks are moved to all parents of the chunk. Defaults to `false`.
+
+`options.entryChunkMultiplicator` When `options.moveToParents` is set, moving to an entry chunk is more expensive. Defaults to `10`, which means moving to an entry chunk is ten times more expensive than moving to an normal chunk.
 
 
 
