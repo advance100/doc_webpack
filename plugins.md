@@ -140,6 +140,10 @@ The sealing to the compilation has started.
 
 Optimize the compilation.
 
+### `optimize-tree(chunks, modules)` async
+
+Async optimize of the tree.
+
 ### `optimize-modules(modules: Module[])`
 
 Optimize the modules.
