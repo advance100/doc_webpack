@@ -259,19 +259,35 @@ Emit an error.
 
 Execute some code fragment like a module.
 
-### `resolve: function(context: string, request: string, callback: function(err, result: string))`
+### `resolve`
+
+``` javascript
+resolve(context: string, request: string, callback: function(err, result: string))
+```
 
 Resolve a request like a require expression.
 
-### `resolveSync: function(context: string, request: string) -> string`
+### `resolveSync`
+
+``` javascript
+resolveSync(context: string, request: string) -> string
+```
 
 Resolve a request like a require expression.
 
-### `addDependency: function(file: string)`
+### `addDependency`
+
+``` javascript
+addDependency(file: string)
+```
 
 Add a file as dependency of the loader result.
 
-### `addContextDependency: function(directory: string)`
+### `addContextDependency`
+
+``` javascript
+addContextDependency(directory: string)
+```
 
 Add a directory as dependency of the loader result.
 
