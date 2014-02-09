@@ -172,37 +172,45 @@ In `/abc/file.js`:
 require("./loader1?xyz!loader2!./resource?rrr");
 ```
 
-### `version = 1`
+### `version`
 
-Loader API version.
+Loader API version. Currently `1`.
 
-### `context: string`
+### `context`
 
-The directory of the module. Can be used as context for resolving other stuff.
+A string. The directory of the module. Can be used as context for resolving other stuff.
 
 In the example: `/abc` because `resource.js` is in this directory
 
-### `request: string`
+### `request`
 
 The resolved request string.
 
 In the example: `"/abc/loader1.js?xyz!/abc/node_modules/loader2/index.js!/abc/resource.js?rrr"`
 
-### `query: string`
+### `query`
 
-The query of the request for the current loader.
+A string. The query of the request for the current loader.
 
 In the example: in loader1: `"?xyz"`, in loader2: `""`
 
-### `data: Object`
+### `data`
 
 A data object shared between the pitch and the normal phase.
 
-### `cacheable: function(flag = true: boolean)`
+### `cacheable`
+
+``` javascript
+cacheable(flag = true: boolean)
+```
 
 Make this loader result cacheable. By default it's not cacheable.
 
-### `loaders: {request: string, path: string, query: string, module: function}[]`
+### `loaders`
+
+``` javascript
+loaders = [{request: string, path: string, query: string, module: function}]
+```
 
 An array of all the loaders. It is writeable in the pitch phase.
 
@@ -223,41 +231,55 @@ In the example:
 ]
 ```
 
-### `loaderIndex: number`
+### `loaderIndex`
 
 The index in the loaders array of the current loader.
 
 In the example: in loader1: `0`, in loader2: `1`
 
-### `resource: string`
+### `resource`
 
 The resource part of the request, including query.
 
 In the example: `"/abc/resource.js?rrr"`
 
-### `resourcePath: string`
+### `resourcePath`
 
 The resource file.
 
 In the example: `"/abc/resource.js"`
 
-### `resourceQuery: string`
+### `resourceQuery`
 
 The query of the resource.
 
 In the example: `"?rrr"`
 
-### `emitWarning: function(message: string)`
+### `emitWarning`
+
+``` javascript
+emitWarning(message: string)
+```
 
 Emit a warning.
 
-### `emitError: function(message: string)`
+### `emitError`
+
+``` javascript
+emitError(message: string)
+```
 
 Emit an error.
 
-### `exec: function(code: string, filename: string)`
+### `exec`
+
+``` javascript
+exec(code: string, filename: string)
+```
 
 Execute some code fragment like a module.
+
+> Hint: Don't use `require(this.resourcePath)`, use this function to make loaders chainable!
 
 ### `resolve`
 
@@ -291,46 +313,56 @@ addContextDependency(directory: string)
 
 Add a directory as dependency of the loader result.
 
-### `clearDependencies: function()`
+### `clearDependencies`
+
+``` javascript
+clearDependencies()
+```
 
 Remove all dependencies of the loader result. Even initial dependencies and these of other loaders. Consider using `pitch`.
 
-### `values: any` (out)
+### `values` (out)
 
 Pass values to the next loaders `inputValues`. If you know what your result exports if executed as module, set this value here (as a only element array).
 
-### `inputValues: any`
+### `inputValues`
 
 Passed from the last loader. If you would execute the input argument as module, consider reading this variable for a shortcut (for performance).
 
-### `options: {...}`
+### `options`
 
 The options passed to the Compiler.
 
-### `debug: boolean`
+### `debug`
 
-In debug mode
+A boolean flag. It is set when in debug mode.
 
-### `minimize: boolean` (webpack)
+### `minimize`
 
 Should the result be minimized.
 
-### `target: string` (webpack)
+### `target`
 
 Target of compilation. Passed from configuration options.
 
-### `webpack = true` (webpack)
+Example values: `"web"`, `"node"`
 
-Is this compiled by webpack.
+### `webpack`
 
-### `emitFile: function(name: string, content: Buffer|String, sourceMap: {...})` (webpack)
+Set to true when this is compiled by webpack.
 
-Emit a file.
+### `emitFile`
 
-### `_compilation: Compilation` (webpack)
+``` javascript
+emitFile(name: string, content: Buffer|String, sourceMap: {...})
+```
+
+Emit a file. This is webpack-spcific
+
+### `_compilation`
 
 Hacky access to the Compilation object of webpack.
 
-### `_compiler: Compiler` (webpack)
+### `_compiler`
 
 Hacky access to the Compiler object of webpack.
