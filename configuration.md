@@ -207,11 +207,19 @@ Kind of exporting as library.
 
 `commonjs2` - Export by setting `module.exports`: `module.exports = xxx`
 
+`amd` - Export to AMD (optionally named)
+
 `umd` - Export to AMD, CommonJS2 or as property in root
 
 > Default: `var`
 
-If `output.library` is not set, but `output.libraryTarget` is set to a value other that `var`, every property of the exported object is copied.
+If `output.library` is not set, but `output.libraryTarget` is set to a value other that `var`, every property of the exported object is copied (Except `amd`, `commonjs2` and `umd`).
+
+## `output.sourcePrefix`
+
+Prefixes every line of the source in the bundle with this string.
+
+Default: `"\t"`
 
 
 
@@ -312,6 +320,14 @@ An array of extensions that should be used to resolve modules. For example, in o
 Check these fields in the `package.json` for suitable files.
 
 > Default: `["webpack", "browser", "web", "main"]`
+
+### `resolve.packageAlias`
+
+Check this field in the `package.json` for an object. Key-value-pairs are threaded as aliasing according to [this spec](https://gist.github.com/defunctzombie/4339901)
+
+> Not set by default
+
+Example: `"browser"` to check the browser field.
 
 ### `resolve.unsafeCache`
 
