@@ -97,6 +97,10 @@ url(file) -> require("./file")
 url(~module) -> require("module")
 ```
 
+### extract common code
+
+don't generate much code that is common in every module processed by that loader. Create a (runtime) file in the loader and generate a `require` to that common code.
+
 ## Read more
 
 Read more about [[loaders]].
