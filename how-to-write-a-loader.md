@@ -32,7 +32,7 @@ module.exports = function(source, map) {
 
 Loaders should
 
-#### do only a single task
+### do only a single task
 
 Loaders can be chained. Create loaders for every step, instead of a loader that does everything at once.
 
@@ -48,7 +48,7 @@ Instead I should write loaders for every task in this usecase and apply them all
 * apply-loader: Takes a function exporting module and returns raw result by applying query parameters.
 * html-loader: Takes HTML and exports a string exporting module.
 
-#### flag itself cachable if possible
+### flag itself cachable if possible
 
 Most loaders are cachable, so they should flag itself as cachable.
 
@@ -62,7 +62,7 @@ module.exports = function(source) {
 };
 ```
 
-#### mark dependencies
+### mark dependencies
 
 If a loader uses external resources, they **must** tell about that. This information is used to invalidate cachable loaders and recompile in watch mode.
 
