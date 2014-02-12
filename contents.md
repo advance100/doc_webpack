@@ -18,7 +18,7 @@
   * [[Code Splitting]]
   * [[Optimization]]
   * [[Long-time Caching]]
-  * How to write a loader (WIP)
+  * [[How to write a loader]]
   * How to write a plugin (WIP)
   * [[Shimming modules]]
   * [[Testing]]
