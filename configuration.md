@@ -179,7 +179,7 @@ The JSONP function used by webpack for asnyc loading of hot update chunks.
 
 > Default: `"webpackHotUpdate"`
 
-### `output.pathInfo`
+### `output.pathinfo`
 
 Include comments with information about the modules.
 
