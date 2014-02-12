@@ -81,6 +81,22 @@ module.exports = function(source) {
 };
 ```
 
+### resolve dependencies
+
+In many languages these is some schema to specify dependencies. i. e. in css there is `@import` and `url(...)`. These dependencies should be resolved by the module system.
+
+There are two options to do this:
+
+* Transform them to `require`s.
+* Use the `this.resolve` function to resolve the path
+
+If the language only accept relative urls (like css: `url(file)` always means `./file`), there is the `~`-convection to specify references to modules:
+
+``` text
+url(file) -> require("./file")
+url(~module) -> require("module")
+```
+
 ## Read more
 
 Read more about [[loaders]].
