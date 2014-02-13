@@ -421,6 +421,8 @@ Choose a developer tool to enhance debugging.
 
 `inline-source-map` - A SourceMap is added as DataUrl to the Javascript file.
 
+`eval-source-map` - Each module is executed with `eval` and a SourceMap is added as DataUrl to the `eval`.
+
 Prefixing `@`, `#` or `#@` will enforce a pragma style.
 
 
