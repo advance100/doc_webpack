@@ -48,29 +48,29 @@ Instead I should write loaders for every task in this usecase and apply them all
 * apply-loader: Takes a function exporting module and returns raw result by applying query parameters.
 * html-loader: Takes HTML and exports a string exporting module.
 
-### flag itself cachable if possible
+### flag itself cacheable if possible
 
-Most loaders are cachable, so they should flag itself as cachable.
+Most loaders are cacheable, so they should flag itself as cacheable.
 
-Just call `cachable` in the loader.
+Just call `cacheable` in the loader.
 
 ``` javascript
-// Cachable identity loader
+// Cacheable identity loader
 module.exports = function(source) {
-  this.cachable();
+  this.cacheable();
   return source;
 };
 ```
 
 ### mark dependencies
 
-If a loader uses external resources, they **must** tell about that. This information is used to invalidate cachable loaders and recompile in watch mode.
+If a loader uses external resources, they **must** tell about that. This information is used to invalidate cacheable loaders and recompile in watch mode.
 
 ``` javascript
 // Loader adding a header
 var path = require("path");
 module.exports = function(source) {
-  this.cachable();
+  this.cacheable();
   var callback = this.async();
   var headerPath = path.resolve("header.js");
   this.dependency(headerPath);
