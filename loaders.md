@@ -206,6 +206,8 @@ cacheable(flag = true: boolean)
 
 Make this loader result cacheable. By default it's not cacheable.
 
+A cacheable loader must have a deterministic result, when inputs and dependencies havn't changed. This means the loader shoudn't have other dependencies than specified with `this.addDependency`. Most loaders are deterministic and cachable.
+
 ### `loaders`
 
 ``` javascript
@@ -301,6 +303,7 @@ Resolve a request like a require expression.
 
 ``` javascript
 addDependency(file: string)
+dependency(file: string) // shortcut
 ```
 
 Add a file as dependency of the loader result.
