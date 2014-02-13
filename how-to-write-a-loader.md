@@ -30,6 +30,8 @@ module.exports = function(source, map) {
 
 ## Guidelines
 
+(First one should get the highest priority)
+
 Loaders should
 
 ### do only a single task
@@ -64,7 +66,7 @@ module.exports = function(source) {
 
 ### mark dependencies
 
-If a loader uses external resources, they **must** tell about that. This information is used to invalidate cacheable loaders and recompile in watch mode.
+If a loader uses external resources (i. e. by reading from filesystem), they **must** tell about that. This information is used to invalidate cacheable loaders and recompile in watch mode.
 
 ``` javascript
 // Loader adding a header
@@ -73,7 +75,7 @@ module.exports = function(source) {
   this.cacheable();
   var callback = this.async();
   var headerPath = path.resolve("header.js");
-  this.dependency(headerPath);
+  this.addDependency(headerPath);
   fs.readFile(headerPath, "utf-8", function(err, header) {
     if(err) return callback(err);
     callback(null, header + "\n" + source);
@@ -89,6 +91,10 @@ There are two options to do this:
 
 * Transform them to `require`s.
 * Use the `this.resolve` function to resolve the path
+
+Example 1 css-loader: The css-loader transform dependencies to `require`s, by replacing `@import`s with a require to the other stylesheet (processed with the css-loader too) and `url(...)` with a `require` to the referenced file.
+
+Example 2 less-loader: The less-loader cannot transform `@import`s to `require`s, because all less files need to be compiled in one pass to track variables and mixins. Therefore the less-loader extends the less compiler with a custom path resolving logic. This custom logic uses `this.resolve` to resolve the file with the configuration of the module system (aliasing, custom module directories, etc.).
 
 If the language only accept relative urls (like css: `url(file)` always means `./file`), there is the `~`-convection to specify references to modules:
 
