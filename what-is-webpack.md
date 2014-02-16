@@ -1,18 +1,18 @@
 **webpack** is a **module bundler**.
 
-This means webpack takes modules with dependencies and emit static assets representing that modules.
+webpack takes modules with dependencies and generates static assets representing those modules.
 
 ![modules with dependencies ---webpack---> static assets](http://webpack.github.io/assets/what-is-webpack.png)
 
 ## Why another module bundler?
 
-Existing module bundlers are not well suited for big projects (big single page application). The most pressing reason for developing another module bundler was [[Code Splitting]]. Another one was that other static assets should fit seamless in the modularization.
+Existing module bundlers are not well suited for big projects (big single page application). The most pressing reason for developing another module bundler was [[Code Splitting]] and that static assets should fit seamlessly together through modularization.
 
-I tried to extend existing module bundlers, but it wasn't possible to archive all goals.
+I tried to extend existing module bundlers, but it wasn't possible to achieve all goals.
 
 ## Goals
 
-* Split the dependency tree into chunks, that are loaded on demand
+* Split the dependency tree into chunks loaded on demand
 * Keep initial loading time low
 * Every static asset should be able to be a module
 * Ability to integrate 3rd-party libraries as modules
@@ -23,7 +23,7 @@ I tried to extend existing module bundlers, but it wasn't possible to archive al
 
 #### [[Code Splitting]]
 
-webpack has two types of dependencies in it's dependency tree: sync and async. Async dependencies act as split points and form a new chunk. After the chunk tree is optimized a file is emitted for each chunk.
+webpack has two types of dependencies in it's dependency tree: sync and async. Async dependencies act as split points and form a new chunk. After the chunk tree is optimized, a file is emitted for each chunk.
 
 Read more about [[Code Splitting]].
 
@@ -41,6 +41,6 @@ Read more about [[expressions in dependencies | Context]], [[CommonJs]] and [[AM
 
 #### [[Plugin system | plugins]]
 
-webpack features a rich plugin system. Most internal features are based on this plugin system. This allows to customize webpack for your needs and distribute common plugins as open source.
+webpack features a rich plugin system. Most internal features are based on this plugin system. This allows you to customize webpack for your needs and distribute common plugins as open source.
 
 Read more about [[Plugins]].
