@@ -6,7 +6,7 @@ Today websites are evolving into web apps:
 
 As a result there is a **lot** of code on the client side!
 
-A big code base needs to be organized. Module systems offer the option to split your code base into modules. There care for dependencies and exports of the module.
+A big code base needs to be organized. Module systems offer the option to split your code base into modules.
 
 # Module system styles
 
@@ -20,7 +20,7 @@ There are multiple standards how to define dependencies and export values:
 
 ## `<script>`-tag style
 
-This is the way you would care with a modulized code base if you don't use a module system.
+This is the way you would handle a modularized code base if you didn't use a module system.
 
 ``` html
 <script src="module1.js"></script>
@@ -38,9 +38,9 @@ Modules export an interface to the global object, i. e. the `window` object. Mod
 * Developer have to resolve dependencies of modules/libraries.
 * In big projects the list can get really long and difficult to manage.
 
-## CommonJs: synchron `require`
+## CommonJs: synchronous `require`
 
-This style uses a synchron `require` method to load a dependency (it returns the exported interface). A module can specify exports by adding properties to the `exports` object or setting the value of `module.exports`.
+This style uses a synchronous `require` method to load a dependency and return an exported interface. A module can specify exports by adding properties to the `exports` object or setting the value of `module.exports`.
 
 ``` javascript
 require("module");
@@ -51,15 +51,15 @@ module.exports = someValue;
 
 It's used on server-side by [node.js](http://nodejs.org).
 
-#### Pro
+#### Pros
 
 * Server-side modules can be reused
 * There are already many modules in this style (npm)
 * very simple and easy to use.
 
-#### Contra
+#### Cons
 
-* blocking calls do not aplly well on networks. Requests are asynchronous.
+* blocking calls do not apply well on networks. Requests are asynchronous.
 * No parallel require of multiple modules
 
 #### Implementations
@@ -82,12 +82,12 @@ define("mymodule", ["dep1", "dep2"], function(d1, d2) {
 });
 ```
 
-#### Pro
+#### Pros
 
 * Fits to the asynchronous request style in networks.
 * Parallel loading of multiple modules.
 
-#### Contra
+#### Cons
 
 * Coding overhead. More difficult to read and write.
 * Seems to be some kind of workaround.
@@ -101,7 +101,7 @@ Read more about [[CommonJs]] and [[AMD]].
 
 ## ES6 modules
 
-EcmaScript6 adds same language contructs to Javascript, which form another module system.
+EcmaScript6 adds same language constructs to Javascript, which form another module system.
 
 ``` javascript
 import "jquery";
@@ -109,12 +109,12 @@ export function doStuff() {}
 module "localModule" {}
 ```
 
-#### Pro
+#### Pros
 
 * Static analysis is easy
 * Future-prove as ES standard
 
-#### Contra
+#### Cons
 
 * Native browser support will take time
 * Very few modules in this style
@@ -129,7 +129,7 @@ Give the developer the choice of the module style. Allow existing code to work. 
 
 Modules should be executed on the client, so they must be transferred from the server to the browser.
 
-There are two extremas how to transfer modules:
+There are two extremes on how to transfer modules:
 
 * 1 request per module (i. e. require.js)
 * all modules in one request (i. e. browserify and require.js when compiled)
@@ -138,15 +138,15 @@ Both are used in the wild, but both are suboptimal:
 
 * 1 request per module
     * Pro: only required modules are transferred
-    * Contra: many requests means much overhead
-    * Contra: slow application startup, because of request latency
+    * Con: many requests means much overhead
+    * Con: slow application startup, because of request latency
 * all modules in one request
     * Pro: less request overhead, less latency
-    * Contra: not (yet) required modules are transferred too
+    * Con: not (yet) required modules are transferred too
 
 ## Chunked transferring
 
-A more flexible transferring is be better. A compromise between the extremas is better in most cases.
+A more flexible transferring is be better. A compromise between the extremes is better in most cases.
 
 → While compiling all modules: Split the set of modules into multiple smaller batches (chunks).
 
