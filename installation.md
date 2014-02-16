@@ -16,7 +16,7 @@ webpack is now installed globally and the `webpack` command is available.
 
 ## Use webpack in a project
 
-It's the best to have webpack also as dependency in your project. Through this you can choose a local webpack version and aren't force to use the global one.
+It's the best to have webpack also as dependency in your project. Through this you can choose a local webpack version and will not be forced to use the single global one.
 
 Add a `package.json` configuration file for `npm` with:
 
@@ -24,7 +24,7 @@ Add a `package.json` configuration file for `npm` with:
 $ npm init
 ```
 
-The anwers to the questions are not so important if you don't want to publish your project to npm.
+The answers to the questions are not so important if you don't want to publish your project to npm.
 
 Install and add `webpack` to the `package.json` with:
 
