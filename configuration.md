@@ -1,4 +1,4 @@
-webpack is feeded with a configuration object. Depending on your usage of webpack there are two ways to pass this configuration object:
+webpack is fed a configuration object. Depending on your usage of webpack there are two ways to pass this configuration object:
 
 ### CLI
 
@@ -379,7 +379,7 @@ Report the first error at a hard error instead of tolerating it.
 
 Capture timing information for each module.
 
-> Hint: Use the [analyse tool](http://webpack.github.io/analyse) to visualize it.
+> Hint: Use the [analyze tool](http://webpack.github.io/analyse) to visualize it.
 
 
 
