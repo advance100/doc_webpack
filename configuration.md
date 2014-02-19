@@ -43,7 +43,7 @@ Very simple configuration object example:
 
 ## `context`
 
-The base directory for resolving the `entry` option. If `output.pathinfo` is set, the included pathinfo is shortened to this directory.
+The base directory (absolute path!) for resolving the `entry` option. If `output.pathinfo` is set, the included pathinfo is shortened to this directory.
 
 > Default: `process.cwd()`
 
@@ -88,7 +88,7 @@ If you use any hashing (`[hash]` or `[chunkhash]`) make sure to have a consisten
 
 ### `output.path`
 
-The output directory as absolute path.
+The output directory as **absolute path**.
 
 `[hash]` is replaced by the hash of the compilation.
 
@@ -303,9 +303,11 @@ An array of directory names to be resolved to the current directory as well as i
 
 > Default: `["web_modules", "node_modules"]`
 
+> Note: Passing `"../someDir"` isn't expected here. Just use a directory name, not a relative path.
+
 ### `resolve.fallback`
 
-A directory (or array of directories), in which webpack should look for modules that weren't fount in `resolve.root` or `resolve.modulesDirectories`.
+A directory (or array of directories **absolute paths**), in which webpack should look for modules that weren't fount in `resolve.root` or `resolve.modulesDirectories`.
 
 ### `resolve.extensions`
 
@@ -470,7 +472,7 @@ Custom values available in the loader context.
 
 Store/Load compiler state from/to a json file. This will result in persistent ids of modules and chunks.
 
-An absolute path is excepted. `recordsPath` is used for `recordsInputPath` and `recordsOutputPath` if they left undefined.
+An **absolute path** is excepted. `recordsPath` is used for `recordsInputPath` and `recordsOutputPath` if they left undefined.
 
 This is required, when using Hot Code Replacement between multiple calls to the compiler.
 
