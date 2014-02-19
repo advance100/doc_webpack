@@ -74,7 +74,7 @@ Examples:
 
 
 
-# Fixing breaking module styles
+# Fixing broken module styles
 
 Some files use a module style wrong. You may want to fix this by teaching webpack to not use this style.
 
