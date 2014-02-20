@@ -16,7 +16,21 @@
 * API: Internal plugin arguments simplified
 * API: added `ResolverPlugin`
 * API: added chunk origin tracking and resolve logging (for finding compile bugs)
-* SUPPORT: free vars are tracked over IIFEs.
+* API: added `eval-source-map` devtool
+* API: default configuration depends on `target` option
+* API: changed filenames in SourceMaps
+* API: ids for entry chunks need to longer have the id 0
+* API: output as amd module
+* API: allow to configure the indent of the source
+* API: added AggressiveMergingPlugin and ResolverPlugin
+* API: added `--display-origins` to show chunk origins
+* API: added `--display-error-details` to show resolving log
+* SUPPORT: Support for the [browser-field](https://gist.github.com/defunctzombie/4339901)
+* SUPPORT: free vars are tracked over IIFEs
+* SUPPORT: allow to rename free vars
+* SUPPORT: allow local named amd modules
+* PERFORMANCE: Cache final module sources
+* SIZE: no `require.e` if not needed
 * bug fixes
 
 # 0.11
