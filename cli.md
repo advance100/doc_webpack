@@ -55,9 +55,19 @@ You see a list of all options, if you don't pass any option.
 
 Equals to `--debug` `--devtool source-map` `--output-pathinfo`
 
+
+
 ### Production shortcut `-p`
 
 Equals to `--optimize-minimize` `--optimize-occurence-order`
+
+
+
+### Watch mode `--watch`
+
+Watches all dependencies and recompile on change.
+
+> Note: It's recommended to combine it with `--cache`.
 
 
 
