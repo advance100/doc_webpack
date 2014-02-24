@@ -80,3 +80,23 @@ Returns a formated string of the result.
 `options` are the same as `options` in `toJson`.
 
 `options.colors` With console colors
+
+## error handling
+
+to handle all errors and warnings with the node.js API you need to test `err` `stats.errors` and `stats.warnings`:
+
+``` javascript
+var webpack = require("webpack");
+webpack({
+	// configuration
+}, function(err, stats) {
+	if(err)
+		return handleFatalError(err);
+	var jsonStats = stats.toJson();
+	if(jsonStats.errors.length > 0)
+		return handleSoftErrors(jsonStats.errors);
+	if(jsonStats.warnings.length > 0)
+		handleWarnings(jsonStats.warnings);
+	successfullyCompiled();
+});
+```
