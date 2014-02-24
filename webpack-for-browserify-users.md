@@ -86,7 +86,7 @@ $ browserify --entry a.js --entry b.js
 
 ## transform
 
-browserify uses *transforms* to preprocess files. webpack uses *loaders*. Loaders are functions that take source code as argument and return (modified) source code. Like transforms that run in node.js, can be chained and can be async. Loader can take additional parameters by query strings. Loaders can be used from `require()` call. Transforms can be specified in the `package.json`. browserify apply configured transforms for each module, in webpack config you select the modules by RegExp. In the common case you specify loaders in the `webpack.config.js`:
+browserify uses *transforms* to preprocess files. webpack uses *loaders*. Loaders are functions that take source code as argument and return (modified) source code. Like transforms they run in node.js, can be chained and can be async. Loader can take additional parameters by query strings. Loaders can be used from `require()` calls. Transforms can be specified in the `package.json`. browserify apply configured transforms for each module. Within the webpack configuration you select the modules by RegExp. In the common case you specify loaders in the `webpack.config.js`:
 
 ``` sh
 $ browserify --transform coffeeify
@@ -102,6 +102,8 @@ $ browserify --transform coffeeify
 }
 ```
 
+> Note: It's possible to use browserify transforms with webpack and the [transform-loader](https://github.com/webpack/transform-loader).
+
 ## debug
 
 ``` sh
@@ -116,11 +118,18 @@ $ webpack --devtool inline-source-map
 $ webpack --devtool source-map
 # Emit SourceMaps as separate file
 
+$ webpack --devtool eval
+# Emit SourceUrls within evals (faster)
+
+$ webpack --devtool eval-source-map
+# Emit inlined SourceMaps within evals
+
 $ webpack --debug
 # Add more debugging information to the source
 
 $ webpack --output-pathinfo
 # Add comments about paths to source code
+# (Useful when using no or the eval devtool)
 
 $ webpack -d
 # = webpack --devtool source-map --debug --output-pathinfo
