@@ -83,7 +83,7 @@ Returns a formated string of the result.
 
 ## error handling
 
-to handle all errors and warnings with the node.js API you need to test `err` `stats.errors` and `stats.warnings`:
+to handle all errors and warnings with the node.js API you need to test `err`, `stats.errors` and `stats.warnings`:
 
 ``` javascript
 var webpack = require("webpack");
