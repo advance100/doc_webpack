@@ -26,20 +26,20 @@ The feature add some overhead to the entry chunk.
 
 ## Chunks
 
-While writing your code you have already added many code split points to load stuff on demand. After compiling you may notice that there are too many of them and your chunks are so small that the HTTP overhead is big. That's no problem. Webpack can postprocess your chunks by merging them cleverly. You can provide two options:
+While writing your code, you may have already added many code split points to load stuff on demand. After compiling you might notice that there are too many chunks that are too small - creating larger HTTP overhead. Luckily, Webpack can post-process your chunks by merging them. You can provide two options:
 
 * Limit the maximum chunk count with `--optimize-max-chunks 15` `new webpack.optimize.LimitChunkCountPlugin(15)`
 * Limit the minimum chunk size with `--optimize-min-chunk-size 10000` `new webpack.optimize.MinChunkSizePlugin(10000)`
 
-Webpack will take care of it by merging chunks (It will prefer merging chunk which have duplicate modules). Nothing will be merged into the entry chunk to not impact initial page loading time.
+Webpack will take care of it by merging chunks (it will prefer merging chunk that have duplicate modules). Nothing will be merged into the entry chunk, so as not to impact initial page loading time.
 
 
 
 ## Single-Page-App
 
-A Single-Page-App is the web app type webpack is designed and optimized for.
+A Single-Page-App is the type of web app webpack is designed and optimized for.
 
-You may have splitted the app into multiple chunks, which are loaded at your router. The entry chunk only contains the router and some libraries, but no content. This works great while your user is navigating through your app, but for initial page load you need 2 round trips: One for the router and one for the current content page.
+You may have split the app into multiple chunks, which are loaded at your router. The entry chunk only contains the router and some libraries, but no content. This works great while your user is navigating through your app, but for initial page load you need 2 round trips: One for the router and one for the current content page.
 
 If you use the HTML5 History API to reflect the current content page in the URL, your server can know which content page will be requested by the client code. To save round trips the server can include the content chunk in the response: This is possible by just adding it as script tag. The browser will load both chunks parallel.
 
