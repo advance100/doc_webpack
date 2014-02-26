@@ -53,7 +53,7 @@ The base directory (absolute path!) for resolving the `entry` option. If `output
 
 The entry point for the bundle.
 
-If you pass a string: The string is resolve to a module which is loaded upon startup.
+If you pass a string: The string is resolved to a module which is loaded upon startup.
 
 If you pass an array: All modules are loaded upon startup. The last one is exported.
 
