@@ -50,4 +50,4 @@ In addition to that when trying to "resolve a module path" all modules name vari
 
 ## Asynchronous
 
-The above description sugguest a serial process, but in the implementation the process is completely ssynchronous and parallel. This may causes more filesystem access than required.
+The above description sugguest a serial process, but in the implementation the process is completely asynchronous and parallel. This may causes more filesystem access than required.
