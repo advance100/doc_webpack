@@ -214,7 +214,7 @@ $ browserify --noparse=file.js
 ```
 
 ``` javascript
-module.expors = {
+module.exports = {
 	module: {
 		noParse: [
 			/file\.js$/
