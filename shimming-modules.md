@@ -59,7 +59,7 @@ Examples:
 
 `var XModule = require("exports?XModule!./file.js")`
 
-##### The file sets multiple variables in the global context with `var XParser, XMinimizer`.
+##### The file sets multiple variables in the global context with `var XParser, Minimizer`.
 
 `var XModule = require("exports?Parser=XParser&Minimizer!./file.js"); XModule.Parser; XModule.Minimizer`
 
