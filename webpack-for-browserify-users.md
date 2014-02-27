@@ -236,7 +236,7 @@ $ webpack --json
 
 ## external requires
 
-webpack do not support external requires. You cannot expose the `require` function to other scripts. Just use webpack for all scripts on a page or do it like this:
+webpack does not support external requires. You cannot expose the `require` function to other scripts. Just use webpack for all scripts on a page or do it like this:
 
 ``` javascript
 {
