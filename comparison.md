@@ -1,4 +1,4 @@
-| Feature | webpack/webpack | jrburke/requirejs | substck/node-browserify |
+| Feature | webpack/webpack | jrburke/requirejs | substack/node-browserify |
 |---------|-----------------|-------------------|-------------------------|
 | CommonJs `require` | **yes** | only wrapping in `define` | **yes** |
 | CommonJs `require.resolve` | **yes** | no | no |
