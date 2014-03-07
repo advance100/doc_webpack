@@ -43,7 +43,7 @@ define(["jquery", "my-module"], function($, myModule) {
 });
 ```
 
-> Note: Can NOT be used in a async function.
+> Note: Can NOT be used in an async function.
 
 ---
 
@@ -61,7 +61,7 @@ module.exports = function doSomething() {
 };
 ```
 
-> Note: Can NOT be used in a async function.
+> Note: Can NOT be used in an async function.
 
 ---
 
@@ -81,7 +81,7 @@ exports.aFunction = function doSomething() {
 };
 ```
 
-> Note: Using it in a async function may not have the expected effect.
+> Note: Using it in an async function may not have the expected effect.
 
 ---
 
@@ -103,7 +103,7 @@ define({
 });
 ```
 
-> Note: Can NOT be used in a async function.
+> Note: Can NOT be used in an async function.
 
 ---
 
@@ -127,7 +127,7 @@ export: function method(value) {
 
 ```
 
-> Note: Using it in a async function may not have the expected effect.
+> Note: Using it in an async function may not have the expected effect.
 
 ---
 
