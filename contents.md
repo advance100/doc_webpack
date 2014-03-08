@@ -17,7 +17,7 @@
   * [[webpack for browserify users]]
   * [[Code Splitting]]
   * [[Optimization]]
-  * [[Long-time Caching]]
+  * [[Long-term Caching]]
   * [[How to write a loader]]
   * How to write a plugin (WIP)
   * [[Library and externals]]
