@@ -1,3 +1,6 @@
+WIP
+
 * `cache: true`
-* [[webpack-dev-server]] or [[webpack-dev-middleware]] or [[webpack --watch | cli]] or [[`watch: true` | configuration]]
-* prefetch
+* Incremental builds with [[webpack-dev-server]], [[webpack-dev-middleware]], [[webpack --watch | cli]] or [[`watch: true` | node.js API]]
+* [[`prefetch` | configuration]]
+* [[`noParse` | configuration]]
