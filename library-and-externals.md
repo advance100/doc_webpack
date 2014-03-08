@@ -61,3 +61,11 @@ var Foo = (/* ... webpack bootstrap ... */
 	/* ... */
 });
 ```
+
+## Applications and externals
+
+You can use the `externals` options for applications too, when you want to import an existing API into the bundle. I. e. you want to use jquery from CDN (separate `<script>` tag) and still want to `require("jquery")` in your bundle. Just specify it as external: `{ externals: { jquery: "jQuery" } }`.
+
+## Resolving and externals
+
+Externals processing happens before resolving the request, which means you need to specify the unresolved request. Loaders are not applied to externals. You can (need to) externalize a request with loader: `require("bundle!jquery")` `{ externals: { "bundle!jquery": "bundledJQuery" } }`
