@@ -215,7 +215,7 @@ Kind of exporting as library.
 
 If `output.library` is not set, but `output.libraryTarget` is set to a value other that `var`, every property of the exported object is copied (Except `amd`, `commonjs2` and `umd`).
 
-## `output.sourcePrefix`
+### `output.sourcePrefix`
 
 Prefixes every line of the source in the bundle with this string.
 
@@ -359,6 +359,43 @@ That's a `resolveLoader` only property.
 It describes alternatives for the module name that are tried.
 
 > Default: `["*-webpack-loader", "*-web-loader", "*-loader", "*"]`
+
+
+
+## `externals`
+
+Specify dependencies that shouldn't be resolved by webpack, but should become dependencies of the resulting bundle. The kind of the dependency depends on `output.libraryTarget`.
+
+As value an object, a string, a function and an array is accepted.
+
+* string: An exact matched dependency becomes external. The same string is used as external dependency.
+* object: If an dependency matches exactly a property of the object, the property value is used as dependency. The property value may contain a dependency type prefixed and separated with a space. If the property value is `true` the property name is used instead. If the property value is `false` the externals test is aborted and the dependency is not external. See example below.
+* function: `function(context, request, callback(err, result))` The function is called of each dependendy. If a result is passed to the callback function this value is handled like a property value of an object (above bullet point).
+* array: Multiple values of the scheme (recursive).
+
+Example:
+
+``` javascript
+{
+	output: { libraryTarget: "commonjs" },
+	externals: [
+		{
+			a: false, // a is not external
+			b: true, // b is external (require("b"))
+			"./c": "c", // "./c" is external (require("c"))
+			"./d": "var d" // "./d" is external (d)
+		},
+		function(context, request, callback) {
+			// Every non-relative module is external
+			// abc -> require("abc")
+			if(/^[a-z\-0-9]+$/.test(request))
+				return callback(null, request);
+			callback();
+		},
+		"./e" // "./e" is external (require("./e"))
+	]
+}
+```
 
 
 
