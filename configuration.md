@@ -366,11 +366,12 @@ It describes alternatives for the module name that are tried.
 
 Specify dependencies that shouldn't be resolved by webpack, but should become dependencies of the resulting bundle. The kind of the dependency depends on `output.libraryTarget`.
 
-As value an object, a string, a function and an array is accepted.
+As value an object, a string, a function, a RegExp and an array is accepted.
 
 * string: An exact matched dependency becomes external. The same string is used as external dependency.
 * object: If an dependency matches exactly a property of the object, the property value is used as dependency. The property value may contain a dependency type prefixed and separated with a space. If the property value is `true` the property name is used instead. If the property value is `false` the externals test is aborted and the dependency is not external. See example below.
 * function: `function(context, request, callback(err, result))` The function is called of each dependendy. If a result is passed to the callback function this value is handled like a property value of an object (above bullet point).
+* RegExp: Every matched dependency becomes external. The request is also used as request for the external dependency.
 * array: Multiple values of the scheme (recursive).
 
 Example:
@@ -385,11 +386,14 @@ Example:
 			"./c": "c", // "./c" is external (require("c"))
 			"./d": "var d" // "./d" is external (d)
 		},
+		// Every non-relative module is external
+		// abc -> require("abc")
+		/^[a-z\-0-9]+$/,
 		function(context, request, callback) {
-			// Every non-relative module is external
-			// abc -> require("abc")
-			if(/^[a-z\-0-9]+$/.test(request))
-				return callback(null, request);
+			// Every module prefixed with "global-" becomes external
+			// "global-abc" -> abc
+			if(/^global-/.test(request))
+				return callback(null, "var " + request.substr(7));
 			callback();
 		},
 		"./e" // "./e" is external (require("./e"))
