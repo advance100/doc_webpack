@@ -401,6 +401,20 @@ Example:
 }
 ```
 
+| type        | value               | resulting import code |
+|-------------|---------------------|-----------------------|
+| "var"       | `"abc"`             | `module.exports = abc;` |
+| "this"      | `"abc"`             | `(function() { module.exports = this["abc"]; }());` |
+| "commonjs"  | `"abc"`             | `module.exports = require("abc");` |
+| "commonjs"  | `["abc", "def"]`    | `module.exports = require("abc").def;` |
+| "amd"       | `"abc"`             | `define(["abc"], function(X) { module.exports = X; })` |
+| "umd"       | `"abc"`             | everything above |
+
+Enforcing `amd` or `umd` in a external value will break if not compiling as amd/umd target.
+
+> Note: If using `umd` you can specify an object as external value with property `commonjs`, `commonjs2`, `amd` and `root` to set different values for each import kind.
+
+
 
 
 ## `target`
