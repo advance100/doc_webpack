@@ -20,8 +20,10 @@
   * [[Long-time Caching]]
   * [[How to write a loader]]
   * How to write a plugin (WIP)
+  * [[Library and externals]]
   * [[Shimming modules]]
   * [[Testing]]
+  * [[Build performance]] (WIP)
   * [[Comparison]]
 * Lists
   * [[List of loaders]]
