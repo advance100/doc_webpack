@@ -404,7 +404,9 @@ Example:
 | type        | value               | resulting import code |
 |-------------|---------------------|-----------------------|
 | "var"       | `"abc"`             | `module.exports = abc;` |
+| "var"       | `"abc.def"`         | `module.exports = abc.def;` |
 | "this"      | `"abc"`             | `(function() { module.exports = this["abc"]; }());` |
+| "this"      | `["abc", "def"]`    | `(function() { module.exports = this["abc"]["def"]; }());` |
 | "commonjs"  | `"abc"`             | `module.exports = require("abc");` |
 | "commonjs"  | `["abc", "def"]`    | `module.exports = require("abc").def;` |
 | "amd"       | `"abc"`             | `define(["abc"], function(X) { module.exports = X; })` |
