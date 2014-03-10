@@ -451,6 +451,14 @@ Style: webpack
 
 ---
 
+### `__non_webpack_require__`
+
+Generates a `require` function that is not parsed by webpack. Can be used to do cool stuff with a global require function if available.
+
+Style: webpack
+
+---
+
 ### `DEBUG`
 
 Equals the config option `debug`
