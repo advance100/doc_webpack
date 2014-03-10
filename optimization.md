@@ -121,3 +121,19 @@ module.exports = {
 // admin-page1.html: commons.js, admin-commons.js, ap1.js
 // admin-page2.html: commons.js, admin-commons.js, ap2.js
 ```
+
+Advanced hint: You can run code inside the commons chunk:
+
+``` javascript
+var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
+module.exports = {
+  entry: {
+    p1: "./page1",
+    p2: "./page2",
+    "commons.js": "./entry-for-the-commons-chunk"
+  },
+  plugins: [
+    new CommonsChunkPlugin("commons.js", ["p1", "p2"])
+  ]
+};
+```
