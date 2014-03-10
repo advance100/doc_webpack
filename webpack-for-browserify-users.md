@@ -1,17 +1,17 @@
 # Why should I prefer webpack over browserify?
 
-* can automatically split you code into multiple chunks, which are loaded on demand
+* can automatically split your code into multiple chunks, which are loaded on demand
 * takes care of other resources too (i. e. css, images, fonts)
 * rich configuration (i. e. for custom module directory)
 * can use AMD modules natively
-* generate smaller files (It replaces all require strings with ids)
+* generates smaller files (It replaces all require strings with ids)
 * minimizing and hashing integrated, plugins for gzipping and localization
-* has a rich plugin system, that let you extend the compiler
+* has a rich plugin system, that lets you extend the compiler
 * Hot Code Replacement
 
 # Usage
 
-Like browserify webpack analyze all the node-style `require()` calls in your app and build a bundle that you can serve up to the browser using a `<script>` tag.
+Like browserify, webpack analyzes all the node-style `require()` calls in your app and builds a bundle that you can serve up to the browser using a `<script>` tag.
 
 Instead of doing
 
@@ -25,7 +25,7 @@ do
 $ webpack main.js bundle.js
 ```
 
-> webpack doesn't write to stdout. You need to specify a filename. It cannot write to stdout because other than browserify is may generate multiple output files.
+> webpack doesn't write to stdout. You need to specify a filename. It can't write to stdout because, unlike browserify, it may generate multiple output files.
 
 ---
 
@@ -37,7 +37,7 @@ So
 $ browserify --entry main.js --outfile bundle.js
 ```
 
-Maps to `webpack` with this config:
+maps to `webpack` with this config:
 
 ``` javascript
 {
@@ -86,7 +86,7 @@ $ browserify --entry a.js --entry b.js
 
 ## transform
 
-browserify uses *transforms* to preprocess files. webpack uses *loaders*. Loaders are functions that take source code as argument and return (modified) source code. Like transforms they run in node.js, can be chained and can be async. Loader can take additional parameters by query strings. Loaders can be used from `require()` calls. Transforms can be specified in the `package.json`. browserify apply configured transforms for each module. Within the webpack configuration you select the modules by RegExp. In the common case you specify loaders in the `webpack.config.js`:
+browserify uses *transforms* to preprocess files. webpack uses *loaders*. Loaders are functions that take source code as an argument and return (modified) source code. Like transforms they run in node.js, can be chained, and can be asyncronous. Loaders can take additional parameters by query strings. Loaders can be used from `require()` calls. Transforms can be specified in the `package.json`. `browserify` applies configured transforms for each module. Within the webpack configuration you select the modules by RegExp. In the common case you specify loaders in the `webpack.config.js`:
 
 ``` sh
 $ browserify --transform coffeeify
