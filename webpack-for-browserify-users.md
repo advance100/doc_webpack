@@ -242,20 +242,24 @@ webpack does not support external requires. You cannot expose the `require` func
 {
 	output: {
 		library: "require",
-		libraryTarget: "var"
+		libraryTarget: "this"
 	}
 }
 ```
 
 ``` javascript
 // entry point
-module.exports = function(module) {
-	switch(module) {
-	case "through": return require("through");
-	case "duplexer": return require("duplexer");
-	}
-	throw new Error("Module '" + module + "' not found");
-};
+module.exports = function(parentRequire) {
+	return function(module) {
+		switch(module) {
+		case "through": return require("through");
+		case "duplexer": return require("duplexer");
+		}
+		return parentRequire(module);
+	};
+}(typeof __non_webpack_require__ === "function" ? __non_webpack_require__ : function() {
+	throw new Error("Module '" + module + "' not found")
+});
 ```
 
 ## multiple bundles
