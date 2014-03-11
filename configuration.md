@@ -257,7 +257,7 @@ This can boost performance when ignoring big libraries.
 
 The files are expected to have no call to `require`, `define` or similar. They are allowed to use `exports` and `module.exports`.
 
-### automatically created contexts defaults
+### automatically created contexts defaults `module.xxxContextXxx`
 
 There are multiple options to configure the defaults for an automatically created context. We differentiate three types of automatically created contexts:
 
@@ -279,6 +279,23 @@ All options and defaults:
 `exprContextRequest = "."`, `exprContextRegExp = /^\.\/.*$/`, `exprContextRecursive = true`, `exprContextCritical = true`
 
 `wrappedContextRegExp = /.*/`, `wrappedContextRecursive = true`, `wrappedContextCritical = false`
+
+> Note: `module.wrappedContextRegExp` only refers to the middle part of the full RegExp. The remaining is generated from prefix and surfix.
+
+Example:
+
+``` javascript
+{
+  module: {
+    // Disable handling of unknown requires
+    unknownContextRegExp: /$^/,
+    unknownContextCritical: false,
+
+    // Warn for every expression in require
+    wrappedContextCritical: true
+  }
+}
+```
 
 
 
