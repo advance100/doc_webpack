@@ -24,6 +24,19 @@ Loaders are [[resolved similar to modules | resolving]]. A loader module is expe
 
 Module names with the suffix `-loader` are tried in addition to the exact name.
 
+## Installing loaders
+
+If the loader is available on npm you can install the loader via:
+
+``` sh
+$ npm install xxx-loader --save
+```
+
+or
+
+``` sh
+$ npm install xxx-loader --save-dev
+```
 # Usage
 
 There are multiple ways to use loaders in your app:
