@@ -257,6 +257,30 @@ This can boost performance when ignoring big libraries.
 
 The files are expected to have no call to `require`, `define` or similar. They are allowed to use `exports` and `module.exports`.
 
+### automatically created contexts defaults
+
+There are multiple options to configure the defaults for an automatically created context. We differentiate three types of automatically created contexts:
+
+* `exprContext`: An expression as dependency (i. e. `require(expr)`)
+* `wrappedContext`: An expression plus pre- and/or surfixed string (i. e. `require("./templates/" + expr)`)
+* `unknownContext`: Any other unparsable usage of `require` (i. e. `require`)
+
+Four options are possible for automatically created contexts:
+
+* `request`: The request for context.
+* `recursive`: Subdirectories should be traversed.
+* `regExp`: The RegExp for the expression.
+* `critical`: This type of dependency should be consider as critical (emits a warning).
+
+All options and defaults:
+
+`unknownContextRequest = "."`, `unknownContextRecursive = true`, `unknownContextRegExp = /^\.\/.*$/`, `unknownContextCritical = true`
+
+`exprContextRequest = "."`, `exprContextRegExp = /^\.\/.*$/`, `exprContextRecursive = true`, `exprContextCritical = true`
+
+`wrappedContextRegExp = /.*/`, `wrappedContextRecursive = true`, `wrappedContextCritical = false`
+
+
 
 ## `resolve`
 
