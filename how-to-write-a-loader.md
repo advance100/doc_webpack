@@ -107,6 +107,16 @@ url(~module) -> require("module")
 
 don't generate much code that is common in every module processed by that loader. Create a (runtime) file in the loader and generate a `require` to that common code.
 
+### use a library as `peerDependencies` when they wrap it
+
+using a peerDependency allows the application developer to specify the exact version in his `package.json` if he wants to. The dependency should be relative open to allow updating the library without needing to publish a new loader version.
+
+``` javascript
+"peerDependencies": {
+  "library": "^1.3.5"
+}
+```
+
 ## Read more
 
 Read more about [[loaders]].
