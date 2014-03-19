@@ -102,11 +102,11 @@ Note: `keys` depends on `Object.keys`. You may need to polyfill it for older bro
 
 This plugin can overwrite the RegExp for a context. See [[list of plugins]].
 
-## Critial depenendencies
+## Critical dependencies
 
-If the module source contains an `require` that cannot be statically analysed, it's threaded a context to the current directory.
+If the module source contains a `require` that cannot be statically analyzed, the context is the current directory.
 
-In this case a warning `Critial depenendencies` is emitted.
+In this case a `Critical dependencies` warning is emitted.
 
 Examples: `someFn(require)` `require.bind(null)`
 
