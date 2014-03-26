@@ -199,19 +199,19 @@ Use this, if you are writing a library and want to publish it as single file.
 
 Kind of exporting as library.
 
-`var` - Export by setting a variable: `var Library = xxx` (default)
+`"var"` - Export by setting a variable: `var Library = xxx` (default)
 
-`this` - Export by setting a property of `this`: `this["Library"] = xxx`
+`"this"` - Export by setting a property of `this`: `this["Library"] = xxx`
 
-`commonjs` - Export by setting a property of `exports`: `exports["Library"] = xxx`
+`"commonjs"` - Export by setting a property of `exports`: `exports["Library"] = xxx`
 
-`commonjs2` - Export by setting `module.exports`: `module.exports = xxx`
+`"commonjs2"` - Export by setting `module.exports`: `module.exports = xxx`
 
-`amd` - Export to AMD (optionally named)
+`"amd"` - Export to AMD (optionally named)
 
-`umd` - Export to AMD, CommonJS2 or as property in root
+`"umd"` - Export to AMD, CommonJS2 or as property in root
 
-> Default: `var`
+> Default: `"var"`
 
 If `output.library` is not set, but `output.libraryTarget` is set to a value other that `var`, every property of the exported object is copied (Except `amd`, `commonjs2` and `umd`).
 
