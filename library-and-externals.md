@@ -2,7 +2,7 @@ You developed a library and want to distribute it in a compiled/bundled versions
 
 ## configuration options
 
-webpack has three [[configuration]] options that are relevant for that use cases: `output.library`, output.libraryTarget` and `externals`.
+webpack has three [[configuration]] options that are relevant for that use cases: `output.library`, `output.libraryTarget` and `externals`.
 
 `output.libraryTarget` allows you to specify the kind to the output. I. e. CommonJs, AMD, for useage in a script tag or as UMD module.
 
