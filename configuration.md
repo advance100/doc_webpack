@@ -175,7 +175,7 @@ A shorter function may reduce the filesize a bit. Use different identifier, when
 
 ### `output.hotUpdateFunction`
 
-The JSONP function used by webpack for asnyc loading of hot update chunks.
+The JSONP function used by webpack for async loading of hot update chunks.
 
 > Default: `"webpackHotUpdate"`
 
@@ -374,7 +374,7 @@ Example: `"browser"` to check the browser field.
 
 ### `resolve.unsafeCache`
 
-Enable aggressive but unsafe caching for the resolving of a part of your files. Changes to cached paths may cause failure (in rar cases). An array of RegExps, only a RegExp or `true` (all files) is expected. If the resolved path matches, it'll be cached.
+Enable aggressive but unsafe caching for the resolving of a part of your files. Changes to cached paths may cause failure (in rare cases). An array of RegExps, only a RegExp or `true` (all files) is expected. If the resolved path matches, it'll be cached.
 
 > Default: `[]`
 
@@ -411,7 +411,7 @@ As value an object, a string, a function, a RegExp and an array is accepted.
 
 * string: An exact matched dependency becomes external. The same string is used as external dependency.
 * object: If an dependency matches exactly a property of the object, the property value is used as dependency. The property value may contain a dependency type prefixed and separated with a space. If the property value is `true` the property name is used instead. If the property value is `false` the externals test is aborted and the dependency is not external. See example below.
-* function: `function(context, request, callback(err, result))` The function is called of each dependendy. If a result is passed to the callback function this value is handled like a property value of an object (above bullet point).
+* function: `function(context, request, callback(err, result))` The function is called on each dependency. If a result is passed to the callback function this value is handled like a property value of an object (above bullet point).
 * RegExp: Every matched dependency becomes external. The request is also used as request for the external dependency.
 * array: Multiple values of the scheme (recursive).
 
@@ -465,7 +465,7 @@ Enforcing `amd` or `umd` in a external value will break if not compiling as amd/
 * `"web"` Compile for usage in a browser-like environment (default)
 * `"webworker"` Compile as WebWorker
 * `"node"` Compile for usage in a node.js-like environment (use `require` to load chunks)
-* `"async-node"` Compile for usage in a node.js-like environment (use `fs` and `vm` to load chunks asnyc)
+* `"async-node"` Compile for usage in a node.js-like environment (use `fs` and `vm` to load chunks async)
 
 
 
