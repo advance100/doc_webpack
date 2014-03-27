@@ -197,7 +197,7 @@ Use this, if you are writing a library and want to publish it as single file.
 
 ### `output.libraryTarget`
 
-Kind of exporting as library.
+Which format to export the library:
 
 `"var"` - Export by setting a variable: `var Library = xxx` (default)
 
