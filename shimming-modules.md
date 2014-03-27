@@ -139,6 +139,6 @@ Example:
 
 # Order of loaders
 
-In rar cases when you have to apply more than one technique, you need to use the correct order of loaders:
+In rare cases when you have to apply more than one technique, you need to use the correct order of loaders:
 
 inlined: `expose!imports!exports`, configuration: expose before imports before exports.
