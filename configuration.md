@@ -165,6 +165,16 @@ output: {
 }
 ```
 
+> If you don't know the publicPath while compiling you can omit it and set `__webpack_public_path__` on runtime.
+> 
+> Example:
+> 
+> ``` javascript
+> var scripts = document.getElementsByTagName("script");
+> var src = scripts[scripts.length - 1].getAttribute("src");
+> __webpack_public_path__ = src.substr(0, src.lastIndexOf("/") + 1);
+> ```
+
 ### `output.jsonpFunction`
 
 The JSONP function used by webpack for asnyc loading of chunks.
