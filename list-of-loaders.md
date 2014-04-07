@@ -33,7 +33,7 @@
 * [`jade-html`](https://github.com/bline/jade-html-loader): Loads jade template and returns generated HTML
 * [`template-html`](https://github.com/jtangelder/template-html-loader): Loads any template with consolidate.js and returns generated HTML
 * [`handlebars`](https://github.com/altano/handlebars-loader): Loads handlebars template and returns a function
-
+* [`ractive`](https://github.com/rstacruz/ractive-loader): Pre-compiles Ractive templates for interactive DOM manipulation
 
 ## styling
 
