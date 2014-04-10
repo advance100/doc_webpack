@@ -362,7 +362,7 @@ A directory (or array of directories **absolute paths**), in which webpack shoul
 
 ### `resolve.extensions`
 
-An array of extensions that should be used to resolve modules. For example, in order to discover CoffeeScript files, your array should contain the string `"*.coffee"`.
+An array of extensions that should be used to resolve modules. For example, in order to discover CoffeeScript files, your array should contain the string `".coffee"`.
 
 > Default: `["", ".webpack.js", ".web.js", ".js"]`
 
