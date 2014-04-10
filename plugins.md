@@ -263,7 +263,7 @@ An assets from a chunk was added to the compilation.
 
 ## Parser `compiler.parser`
 
-### `programm(ast)` bailing
+### `program(ast)` bailing
 
 General purpose plugin interface for the while AST of a code fragment.
 
