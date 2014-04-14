@@ -27,7 +27,7 @@ compiler.watch(/* watchDelay= */200, function(err, stats) {
 });
 ```
 
-> Note: `watch` automatically run a initial build, so you shoud either call `run` or `watch`
+> Note: `watch` will automatically run an initial build, so you should either call `run` or `watch`.
 
 ## stats
 
@@ -45,7 +45,7 @@ Returns `true` if there were errors while compiling.
 
 Return information as json object
 
-You can specify the whished information by the `options` argument: (Boolean)
+You can specify the information by the `options` argument: (Boolean)
 
 `options.hash` add the hash of the compilation
 
@@ -77,7 +77,7 @@ You can specify the whished information by the `options` argument: (Boolean)
 
 ### `stats.toString(options)`
 
-Returns a formated string of the result.
+Returns a formatted string of the result.
 
 `options` are the same as `options` in `toJson`.
 
