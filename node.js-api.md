@@ -27,6 +27,8 @@ compiler.watch(/* watchDelay= */200, function(err, stats) {
 });
 ```
 
+> Note: `watch` automatically run a initial build, so you shoud either call `run` or `watch`
+
 ## stats
 
 The `Stats` object expose this methods:
