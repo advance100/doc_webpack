@@ -34,7 +34,7 @@ module.exports = function(grunt) {
 
 ## Development
 
-The best option for development is the [[webpack-dev-server]], but it requires spawning a server. If this is not possible or to complex the normal build - watch cycle is possible too.
+The best option for development is the [[webpack-dev-server]], but it requires spawning a server. If this is not possible or too complex the normal build - watch cycle is possible too.
 
 ## Example
 
