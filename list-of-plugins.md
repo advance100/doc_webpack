@@ -181,7 +181,9 @@ Support Labeled Modules.
 
 Use [component](https://github.com/component/component) with webpack.
 
+### [`AngularPlugin`](https://github.com/stackfull/angular-webpack-plugin)
 
+Use angular.js modules with webpack.
 
 
 ## dependency injection
