@@ -24,6 +24,7 @@
 * [`json5`](https://github.com/webpack/json5-loader): Like json, but not so strict.
 * [`es6-module`](https://github.com/shama/es6-module-loader): Loads ES6 modules.
 * [`livescript`](https://github.com/appedemic/livescript-loader): Loads LiveScript like javascript
+* [`sweetjs`](https://github.com/petehunt/sweetjs-loader): Use sweetjs macros. 
 
 
 ## templating
@@ -34,6 +35,9 @@
 * [`template-html`](https://github.com/jtangelder/template-html-loader): Loads any template with consolidate.js and returns generated HTML
 * [`handlebars`](https://github.com/altano/handlebars-loader): Loads handlebars template and returns a function
 * [`ractive`](https://github.com/rstacruz/ractive-loader): Pre-compiles Ractive templates for interactive DOM manipulation
+* [`jsx`](https://github.com/petehunt/jsx-loader): Transform jsx code for [React](http://facebook.github.io/react/) to js code.
+
+
 
 ## styling
 
@@ -43,8 +47,11 @@
 * [`sass`](https://github.com/jtangelder/sass-loader): Loads and compiles a scss file
 * [`stylus`](https://github.com/shama/stylus-loader): Loads and compiles a stylus file
 
+
 ## support
 
 * [`mocha`](https://github.com/webpack/mocha-loader): do tests with mocha in browser or node.js
 * [`coverjs`](https://github.com/webpack/coverjs-loader): PostLoader to code coverage with CoverJs
 * [`jshint`](https://github.com/webpack/jshint-loader): PreLoader for linting code.
+* [`injectable`](https://github.com/jauco/webpack-injectable): Allow to inject dependencies into modules
+* [`transform`](https://github.com/webpack/transform-loader): Use browserify transforms as loader.
