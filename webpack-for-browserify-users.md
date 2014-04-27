@@ -1,14 +1,3 @@
-# Why should I prefer webpack over browserify?
-
-* can automatically split your code into multiple chunks, which are loaded on demand
-* takes care of other resources too (i. e. css, images, fonts)
-* rich configuration (i. e. for custom module directory)
-* can use AMD modules natively
-* generates smaller files (It replaces all require strings with ids)
-* minimizing and hashing integrated, plugins for gzipping and localization
-* has a rich plugin system, that lets you extend the compiler
-* Hot Code Replacement
-
 # Usage
 
 Like browserify, webpack analyzes all the node-style `require()` calls in your app and builds a bundle that you can serve up to the browser using a `<script>` tag.
