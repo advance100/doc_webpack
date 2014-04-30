@@ -4,7 +4,7 @@ webpack has a feature to split you codebase into so called chunks which are load
 This feature is also called "code splitting".
 Names for similar features in other bundlers: layers, rollups, fragments.
 
-It's any opt-in feature. You can define split point in your code base. webpack cares for the dependencies, output files and runtime stuff.
+It's an opt-in feature. You can define split point in your code base. webpack cares for the dependencies, output files and runtime stuff.
 
 
 
