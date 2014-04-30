@@ -1,7 +1,6 @@
 For big web apps it's not efficient to put all code into a single file.
 Especially if some blocks of code are only required under some circumstances.
-webpack has a feature to split your codebase into so called chunks which are loaded on demand.
-This feature is called "code splitting". Some other bundlers call them layers, rollups, or fragments.
+webpack has a feature to split your codebase into "chunks" which are loaded on demand. Some other bundlers call them "layers", "rollups", or "fragments". This feature is called "code splitting". 
 
 It's an opt-in feature. You can define split points in your code base. webpack cares for the dependencies, output files and runtime stuff.
 
