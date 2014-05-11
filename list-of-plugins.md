@@ -132,6 +132,13 @@ new webpack.optimize.UglifyJsPlugin([options])
 
 Minimize all javascript output of chunks. Loaders are switched into minimizing mode. You can pass an object containing UglifyJs options.
 
+### [`ngMinPlugin`](http://github.com/jeffling/ngmin-webpack-plugin)
+``` javascript
+new ngMinPlugin([options]);
+```
+Runs the [ngmin](http://github.com/btford/ngmin) pre-minimizer to insert AngularJS DI annotations.
+
+
 ### `CommonsChunkPlugin`
 
 ``` javascript
