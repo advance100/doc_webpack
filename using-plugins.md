@@ -18,7 +18,9 @@ module.exports = {
 
 Plugins that are not built-in may be installed via npm if published there, or by other means if not:
 
-`npm install component-webpack-plugin`
+``` text
+npm install component-webpack-plugin
+```
 
 which can then be used as follows:
 
