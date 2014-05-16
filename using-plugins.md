@@ -3,7 +3,8 @@
 Plugins are included in your module by using the plugins property in the webpack config.
 
 ``` javascript
-var webpack = require("webpack"); // webpack should be in the node_modules directory, install if not.
+// webpack should be in the node_modules directory, install if not.
+var webpack = require("webpack");
 
 module.exports = {
   plugins: [
