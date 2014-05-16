@@ -1,38 +1,3 @@
-# Using plugins
-
-Plugins are included in your module by using the plugins property in the webpack config.
-
-``` javascript
-var webpack = require("webpack"); // webpack should be in the node_modules directory, install if not.
-
-module.exports = {
-  plugins: [
-    new webpack.ResolverPlugin([
-      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-    ], ["normal", "loader"])
-  ]
-};
-```
-
-### Using other plugins
-
-Plugins that are not built-in may be installed via npm if published there, or by other means if not:
-
-`npm install component-webpack-plugin`
-
-which can then be used as follows:
-
-``` javascript
-var ComponentPlugin = require("component-webpack-plugin");
-module.exports = {
-    plugins: [
-        new ComponentPlugin();
-    ]
-}
-```
-
-# About plugins
-
 A (webpack) plugin is a object that has a `apply` method with one parameter, the compiler. I. e. a function is a plugin, because the function prototype defines a `apply` method. But you also can define a "class" with the `apply` method.
 
 Many objects in webpack extends the Tapable class, which mean they expose a `plugin` method, which plugins can use to bind custom stuff.
