@@ -1,14 +1,18 @@
 # 1.1
 
+(2014-05-17)
+
 * API: added `externals` option
 * API: cache is enabled by default
 * SUPPORT: Generated `require` is now `__webpack_require__`
 * SUPPORT: updates to node.js buildin replacements
+* PERFORMANCE: more and more reliable caching
 * API: support `[hash]` in `output.path`
 * API: allow to overwrite default RegExp and warnings for contexts
 * API: allow querystring on output files
 * API: Warning about case-sensitive modules
 * API: added access to outside `require` with `__non_webpack_require__`
+* API: added `node-webkit` target
 * SUPPORT: allow multiple webpack entry chunks on a page
 * SUPPORT: `.json` is a default extension (similar to node.js)
 * SUPPORT: ignore modules by browser field
