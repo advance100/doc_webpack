@@ -172,6 +172,10 @@ A plugin for a more aggressive chunk merging strategy. Even similar chunks are m
 
 `options.entryChunkMultiplicator` When `options.moveToParents` is set, moving to an entry chunk is more expensive. Defaults to `10`, which means moving to an entry chunk is ten times more expensive than moving to an normal chunk.
 
+### [`AppCachePlugin`](https://github.com/lettertwo/appcache-webpack-plugin)
+
+Generates a HTML5 Application Cache manifest
+
 
 
 ## module styles
