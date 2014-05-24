@@ -117,6 +117,8 @@ using a peerDependency allows the application developer to specify the exact ver
 }
 ```
 
+### be added to the [[list of loaders]]
+
 ## Read more
 
 Read more about [[loaders]].
