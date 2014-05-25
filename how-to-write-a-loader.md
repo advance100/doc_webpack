@@ -117,6 +117,18 @@ using a peerDependency allows the application developer to specify the exact ver
 }
 ```
 
+### generate modules that are modular
+
+Loader generated modules should respect the same design principles like normal modules.
+
+Example: That's a bad design: (not modular, global state, ...)
+
+``` javascript
+require("any-template-language-loader!./xyz.atl");
+
+var html = anyTemplateLanguage.render("xyz");
+```
+
 ### be added to the [[list of loaders]]
 
 ## Read more
