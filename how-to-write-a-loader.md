@@ -50,6 +50,18 @@ Instead I should write loaders for every task in this usecase and apply them all
 * apply-loader: Takes a function exporting module and returns raw result by applying query parameters.
 * html-loader: Takes HTML and exports a string exporting module.
 
+### generate modules that are modular
+
+Loader generated modules should respect the same design principles like normal modules.
+
+Example: That's a bad design: (not modular, global state, ...)
+
+``` javascript
+require("any-template-language-loader!./xyz.atl");
+
+var html = anyTemplateLanguage.render("xyz");
+```
+
 ### flag itself cacheable if possible
 
 Most loaders are cacheable, so they should flag itself as cacheable.
@@ -115,18 +127,6 @@ using a peerDependency allows the application developer to specify the exact ver
 "peerDependencies": {
   "library": "^1.3.5"
 }
-```
-
-### generate modules that are modular
-
-Loader generated modules should respect the same design principles like normal modules.
-
-Example: That's a bad design: (not modular, global state, ...)
-
-``` javascript
-require("any-template-language-loader!./xyz.atl");
-
-var html = anyTemplateLanguage.render("xyz");
 ```
 
 ### be added to the [[list of loaders]]
