@@ -211,13 +211,16 @@ A key is a identifier or multiple identifier joined with `.`. If the value is a 
 
 If the value is an object all keys are defined the same way.
 
+If you prefix `typeof ` to the key, it's only defined for typeof calls.
+
 Example:
 
 ```
 new webpack.DefinePlugin({
   VERSION: JSON.stringify("5fa3b9"),
   BROWSER_SUPPORTS_HTML5: true,
-  TWO: "1+1"
+  TWO: "1+1",
+  "typeof window": JSON.stringify("object")
 })
 ```
 
