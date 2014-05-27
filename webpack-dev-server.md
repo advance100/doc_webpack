@@ -41,7 +41,7 @@ var server = new WebpackDevServer(compiler, {
 	// Use "webpack/hot/dev-server" as additional module in your entry point
 
 	// webpack-dev-middleware options
-	quite: false,
+	quiet: false,
 	noInfo: false,
 	lazy: true,
 	watchDelay: 300,
