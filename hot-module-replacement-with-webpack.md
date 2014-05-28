@@ -1,7 +1,7 @@
 To use hot code replacement with webpack you need to four things:
 
 * records (`--records-path`, `recordsPath: ...`)
-* global enable hot code replacement (`--hot`, `hot: true`)
+* global enable hot code replacement (`HotModuleReplacementPlugin`)
 * hot replacement code in your code `module.hot.accept`
 * hot replacement management code in your code `module.hot.check`, `module.hot.apply`
 
