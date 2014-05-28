@@ -25,6 +25,7 @@
   * [[Shimming modules]]
   * [[Testing]]
   * [[Build performance]] (WIP)
+  * [[Hot Module Replacement with webpack]] (WIP)
   * [[Comparison]]
 * Lists
   * [[List of loaders]]
