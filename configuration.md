@@ -156,7 +156,7 @@ The `output.path` from the view of the javascript.
 // Example
 output: {
   path: "/home/proj/public/assets",
-  publicPath: "/assets"
+  publicPath: "/assets/"
 }
 // Example CDN
 output: {
