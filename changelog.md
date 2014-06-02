@@ -1,3 +1,18 @@
+# 1.3
+
+(2014-06-03)
+
+* plugin interface for all templates
+* resolve path in NormalModuleReplacementPlugin
+
+# 1.2
+
+(2014-05-27)
+
+* fixed some SourceMap issues
+* added typeof support to the DefinePlugin
+* fixed parser crash
+
 # 1.1
 
 (2014-05-17)
