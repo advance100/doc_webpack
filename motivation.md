@@ -59,7 +59,7 @@ It's used on server-side by [node.js](http://nodejs.org).
 
 #### Cons
 
-* blocking calls do not apply well on networks. Requests are synchronous.
+* blocking calls do not apply well on networks. Network requests are asynchronous.
 * No parallel require of multiple modules
 
 #### Implementations
