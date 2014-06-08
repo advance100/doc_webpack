@@ -91,7 +91,7 @@ The `!!` prefix and the `-!` prefix should only be used by loaders.
 
 # Writing a loader
 
-Writing a loader is pretty simple. A loader is just a file, which exports a function. That function is called by the compiler. The result of the previous loader is passed to the next loader. The `this` context is filled by the compiler with some useful methods. I. e. loaders can change there invocation style to async or get query parameters. The first loader is passed one argument: the content of the resource file. The compiler expect a result from the last loader. The first result should be a String or a Buffer (which is converted to a string), representing the javascript source code of the module. As additional optional second result is a SourceMap (as JSON object) expected.
+Writing a loader is pretty simple. A loader is just a file that exports a function. The compiler calls this function and passes the result of the previous loader or the resource file into it. The `this` context of the function is filled-in by the compiler with some useful methods that allow the loader to, among other things, change its invocation style to async or get query parameters. The first loader is passed one argument: the content of the resource file. The compiler expects a result from the last loader. The result should be a String or a Buffer (which is converted to a string), representing the javascript source code of the module. An optional SourceMap result (as JSON object) may also be passed.
 
 A single result can be returned in sync mode. For multiple result the `this.callback` must be called. In async mode `this.async()` must be called. It returns `this.callback` if async mode is allowed. Then the loader must return `undefined` and call the callback.
 
