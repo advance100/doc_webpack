@@ -15,6 +15,7 @@ var webpack = require("webpack");
 
 var compiler = webpack({
 	// configuration
+	output: { path: '/' }
 });
 
 app.use(webpackDevMiddleware(compiler, {
