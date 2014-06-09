@@ -19,7 +19,7 @@ var compiler = webpack({
 
 app.use(webpackDevMiddleware(compiler, {
 	// options
-});
+}));
 ```
 
 ### options
