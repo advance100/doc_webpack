@@ -137,3 +137,5 @@ module.exports = {
   ]
 };
 ```
+
+See also [multiple-entry-points example](https://github.com/webpack/webpack/tree/master/examples/multiple-entry-points).
