@@ -100,13 +100,13 @@ Note: `keys` depends on `Object.keys`. You may need to polyfill it for older bro
 
 ## `ContextReplacementPlugin`
 
-This plugin can overwrite the RegExp for a context. See [[list of plugins]].
+This plugin can overwrite the details for a context (i. e. the RegExp). See [[list of plugins]].
 
 ## Critical dependencies
 
 If the module source contains a `require` that cannot be statically analyzed, the context is the current directory.
 
-In this case a `Critical dependencies` warning is emitted.
+In this case a `Critical dependencies` warning is emitted. You need to use the `ContextReplacementPlugin` in most cases.
 
 Examples: `someFn(require)` `require.bind(null)`
 
