@@ -360,7 +360,7 @@ Set to true when this is compiled by webpack.
 emitFile(name: string, content: Buffer|String, sourceMap: {...})
 ```
 
-Emit a file. This is webpack-spcific
+Emit a file. This is webpack-specific
 
 ### `_compilation`
 
