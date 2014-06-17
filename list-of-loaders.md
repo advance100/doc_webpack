@@ -38,6 +38,8 @@
 * [`dust`](https://github.com/avaly/dust-loader): Loads dust template and returns a function
 * [`ractive`](https://github.com/rstacruz/ractive-loader): Pre-compiles Ractive templates for interactive DOM manipulation
 * [`jsx`](https://github.com/petehunt/jsx-loader): Transform jsx code for [React](http://facebook.github.io/react/) to js code.
+* [`ejs`](https://github.com/okonet/ejs-loader): Loads EJS ([underscore](http://underscorejs.org/#template)( templating engine) template and returns a pre-compiled function
+* [`yml`](https://github.com/okonet/yml-loader): Converts YAML to JSON
 
 
 
@@ -48,6 +50,7 @@
 * [`less`](https://github.com/webpack/less-loader): Loads and compiles a less file
 * [`sass`](https://github.com/jtangelder/sass-loader): Loads and compiles a scss file
 * [`stylus`](https://github.com/shama/stylus-loader): Loads and compiles a stylus file
+* [`rework`](https://github.com/okonet/rework-loader): Post-process CSS with [Rework](https://github.com/reworkcss/rework) and returns CSS code
 
 
 ## support
