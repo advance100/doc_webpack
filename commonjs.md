@@ -52,7 +52,7 @@ module.exports = Result;
 ```
 
 Here we make use of the special object `module` and place a reference of our
-variable into `module.exports` so the CommonJS module system nows this is 
+variable into `module.exports` so the CommonJS module system knows this is 
 the object of our module we want to show to the world.
 `salute.js` discloses `MySalute`, and `world.js` discloses `Result`.
 
