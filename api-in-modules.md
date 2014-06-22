@@ -2,7 +2,7 @@ A quick summary of all methods and variables available in code compiled with web
 
 ## Basic
 
-### `require` (CommonJs)
+### `require` CommonJs
 
 ``` javascript
 require(dependency: String)
@@ -131,7 +131,7 @@ export: function method(value) {
 
 ---
 
-### `require` (label)
+### `require` label
 
 ``` javascript
 require: "dependency"
@@ -275,7 +275,7 @@ require.ensure([], function() {
 
 ---
 
-### `require` (AMD)
+### `require` AMD
 
 ``` javascript
 require(dependencies: String[], [callback: function(...)])
