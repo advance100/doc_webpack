@@ -538,6 +538,16 @@ Choose a developer tool to enhance debugging.
 
 Prefixing `@`, `#` or `#@` will enforce a pragma style.
 
+Example:
+
+``` javascript
+{
+	devtool: "#inline-source-map"
+}
+// =>
+//# sourceMappingURL=...
+```
+
 
 
 ## `node`
