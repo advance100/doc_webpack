@@ -1,9 +1,12 @@
 # 1.3
 
-(2014-06-03)
+(2014-06-22)
 
 * API: plugin interface for all templates
 * API: resolve path in NormalModuleReplacementPlugin
+* API: added MultiCompiler (experimental)
+* API: more params for the ContextReplacementPlugin
+* SUPPORT: Support browserify pre-built bundles with a warning
 
 # 1.2
 
