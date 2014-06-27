@@ -22,6 +22,7 @@
   * [[Long-term Caching]]
   * [[How to write a loader]]
   * How to write a plugin (WIP)
+  * Multiple entry points (WIP)
   * [[Library and externals]]
   * [[Shimming modules]]
   * [[Testing]]
