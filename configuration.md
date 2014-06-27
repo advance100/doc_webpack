@@ -249,7 +249,7 @@ Each item can have these properties:
 * `loader`: A string of "!" separated loaders
 * `loaders`: A array of loaders as string
 
-A condition can be a RegExp, or a array of RegExps combined with "and".
+A condition can be a RegExp, an absolute path start, or an array of one of these combined with "and".
 
 See more: [[loaders]]
 
