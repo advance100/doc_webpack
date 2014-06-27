@@ -14,8 +14,6 @@
 * Guides
   * [[CommonJs]]
   * [[AMD]]
-  * [[Usage with Grunt]]
-  * [[Usage with gulp]]
   * [[webpack for browserify users]]
   * [[Code Splitting]]
   * [[Optimization]]
@@ -32,6 +30,11 @@
 * Lists
   * [[List of loaders]]
   * [[List of plugins]]
+* webpack with
+  * [[grunt | Usage with grunt]]
+  * [[gulp | Usage with gulp]]
+  * [[karma | Usage with karma]]
+  * [[react | Usage with react]]
 * API
   * [[Configuration]]
   * [[CLI]]
