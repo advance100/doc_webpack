@@ -37,7 +37,7 @@ $ npm install webpack --save-dev
 There are two versions of webpack available. The stable one and a beta version. The beta version is marked with a `-beta` in the version string. The beta version may contain fragile changes or experimental features and is less tested. See [[changelog]] for differences. For serious stuff you should use the stable version:
 
 ``` sh
-$ npm install webpack@1.0.x --save-dev
+$ npm install webpack@1.2.x --save-dev
 ```
 
 ## Continue reading
