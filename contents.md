@@ -7,7 +7,7 @@
   * Vendor Modules (WIP)
   * [[Using Loaders]]
   * [[Using Plugins]] (WIP)
-  * Dev Tools (WIP)
+  * [[Dev Tools]] (WIP)
 * Step-by-step tutorials
   * [Getting started](http://webpack.github.io/docs/tutorials/getting-started/)
   * [[List of tutorials]]
@@ -20,7 +20,7 @@
   * [[Long-term Caching]]
   * [[How to write a loader]]
   * How to write a plugin (WIP)
-  * Multiple entry points (WIP)
+  * [[Multiple entry points]] (WIP)
   * [[Library and externals]]
   * [[Shimming modules]]
   * [[Testing]]
@@ -33,8 +33,7 @@
 * webpack with
   * [[grunt | Usage with grunt]]
   * [[gulp | Usage with gulp]]
-  * [[karma | Usage with karma]]
-  * [[react | Usage with react]]
+  * [[karma | Usage with karma]] (WIP)
 * API
   * [[Configuration]]
   * [[CLI]]
