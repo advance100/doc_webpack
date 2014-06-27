@@ -10,6 +10,12 @@ introductory tutorial (with real world samples)
 
 2014-06-11 @ryanseddon
 
+## [An introduction to webpack](http://cuttleblog.tumblr.com/post/63669845272/webpack)
+
+Cross develop for Node and the Browser without forking around
+
+2013-10-10 @davidgovea
+
 ## [Single Page Modules with Webpack](http://dontkry.com/posts/code/single-page-modules-with-webpack.html)
 
 2013-09-27 @shama 
