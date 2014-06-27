@@ -10,6 +10,7 @@
   * Dev Tools (WIP)
 * Step-by-step tutorials
   * [Getting started](http://webpack.github.io/docs/tutorials/getting-started/)
+  * [[List of tutorials]]
 * Guides
   * [[CommonJs]]
   * [[AMD]]
