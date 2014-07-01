@@ -131,6 +131,7 @@ There are optimizing plugins that can merge chunks depending on specific criteri
 
 * `LimitChunkCountPlugin`
 * `MinChunkSizePlugin`
+* `AggressiveMergingPlugin`
 
 
 
