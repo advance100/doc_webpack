@@ -10,6 +10,12 @@ introductory tutorial (with real world samples)
 
 2014-06-11 @ryanseddon
 
+## [Book of Modern frontend tooling](http://tooling.github.io/book-of-modern-frontend-tooling/dependency-management/webpack/getting-started.html)
+
+An unfinished chapter on webpack
+
+2014-04-08, @shama
+
 ## [An introduction to webpack](http://cuttleblog.tumblr.com/post/63669845272/webpack)
 
 Cross develop for Node and the Browser without forking around
