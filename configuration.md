@@ -500,6 +500,12 @@ Capture timing information for each module.
 
 Cache generated modules and chunks to improve performance for multiple incremental builds.
 
+This is enabled by default in watch mode.
+
+You can pass `false` to disable it.
+
+You can pass an object to enable it and let webpack use the passed object as cache. This way you can share the cache object between multiple compiler calls. Note: Don't share the cache between calls with different options.
+
 
 
 ## `watch`
