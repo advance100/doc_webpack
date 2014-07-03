@@ -33,8 +33,8 @@
 * webpack with
   * [[grunt | Usage with grunt]]
   * [[gulp | Usage with gulp]]
+  * [[bower | Usage with bower]]
   * [[karma | Usage with karma]] (WIP)
-  * [[bower | Usage with bower]] (WIP)
 * API
   * [[Configuration]]
   * [[CLI]]
