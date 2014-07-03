@@ -34,6 +34,7 @@
   * [[grunt | Usage with grunt]]
   * [[gulp | Usage with gulp]]
   * [[karma | Usage with karma]] (WIP)
+  * [[bower | Usage with bower]] (WIP)
 * API
   * [[Configuration]]
   * [[CLI]]
