@@ -24,6 +24,20 @@ gulp.task("webpack", function(callback) {
 });
 ```
 
+## Use with [gulp-webpack](https://github.com/shama/gulp-webpack)
+
+gulp-webpack is a plugin that streams assets from webpack allowing a more idiomatic gulp way of building with webpack. First install with `npm install gulp-webpack` and then use as follows:
+
+``` javascript
+var gulp = require('gulp');
+var webpack = require('gulp-webpack');
+gulp.task("webpack", function() {
+	return gulp.src('src/entry.js')
+		.pipe(webpack({ /* webpack configuration */ }))
+		.pipe(gulp.dest('dist/'));
+});
+```
+
 ## [[webpack-dev-server]]
 
 > Don't be too lazy to integrate the webpack-dev-server into your development process. It's a important tool for productivity.
