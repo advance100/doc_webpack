@@ -37,7 +37,7 @@ bower package vs. npm package
 
 > Note: the bower package is built with bowserify and envify (`NODE_ENV = "production"`)
 
-So we compare three configurations:
+So we compare four configurations:
 
 a) webpack + bower package (`DefinePlugin` makes no difference here as envify already removed debug code)
 
