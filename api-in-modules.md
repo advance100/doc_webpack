@@ -200,7 +200,7 @@ module.id === require.resolve("./file.js")
 
 ### `require.cache`
 
-Multiple requires to the same module result in only one module execution and only one export. Therefore a cache in the runtime exists. Removing values from this cache cause new module execution and a new export. This is only needed in rar cases (for compatibility!).
+Multiple requires to the same module result in only one module execution and only one export. Therefore a cache in the runtime exists. Removing values from this cache cause new module execution and a new export. This is only needed in rare cases (for compatibility!).
 
 Style: CommonJs
 
