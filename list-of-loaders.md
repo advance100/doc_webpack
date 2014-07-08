@@ -2,7 +2,6 @@
 
 * [`json`](https://github.com/webpack/json-loader): Loads file as JSON
 * [`raw`](https://github.com/webpack/raw-loader): Loads raw content of a file (as utf-8)
-* [`bundle`](https://github.com/webpack/bundle-loader): Wraps request in a `require.ensure` block
 * [`val`](https://github.com/webpack/val-loader): Executes code as module and consider exports as javascript code
 * [`imports`](https://github.com/webpack/imports-loader): imports stuff to the module
 * [`exports`](https://github.com/webpack/exports-loader): exports stuff from the module
@@ -10,13 +9,13 @@
 * [`script`](https://github.com/webpack/script-loader): Executes a javascript file once in global context (like in script tag), requires are not parsed.
 * [`source-map`](https://github.com/webpack/source-map-loader): Extract `sourceMappingURL` comments from modules and offer it to webpack
 
-
 ## packaging
 
 * [`file`](https://github.com/webpack/file-loader): Emits the file into the output folder and returns the (relative) url.
 * [`url`](https://github.com/webpack/url-loader): The url loader works like the file loader, but can return a Data Url if the file is smaller than a limit.
 * [`worker`](https://github.com/webpack/worker-loader): The worker loader creates a WebWorker for the provided file. The bundling of dependencies of the Worker is transparent.
-
+* [`bundle`](https://github.com/webpack/bundle-loader): Wraps request in a `require.ensure` block
+* [`react-proxy`](https://github.com/webpack/react-proxy-loader): Code Splitting and Hot Module Replacement for react components.
 
 ## dialects
 
