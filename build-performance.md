@@ -4,3 +4,4 @@ WIP
 * [[`prefetch` | configuration]]
 * [[`noParse` | configuration]]
 * [analyse tool gives hints](http://webpack.github.io/analyse/)
+* SourceMaps are slow
