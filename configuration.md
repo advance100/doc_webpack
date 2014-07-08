@@ -544,6 +544,8 @@ Choose a developer tool to enhance debugging.
 
 Prefixing `@`, `#` or `#@` will enforce a pragma style.
 
+> Hint: If your modules already contain SourceMaps you'll need to use the [source-map-loader](https://github.com/webpack/source-map-loader) to merge it with the emitted SourceMap.
+
 Example:
 
 ``` javascript
