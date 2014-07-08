@@ -227,6 +227,13 @@ console.log("Running App version " + VERSION);
 if(!BROWSER_SUPPORTS_HTML5) require("html5shiv");
 ```
 
+Each key passed into `DefinePlugin` is an identifier or multiple identifiers joined with `.`. 
+
+* If the value is a string it will be used as a code fragment. 
+* If the value isn't a string, it will be stringified (including functions). 
+* If the value is an object all keys are defined the same way.
+* If you prefix `typeof` to the key, it's only defined for typeof calls.
+
 The values will be inlined into the code which allows a minification pass to remove the redundant conditional.
 
 Example: 
@@ -251,11 +258,6 @@ and then after a minification pass results in:
 ``` javascript
   console.log('Production log')
 ````` 
-A key is a identifier or multiple identifier joined with `.`. If the value is a string it'll be used a code fragment. If the value isn't a string, it'll be stringified (including functions).
-
-If the value is an object all keys are defined the same way.
-
-If you prefix `typeof ` to the key, it's only defined for typeof calls.
 
 
 
