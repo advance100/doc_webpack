@@ -209,13 +209,7 @@ Use angular.js modules with webpack.
 new webpack.DefinePlugin(definitions)
 ```
 
-Define free variables. The values will be inlined into the code.
-
-A key is a identifier or multiple identifier joined with `.`. If the value is a string it'll be used a code fragment. If the value isn't a string, it'll be stringified (including functions).
-
-If the value is an object all keys are defined the same way.
-
-If you prefix `typeof ` to the key, it's only defined for typeof calls.
+Define free variables. Useful for having development builds with debug logging or adding global constants. 
 
 Example:
 
@@ -232,6 +226,38 @@ new webpack.DefinePlugin({
 console.log("Running App version " + VERSION);
 if(!BROWSER_SUPPORTS_HTML5) require("html5shiv");
 ```
+
+The values will be inlined into the code which allows a minification pass to remove the redundant conditional.
+
+Example: 
+
+``` javascript
+if(DEBUG)
+  console.log('Debug info')
+if(PRODUCTION)
+  console.log('Production log')
+````` 
+After passing through webpack with no minification results in:
+
+``` javascript
+if(false)
+  console.log('Debug info')
+if(true)
+  console.log('Production log')
+````` 
+
+and then after a minification pass results in:
+
+``` javascript
+  console.log('Production log')
+````` 
+A key is a identifier or multiple identifier joined with `.`. If the value is a string it'll be used a code fragment. If the value isn't a string, it'll be stringified (including functions).
+
+If the value is an object all keys are defined the same way.
+
+If you prefix `typeof ` to the key, it's only defined for typeof calls.
+
+
 
 ### `ProvidePlugin`
 
