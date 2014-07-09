@@ -356,7 +356,7 @@ An array of directory names to be resolved to the current directory as well as i
 
 > Default: `["web_modules", "node_modules"]`
 
-> Note: Passing `"../someDir"` or `"app"` isn't expected here. Just use a directory name, not a relative path. You may want to use the `resolve.root` option here.
+> Note: Passing `"../someDir"`, `"app"` or `"."` isn't expected here. Just use a directory name, not a relative path. You may want to use the `resolve.root` option instead.
 
 ### `resolve.fallback`
 
