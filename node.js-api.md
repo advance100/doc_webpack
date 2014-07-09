@@ -75,6 +75,8 @@ You can specify the information by the `options` argument: (Boolean)
 
 `options.assetsSort` (string) sort the assets by that field
 
+In `toJson` every flag defaults to `true` (except `chunkModules`). By default it's not sorted.
+
 Here is an [example of the resulting JSON](https://github.com/webpack/analyse/blob/master/app/pages/upload/example.json).
 
 ### `stats.toString(options)`
