@@ -484,7 +484,7 @@ Enforcing `amd` or `umd` in a external value will break if not compiling as amd/
 
 ## `bail`
 
-Report the first error at a hard error instead of tolerating it.
+Report the first error as a hard error instead of tolerating it.
 
 
 
