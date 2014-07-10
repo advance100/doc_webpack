@@ -1,31 +1,36 @@
-## [RequireJS等はもう古い。WebPackとは？](http://ameblo.jp/ca-1pixel/entry-11884453208.html)
+## Articles
 
-introductory tutorial (with real world samples)
+### [RequireJS???????WebPack???](http://ameblo.jp/ca-1pixel/entry-11884453208.html)
 
+Introductory tutorial (with real world samples)<br>
 2014-06-26 @gunta
 
-## (Talk) [webpack](http://ryanseddon.github.io/webpack-talk/)
+### [Book of Modern frontend tooling](http://tooling.github.io/book-of-modern-frontend-tooling/dependency-management/webpack/getting-started.html)
 
-22 Slices, short introduction
+An unfinished chapter on webpack<br>
+2014-04-08 @shama
 
-2014-06-11 @ryanseddon
+### [An introduction to webpack](http://cuttleblog.tumblr.com/post/63669845272/webpack)
 
-## [Book of Modern frontend tooling](http://tooling.github.io/book-of-modern-frontend-tooling/dependency-management/webpack/getting-started.html)
-
-An unfinished chapter on webpack
-
-2014-04-08, @shama
-
-## [An introduction to webpack](http://cuttleblog.tumblr.com/post/63669845272/webpack)
-
-Cross develop for Node and the Browser without forking around
-
+Cross develop for Node and the Browser without forking around<br>
 2013-10-10 @davidgovea
 
-## [Single Page Modules with Webpack](http://dontkry.com/posts/code/single-page-modules-with-webpack.html)
+### [Single Page Modules with Webpack](http://dontkry.com/posts/code/single-page-modules-with-webpack.html)
 
 2013-09-27 @shama 
 
+## Talks
+
+### [Managing your front-end with webpack](http://peerigon.github.io/presentations/2014-07-09-MNUG-webpack)
+
+Comprehensive introduction to webpack, held at the [MNUG (munich node.js user group)](http://mnug.de/)<br>
+2014-07-09 @jhnns
+
+### [webpack](http://ryanseddon.github.io/webpack-talk/)
+
+22 Slides, short introduction<br>
+2014-06-11 @ryanseddon
+
 ---
 
-(Use the edit button (top right corner) to add more)
+(Use the edit button at top right corner to add more)
