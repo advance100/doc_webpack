@@ -1,6 +1,6 @@
 ## Articles
 
-### [RequireJS???????WebPack???](http://ameblo.jp/ca-1pixel/entry-11884453208.html)
+### [RequireJS等はもう古い。WebPackとは？](http://ameblo.jp/ca-1pixel/entry-11884453208.html)
 
 Introductory tutorial (with real world samples)<br>
 2014-06-26 @gunta
