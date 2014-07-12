@@ -8,9 +8,10 @@
   * [[Using Loaders]]
   * [[Using Plugins]] (WIP)
   * [[Dev Tools]] (WIP)
-* Step-by-step tutorials
+* tutorials and examples
   * [Getting started](http://webpack.github.io/docs/tutorials/getting-started/)
   * [[List of tutorials]]
+  * [[examples]]
 * Guides
   * [[CommonJs]]
   * [[AMD]]
