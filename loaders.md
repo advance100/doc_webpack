@@ -101,6 +101,8 @@ Errors can be thrown in sync mode or the `this.callback` can be called with the 
 
 `enhanced-require` allows async mode only with `require.ensure` or AMD `require`.
 
+For more detailed instructions and guidelines, check out [[How to write a loader]].
+
 ## examples
 
 ### sync loader
