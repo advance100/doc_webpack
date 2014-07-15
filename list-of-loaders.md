@@ -41,6 +41,7 @@
 * [`jsx`](https://github.com/petehunt/jsx-loader): Transform jsx code for [React](http://facebook.github.io/react/) to js code.
 * [`ejs`](https://github.com/okonet/ejs-loader): Loads EJS ([underscore](http://underscorejs.org/#template)( templating engine) template and returns a pre-compiled function
 * [`yml`](https://github.com/okonet/yml-loader): Converts YAML to JSON
+* [`markdown`](https://github.com/peerigon/markdown-loader): Compiles Markdown to HTML
 
 
 
