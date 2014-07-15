@@ -8,6 +8,7 @@
 * [`expose`](https://github.com/webpack/expose-loader): expose exports from a module to the global context
 * [`script`](https://github.com/webpack/script-loader): Executes a javascript file once in global context (like in script tag), requires are not parsed.
 * [`source-map`](https://github.com/webpack/source-map-loader): Extract `sourceMappingURL` comments from modules and offer it to webpack
+* [`checksum`](https://github.com/naturalatlas/checksum-loader): Computes the checksum of a file
 
 ## packaging
 
