@@ -17,7 +17,7 @@ open index.html
 
 ### webpack-dev-server
 
-The webpack-dev-server do automatically create a HTML page which loads the script. It also reexecutes the tests when files have changed.
+The webpack-dev-server will automatically create a HTML page which loads the script. It also reexecutes the tests when files have changed.
 
 ``` sh
 webpack-dev-server "mocha!./test.js" --output-file test.js
