@@ -1,5 +1,10 @@
 ## Articles
 
+### [webpack-howto](https://github.com/petehunt/webpack-howto)
+
+A no-BS cookbook for getting things done with webpack, taken from Instagram.com's best practices<br>
+20147-17 @petehunt
+
 ### [RequireJS等はもう古い。WebPackとは？](http://ameblo.jp/ca-1pixel/entry-11884453208.html)
 
 Introductory tutorial (with real world samples)<br>
