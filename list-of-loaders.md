@@ -18,6 +18,7 @@
 * [`bundle`](https://github.com/webpack/bundle-loader): Wraps request in a `require.ensure` block (callback)
 * [`promise`](https://github.com/gaearon/promise-loader): Wraps request in a `require.ensure` block (promise)
 * [`react-proxy`](https://github.com/webpack/react-proxy-loader): Code Splitting and Hot Module Replacement for react components.
+* [`react-hot`](https://github.com/gaearon/react-hot-loader): Allows to live-edit React components while keeping them mounted and preserving their state.
 
 ## dialects
 
