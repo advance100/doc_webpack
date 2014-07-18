@@ -28,8 +28,8 @@ The feature add some overhead to the entry chunk.
 
 While writing your code, you may have already added many code split points to load stuff on demand. After compiling you might notice that there are too many chunks that are too small - creating larger HTTP overhead. Luckily, Webpack can post-process your chunks by merging them. You can provide two options:
 
-* Limit the maximum chunk count with `--optimize-max-chunks 15` `new webpack.optimize.LimitChunkCountPlugin(15)`
-* Limit the minimum chunk size with `--optimize-min-chunk-size 10000` `new webpack.optimize.MinChunkSizePlugin(10000)`
+* Limit the maximum chunk count with `--optimize-max-chunks 15` `new webpack.optimize.LimitChunkCountPlugin({maxChunks: 15})`
+* Limit the minimum chunk size with `--optimize-min-chunk-size 10000` `new webpack.optimize.MinChunkSizePlugin({minChunkSize: 10000})`
 
 Webpack will take care of it by merging chunks (it will prefer merging chunk that have duplicate modules). Nothing will be merged into the entry chunk, so as not to impact initial page loading time.
 
