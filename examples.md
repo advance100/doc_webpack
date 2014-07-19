@@ -67,8 +67,8 @@
 ## stylesheet
 
 * [extracting a stylesheet for the css modules](https://github.com/webpack/webpack/tree/master/examples/css-bundle)
-* [+ Code Splitting](https://github.com/webpack/webpack/tree/master/examples/css-bundle)
-* [+ commons chunk](https://github.com/webpack/webpack/tree/master/examples/css-bundle)
+* [+ Code Splitting](https://github.com/webpack/webpack/tree/master/examples/code-splitted-css-bundle)
+* [+ commons chunk](https://github.com/webpack/webpack/tree/master/examples/multiple-entry-points-commons-chunk-css-bundle)
 
 ## WebWorker
 
