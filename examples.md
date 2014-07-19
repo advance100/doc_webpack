@@ -60,13 +60,15 @@
 * [using the deduplication plugin](https://github.com/webpack/webpack/tree/master/examples/dedupe)
 * [deduplication with Code Splitting](https://github.com/webpack/webpack/tree/master/examples/code-splitted-dedupe)
 
-## stylesheet
-
-* [extracting a stylesheet for the css modules](https://github.com/webpack/webpack/tree/master/examples/css-bundle) (WIP)
-
 ## commons chunk plugin
 
 * [using the a commons chunk](https://github.com/webpack/webpack/tree/master/examples/multiple-commons-chunks)
+
+## stylesheet
+
+* [extracting a stylesheet for the css modules](https://github.com/webpack/webpack/tree/master/examples/css-bundle)
+* [+ Code Splitting](https://github.com/webpack/webpack/tree/master/examples/css-bundle)
+* [+ commons chunk](https://github.com/webpack/webpack/tree/master/examples/css-bundle)
 
 ## WebWorker
 
