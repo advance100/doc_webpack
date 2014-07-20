@@ -146,7 +146,7 @@ Runs the [ngmin](http://github.com/btford/ngmin) pre-minimizer to insert Angular
 ### `CommonsChunkPlugin`
 
 ``` javascript
-new webpack.optimize.CommonsChunkPlugin(filename, [entryPoints], [minChunks])
+new webpack.optimize.CommonsChunkPlugin([chunkName], filename, [entryPoints], [minChunks])
 ```
 
 Generates an extra chunk, which contains common modules shared between at least `minChunks` entry points. You must load the generated chunk before the entry point:
@@ -156,11 +156,13 @@ Generates an extra chunk, which contains common modules shared between at least 
 <script src="entry.bundle.js" charset="utf-8"></script>
 ```
 
+`chunkName` is the internal name of the chunk. You pass a name of an exisiting chunk to reuse it (i. e. to add stuff to the commons chunk).
+
 `filename` the filename of the commons chunk (like `output.filename`). Accepts `[hash]`, `[chunkhash]`, etc.
 
 `entryPoints` an array of entry points that should be used to generate these commons chunk. By default all entry points will be used.
 
-`minChunks` the number of entry point that need to have a module in common. By default it need to be in all entry points. Allowed values are `2` <= `minChunks` <= entry points count or `Infinitiy`.
+`minChunks` the number of entry point that need to have a module in common. By default it need to be in all entry points. Allowed values are `2` <= `minChunks` <= entry points count or `Infinitiy`. Passing `Infinitiy` doesn't move any module into the commons chunk (use this if you want manual control over the content for better long-term-caching).
 
 ### `AggressiveMergingPlugin`
 
