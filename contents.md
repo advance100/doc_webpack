@@ -1,13 +1,13 @@
 * Getting Started
   * [[Motivation]]
   * [[What is webpack? | What is webpack]]
-  * [[Installation]] (WIP)
-  * [[Usage]] (WIP)
-  * Require Modules (WIP)
-  * Vendor Modules (WIP)
+  * [[Installation]]
+  * [[Usage]]
+  * Require Modules
+  * Vendor Modules
   * [[Using Loaders]]
-  * [[Using Plugins]] (WIP)
-  * [[Dev Tools]] (WIP)
+  * [[Using Plugins]]
+  * [[Dev Tools]]
 * tutorials and examples
   * [Getting started](http://webpack.github.io/docs/tutorials/getting-started/)
   * [[List of tutorials]]
@@ -21,13 +21,13 @@
   * [[Optimization]]
   * [[Long-term Caching]]
   * [[How to write a loader]]
-  * How to write a plugin (WIP)
-  * [[Multiple entry points]] (WIP)
+  * How to write a plugin
+  * [[Multiple entry points]]
   * [[Library and externals]]
   * [[Shimming modules]]
   * [[Testing]]
-  * [[Build performance]] (WIP)
-  * [[Hot Module Replacement with webpack]] (WIP)
+  * [[Build performance]]
+  * [[Hot Module Replacement with webpack]]
   * [[Comparison]]
 * Lists
   * [[List of loaders]]
@@ -36,7 +36,7 @@
   * [[grunt | Usage with grunt]]
   * [[gulp | Usage with gulp]]
   * [[bower | Usage with bower]]
-  * [[karma | Usage with karma]] (WIP)
+  * [[karma | Usage with karma]]
 * API
   * [[Configuration]]
   * [[CLI]]
@@ -54,4 +54,4 @@
   * [[Changelog]]
   * [[Roadmap]]
   * [[Ideas]]
-  * Contributing (WIP)
+  * Contributing
