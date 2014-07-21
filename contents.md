@@ -17,6 +17,7 @@
   * [[AMD]]
   * [[webpack for browserify users]]
   * [[Code Splitting]]
+  * [[Stylesheets]]
   * [[Optimization]]
   * [[Long-term Caching]]
   * [[How to write a loader]]
