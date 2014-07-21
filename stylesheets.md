@@ -2,6 +2,14 @@
 
 Through using the `style-loader` and the `css-loader` it's possible to embed stylesheets into a webpack javascript bundle. This way you can modularize your stylesheets with your other modules. This way stylesheets are as easy as `require("./stylesheet.css")`.
 
+## installation
+
+Install the loaders from npm.
+
+``` text
+npm install style-loader css-loader --save
+```
+
 ## configuration
 
 Here is a configuration example that enables `require()` css:
@@ -39,6 +47,14 @@ With Code Splitting we can use two different modes:
 * Create one css file for the complete bundle.
 
 The first mode is recommended because it's optimial in regards to initial page loading time. In small apps with multiple entry points the second mode could be better because of HTTP request overheads and caching.
+
+## plugin installation
+
+Install the plugin from npm.
+
+``` text
+npm install extract-text-webpack-plugin --save
+```
 
 ## general
 
