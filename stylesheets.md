@@ -127,3 +127,24 @@ You'll get these output files:
 * `about.js`
 * `1.js` `2.js` (don't contain embedded styles)
 * `style.css`
+
+## one css file per initial chunk (with commons chunk)
+
+``` javascript
+// ...
+module.exports = {
+	// ...
+	plugins: [
+		new webpack.optimize.CommonsChunkPlugin("commons", "commons.js"),
+		new ExtractTextPlugin("[name].css")
+	]
+}
+```
+
+You'll get these output files:
+
+* `commons.js` `commons.css`
+* `posts.js` `posts.css`
+* `post.js` `post.css`
+* `about.js` `about.css`
+* `1.js` `2.js` (contain embedded styles)
