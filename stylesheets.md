@@ -62,7 +62,7 @@ To use the plugin you need to flag modules that should be moved into the css fil
 
 A new asset is created for the extracted modules.
 
-## one css file per initial chunk
+## one css file per entry
 
 This examples shows multiple entry points, but also works with a single entry point.
 
@@ -128,7 +128,7 @@ You'll get these output files:
 * `1.js` `2.js` (don't contain embedded styles)
 * `style.css`
 
-## one css file per initial chunk (with commons chunk)
+## one css file per entry + commons chunk
 
 ``` javascript
 // ...
