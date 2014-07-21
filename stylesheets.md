@@ -83,11 +83,11 @@ module.exports {
 		loaders: [
 			{
 				test: /\.css$/,
-				loader: ExtractTextPlugin.use("style-loader", "css-loader")
+				loader: ExtractTextPlugin.extract("style-loader", "css-loader")
 			},
 			{
 				test: /\.less$/,
-				loader: ExtractTextPlugin.use("style-loader", "css-loader!less-loader")
+				loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
 			}
 		]
 	},
