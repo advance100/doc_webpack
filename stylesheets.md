@@ -43,7 +43,7 @@ In combination with the [extract-text-webpack-plugin](https://github.com/webpack
 
 With Code Splitting we can use two different modes:
 
-* Create one css file per initial chunk (see [[Code Spitting]]) and embed stylesheets into additional chunks. (recommended)
+* Create one css file per initial chunk (see [[Code Splitting]]) and embed stylesheets into additional chunks. (recommended)
 * Create one css file for the complete bundle.
 
 The first mode is recommended because it's optimial in regards to initial page loading time. In small apps with multiple entry points the second mode could be better because of HTTP request overheads and caching.
