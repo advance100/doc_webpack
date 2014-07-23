@@ -128,8 +128,6 @@ module.exports = {
 }
 ```
 
-> Note that there is currently a bug, so you need to omit the first argument to `extract` when using `allChunks: true`. => `ExtractTextPlugin.extract("css-loader")`
-
 You'll get these output files:
 
 * `posts.js`
