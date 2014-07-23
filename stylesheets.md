@@ -39,6 +39,8 @@ require("./stylesheet.css");
 
 # separate css bundle
 
+> WARNING: experimental
+
 In combination with the [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin) it's possible to generate a native css file.
 
 With Code Splitting we can use two different modes:
