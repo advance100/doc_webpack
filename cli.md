@@ -96,3 +96,7 @@ Display the separation of the modules into chunks.
 #### `--display-reasons`
 
 Show more information about the reasons why a module is included.
+
+#### `--display-error-details`
+
+Show more information about the errors. I. e. this shows which paths are tried while resolving a module.
