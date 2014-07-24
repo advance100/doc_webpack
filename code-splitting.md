@@ -69,7 +69,25 @@ If a module is available in all parents of a chunk, it's removed from that chunk
 
 If a chunk contains all modules of another chunk, this is stored. It fulfill multiple chunks.
 
+To split your app into 2 files, say `app.js` and `vendor.js`, you can `require` the vendor files in `vendor.js`. Then pass this name to the `CommonsChunkPlugin` as shown below.
 
+```js
+module.exports = {
+  entry: {
+    app: './app/app.js',
+    vendor: './app/vendor.js',
+  },
+  output: {
+    path: 'dist',
+    filename: '[name].js'
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js')
+  ]
+};
+```
+
+This will move all code common between your `app.js` and `vendor.js` to `dist/vendor.js`. The `app.js` will now contain just your app code, without any of it's dependencies.
 
 ## Chunk loading
 
