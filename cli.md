@@ -67,8 +67,6 @@ Equals to `--optimize-minimize` `--optimize-occurence-order`
 
 Watches all dependencies and recompile on change.
 
-> Note: It's recommended to combine it with `--cache`.
-
 
 
 ### display options
