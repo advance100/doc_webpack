@@ -130,12 +130,12 @@ module.exports = {
   entry: {
     p1: "./page1",
     p2: "./page2",
-    "commons.js": "./entry-for-the-commons-chunk"
+    commons: "./entry-for-the-commons-chunk"
   },
   plugins: [
-    new CommonsChunkPlugin("commons.js", ["p1", "p2"])
+    new CommonsChunkPlugin("commons", "commons.js")
   ]
 };
 ```
 
-See also [multiple-entry-points example](https://github.com/webpack/webpack/tree/master/examples/multiple-entry-points).
+See also [multiple-entry-points example](https://github.com/webpack/webpack/tree/master/examples/multiple-entry-points) and [advanced mulitple-commons-chunks example](https://github.com/webpack/webpack/tree/master/examples/multiple-commons-chunks).
