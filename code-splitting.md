@@ -69,25 +69,7 @@ If a module is available in all parents of a chunk, it's removed from that chunk
 
 If a chunk contains all modules of another chunk, this is stored. It fulfill multiple chunks.
 
-To split your app into 2 files, say `app.js` and `vendor.js`, you can `require` the vendor files in `vendor.js`. Then pass this name to the `CommonsChunkPlugin` as shown below.
 
-```js
-module.exports = {
-  entry: {
-    app: './app/app.js',
-    vendor: './app/vendor.js',
-  },
-  output: {
-    path: 'dist',
-    filename: '[name].js'
-  },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js')
-  ]
-};
-```
-
-This will move all code common between your `app.js` and `vendor.js` to `dist/vendor.js`. The `app.js` will now contain just your app code, without any of it's dependencies.
 
 ## Chunk loading
 
@@ -108,6 +90,36 @@ A normal chunk contains no runtime. It only contains a bunch of modules. The str
 ### Initial chunk (non-entry)
 
 A initial chunk is a normal chunk. The only difference is that optimization threads it as more important because it counts toward the initial loading time (like entry chunks). That chunk type can occur in combination with the `CommonsChunkPlugin`.
+
+
+
+## Split app and vendor code
+
+To split your app into 2 files, say `app.js` and `vendor.js`, you can `require` the vendor files in `vendor.js`. Then pass this name to the `CommonsChunkPlugin` as shown below.
+
+``` javascript
+module.exports = {
+  entry: {
+    app: "./app.js",
+    vendor: ["jquery", "underscore", ...],
+  },
+  output: {
+    filename: "bundle.js"
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.bundle.js")
+  ]
+};
+```
+
+This will remove all modules in the `vendor` chunk from the `app` chunk. The `bundle.js` will now contain just your app code, without any of it's dependencies. These are in `vendor.bundle.js`.
+
+In your HTML page load `vendor.bundle.js` before `bundle.js`.
+
+``` html
+<script src="vendor.bundle.js"></script>
+<script src="bundle.js"></script>
+```
 
 
 
