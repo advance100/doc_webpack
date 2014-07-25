@@ -1,9 +1,14 @@
 ## Articles
 
+### [Integrating JSX live reload into your React workflow](http://gaearon.github.io/react-hot-loader/)
+
+A guide how to migrate the react-tutorial to webpack and using the Hot Module Replacement and react-hot-loader for a live reloading react app.<br>
+2014-07-24 @gaearon
+
 ### [webpack-howto](https://github.com/petehunt/webpack-howto)
 
 A no-BS cookbook for getting things done with webpack, taken from Instagram.com's best practices<br>
-20147-17 @petehunt
+2014-07-17 @petehunt
 
 ### [RequireJS等はもう古い。WebPackとは？](http://ameblo.jp/ca-1pixel/entry-11884453208.html)
 
