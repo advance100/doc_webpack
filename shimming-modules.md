@@ -122,7 +122,7 @@ This loader evaluates code in the global context, just like you would add the co
 
 There are cases where you want a module to export itself to the global context.
 
-Don't do this if you don't really need this
+Don't do this unless you really need this.
 
 ## [`expose-loader`](https://github.com/webpack/expose-loader)
 
