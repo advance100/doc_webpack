@@ -21,7 +21,7 @@
 
 ## library and externals
 
-* [library option with multiple entry points](https://github.com/webpack/webpack/tree/master/examples/multi-part-library)
+* [library option with multiple entry points and UMD](https://github.com/webpack/webpack/tree/master/examples/multi-part-library)
 * [using stuff from other scripts](https://github.com/webpack/webpack/tree/master/examples/externals)
 
 ## loaders
