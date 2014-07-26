@@ -11,7 +11,7 @@ See [[configuration]] `resolve.modulesDirectories` and [[list of plugins]] `Reso
 var webpack = require("webpack");
 module.exports = {
 	resolve: {
-		modulesDirectories: ["node_modules", "bower_components"]
+		modulesDirectories: ["web_modules", "node_modules", "bower_components"]
 	},
 	plugins: [
 		new webpack.ResolverPlugin(
