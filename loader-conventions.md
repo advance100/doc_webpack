@@ -13,6 +13,6 @@
 | `.wav`<br>`.mp3` | returns url to audio | `file-loader`<br>`url-loader` |
 | `.mpeg`<br>`.mp4`<br>`.webm`<br>`.ogv` | returns url to video | `file-loader` |
 | `.html` | returns HTML as string | `html-loader` |
-| `.md`<br>`.markdown` | return HTML as string | `html-loader!markdown-loader` |
+| `.md`<br>`.markdown` | returns HTML as string | `html-loader!markdown-loader` |
 | `.jade` | returns template function | `jade-loader` |
 | `.hbs`<br>`.handlebars` | returns template function | `handlebars-loader` |
