@@ -29,14 +29,16 @@
   * [[Build performance]]
   * [[Hot Module Replacement with webpack]]
   * [[Comparison]]
-* Lists
-  * [[List of loaders]]
-  * [[List of plugins]]
 * webpack with
   * [[grunt | Usage with grunt]]
   * [[gulp | Usage with gulp]]
   * [[bower | Usage with bower]]
   * [[karma | Usage with karma]]
+* Lists
+  * [[loader conventions]]
+  * [[List of loaders]]
+  * [[List of plugins]]
+  * [[List of tutorials]]
 * API
   * [[Configuration]]
   * [[CLI]]
