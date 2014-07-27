@@ -28,6 +28,7 @@
 * [`es6`](https://github.com/shama/es6-loader): Loads ES6 modules.
 * [`livescript`](https://github.com/appedemic/livescript-loader): Loads LiveScript like javascript
 * [`sweetjs`](https://github.com/petehunt/sweetjs-loader): Use sweetjs macros. 
+* [`traceur`](https://github.com/jupl/traceur-loader): Use future JavaScript features with [Traceur](https://github.com/google/traceur-compiler).
 
 
 ## templating
