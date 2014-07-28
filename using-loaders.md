@@ -22,7 +22,15 @@ If you are interested in some loader examples head of to the [[list of loaders]]
 
 Loaders are [[resolved similar to modules | resolving]]. A loader module is expected to export a function and to be written in node.js compatible javascript. In the common case you manage loaders with npm, but you can also have loaders as files in your app.
 
-Module names with the suffix `-loader` are tried in addition to the exact name.
+## Referencing loaders
+
+By convention, though not required, loaders are usually named as `XXX-loader`, where `XXX` is the context name. For example, `json-loader`. 
+
+You may reference loaders by its full (actual) name (e.g. `json-loader`), or by its shorthand name (e.g. `json`). 
+
+The loader name convention and precedence search order is defined by [`resolveLoader.moduleTemplates`](http://webpack.github.io/docs/configuration.html#resolveloader-moduletemplates) within the webpack configuration API. 
+
+Loader name conventions may be useful, especially when referencing them within `require()` statements; see usage below.
 
 ## Installing loaders
 
