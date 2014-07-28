@@ -42,10 +42,12 @@ $ npm install xxx-loader --save-dev
 There are multiple ways to use loaders in your app:
 
 * explicit in the `require` statement
-* configured via CLI
 * configured via configuration
+* configured via CLI
 
 ## loaders in `require`
+
+> **Note:** Avoid using this, if at all possible, if you intend your scripts to be environment agnostic (node.js and browser). Use the *configuration* convention for specifying loaders (see next section).
 
 It's possible to specify the loaders in the `require` statement (or `define`, `require.ensure`, etc.). Just separate loaders from resource with `!`. Each part is resolved relative to the current directory.
 
@@ -65,15 +67,6 @@ require("style!css!less!bootstrap/less/bootstrap.less");
 //    "css-loader" and than by the "style-loader".
 ```
 
-## [[CLI]]
-
-You can bind loaders to a extension via CLI:
-
-``` sh
-$ webpack --module-bind jade --module-bind css=style!css
-```
-
-This uses the loader "jade" for ".jade" files and the loaders "style" and "css" for ".css" files.
 
 ## [[Configuration]]
 
@@ -95,6 +88,16 @@ You can bind loaders to a RegExp via configuration:
 }
 ```
 
+## [[CLI]]
+
+You can bind loaders to a extension via CLI:
+
+``` sh
+$ webpack --module-bind jade --module-bind css=style!css
+```
+
+This uses the loader "jade" for ".jade" files and the loaders "style" and "css" for ".css" files.
+
 ## Query parameters
 
 Loader can be passed query parameters via a query string (just like in the web). The query string is appended to the loader with `?`. I. e. `url-loader?mimetype=image/png`.
@@ -105,12 +108,6 @@ Note: The format of the query string is up to the loader. See format in the load
 
 ``` javascript
 require("url-loader?mimetype=image/png!./file.png");
-```
-
-### CLI
-
-``` sh
-webpack --module-bind "png=url-loader?mimetype=image/png"
 ```
 
 ### Configuration
@@ -129,3 +126,9 @@ or
 }
 ```
 
+
+### CLI
+
+``` sh
+webpack --module-bind "png=url-loader?mimetype=image/png"
+```
