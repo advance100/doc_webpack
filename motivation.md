@@ -65,7 +65,7 @@ It's used on server-side by [node.js](http://nodejs.org).
 #### Implementations
 
 * [node.js](http://nodejs.org/) - server-side
-* [browserify](https://github.com/substack/node-browserify) - compile to one bundle
+* [browserify](https://github.com/substack/node-browserify)
 * [modules-webmake](https://github.com/medikoo/modules-webmake) - compile to one bundle
 * [wreq](https://github.com/substack/wreq) - client-side
 
@@ -131,8 +131,8 @@ Modules should be executed on the client, so they must be transferred from the s
 
 There are two extremes on how to transfer modules:
 
-* 1 request per module (i. e. require.js)
-* all modules in one request (i. e. browserify and require.js when compiled)
+* 1 request per module
+* all modules in one request
 
 Both are used in the wild, but both are suboptimal:
 
