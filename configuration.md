@@ -140,7 +140,7 @@ The filename of the Hot Update Chunks. They are inside the `output.path` directo
 
 > Default: `"[id].[hash].hot-update.js"`
 
-### `output.hotUpdateChunkFilename`
+### `output.hotUpdateMainFilename`
 
 The filename of the Hot Update Main File. It is inside the `output.path` directory.
 
