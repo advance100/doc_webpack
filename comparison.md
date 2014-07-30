@@ -12,7 +12,7 @@
 | additional chunks are loaded on demand | **yes** | **yes** | no |
 | multi pages build with common bundle | with manual configuration | **yes** | with manual configuration |
 | concat in require `require("./fi" + "le")` | **yes** | no♦ | no |
-| indirect require `var r = require; r("./file")` | warning (include too much) | no♦ | no |
+| indirect require `var r = require; r("./file")` | **yes** | no♦ | no |
 | expressions in require (guided) `require("./templates/" + template)` | **yes (all files matching included)** | no♦ | no |
 | expressions in require (free) `require(moduleName)` | with manual configuration | no♦ | no |
 | requirable files | file system | **web** | file system |
