@@ -303,6 +303,10 @@ Example:
     unknownContextRegExp: /$^/,
     unknownContextCritical: false,
 
+    // Disable handling of requires with a single expression
+    exprContextRegExp: /$^/,
+    exprContextCritical: false,
+
     // Warn for every expression in require
     wrappedContextCritical: true
   }
