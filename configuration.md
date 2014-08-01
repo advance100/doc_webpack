@@ -6,7 +6,7 @@ If you use the [[CLI]] it will read a file `webpack.config.js` (or the file pass
 
 ``` javascript
 module.exports = {
-  // configuration
+	// configuration
 };
 ```
 
@@ -16,7 +16,7 @@ If you use the [[node.js API]] you need to pass the configuration object as para
 
 ``` javascript
 webpack({
-  // configuration
+	// configuration
 }, callback);
 ```
 
@@ -32,12 +32,12 @@ Very simple configuration object example:
 
 ``` javascript
 {
-  context: __dirname + "/app",
-  entry: "./entry",
-  output: {
-    path: __dirname + "/dist",
-    filename: "bundle.js"
-  }
+	context: __dirname + "/app",
+	entry: "./entry",
+	output: {
+		path: __dirname + "/dist",
+		filename: "bundle.js"
+	}
 }
 ```
 
@@ -67,16 +67,16 @@ If you pass an object: Multiple entry bundles are created. The key is the chunk 
 
 ``` javascript
 {
-  entry: {
-    page1: "./page1",
-    page2: ["./entry1", "./entry2"]
-  },
-  output: {
-    // Make sure to use [name] or [id] in output.filename
-    //  when using multiple entry points
-    filename: "[name].bundle.js",
-    chunkFilename: "[id].bundle.js"
-  }
+	entry: {
+		page1: "./page1",
+		page2: ["./entry1", "./entry2"]
+	},
+	output: {
+		// Make sure to use [name] or [id] in output.filename
+		//  when using multiple entry points
+		filename: "[name].bundle.js",
+		chunkFilename: "[id].bundle.js"
+	}
 }
 ```
 
@@ -122,9 +122,9 @@ The filename of named chunks as relative path inside the `output.path` directory
 
 ### `output.sourceMapFilename`
 
-The filename of the SourceMaps for the JavaScript files. They are inside the `output.path` directory.
+The filename of the SourceMaps for the Javascript files. They are inside the `output.path` directory.
 
-`[file]` is replaced by the filename of the JavaScript file.
+`[file]` is replaced by the filename of the Javascript file.
 
 `[id]` is replaced by the id of the chunk.
 
@@ -152,7 +152,7 @@ The filename of the Hot Update Main File. It is inside the `output.path` directo
 
 ### `output.publicPath`
 
-The `output.path` from the view of the JavaScript.
+The `output.path` from the view of the javascript.
 
 ``` javascript
 // Example
@@ -294,7 +294,7 @@ All options and defaults:
 
 `wrappedContextRegExp = /.*/`, `wrappedContextRecursive = true`, `wrappedContextCritical = false`
 
-> Note: `module.wrappedContextRegExp` only refers to the middle part of the full RegExp. The remaining is generated from prefix and suffix.
+> Note: `module.wrappedContextRegExp` only refers to the middle part of the full RegExp. The remaining is generated from prefix and surfix.
 
 Example:
 
@@ -362,7 +362,7 @@ An array of directory names to be resolved to the current directory as well as i
 
 > Default: `["web_modules", "node_modules"]`
 
-> Note: Passing `"../someDir"`, `"app"`, `"."` or an absolute path isn't necessary here. Just use a directory name, not a path. Use only if you expect to have a hierarchy within these folders. Otherwise you may want to use the `resolve.root` option instead.
+> Note: Passing `"../someDir"`, `"app"`, `"."` or an absolute path isn't expected here. Just use a directory name, not a path. Use it only if it is expected to have a hirachie or these folders. Elsewise you may want to use the `resolve.root` option instead.
 
 ### `resolve.fallback`
 
@@ -437,26 +437,26 @@ Example:
 
 ``` javascript
 {
-  output: { libraryTarget: "commonjs" },
-  externals: [
-    {
-      a: false, // a is not external
-      b: true, // b is external (require("b"))
-      "./c": "c", // "./c" is external (require("c"))
-      "./d": "var d" // "./d" is external (d)
-    },
-    // Every non-relative module is external
-    // abc -> require("abc")
-    /^[a-z\-0-9]+$/,
-    function(context, request, callback) {
-      // Every module prefixed with "global-" becomes external
-      // "global-abc" -> abc
-      if(/^global-/.test(request))
-        return callback(null, "var " + request.substr(7));
-      callback();
-    },
-    "./e" // "./e" is external (require("./e"))
-  ]
+	output: { libraryTarget: "commonjs" },
+	externals: [
+		{
+			a: false, // a is not external
+			b: true, // b is external (require("b"))
+			"./c": "c", // "./c" is external (require("c"))
+			"./d": "var d" // "./d" is external (d)
+		},
+		// Every non-relative module is external
+		// abc -> require("abc")
+		/^[a-z\-0-9]+$/,
+		function(context, request, callback) {
+			// Every module prefixed with "global-" becomes external
+			// "global-abc" -> abc
+			if(/^global-/.test(request))
+				return callback(null, "var " + request.substr(7));
+			callback();
+		},
+		"./e" // "./e" is external (require("./e"))
+	]
 }
 ```
 
@@ -544,7 +544,7 @@ Choose a developer tool to enhance debugging.
 
 `source-map` - A SourceMap is emitted. See also `output.sourceMapFilename`.
 
-`inline-source-map` - A SourceMap is added as DataUrl to the JavaScript file.
+`inline-source-map` - A SourceMap is added as DataUrl to the Javascript file.
 
 `eval-source-map` - Each module is executed with `eval` and a SourceMap is added as DataUrl to the `eval`.
 
@@ -556,7 +556,7 @@ Example:
 
 ``` javascript
 {
-  devtool: "#inline-source-map"
+	devtool: "#inline-source-map"
 }
 // =>
 //# sourceMappingURL=...
@@ -579,12 +579,12 @@ Include polyfills or mocks for various node stuff:
 ``` javascript
 // Default:
 {
-  console: false,
-  process: true,
-  global: true,
-  buffer: true,
-  __filename: "mock",
-  __dirname: "mock"
+	console: false,
+	process: true,
+	global: true,
+	buffer: true,
+	__filename: "mock",
+	__dirname: "mock"
 }
 ```
 
