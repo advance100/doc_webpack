@@ -26,6 +26,8 @@ webpack({
 
 # configuration object content
 
+> Hint: Keep in mind that you don't need to write pure JSON into the configuration. Use any javascript you want. It's just a node.js module...
+
 Very simple configuration object example:
 
 ``` javascript
