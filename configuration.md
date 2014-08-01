@@ -276,7 +276,7 @@ The files are expected to have no call to `require`, `define` or similar. They a
 There are multiple options to configure the defaults for an automatically created context. We differentiate three types of automatically created contexts:
 
 * `exprContext`: An expression as dependency (i. e. `require(expr)`)
-* `wrappedContext`: An expression plus pre- and/or surfixed string (i. e. `require("./templates/" + expr)`)
+* `wrappedContext`: An expression plus pre- and/or suffixed string (i. e. `require("./templates/" + expr)`)
 * `unknownContext`: Any other unparsable usage of `require` (i. e. `require`)
 
 Four options are possible for automatically created contexts:
@@ -362,7 +362,7 @@ An array of directory names to be resolved to the current directory as well as i
 
 > Default: `["web_modules", "node_modules"]`
 
-> Note: Passing `"../someDir"`, `"app"`, `"."` or an absolute path isn't expected here. Just use a directory name, not a path. Use it only if it is expected to have a hirachie or these folders. Elsewise you may want to use the `resolve.root` option instead.
+> Note: Passing `"../someDir"`, `"app"`, `"."` or an absolute path isn't necessary here. Just use a directory name, not a path. Use only if you expect to have a hierarchy within these folders. Otherwise you may want to use the `resolve.root` option instead.
 
 ### `resolve.fallback`
 
