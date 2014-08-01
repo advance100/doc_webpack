@@ -49,6 +49,8 @@ You can specify the information by the `options` argument: (Boolean)
 
 `options.hash` add the hash of the compilation
 
+`options.version` add webpack version information 
+
 `options.timings` add timing information
 
 `options.assets` add assets information
