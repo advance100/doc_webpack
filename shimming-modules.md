@@ -4,7 +4,7 @@ In some cases webpack cannot parse some file, because it has a unsupported modul
 
 # [[Using loaders]]
 
-On this page all examples with loaders are inlined into `require` calls. This is just for demonstration. You may want to configurate them in your configuration. Read [[Using loaders]] for more details how to do this.
+On this page all examples with loaders are inlined into `require` calls. This is just for demonstration. You may want to configure them in your webpack config instead. Read [[Using loaders]] for more details how to do this.
 
 
 
@@ -14,7 +14,7 @@ The file has dependencies that are not required.
 
 ## [`imports-loader`](https://github.com/webpack/imports-loader)
 
-This loader allows put some modules or arbitrary javascript onto a local variable of the file.
+This loader allows put some modules or arbitrary JavaScript onto a local variable of the file.
 
 Examples: 
 

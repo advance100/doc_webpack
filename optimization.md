@@ -60,14 +60,14 @@ When you compile a (real) multi page app, you want to share common code between 
 
 ``` javascript
 module.exports = {
-  entry: {
-    p1: "./page1",
-    p2: "./page2",
-    p3: "./page3"
-  },
-  output: {
-    filename: "[name].entry.chunk.js"
-  }
+	entry: {
+		p1: "./page1",
+		p2: "./page2",
+		p3: "./page3"
+	},
+	output: {
+		filename: "[name].entry.chunk.js"
+	}
 }
 ```
 
@@ -78,17 +78,17 @@ If your entry chunks have some modules in common, there is a cool plugin for thi
 ``` javascript
 var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 module.exports = {
-  entry: {
-    p1: "./page1",
-    p2: "./page2",
-    p3: "./page3"
-  },
-  output: {
-    filename: "[name].entry.chunk.js"
-  },
-  plugins: [
-    new CommonsChunkPlugin("commons.chunk.js")
-  ]
+	entry: {
+		p1: "./page1",
+		p2: "./page2",
+		p3: "./page3"
+	},
+	output: {
+		filename: "[name].entry.chunk.js"
+	},
+	plugins: [
+		new CommonsChunkPlugin("commons.chunk.js")
+	]
 }
 ```
 
@@ -99,20 +99,20 @@ You can generate multiple commons chunks, by selecting the entry chunks. And you
 ``` javascript
 var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 module.exports = {
-  entry: {
-    p1: "./page1",
-    p2: "./page2",
-    p3: "./page3",
-    ap1: "./admin/page1",
-    ap2: "./admin/page2"
-  },
-  output: {
-    filename: "[name].js"
-  },
-  plugins: [
-    new CommonsChunkPlugin("admin-commons.js", ["ap1", "ap2"]),
-    new CommonsChunkPlugin("commons.js", ["p1", "p2", "admin-commons.js"])
-  ]
+	entry: {
+		p1: "./page1",
+		p2: "./page2",
+		p3: "./page3",
+		ap1: "./admin/page1",
+		ap2: "./admin/page2"
+	},
+	output: {
+		filename: "[name].js"
+	},
+	plugins: [
+		new CommonsChunkPlugin("admin-commons.js", ["ap1", "ap2"]),
+		new CommonsChunkPlugin("commons.js", ["p1", "p2", "admin-commons.js"])
+	]
 };
 // <script>s required:
 // page1.html: commons.js, p1.js
@@ -127,14 +127,14 @@ Advanced hint: You can run code inside the commons chunk:
 ``` javascript
 var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 module.exports = {
-  entry: {
-    p1: "./page1",
-    p2: "./page2",
-    commons: "./entry-for-the-commons-chunk"
-  },
-  plugins: [
-    new CommonsChunkPlugin("commons", "commons.js")
-  ]
+	entry: {
+		p1: "./page1",
+		p2: "./page2",
+		commons: "./entry-for-the-commons-chunk"
+	},
+	plugins: [
+		new CommonsChunkPlugin("commons", "commons.js")
+	]
 };
 ```
 

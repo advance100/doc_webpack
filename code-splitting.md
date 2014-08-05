@@ -55,7 +55,7 @@ Note: It's allowed to omit the callback.
 
 ## Chunk content
 
-All dependencies at a split point go into a new chunk. Dependencies are also recursivly added.
+All dependencies at a split point go into a new chunk. Dependencies are also recursively added.
 
 If you pass a function expression (or bound function expression) as callback to the split point, webpack automatically puts all dependencies required in this function expression into the chunk too.
 

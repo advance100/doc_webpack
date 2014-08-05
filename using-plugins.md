@@ -7,11 +7,11 @@ Plugins are included in your module by using the plugins property in the webpack
 var webpack = require("webpack");
 
 module.exports = {
-  plugins: [
-    new webpack.ResolverPlugin([
-      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-    ], ["normal", "loader"])
-  ]
+	plugins: [
+		new webpack.ResolverPlugin([
+			new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
+		], ["normal", "loader"])
+	]
 };
 ```
 
@@ -28,9 +28,9 @@ which can then be used as follows:
 ``` javascript
 var ComponentPlugin = require("component-webpack-plugin");
 module.exports = {
-    plugins: [
-        new ComponentPlugin();
-    ]
+	plugins: [
+		new ComponentPlugin();
+	]
 }
 ```
 

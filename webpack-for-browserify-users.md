@@ -75,7 +75,7 @@ $ browserify --entry a.js --entry b.js
 
 ## transform
 
-browserify uses *transforms* to preprocess files. webpack uses *loaders*. Loaders are functions that take source code as an argument and return (modified) source code. Like transforms they run in node.js, can be chained, and can be asyncronous. Loaders can take additional parameters by query strings. Loaders can be used from `require()` calls. Transforms can be specified in the `package.json`. `browserify` applies configured transforms for each module. Within the webpack configuration you select the modules by RegExp. In the common case you specify loaders in the `webpack.config.js`:
+browserify uses *transforms* to preprocess files. webpack uses *loaders*. Loaders are functions that take source code as an argument and return (modified) source code. Like transforms they run in node.js, can be chained, and can be asynchronous. Loaders can take additional parameters by query strings. Loaders can be used from `require()` calls. Transforms can be specified in the `package.json`. `browserify` applies configured transforms for each module. Within the webpack configuration you select the modules by RegExp. In the common case you specify loaders in the `webpack.config.js`:
 
 ``` sh
 $ browserify --transform coffeeify

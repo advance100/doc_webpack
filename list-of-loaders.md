@@ -2,11 +2,11 @@
 
 * [`json`](https://github.com/webpack/json-loader): Loads file as JSON
 * [`raw`](https://github.com/webpack/raw-loader): Loads raw content of a file (as utf-8)
-* [`val`](https://github.com/webpack/val-loader): Executes code as module and consider exports as javascript code
+* [`val`](https://github.com/webpack/val-loader): Executes code as module and consider exports as JavaScript code
 * [`imports`](https://github.com/webpack/imports-loader): imports stuff to the module
 * [`exports`](https://github.com/webpack/exports-loader): exports stuff from the module
 * [`expose`](https://github.com/webpack/expose-loader): expose exports from a module to the global context
-* [`script`](https://github.com/webpack/script-loader): Executes a javascript file once in global context (like in script tag), requires are not parsed.
+* [`script`](https://github.com/webpack/script-loader): Executes a JavaScript file once in global context (like in script tag), requires are not parsed.
 * [`source-map`](https://github.com/webpack/source-map-loader): Extract `sourceMappingURL` comments from modules and offer it to webpack
 * [`checksum`](https://github.com/naturalatlas/checksum-loader): Computes the checksum of a file
 * [`null`](https://github.com/webpack/null-loader): Emits an empty module.
@@ -23,11 +23,11 @@
 
 ## dialects
 
-* [`coffee`](https://github.com/webpack/coffee-loader): Loads coffee-script like javascript
-* [`coffee-redux`](https://github.com/webpack/coffee-redux-loader): Loads coffee-script like javascript
+* [`coffee`](https://github.com/webpack/coffee-loader): Loads coffee-script like JavaScript
+* [`coffee-redux`](https://github.com/webpack/coffee-redux-loader): Loads coffee-script like JavaScript
 * [`json5`](https://github.com/webpack/json5-loader): Like json, but not so strict.
 * [`es6`](https://github.com/shama/es6-loader): Loads ES6 modules.
-* [`livescript`](https://github.com/appedemic/livescript-loader): Loads LiveScript like javascript
+* [`livescript`](https://github.com/appedemic/livescript-loader): Loads LiveScript like JavaScript
 * [`sweetjs`](https://github.com/petehunt/sweetjs-loader): Use sweetjs macros. 
 * [`traceur`](https://github.com/jupl/traceur-loader): Use future JavaScript features with [Traceur](https://github.com/google/traceur-compiler).
 

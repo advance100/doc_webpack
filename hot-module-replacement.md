@@ -18,13 +18,13 @@ server.listen(8080);
 
 // check if HMR is enabled
 if(module.hot) {
-  // accept update of dependency
-  module.hot.accept("./handler.js", function() {
-    // replace request handler of server
-    server.removeListener("request", requestHandler);
-    requestHandler = require("./handler.js");
-    server.on("request", requestHandler);
-  });
+	// accept update of dependency
+	module.hot.accept("./handler.js", function() {
+		// replace request handler of server
+		server.removeListener("request", requestHandler);
+		requestHandler = require("./handler.js");
+		server.on("request", requestHandler);
+	});
 }
 ```
 
@@ -40,17 +40,17 @@ module.exports = null;
 // check if HMR is enabled
 if(module.hot) {
 
-  // accept itself
-  module.hot.accept();
+	// accept itself
+	module.hot.accept();
 
-  // removeStyleTag(element: HTMLStyleElement) => void
-  var removeStyleTag = require("./removeStyleTag");
+	// removeStyleTag(element: HTMLStyleElement) => void
+	var removeStyleTag = require("./removeStyleTag");
 
-  // dispose handler
-  module.hot.dispose(function() {
-    // revoke the side effect
-    removeStyleTag(element);
-  });
+	// dispose handler
+	module.hot.dispose(function() {
+		// revoke the side effect
+		removeStyleTag(element);
+	});
 }
 ```
 
@@ -88,7 +88,7 @@ Do not accept updates for the specified dependencies. If any dependencies is upd
 decline() => void
 ```
 
-Flag the current module as not updateable. If updated the update code would fail with code `"decline"`.
+Flag the current module as not update-able. If updated the update code would fail with code `"decline"`.
 
 ### `dispose/addDisposeHandler`
 
@@ -242,4 +242,4 @@ As it doesn't export it can accept itself. A dispose handler can pass the applic
 
 #### ... external module with not handleable side effects
 
-In the nearest parent you decline the dependency. This makes your application throw on update. But as it's an external module, an update is very rar.
+In the nearest parent you decline the dependency. This makes your application throw on update. But as it's an external module, an update is very rare.

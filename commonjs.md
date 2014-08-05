@@ -86,7 +86,7 @@ Note that we didn't use the full filename `salute.js` but `./salute` when callin
 ``` javascript
 // moduleA.js
 module.exports = function( value ){
-    return value*2;
+	return value*2;
 }
 ```
 

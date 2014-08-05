@@ -29,7 +29,7 @@ Example:
 
 The context module also contains a bit runtime logic to access the map.
 
-## dynamic require rewritting
+## dynamic require rewriting
 
 The original `require` statement gets rewritten by the compiler to access the context module: (assuming the context module gets the module id `21`)
 

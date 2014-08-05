@@ -1,6 +1,6 @@
 Today websites are evolving into web apps:
 
-* More and more javascript is in a page.
+* More and more JavaScript is in a page.
 * You can do more stuff in modern browsers.
 * Fewer full page reloads → even more code in a page.
 
@@ -101,7 +101,7 @@ Read more about [[CommonJs]] and [[AMD]].
 
 ## ES6 modules
 
-EcmaScript6 adds same language constructs to Javascript, which form another module system.
+EcmaScript6 adds same language constructs to JavaScript, which form another module system.
 
 ``` javascript
 import "jquery";
@@ -162,9 +162,9 @@ Read more about [[Code Splitting]].
 
 ---
 
-# Why only javascript?
+# Why only JavaScript?
 
-Why should a module system only help the developer with javascript? There are many other static resources that need to the handled:
+Why should a module system only help the developer with JavaScript? There are many other static resources that need to the handled:
 
 * stylesheets
 * images

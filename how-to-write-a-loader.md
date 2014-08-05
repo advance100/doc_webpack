@@ -6,11 +6,11 @@ In the simple case, when only a single loader is applied to the resource, the lo
 
 The loader can access the [[loader API | loaders]] on the `this` context in the function.
 
-A sync loader that only want to give a one value can simply `return` it. In every other case the loader can give back any number of values with the `this.callback(err, values...)` function. Errors are passed to the `this.callback` function or throwed in a sync loader.
+A sync loader that only want to give a one value can simply `return` it. In every other case the loader can give back any number of values with the `this.callback(err, values...)` function. Errors are passed to the `this.callback` function or thrown in a sync loader.
 
-The loader is expected to give back one or two values. The first value is a resulting javascript code as string or buffer. The second optional value is a SourceMap as javascript object.
+The loader is expected to give back one or two values. The first value is a resulting JavaScript code as string or buffer. The second optional value is a SourceMap as JavaScript object.
 
-In the complex case, when multiple loaders are chained, only the last loader gets the resource file and only the first loader is expected to give back one or two values (javascript and SourceMap). Values that any other loader give back are passed to the previous loader.
+In the complex case, when multiple loaders are chained, only the last loader gets the resource file and only the first loader is expected to give back one or two values (JavaScript and SourceMap). Values that any other loader give back are passed to the previous loader.
 
 ## Examples
 
@@ -38,13 +38,13 @@ Loaders should
 
 Loaders can be chained. Create loaders for every step, instead of a loader that does everything at once.
 
-This also means they should not convert to javascript if not necessary.
+This also means they should not convert to JavaScript if not necessary.
 
 Example: Render HTML from a template file by applying the query parameters
 
 I could write a loader that compiles the template from source, execute it and return a module that exports a string containing the HTML code. This is bad.
 
-Instead I should write loaders for every task in this usecase and apply them all (pipeline):
+Instead I should write loaders for every task in this use case and apply them all (pipeline):
 
 * jade-loader: Convert template to a module that exports a function.
 * apply-loader: Takes a function exporting module and returns raw result by applying query parameters.
@@ -71,8 +71,8 @@ Just call `cacheable` in the loader.
 ``` javascript
 // Cacheable identity loader
 module.exports = function(source) {
-  this.cacheable();
-  return source;
+	this.cacheable();
+	return source;
 };
 ```
 
@@ -84,14 +84,14 @@ If a loader uses external resources (i. e. by reading from filesystem), they **m
 // Loader adding a header
 var path = require("path");
 module.exports = function(source) {
-  this.cacheable();
-  var callback = this.async();
-  var headerPath = path.resolve("header.js");
-  this.addDependency(headerPath);
-  fs.readFile(headerPath, "utf-8", function(err, header) {
-    if(err) return callback(err);
-    callback(null, header + "\n" + source);
-  });
+	this.cacheable();
+	var callback = this.async();
+	var headerPath = path.resolve("header.js");
+	this.addDependency(headerPath);
+	fs.readFile(headerPath, "utf-8", function(err, header) {
+		if(err) return callback(err);
+		callback(null, header + "\n" + source);
+	});
 };
 ```
 
@@ -125,7 +125,7 @@ using a peerDependency allows the application developer to specify the exact ver
 
 ``` javascript
 "peerDependencies": {
-  "library": "^1.3.5"
+	"library": "^1.3.5"
 }
 ```
 

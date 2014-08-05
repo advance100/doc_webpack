@@ -8,7 +8,7 @@ The resolving process is pretty simple. We distinguish three types of requests:
 
 We first check if the path points to a directory. For a directory we need to find the main file in this directory. Therefore the `main` field in the `package.json` is joined to the path. If there is no `package.json` or no `main` field, `index` is used as filename.
 
-We have a absolute to a file now. We try to append all extensions (configuration option `resolve.extensions`). The first exisiting file is used as result.
+We have a absolute to a file now. We try to append all extensions (configuration option `resolve.extensions`). The first existing file is used as result.
 
 ## Resolving an relative path
 

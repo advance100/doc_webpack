@@ -9,14 +9,14 @@ Option 1 is enabled by adding `[hash]` to the filename config options
 
 `webpack ./entry output.[hash].bundle.js`
 
-```
+``` javascript
 {
-  output: {
-    path: path.join(__dirname, "assets", "[hash]"),
-    publicPath: "assets/[hash]/",
-    filename: "output.[hash].bundle.js",
-    chunkFilename: "[id].[hash].bundle.js"
-  }
+	output: {
+		path: path.join(__dirname, "assets", "[hash]"),
+		publicPath: "assets/[hash]/",
+		filename: "output.[hash].bundle.js",
+		chunkFilename: "[id].[hash].bundle.js"
+	}
 }
 ```
 

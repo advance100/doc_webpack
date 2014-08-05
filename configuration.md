@@ -26,7 +26,7 @@ webpack({
 
 # configuration object content
 
-> Hint: Keep in mind that you don't need to write pure JSON into the configuration. Use any javascript you want. It's just a node.js module...
+> Hint: Keep in mind that you don't need to write pure JSON into the configuration. Use any JavaScript you want. It's just a node.js module...
 
 Very simple configuration object example:
 
@@ -122,9 +122,9 @@ The filename of named chunks as relative path inside the `output.path` directory
 
 ### `output.sourceMapFilename`
 
-The filename of the SourceMaps for the Javascript files. They are inside the `output.path` directory.
+The filename of the SourceMaps for the JavaScript files. They are inside the `output.path` directory.
 
-`[file]` is replaced by the filename of the Javascript file.
+`[file]` is replaced by the filename of the JavaScript file.
 
 `[id]` is replaced by the id of the chunk.
 
@@ -152,18 +152,18 @@ The filename of the Hot Update Main File. It is inside the `output.path` directo
 
 ### `output.publicPath`
 
-The `output.path` from the view of the javascript.
+The `output.path` from the view of the JavaScript.
 
 ``` javascript
 // Example
 output: {
-  path: "/home/proj/public/assets",
-  publicPath: "/assets/"
+	path: "/home/proj/public/assets",
+	publicPath: "/assets/"
 }
 // Example CDN
 output: {
-  path: "/home/proj/cdn/assets/[hash]",
-  publicPath: "http://cdn.example.com/assets/[hash]/"
+	path: "/home/proj/cdn/assets/[hash]",
+	publicPath: "http://cdn.example.com/assets/[hash]/"
 }
 ```
 
@@ -301,16 +301,16 @@ Example:
 ``` javascript
 {
   module: {
-    // Disable handling of unknown requires
-    unknownContextRegExp: /$^/,
-    unknownContextCritical: false,
+	// Disable handling of unknown requires
+	unknownContextRegExp: /$^/,
+	unknownContextCritical: false,
 
-    // Disable handling of requires with a single expression
-    exprContextRegExp: /$^/,
-    exprContextCritical: false,
+	// Disable handling of requires with a single expression
+	exprContextRegExp: /$^/,
+	exprContextCritical: false,
 
-    // Warn for every expression in require
-    wrappedContextCritical: true
+	// Warn for every expression in require
+	wrappedContextCritical: true
   }
 }
 ```
@@ -405,9 +405,9 @@ Like `resolve` but for loaders.
 ``` javascript
 // Default:
 {
-  modulesDirectories: ["web_loaders", "web_modules", "node_loaders", "node_modules"],
-  extensions: ["", ".webpack-loader.js", ".web-loader.js", ".loader.js", ".js"],
-  packageMains: ["webpackLoader", "webLoader", "loader", "main"]
+	modulesDirectories: ["web_loaders", "web_modules", "node_loaders", "node_modules"],
+	extensions: ["", ".webpack-loader.js", ".web-loader.js", ".loader.js", ".js"],
+	packageMains: ["webpackLoader", "webLoader", "loader", "main"]
 }
 ```
 
@@ -518,7 +518,7 @@ You can pass an object to enable it and let webpack use the passed object as cac
 
 Enter watch mode, which rebuilds on file change.
 
-Only use it with the node.js javascript api `webpack(options, fn)`.
+Only use it with the Node.js JavaScript api `webpack(options, fn)`.
 
 
 
@@ -544,7 +544,7 @@ Choose a developer tool to enhance debugging.
 
 `source-map` - A SourceMap is emitted. See also `output.sourceMapFilename`.
 
-`inline-source-map` - A SourceMap is added as DataUrl to the Javascript file.
+`inline-source-map` - A SourceMap is added as DataUrl to the JavaScript file.
 
 `eval-source-map` - Each module is executed with `eval` and a SourceMap is added as DataUrl to the `eval`.
 

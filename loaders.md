@@ -1,6 +1,6 @@
 # Introduction
 
-Loaders are transformations that are applied on files. They preprocess files. I. e. they can transform coffeescript to javascript.
+Loaders are transformations that are applied on files. They preprocess files. I. e. they can transform CoffeeScript to JavaScript.
 
 Loaders resolve similar to modules. You can apply loaders to modules by prefixing them in the `require` call:
 
@@ -72,7 +72,7 @@ If request matches `/^-!/` omit step 2. and 3.
 
 ## recommendations
 
-It is recommended that the result is **javascript after step 3**.
+It is recommended that the result is **JavaScript after step 3**.
 
 It is recommended to applied **non-js to js transformations in step 2** (or step 3 when they don't apply globally).
 
@@ -91,7 +91,7 @@ The `!!` prefix and the `-!` prefix should only be used by loaders.
 
 # Writing a loader
 
-Writing a loader is pretty simple. A loader is just a file that exports a function. The compiler calls this function and passes the result of the previous loader or the resource file into it. The `this` context of the function is filled-in by the compiler with some useful methods that allow the loader to, among other things, change its invocation style to async or get query parameters. The first loader is passed one argument: the content of the resource file. The compiler expects a result from the last loader. The result should be a String or a Buffer (which is converted to a string), representing the javascript source code of the module. An optional SourceMap result (as JSON object) may also be passed.
+Writing a loader is pretty simple. A loader is just a file that exports a function. The compiler calls this function and passes the result of the previous loader or the resource file into it. The `this` context of the function is filled-in by the compiler with some useful methods that allow the loader to, among other things, change its invocation style to async or get query parameters. The first loader is passed one argument: the content of the resource file. The compiler expects a result from the last loader. The result should be a String or a Buffer (which is converted to a string), representing the JavaScript source code of the module. An optional SourceMap result (as JSON object) may also be passed.
 
 A single result can be returned in sync mode. For multiple result the `this.callback` must be called. In async mode `this.async()` must be called. It returns `this.callback` if async mode is allowed. Then the loader must return `undefined` and call the callback.
 
@@ -109,7 +109,7 @@ For more detailed instructions and guidelines, check out [[How to write a loader
 
 ``` javascript
 module.exports = function(content) {
-  return someSyncOperation(content);
+	return someSyncOperation(content);
 };
 ```
 
@@ -117,16 +117,16 @@ module.exports = function(content) {
 
 ``` javascript
 module.exports = function(content) {
-  var callback = this.async();
-  if(!callback) return someSyncOperation(content);
-  someAsyncOperation(content, function(err, result) {
-    if(err) return callback(err);
-    callback(null, result);
-  });
+	var callback = this.async();
+	if(!callback) return someSyncOperation(content);
+	someAsyncOperation(content, function(err, result) {
+		if(err) return callback(err);
+		callback(null, result);
+	});
 };
 ```
 
-> Note: It's recommended to give an asnychron loader and fallback sync mode. This isn't required for webpack, but allows to run the loader sync in enhanced-require.
+> Note: It's recommended to give an asynchronous loader a fall back to synchronous mode. This isn't required for webpack, but allows to run the loader sync using enhanced-require.
 
 ### raw loader
 
@@ -136,10 +136,10 @@ Every loader is allowed to deliver its result as String or as Buffer. The compil
 
 ``` javascript
 module.exports = function(content) {
-  assert(content instanceof Buffer);
-  return someSyncOperation(content);
-  // return value can be a Buffer too
-  // This is also allowed if loader is not "raw"
+	assert(content instanceof Buffer);
+	return someSyncOperation(content);
+	// return value can be a Buffer too
+	// This is also allowed if loader is not "raw"
 };
 module.exports.raw = true;
 ```
@@ -150,14 +150,14 @@ The loaders are called from right to left. But in some cases loaders doesn't car
 
 ``` javascript
 module.exports = function(content) {
-  return someSyncOperation(content, this.data.value);
+	return someSyncOperation(content, this.data.value);
 };
 module.exports.pitch = function(remainingRequest, precedingRequest, data) {
-  if(someCondition()) {
-    // fast exit
-    return "module.exports = require(" + JSON.stringify("-!" + remainingRequest) + ");";
-  }
-  data.value = 42;
+	if(someCondition()) {
+		// fast exit
+		return "module.exports = require(" + JSON.stringify("-!" + remainingRequest) + ");";
+	}
+	data.value = 42;
 };
 ```
 
@@ -208,7 +208,7 @@ cacheable(flag = true: boolean)
 
 Make this loader result cacheable. By default it's not cacheable.
 
-A cacheable loader must have a deterministic result, when inputs and dependencies havn't changed. This means the loader shoudn't have other dependencies than specified with `this.addDependency`. Most loaders are deterministic and cacheable.
+A cacheable loader must have a deterministic result, when inputs and dependencies haven't changed. This means the loader shouldn't have other dependencies than specified with `this.addDependency`. Most loaders are deterministic and cacheable.
 
 ### `loaders`
 
@@ -223,14 +223,14 @@ In the example:
 ``` javascript
 [
   { request: "/abc/loader1.js?xyz",
-    path: "/abc/loader1.js",
-    query: "?xyz",
-    module: [Function]
+	path: "/abc/loader1.js",
+	query: "?xyz",
+	module: [Function]
   },
   { request: "/abc/node_modules/loader2/index.js",
-    path: "/abc/node_modules/loader2/index.js",
-    query: "",
-    module: [Function]
+	path: "/abc/node_modules/loader2/index.js",
+	query: "",
+	module: [Function]
   }
 ]
 ```

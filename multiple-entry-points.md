@@ -10,7 +10,7 @@ Every entry chunk contains the webpack runtime, so you can only load one entry c
 
 To use multiple entry points you can pass an object to the `entry` option. Each value is threaded as entry point and the key represents the name of the entry point.
 
-When using multiple entry point you must override the default `output.filename` option. Elsewise each entry point would write to the same output file. Use `[name]` to get the name of the entry point.
+When using multiple entry point you must override the default `output.filename` option. Otherwise each entry point would write to the same output file. Use `[name]` to get the name of the entry point.
 
 ### Minimal example configuration
 

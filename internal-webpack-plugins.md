@@ -1,4 +1,4 @@
-These is a list of plugins, which are internally used by webpack. You should only care about them if you are building a own compiler based on webpack, or introspec the internals.
+These is a list of plugins, which are internally used by webpack. You should only care about them if you are building a own compiler based on webpack, or introspect the internals.
 
 categories of internal plugins:
 
@@ -123,7 +123,7 @@ Plugins affecting the source code of modules.
 
 ### `APIPlugin`
 
-Make `__webpack_public_path__`, `__webpack_require__`, `__webpack_modules__`, `__webpack_chunk_load__` accessable. Ensures that `require.valueOf` and `require.onError` are not processed by other plugins.
+Make `__webpack_public_path__`, `__webpack_require__`, `__webpack_modules__`, `__webpack_chunk_load__` accessible. Ensures that `require.valueOf` and `require.onError` are not processed by other plugins.
 
 ### `CompatibilityPlugin`
 
@@ -155,9 +155,9 @@ Provide stuff that is normally available in require.js.
 
 ### `node/NodeSourcePlugin(options)`
 
-This module adds stuff from node.js that is not avalible in non-node.js environments.
+This module adds stuff from node.js that is not available in non-node.js environments.
 
-It adds polyfills for `process`, `console`, `Buffer` and `global` if used. It also binds the buildin node.js replacement modules.
+It adds polyfills for `process`, `console`, `Buffer` and `global` if used. It also binds the built in Node.js replacement modules.
 
 ### `node/NodeTargetPlugin`
 

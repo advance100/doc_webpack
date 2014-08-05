@@ -41,17 +41,17 @@ For the module system runtime is additional code emitted to track module `parent
 
 On the management side the runtime supports two methods: `check` and `apply`.
 
-A `check` does a HTTP request to the update manifest. When this request fails, there is no update available. Elsewise the list of updated chunks is compared to the list of currently loaded chunks. For each loaded chunk the corresponding update chunk is downloaded. All module updates as stored in the runtime as update. The runtime switches into the `ready` state, meaning an update has been downloaded and is ready to be applied.
+A `check` does a HTTP request to the update manifest. When this request fails, there is no update available. Otherwise the list of updated chunks is compared to the list of currently loaded chunks. For each loaded chunk the corresponding update chunk is downloaded. All module updates as stored in the runtime as update. The runtime switches into the `ready` state, meaning an update has been downloaded and is ready to be applied.
 
 For each new chunk request in the ready state the update chunk is also downloaded.
 
-The `apply` method flags all updated modules as invalid. For each invalid module there need to be a update handler in the module or update handlers in every parent. Else the invalid buddles up and mark all parents as invalid too. This process continues until no more "bubble up" occurs. If it bubbles up from an entry point the process fails.
+The `apply` method flags all updated modules as invalid. For each invalid module there need to be a update handler in the module or update handlers in every parent. Else the invalid bundles up and mark all parents as invalid too. This process continues until no more "bubble up" occurs. If it bubbles up from an entry point the process fails.
 
 Now all invalid modules are disposed (dispose handler) and unloaded. Then the current hash is updated and all "accept" handlers are called. The runtime switches back to the `idle` state and everything continues as normal.
 
 ### Generated files (technical)
 
-The left side represents the inital compiler pass. The right side represents an additional pass with module 4 and 9 updated.
+The left side represents the initial compiler pass. The right side represents an additional pass with module 4 and 9 updated.
 
 ![generated update chunks](http://webpack.github.io/assets/HMR.svg)
 
@@ -109,7 +109,7 @@ A small testcase:
 ``` css
 /* style.css */
 body {
-  background: red;
+	background: red;
 }
 ```
 
