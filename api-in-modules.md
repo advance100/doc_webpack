@@ -35,11 +35,11 @@ Example:
 
 ``` javascript
 define(["jquery", "my-module"], function($, myModule) {
-  // Do something with $ and myModule.
-  // Export a function
-  return function doSomething() {
-    // Do something
-  };
+	// Do something with $ and myModule.
+	// Export a function
+	return function doSomething() {
+		// Do something
+	};
 });
 ```
 
@@ -57,7 +57,7 @@ Example:
 
 ``` javascript
 module.exports = function doSomething() {
-  // Do something
+	// Do something
 };
 ```
 
@@ -74,10 +74,10 @@ Style: CommonJs
 ``` javascript
 exports.someValue = 42;
 exports.anObject = {
-  x: 123
+	x: 123
 };
 exports.aFunction = function doSomething() {
-  // Do something
+	// Do something
 };
 ```
 
@@ -99,7 +99,7 @@ Example:
 
 ``` javascript
 define({
-  answer: 42
+	answer: 42
 });
 ```
 
@@ -147,7 +147,7 @@ Example:
 // in dependency
 export: var answer = 42;
 export: function method(value) {
-  // Do something
+	// Do something
 };
 ```
 
@@ -251,25 +251,25 @@ Example:
 // in file.js
 var a = require("a");
 require.ensure(["b"], function(require) {
-  var c = require("c");
+	var c = require("c");
 });
 require.ensure(["d"], function() {
-  var e = require("e");
+	var e = require("e");
 }, "my chunk");
 require.ensure([], function() {
-  var f = require("f");
+	var f = require("f");
 }, "my chunk");
 /* This results in:
-   * entry chunk
-     - file.js
-     - a
-   * anonymous chunk
-     - b
-     - c
-   * "my chunk"
-     - d
-     - e
-     - f
+	* entry chunk
+		- file.js
+		- a
+	* anonymous chunk
+		- b
+		- c
+	* "my chunk"
+		- d
+		- e
+		- f
 */
 ```
 
@@ -294,12 +294,12 @@ require(["b"], function(b) {
   var c = require("c");
 });
 /* This results in:
-   * entry chunk
-     - file.js
-     - a
-   * anonymous chunk
-     - b
-     - c
+	* entry chunk
+		- file.js
+		- a
+	* anonymous chunk
+		- b
+		- c
 */
 ```
 
@@ -328,12 +328,12 @@ require.ensure(["a", "c"], function(require) {
 });
 /* This results in:
    * entry chunk
-     - file.js
-     - a
+	 - file.js
+	 - a
    * anonymous chunk
-     - b
+	 - b
    * anonymous chunk
-     - c
+	 - c
 Without require.include "a" would be in both anonymous chunks.
 The runtime behavior isn't changed.
 */
