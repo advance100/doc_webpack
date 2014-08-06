@@ -27,6 +27,7 @@
 * [`coffee-redux`](https://github.com/webpack/coffee-redux-loader): Loads coffee-script like JavaScript
 * [`json5`](https://github.com/webpack/json5-loader): Like json, but not so strict.
 * [`es6`](https://github.com/shama/es6-loader): Loads ES6 modules.
+* [`regenerator`](https://github.com/pjeby/regenerator-loader): Use ES6 generators via Facebook's [Regenerator](http://facebook.github.io/regenerator/) module.
 * [`livescript`](https://github.com/appedemic/livescript-loader): Loads LiveScript like JavaScript
 * [`sweetjs`](https://github.com/petehunt/sweetjs-loader): Use sweetjs macros. 
 * [`traceur`](https://github.com/jupl/traceur-loader): Use future JavaScript features with [Traceur](https://github.com/google/traceur-compiler).
