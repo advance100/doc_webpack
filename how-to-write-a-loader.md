@@ -30,7 +30,7 @@ module.exports = function(source, map) {
 
 ## Guidelines
 
-(First one should get the highest priority)
+(Ordered by priority, first one should get the highest priority)
 
 Loaders should
 
