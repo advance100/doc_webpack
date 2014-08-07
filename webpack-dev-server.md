@@ -20,6 +20,7 @@ There are some additional options:
 * `--quiet`: Don't output anything to the console
 * `--no-info`: Suppress boring information
 * `--port <number>`
+* `--inline`: embedd the webpack-dev-server runtime into the bundle
 
 ## API
 
@@ -67,6 +68,8 @@ You need to pass the url of the webpack-dev-server to the runtime (`webpack-dev-
   entry: ["webpack-dev-server/client?http://localhost:8080", "yourEntry"]
 }
 ```
+
+Or use the `--inline` CLI option and this will be added for you. (`--inline --hot` also adds the `webpack/hot/dev-server` entry.)
 
 ### Add as script tag
 
