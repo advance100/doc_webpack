@@ -5,6 +5,8 @@ Webpack can add hashes for the files to the filename. Loaders that emit files (w
 1. Compute a hash of all chunks and add it.
 2. Compute a hash per chunk and add it.
 
+## One hash for the bundle
+
 Option 1 is enabled by adding `[hash]` to the filename config options
 
 `webpack ./entry output.[hash].bundle.js`
@@ -20,6 +22,8 @@ Option 1 is enabled by adding `[hash]` to the filename config options
 }
 ```
 
+## One hash per chunk
+
 Option 2 is enabled by adding `[chunkhash]` to the chunk filename config option
 
 `--output-chunk-file [chunkhash].js`
@@ -29,3 +33,25 @@ Option 2 is enabled by adding `[chunkhash]` to the chunk filename config option
 Note that you need to reference the entry chunk with it's hash in your HTML. You may want to extract the hash or the filename from the stats.
 
 In combination with Hot Code Replacement your must use option 1, but not on the `publicPath` config option.
+
+## get filenames from stats
+
+You propably want to access the final filename of the asset to embed it into you HTML. This information is available in the webpack stats. If you are using the CLI you can run it with `--json` to get the stats as JSON to stdout.
+
+You can add a plugin to your configuration which allows you to access the stats object. Here is an example how to write it into a file:
+
+``` javascript
+plugins: [
+  function() {
+    this.plugin("done", function(stats) {
+      require("fs").writeFileSync(
+        path.join(__dirname, "...", "stats.json"),
+        JSON.stringify(stats.toJson()));
+    });
+  }
+]
+```
+
+The stats json contains a useful property `assetsByChunkName` which is a object containing chunk name as key and filename(s) as value.
+
+> Note: It's an array if you emitting multiple assets per chunk. I. e. a javascript file and a SourceMap. The first one is you javascript source.
