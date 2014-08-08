@@ -36,7 +36,7 @@ In combination with Hot Code Replacement your must use option 1, but not on the 
 
 ## get filenames from stats
 
-You propably want to access the final filename of the asset to embed it into you HTML. This information is available in the webpack stats. If you are using the CLI you can run it with `--json` to get the stats as JSON to stdout.
+You probably want to access the final filename of the asset to embed it into you HTML. This information is available in the webpack stats. If you are using the CLI you can run it with `--json` to get the stats as JSON to stdout.
 
 You can add a plugin to your configuration which allows you to access the stats object. Here is an example how to write it into a file:
 
