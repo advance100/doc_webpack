@@ -132,6 +132,30 @@ The filename of the SourceMaps for the JavaScript files. They are inside the `ou
 
 > Default: `"[file].map"`
 
+### `output.devtoolModuleFilenameTemplate`
+
+Filename template for the `sources` array in a generated SourceMap.
+
+`[resource]` is replaced by the path used by Webpack to resolve the file, including the query params to the rightmost loader (if any).
+
+`[resource-path]` is the same as `[resource]` but without the loader query params.
+
+`[loaders]` is the list of loaders and params up to the name of the rightmost loader.
+
+`[id]` is replaced by the id of the module.
+
+`[hash]` is replaced by the hash of the module identifier.
+
+> Default (devtool=`[inline-]source-map`): `"webpack:///[resource-path]"`  
+> Default (devtool=`eval`): `"webpack:///[resource-path]?[loaders]"`  
+> Default (devtool=`eval-source-map`): `"webpack:///[resource-path]?[hash]"`
+
+### `output.devtoolFallbackModuleFilenameTemplate`
+
+Similar to `output.devtoolModuleFilenameTemplate`, but used in the case of duplicate module identifiers.
+
+> Default: `"webpack:///[resourcePath]?[hash]"`
+
 ### `output.hotUpdateChunkFilename`
 
 The filename of the Hot Update Chunks. They are inside the `output.path` directory.
