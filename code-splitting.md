@@ -81,7 +81,7 @@ Depending on the configuration option `target` a runtime logic for chunk loading
 
 ### Entry chunk
 
-A entry chunks contains the runtime plus a bunch of modules. If the chunk contains the module `0` the runtime executes it. If not, it waits for chunks that contains the module `0` and executes it (every time when there is a chunk with a module `0`).
+An entry chunk contains the runtime plus a bunch of modules. If the chunk contains the module `0` the runtime executes it. If not, it waits for chunks that contains the module `0` and executes it (every time when there is a chunk with a module `0`).
 
 ### Normal chunk
 
@@ -89,7 +89,7 @@ A normal chunk contains no runtime. It only contains a bunch of modules. The str
 
 ### Initial chunk (non-entry)
 
-A initial chunk is a normal chunk. The only difference is that optimization threads it as more important because it counts toward the initial loading time (like entry chunks). That chunk type can occur in combination with the `CommonsChunkPlugin`.
+An initial chunk is a normal chunk. The only difference is that optimization threads it as more important because it counts toward the initial loading time (like entry chunks). That chunk type can occur in combination with the `CommonsChunkPlugin`.
 
 
 
