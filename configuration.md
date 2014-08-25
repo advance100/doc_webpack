@@ -522,7 +522,7 @@ Report the first error as a hard error instead of tolerating it.
 
 Capture timing information for each module.
 
-> Hint: Use the [analyze tool](http://webpack.github.io/analyse) to visualize it.
+> Hint: Use the [analyze tool](http://webpack.github.io/analyse) to visualize it. `--json` or `stats.toJson()` will give you the stats as JSON.
 
 
 
