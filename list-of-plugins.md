@@ -318,4 +318,18 @@ new webpack.HotModuleReplacementPlugin()
 
 Enables Hot Module Replacement. (This requires records data if not in dev-server mode, `recordsPath`)
 
-Generates Hot Update Chunks of each chunk in the records. It also enables the [API](https://github.com/webpack/docs/wiki/hot-code-replacement).
+Generates Hot Update Chunks of each chunk in the records. It also enables the [[API | hot-module-replacement]] and makes `__webpack_hash__` available in the bundle.
+
+
+
+### `ExtendedAPIPlugin`
+
+``` javascript
+new webpack.ExtendedAPIPlugin()
+```
+
+Adds useful free vars to the bundle.
+
+`__webpack_hash__` The hash of the compilation available as free var.
+
+> WARNING: Don't combine it with the `HotModuleReplacementPlugin`. It would break and you don't need it as the `HotModuleReplacementPlugin` export the same stuff.
