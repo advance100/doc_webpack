@@ -606,7 +606,8 @@ Include polyfills or mocks for various node stuff:
 * `buffer`: `true`, `"mock"` or `false`
 * `__filename`: `true` (real filename), `"mock"` (`"/index.js"`) or `false`
 * `__dirname`: `true` (real dirname), `"mock"` (`"/"`) or `false`
-* `<node buildin>`: `true`, `"mock"` or `false`
+* `<node buildin>`: `true`, `"mock"`, `"empty"` or `false`
+
 
 ``` javascript
 // Default:
