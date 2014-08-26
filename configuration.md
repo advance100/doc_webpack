@@ -378,7 +378,9 @@ Examples: Calling a require from `/abc/entry.js` with different alias settings.
 
 ### `resolve.root`
 
-The directory that contains your modules. May also be an array of directories. This setting should be used to add individual directories to the search path.
+The directory (**absolute path**) that contains your modules. May also be an array of directories. This setting should be used to add individual directories to the search path.
+
+> It **must** be an **absolute path**! Don't pass something like `./app/modules`.
 
 ### `resolve.modulesDirectories`
 
