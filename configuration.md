@@ -1,4 +1,4 @@
-webpack is fed a configuration object. Depending on your usage of webpack there are two ways to pass this configuration object:
+> webpack is fed a configuration object. Depending on your usage of webpack there are two ways to pass this configuration object:
 
 ### CLI
 
@@ -596,7 +596,19 @@ Example:
 //# sourceMappingURL=...
 ```
 
+## `devServer`
 
+Can be used to configure the behaviour of `webpack-dev-server`.
+
+Example:
+
+``` javascript
+{
+	devServer: {
+		contentBase: "./build",
+	}
+}
+```
 
 ## `node`
 
