@@ -570,6 +570,8 @@ Choose a developer tool to enhance debugging.
 
 `source-map` - A SourceMap is emitted. See also `output.sourceMapFilename`.
 
+`hidden-source-map` - Same as `source-map`, but doesn't add a reference comment to the bundle.
+
 `inline-source-map` - A SourceMap is added as DataUrl to the JavaScript file.
 
 `eval-source-map` - Each module is executed with `eval` and a SourceMap is added as DataUrl to the `eval`.
