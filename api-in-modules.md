@@ -393,7 +393,7 @@ Depending on the config option `node.filename`:
 
 * `false`: Not defined
 * `mock`: equal "/index.js"
-* `true`: [node.js __dirname](http://nodejs.org/api/globals.html#globals_filename)
+* `true`: [node.js __filename](http://nodejs.org/api/globals.html#globals_filename)
 
 If used inside a expression that is parsed by the Parser, the config option is threaded as `true`.
 
