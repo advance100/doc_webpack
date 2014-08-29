@@ -375,7 +375,7 @@ Style: node.js
 
 ### `__dirname`
 
-Depending on the config option `node.dirname`:
+Depending on the config option `node.__dirname`:
 
 * `false`: Not defined
 * `mock`: equal "/"
@@ -389,7 +389,7 @@ Style: node.js (for compatibility!)
 
 ### `__filename`
 
-Depending on the config option `node.filename`:
+Depending on the config option `node.__filename`:
 
 * `false`: Not defined
 * `mock`: equal "/index.js"
