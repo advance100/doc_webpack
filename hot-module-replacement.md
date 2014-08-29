@@ -70,10 +70,10 @@ accept(dependency: string, callback: () => void) => void
 Accept code updates for the specified dependencies. The callback is called when dependencies were replaced.
 
 ``` javascript
-accept() => void
+accept([errHandler]) => void
 ```
 
-Accept code updates for this module without notification of parents. This should only be used if the module doesn't export anything.
+Accept code updates for this module without notification of parents. This should only be used if the module doesn't export anything. The `errHandler` can be used to handle errors that occur while loading the updated module.
 
 ### `decline`
 
@@ -116,22 +116,10 @@ This can useful to add a temporary dispose handler. You could i. e. replace code
 
 Also on the `module.hot` object.
 
-### `setApplyOnUpdate`
-
-``` javascript
-setApplyOnUpdate(flag: boolean) => void
-```
-
-`flag == false` means you have to have to manually call `apply()` if an update is ready.
-
-`flag == true` means that it is called for you.
-
-Default should be `true`.
-
 ### `check`
 
 ``` javascript
-check(callback: (err: Error, outdatedModules: Module[]) => void
+check([autoApply], callback: (err: Error, outdatedModules: Module[]) => void
 ```
 
 Throws an exceptions if `status()` is not `idle`.
@@ -140,19 +128,23 @@ Check all currently loaded modules for updates and apply updates if found.
 
 If no update where found, the callback is called with `null`.
 
-If applyOnUpdate is set the callback will be called with all modules that were disposed.
+If `autoApply` is truthy the callback will be called with all modules that were disposed. `apply()` is automatically called with `autoApply` as `options` parameter.
 
-If applyOnUpdate is not set the callback will be called with all modules that will be disposed on `apply()`.
+If `autoApply` is not set the callback will be called with all modules that will be disposed on `apply()`.
 
 ### `apply`
 
 ``` javascript
-apply(callback: (err: Error, outdatedModules: Module[]) => void
+apply([options], callback: (err: Error, outdatedModules: Module[]) => void
 ```
 
 If `status() != "ready"` it throws an error.
 
 Continue the update process.
+
+`options` can be an object containing these options:
+
+* `ignoreUnaccepted`: If true the update process continues even if some modules are not accepted (and would bubble to the entry point).
 
 ### `status`
 
