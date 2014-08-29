@@ -31,6 +31,10 @@ Cross develop for Node and the Browser without forking around<br>
 
 ## Talks
 
+### [Introduction to webpack](http://okonet.github.io/viennajs-webpack-introduction/)
+
+2014-08-28 @okonetchnikov
+
 ### [Managing your front-end with webpack](http://peerigon.github.io/presentations/2014-07-09-MNUG-webpack)
 
 Comprehensive introduction to webpack, held at the [MNUG (munich node.js user group)](http://mnug.de/)<br>
