@@ -59,6 +59,9 @@
 * [`rework`](https://github.com/okonet/rework-loader): Post-process CSS with [Rework](https://github.com/reworkcss/rework) and returns CSS code
 * [`autoprefixer`](https://github.com/passy/autoprefixer-loader): Add vendor prefixes to CSS rules using values from Can I Use
 
+## translation
+
+* [`po`](https://github.com/dschissler/po-loader): Loads a PO gettext file and returns JSON
 
 ## support
 
