@@ -1,8 +1,8 @@
-The webpack-dev-server is a little node.js express server, which uses the [[webpack-dev-middleware]] to serve a webpack bundle. It also has a little runtime which is connected to the server via socket.io. The server emit information about the compilation state to the client, which reacts on that events.
+The webpack-dev-server is a little node.js express server, which uses the [[webpack-dev-middleware]] to serve a webpack bundle. It also has a little runtime which is connected to the server via socket.io. The server emits information about the compilation state to the client, which reacts to those events.
 
-It serves static assets from the current directory. If the file isn't found a empty HTML page is generated which references the corresponding JavaScript file. If `/webpack-dev-server/` is prefixed to the path, it serves a small runtime which connects to the server with socket.io and automatically updates the page. In this mode the content is wrapped in a iframe and a small GUI gives status information about the server.
+It serves static assets from the current directory. If the file isn't found, an empty HTML page is generated which references the corresponding JavaScript file. If `/webpack-dev-server/` is prefixed to the path, it serves a small runtime which connects to the server with socket.io and automatically updates the page. In this mode the content is wrapped in an iframe and a small GUI gives status information about the server.
 
-There is also an inlined mode without an GUI (status information is printed to the console). In this mode you need to add the runtime manually to your page. You can do this by adding it to the entry point or by adding an additional script tag to your html. See chapter "inlined mode" below.
+There is also an inlined mode without a GUI (status information is printed to the console). In this mode you need to add the runtime manually to your page. You can do this by adding it to the entry point or by adding an additional script tag to your html. See chapter "inlined mode" below.
 
 The webpack-dev-server has a CLI and a node.js API.
 
@@ -57,7 +57,7 @@ See [[webpack-dev-middleware]] for documentation on middleware options.
 
 ## Inlined mode
 
-You can choose one of the following options to add the runtime:
+You can choose one of the following options to add to the runtime:
 
 ### Add to entry point
 
