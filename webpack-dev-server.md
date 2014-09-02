@@ -12,7 +12,7 @@ The webpack-dev-server has a CLI and a node.js API.
 $ webpack-dev-server <entry>
 ```
 
-All [[CLI]] options are valid for the dev-server too, but there is no `<output>` default argument. For the [[CLI]] is a `webpack.config.js` accepted too.
+All [[CLI]] options are valid for the dev-server too, but there is no `<output>` default argument. For the [[CLI]] a `webpack.config.js` is accepted too.
 
 There are some additional options:
 
@@ -20,7 +20,7 @@ There are some additional options:
 * `--quiet`: Don't output anything to the console
 * `--no-info`: Suppress boring information
 * `--port <number>`
-* `--inline`: embedd the webpack-dev-server runtime into the bundle
+* `--inline`: embed the webpack-dev-server runtime into the bundle
 
 ## API
 
