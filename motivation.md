@@ -35,7 +35,7 @@ Modules export an interface to the global object, i. e. the `window` object. Mod
 
 * Conflicts in the global object.
 * Order of loading is important.
-* Developer have to resolve dependencies of modules/libraries.
+* Developers have to resolve dependencies of modules/libraries.
 * In big projects the list can get really long and difficult to manage.
 
 ## CommonJs: synchronous `require`
@@ -206,4 +206,4 @@ Many libraries are written in different styles. Some of them are very weird...
 
 ## Strategy
 
-A clever parser would allow most existing code to run. If the developer does something weird try to find the most compatible solution.
+A clever parser would allow most existing code to run. If the developer does something weird it would try to find the most compatible solution.
