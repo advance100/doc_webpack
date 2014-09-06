@@ -1,5 +1,10 @@
 ## Articles
 
+### [webpack 基本的な使い方](http://aics-app.sakura.ne.jp/blog/2014/09/03/webpack-%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E4%BD%BF%E3%81%84%E6%96%B9/)
+
+basic sample and explanation of compiled bundle.js<br>
+2014-09-07 @tssubo
+
 ### [Integrating JSX live reload into your React workflow](http://gaearon.github.io/react-hot-loader/)
 
 A guide how to migrate the react-tutorial to webpack and using the Hot Module Replacement and react-hot-loader for a live reloading react app.<br>
