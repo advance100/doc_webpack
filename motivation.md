@@ -164,7 +164,7 @@ Read more about [[Code Splitting]].
 
 # Why only JavaScript?
 
-Why should a module system only help the developer with JavaScript? There are many other static resources that need to the handled:
+Why should a module system only help the developer with JavaScript? There are many other static resources that need to be handled:
 
 * stylesheets
 * images
