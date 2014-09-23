@@ -68,6 +68,9 @@ Equals to `--optimize-minimize` `--optimize-occurence-order`
 Watches all dependencies and recompile on change.
 
 
+### Configuration file `--config example.config.js`
+
+Specifies a different configuration file to pick up. Use this if you want to specify something different than `webpack.config.js`, which is the default
 
 ### display options
 
