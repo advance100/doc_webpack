@@ -1,12 +1,37 @@
+# 1.4
+
+(2014-09-22)
+
+* API: Breaking change: added options parameter to `module.hot.accept/check`
+* API: added 'hidden-sourcemap' devtool
+* API: added `NoErrorsPlugin`, which doesn't emit a bundle on errors
+* API: added hot-only dev-server, which doesn't reload the page on unaccepted update
+* BUG: rewrite module reasons on module moving
+* BUG: fixed bug, when extending Object.prototype
+* API: expose `sourceMap` flag to loaders
+* BUG: allow array in `module.hot.accept`
+* API: expose `id` in context
+* INTERNAL: moved placeholder replacing into plugin
+
 # 1.3
 
-(2014-06-22)
+(2014-08-25)
 
 * API: plugin interface for all templates
 * API: resolve path in NormalModuleReplacementPlugin
 * API: added MultiCompiler (experimental)
 * API: more params for the ContextReplacementPlugin
+* API: added support for optional externals
+* API: support multiple assets in `assetsByChunkName`
+* API: better support for `[name]`
+* API: better filenames in SourceMaps + options
+* API: added API for error handing in self accepted modules
+* API: added `__webpack_hash__`
 * SUPPORT: Support browserify pre-built bundles with a warning
+* SUPPORT: better AMD support
+* BUG: fixed sourceMappingURL path
+* TEST: tests run on linux and windows
+* PERFORMANCE: more caching for main chunk
 
 # 1.2
 
