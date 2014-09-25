@@ -392,7 +392,7 @@ An array of directory names to be resolved to the current directory as well as i
 
 ### `resolve.fallback`
 
-A directory (or array of directories **absolute paths**), in which webpack should look for modules that weren't fount in `resolve.root` or `resolve.modulesDirectories`.
+A directory (or array of directories **absolute paths**), in which webpack should look for modules that weren't found in `resolve.root` or `resolve.modulesDirectories`.
 
 ### `resolve.extensions`
 
