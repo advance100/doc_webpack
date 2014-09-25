@@ -1,4 +1,4 @@
-**webpack** is a **module bundler**.test
+**webpack** is a **module bundler**.
 
 webpack takes modules with dependencies and generates static assets representing those modules.
 
