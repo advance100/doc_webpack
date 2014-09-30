@@ -21,6 +21,7 @@
 * [`react-proxy`](https://github.com/webpack/react-proxy-loader): Code Splitting for react components.
 * [`react-hot`](https://github.com/gaearon/react-hot-loader): Allows to live-edit React components while keeping them mounted and preserving their state.
 * [`image`](https://github.com/tcoopman/image-webpack-loader): Compresses your images. Ideal to use together with `file` or `url`.
+* [`baggage`](https://github.com/deepsweet/baggage-loader): Automatically require any resources related to the required one
 
 ## dialects
 
