@@ -8,6 +8,7 @@ To use components from bower you need to add two things to webpack:
 See [[configuration]] `resolve.modulesDirectories` and [[list of plugins]] `ResolverPlugin`.
 
 ``` javascript
+var path = require("path");
 var webpack = require("webpack");
 module.exports = {
 	resolve: {
