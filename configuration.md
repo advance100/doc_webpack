@@ -406,7 +406,7 @@ An array of extensions that should be used to resolve modules. For example, in o
 
 Check these fields in the `package.json` for suitable files.
 
-> Default: `["webpack", "browser", "web", "main"]`
+> Default: `["webpack", "browser", "web", "browserify", ["jam", "main"], "main"]`
 
 ### `resolve.packageAlias`
 
