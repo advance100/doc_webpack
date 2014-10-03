@@ -58,7 +58,7 @@
 * [`sass`](https://github.com/jtangelder/sass-loader): Loads and compiles a scss file
 * [`stylus`](https://github.com/shama/stylus-loader): Loads and compiles a stylus file
 * [`rework`](https://github.com/okonet/rework-loader): Post-process CSS with [Rework](https://github.com/reworkcss/rework) and returns CSS code
-* [`postcss`](https://github.com/postcss/postcss-loader): Post-process CSS throw Autoprefixer and [other PostCSS plugins](https://github.com/postcss/postcss#built-with-postcss).
+* [`postcss`](https://github.com/postcss/postcss-loader): Post-process CSS throw Autoprefixer and [other PostCSS plugins](https://github.com/postcss/postcss#built-with-postcss)
 * [`autoprefixer`](https://github.com/passy/autoprefixer-loader): Add vendor prefixes to CSS rules using values from Can I Use
 
 ## translation
