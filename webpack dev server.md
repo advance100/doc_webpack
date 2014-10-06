@@ -21,6 +21,7 @@ There are some additional options:
 * `--no-info`: Suppress boring information
 * `--port <number>`
 * `--inline`: embed the webpack-dev-server runtime into the bundle
+* `--hot`: adds the `HotModuleReplacementPlugin` and switch the server to hot mode. (Note: make sure you don't add `HotModuleReplacementPlugin` twice)
 
 ## API
 
