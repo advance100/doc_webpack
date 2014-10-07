@@ -49,6 +49,7 @@
 * [`mustache`](https://github.com/deepsweet/mustache-loader): Pre-compiles Mustache templates with [Hogan.js](https://github.com/twitter/hogan.js) and returns a function
 * [`yml`](https://github.com/okonet/yml-loader): Converts YAML to JSON
 * [`markdown`](https://github.com/peerigon/markdown-loader): Compiles Markdown to HTML
+* [`ng-cache`](https://github.com/teux/ng-cache-loader): Puts HTML partials in the Angular's $templateCache
 
 ## styling
 
