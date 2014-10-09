@@ -1,8 +1,7 @@
-For big web apps it's not efficient to put all code into a single file.
-Especially if some blocks of code are only required under some circumstances.
+For big web apps it's not efficient to put all code into a single file, especially if some blocks of code are only required under some circumstances.
 webpack has a feature to split your codebase into "chunks" which are loaded on demand. Some other bundlers call them "layers", "rollups", or "fragments". This feature is called "code splitting". 
 
-It's an opt-in feature. You can define split points in your code base. webpack cares for the dependencies, output files and runtime stuff.
+It's an opt-in feature. You can define split points in your code base. webpack takes care of the dependencies, output files and runtime stuff.
 
 
 
@@ -31,7 +30,7 @@ Note: `require.ensure` only loads the modules, it doesn't evaluate them.
 
 ### `require` (AMD)
 
-The AMD spec defines a asynchronous `require` method with this definition:
+The AMD spec defines an asynchronous `require` method with this definition:
 
 ``` javascript
 require(dependencies, callback)
