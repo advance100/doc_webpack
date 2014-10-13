@@ -451,6 +451,24 @@ Style: webpack
 
 ---
 
+### `require.resolveWeak`
+
+Like `require.resolve`, but doesn't include the module into the bundle. It's a weak dependency.
+
+Style: webpack
+
+Example:
+
+``` javascript
+if(__webpack_modules__[require.resolveWeak("module")]) {
+  // do something when module is available
+}
+if(require.cache[require.resolveWeak("module")]) {
+  // do something when module was loaded before
+}
+```
+---
+
 ### `__webpack_hash__`
 
 Access to the hash of the compilation.
