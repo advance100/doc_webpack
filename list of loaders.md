@@ -52,6 +52,7 @@
 * [`yml`](https://github.com/okonet/yml-loader): Converts YAML to JSON
 * [`markdown`](https://github.com/peerigon/markdown-loader): Compiles Markdown to HTML
 * [`ng-cache`](https://github.com/teux/ng-cache-loader): Puts HTML partials in the Angular's $templateCache
+* [`ngtemplate-loader`](https://github.com/WearyMonkey/ngtemplate-loader): Bundles your AngularJS templates and Pre-loads the template cache.
 
 ## styling
 
