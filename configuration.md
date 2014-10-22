@@ -249,7 +249,7 @@ Which format to export the library:
 
 > Default: `"var"`
 
-If `output.library` is not set, but `output.libraryTarget` is set to a value other that `var`, every property of the exported object is copied (Except `amd`, `commonjs2` and `umd`).
+If `output.library` is not set, but `output.libraryTarget` is set to a value other than `var`, every property of the exported object is copied (Except `amd`, `commonjs2` and `umd`).
 
 ### `output.sourcePrefix`
 
