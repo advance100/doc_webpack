@@ -108,7 +108,7 @@ Example:
 }
 ```
 
-> Note: `require`, `exports` and `module` are still available as variables. `exports` and `module` are still usable, `require` is not usable. You may want to undefine them with the `imports-loader`.
+> Note: `exports` and `module` are still available and usable. You may want to undefine them with the `imports-loader`.
 
 ## [`script-loader`](https://github.com/webpack/script-loader)
 
@@ -123,7 +123,7 @@ This loader evaluates code in the global context, just like you would add the co
 
 There are cases where you want a module to export itself to the global context.
 
-Don't do this unless you really need this.
+Don't do this unless you really need this. (Better use the ProvidePlugin)
 
 ## [`expose-loader`](https://github.com/webpack/expose-loader)
 
