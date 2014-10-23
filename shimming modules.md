@@ -39,7 +39,8 @@ Example: Make `$` and `jQuery` available in every module without writing `requir
 ``` javascript
 new webpack.ProvidePlugin({
 	$: "jquery",
-	jQuery: "jquery"
+	jQuery: "jquery",
+	"windows.jQuery": "jquery"
 })
 ```
 
