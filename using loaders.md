@@ -72,7 +72,7 @@ require("style!css!less!bootstrap/less/bootstrap.less");
 // => the file "bootstrap.less" in the folder "less" in the "bootstrap"
 //    module (that is installed from github to "node_modules") is
 //    transformed by the "less-loader". The result is transformed by the
-//    "css-loader" and than by the "style-loader".
+//    "css-loader" and then by the "style-loader".
 ```
 
 
