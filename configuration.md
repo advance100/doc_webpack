@@ -146,6 +146,8 @@ Filename template for the `sources` array in a generated SourceMap.
 
 `[hash]` is replaced by the hash of the module identifier.
 
+`[absolute-resource-path]` is replaced with the absolute filename.
+
 > Default (devtool=`[inline-]source-map`): `"webpack:///[resource-path]"`  
 > Default (devtool=`eval`): `"webpack:///[resource-path]?[loaders]"`  
 > Default (devtool=`eval-source-map`): `"webpack:///[resource-path]?[hash]"`
