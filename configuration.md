@@ -140,7 +140,9 @@ Filename template for the `sources` array in a generated SourceMap.
 
 `[resource-path]` is the same as `[resource]` but without the loader query params.
 
-`[loaders]` is the list of loaders and params up to the name of the rightmost loader.
+`[loaders]` is the list of loaders and params up to the name of the rightmost loader (only explict loaders).
+
+`[all-loaders]` is the list of loaders and params up to the name of the rightmost loader (including automatic loaders).
 
 `[id]` is replaced by the id of the module.
 
