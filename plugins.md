@@ -1,4 +1,4 @@
-A (webpack) plugin is a object that has a `apply` method with one parameter, the compiler. I. e. a function is a plugin, because the function prototype defines a `apply` method. But you also can define a "class" with the `apply` method.
+A (webpack) plugin is a object that has an `apply` method with one parameter, the compiler. I. e. a function is a plugin, because the function prototype defines a `apply` method. But you also can define a "class" with the `apply` method.
 
 Many objects in webpack extends the Tapable class, which mean they expose a `plugin` method, which plugins can use to bind custom stuff.
 
