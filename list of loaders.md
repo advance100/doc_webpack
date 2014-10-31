@@ -75,5 +75,6 @@
 * [`coverjs`](https://github.com/webpack/coverjs-loader): PostLoader to code coverage with CoverJs
 * [`istanbul-instrumenter`](https://github.com/deepsweet/istanbul-instrumenter-loader): [Istanbul](https://github.com/gotwarlost/istanbul) postLoader to code coverage with [karma-webpack](https://github.com/webpack/karma-webpack) and [karma-coverage](https://github.com/karma-runner/karma-coverage)
 * [`jshint`](https://github.com/webpack/jshint-loader): PreLoader for linting code.
+* [`jscs`](https://github.com/unindented/jscs-loader): PreLoader for style checking.
 * [`injectable`](https://github.com/jauco/webpack-injectable): Allow to inject dependencies into modules
 * [`transform`](https://github.com/webpack/transform-loader): Use browserify transforms as loader.
