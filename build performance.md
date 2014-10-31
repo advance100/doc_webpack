@@ -5,3 +5,5 @@ WIP
 * [[`noParse` | configuration]]
 * [analyse tool gives hints](http://webpack.github.io/analyse/)
 * SourceMaps are slow
+  * `devtool: "eval-source-map"`
+  * `new UglifyJsPlugin({ sourceMap: false })`
