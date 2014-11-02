@@ -346,6 +346,10 @@ A boolean flag. It is set when in debug mode.
 
 Should the result be minimized.
 
+### `sourceMap`
+
+Should a SourceMap be generated.
+
 ### `target`
 
 Target of compilation. Passed from configuration options.
