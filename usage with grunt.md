@@ -38,7 +38,7 @@ The best option for development is the [[webpack-dev-server]], but it requires s
 
 ## Example
 
-Take a look at a example Gruntfile. It covers three modes:
+Take a look at an example Gruntfile. It covers three modes:
 
 * webpack-dev-server
 * build - watch cycle
