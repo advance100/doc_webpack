@@ -40,7 +40,7 @@ gulp.task("webpack", function() {
 
 ## [[webpack-dev-server]]
 
-> Don't be too lazy to integrate the webpack-dev-server into your development process. It's a important tool for productivity.
+> Don't be too lazy to integrate the webpack-dev-server into your development process. It's an important tool for productivity.
 
 ``` javascript
 gulp.task("webpack-dev-server", function(callback) {
