@@ -34,7 +34,7 @@
 * [`6to5`](https://github.com/Couto/6to5-loader): Turn ES6 code into vanilla ES5 using [6to5](https://github.com/sebmck/6to5).
 * [`regenerator`](https://github.com/pjeby/regenerator-loader): Use ES6 generators via Facebook's [Regenerator](http://facebook.github.io/regenerator/) module.
 * [`livescript`](https://github.com/appedemic/livescript-loader): Loads LiveScript like JavaScript
-* [`sweetjs`](https://github.com/petehunt/sweetjs-loader): Use sweetjs macros. 
+* [`sweetjs`](https://github.com/jlongster/sweetjs-loader): Use sweetjs macros. 
 * [`traceur`](https://github.com/jupl/traceur-loader): Use future JavaScript features with [Traceur](https://github.com/google/traceur-compiler).
 
 ## templating
