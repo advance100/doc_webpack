@@ -10,7 +10,7 @@ On this page all examples with loaders are inlined into `require` calls. This is
 
 # Importing
 
-The file has dependencies that are not required.
+Useful when a file has dependencies that are not imported via `require()`. 
 
 ## [`imports-loader`](https://github.com/webpack/imports-loader)
 
