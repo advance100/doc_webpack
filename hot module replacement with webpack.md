@@ -2,7 +2,7 @@
 
 # Introduction
 
-Hot Module Replacement (HMR) is a way of exchanging modules in a running application (and adding/removing modules). You basically can update changed modules without a full page reload.
+Hot Module Replacement (HMR) exchanges, adds, or removes modules while an application is running **without** a page reload.
 
 ## Prerequirements
 
@@ -14,11 +14,11 @@ Hot Module Replacement (HMR) is a way of exchanging modules in a running applica
 
 ### From the app view
 
-The app code asks the HMR runtime to check of updates. The HMR runtime downloads the updates (async) and tell the app code that an update is available. The app code asks the HMR runtime to apply updates.  The HMR runtime applies the update (sync). The app code may or may not require user interaction in this process (you decide).
+The app code asks the HMR runtime to check for updates. The HMR runtime downloads the updates (async) and tell the app code that an update is available. The app code asks the HMR runtime to apply updates. The HMR runtime applies the update (sync). The app code may or may not require user interaction in this process (you decide).
 
 ### From the compiler (webpack) view
 
-In addition to the normal assets the compiler need to emit the "Update" to allow updating from previous version to this version. The "Update" contains two parts:
+In addition to the normal assets the compiler needs to emit the "Update" to allow updating from previous version to this version. The "Update" contains two parts:
 
 1. the update manifest (json)
 2. one or multiple update chunks (js)
@@ -33,7 +33,7 @@ The compiler addtionally makes sure that module and chunk ids as consistent betw
 
 HMR is a opt-in feature, so it only affects modules that contains HMR code. The documentation describes the API that is available in modules. In general the module developer writes handlers that are called when a dependency of this module is updated. He can also write a handler that are called when this module is updated.
 
-In most cases it's not mandatory to write HMR code in every module. If a module has no HMR handlers the update bubbles up. This means a single handler can handle a update to a complete module tree. If a single module in this tree is updated, the complete module tree is reloaded (only reloaded not transferred).
+In most cases it's not mandatory to write HMR code in every module. If a module has no HMR handlers the update bubbles up. This means a single handler can handle an update to a complete module tree. If a single module in this tree is updated, the complete module tree is reloaded (only reloaded not transferred).
 
 ### From the HMR runtime view (technical)
 
