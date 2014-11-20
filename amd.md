@@ -46,7 +46,7 @@ define('myModule', ['jquery'], function($) {
 define(['myModule'], function(myModule) {});
 ```
 
-Note: In Webpack a named module is only locally available. In Require.js a named module is globally available.
+Note: In webpack a named module is only locally available. In Require.js a named module is globally available.
 
 ### Anonymous module
 
