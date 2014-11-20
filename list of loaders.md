@@ -30,7 +30,7 @@
 * [`coffee`](https://github.com/webpack/coffee-loader): Loads coffee-script like JavaScript
 * [`coffee-redux`](https://github.com/webpack/coffee-redux-loader): Loads coffee-script like JavaScript
 * [`json5`](https://github.com/webpack/json5-loader): Like json, but not so strict.
-* [`es6`](https://github.com/shama/es6-loader): Loads ES6 modules.
+* [`es6`](https://github.com/shama/es6-loader): Loads ES6 modules. (old)
 * [`esnext`](https://github.com/conradz/esnext-loader): Transpile ES6 code using [esnext](https://github.com/esnext/esnext).
 * [`6to5`](https://github.com/Couto/6to5-loader): Turn ES6 code into vanilla ES5 using [6to5](https://github.com/sebmck/6to5).
 * [`regenerator`](https://github.com/pjeby/regenerator-loader): Use ES6 generators via Facebook's [Regenerator](http://facebook.github.io/regenerator/) module.
