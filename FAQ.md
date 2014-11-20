@@ -52,5 +52,5 @@ A few things to note:
 
 ## How do I integrate Webpack with Rails
 
-Justin Gordon has created a detailed document describing how to integrate Webpack with Rails, including ReactJS and ES6, and deployment on Heroku: [Fast Rich Client Rails Development With Webpack and the ES6 Transpiler|http://www.railsonmaui.com/blog/2014/10/02/integrating-webpack-and-the-es6-transpiler-into-an-existing-rails-project/]
+Justin Gordon has created a detailed document describing how to integrate Webpack with Rails, including ReactJS and ES6, and deployment on Heroku: [Fast Rich Client Rails Development With Webpack and the ES6 Transpiler](http://www.railsonmaui.com/blog/2014/10/02/integrating-webpack-and-the-es6-transpiler-into-an-existing-rails-project/)
 
