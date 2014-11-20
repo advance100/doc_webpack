@@ -47,3 +47,10 @@ A few things to note:
 
 * The loaders are not bundled with webpack and must be installed separately.
 * In order to retain the original resolution behavior, your extension array must include the default values (as shown above). See [[resolve.extensions|configuration#resolve-extensions]] for more details.
+
+
+
+## How do I integrate Webpack with Rails
+
+Justin Gordon has created a detailed document describing how to integrate Webpack with Rails, including ReactJS and ES6, and deployment on Heroku: [Fast Rich Client Rails Development With Webpack and the ES6 Transpiler|http://www.railsonmaui.com/blog/2014/10/02/integrating-webpack-and-the-es6-transpiler-into-an-existing-rails-project/]
+
