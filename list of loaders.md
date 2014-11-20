@@ -56,7 +56,7 @@
 * [`ngtemplate-loader`](https://github.com/WearyMonkey/ngtemplate-loader): Bundles your AngularJS templates and Pre-loads the template cache.
 
 ## styling
-
+* [`bootstrap-sass`](https://github.com/justin808/bootstrap-sass-loader): Loads a configuration file for Twitter Bootstrap integration using Sass. Allows complete customization via Sass.
 * [`style`](https://github.com/webpack/style-loader): Add exports of a module as style to DOM
 * [`css`](https://github.com/webpack/css-loader): Loads css file with resolved imports and returns css code
 * [`less`](https://github.com/webpack/less-loader): Loads and compiles a less file
