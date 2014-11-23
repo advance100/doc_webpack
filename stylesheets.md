@@ -71,7 +71,7 @@ This examples shows multiple entry points, but also works with a single entry po
 ``` javascript
 // webpack.config.js
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-module.exports {
+module.exports = {
 	// The standard entry point and output config
 	entry: {
 		posts: "./posts",
