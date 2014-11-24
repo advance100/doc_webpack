@@ -23,13 +23,13 @@ I tried to extend existing module bundlers, but it wasn't possible to achieve al
 
 #### [[Code Splitting]]
 
-webpack has two types of dependencies in it's dependency tree: sync and async. Async dependencies act as split points and form a new chunk. After the chunk tree is optimized, a file is emitted for each chunk.
+webpack has two types of dependencies in its dependency tree: sync and async. Async dependencies act as split points and form a new chunk. After the chunk tree is optimized, a file is emitted for each chunk.
 
 Read more about [[Code Splitting]].
 
 #### [[Loaders]]
 
-webpack can only process javascript natively, but loaders are used to transform other resources into javascript. By doing so every resource forms a module.
+webpack can only process JavaScript natively, but loaders are used to transform other resources into JavaScript. By doing so, every resource forms a module.
 
 Read more about [[Using loaders]] and [[Loaders]].
 
