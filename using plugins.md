@@ -1,4 +1,4 @@
-## Build-in plugins
+## Built-in plugins
 
 Plugins are included in your module by using the plugins property in the webpack config.
 
