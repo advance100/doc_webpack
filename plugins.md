@@ -36,7 +36,7 @@ There are multiple types of plugin interfaces.
 	* parallel bailing: The handlers are invoked parallel (async). The first (by order) returned value is significant.
 	* waterfall: Each handler get the result value of the last handler as argument.
 
-## Compiler
+## `Compiler` instance
 
 ### `run(compiler: Compiler)` async
 
@@ -130,7 +130,7 @@ After the factory has resolved the request. The `data` object has this propertie
 
 ### `alternatives(options: Array)` async waterfall
 
-## Compilation
+## `Compilation` instance
 
 ### `seal`
 
@@ -261,7 +261,7 @@ An assets from a module was added to the compilation.
 An assets from a chunk was added to the compilation.
 
 
-## Parser `compiler.parser`
+## `Parser` instance (`compiler.parser`)
 
 ### `program(ast)` bailing
 
@@ -330,7 +330,7 @@ Evaluate a identifier that is a defined var.
 Evaluate a call to a member function of a successfully evaluated expression.
 
 
-## Resolver
+## Resolvers
 
 * `compiler.resolvers.normal` Resolver for a normal module
 * `compiler.resolvers.context` Resolver for a context module
