@@ -1,8 +1,8 @@
 WIP
 
 * Incremental builds with [[webpack-dev-server]], [[webpack-dev-middleware]], [[webpack --watch | cli]] or [[`watch: true` | node.js API]]
-* [[`prefetch` | configuration]]
-* [[`noParse` | configuration]]
+* [[`prefetch` | http://webpack.github.io/docs/list-of-plugins.html#prefetchplugin]]
+* [[`noParse` | https://github.com/webpack/docs/wiki/configuration#modulenoparse]]
 * [analyse tool gives hints](http://webpack.github.io/analyse/)
 * SourceMaps are slow
   * `devtool: "eval-source-map"`
