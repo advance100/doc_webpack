@@ -81,6 +81,8 @@ In `toJson` every flag defaults to `true` (except `chunkModules`). By default it
 
 Here is an [example of the resulting JSON](https://github.com/webpack/analyse/blob/master/app/pages/upload/example.json).
 
+> Note: If you want to extract the asset name for generating the HTML page, use the `assetsByChunkName` property, which contains an object mapping `chunkName` to asset name(s) (it's a string or an array of strings).
+
 ### `stats.toString(options)`
 
 Returns a formatted string of the result.
