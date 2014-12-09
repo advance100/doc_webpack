@@ -1,10 +1,91 @@
-The webpack-dev-server is a little node.js express server, which uses the [[webpack-dev-middleware]] to serve a webpack bundle. It also has a little runtime which is connected to the server via socket.io. The server emits information about the compilation state to the client, which reacts to those events.
+The webpack-dev-server is a little node.js express server, which uses the [[webpack-dev-middleware]] to serve a webpack bundle. It also has a little runtime which is connected to the server via socket.io. The server emits information about the compilation state to the client, which reacts to those events. You can choose between different modes, depending on your needs. So lets say you have the following config file:
 
-It serves static assets from the current directory. If the file isn't found, an empty HTML page is generated which references the corresponding JavaScript file. If `/webpack-dev-server/` is prefixed to the path, it serves a small runtime which connects to the server with socket.io and automatically updates the page. In this mode the content is wrapped in an iframe and a small GUI gives status information about the server.
+```javascript
+module.exports = {
+  entry: {
+    app: ['./app/main.js']
+  },
+  output: {
+    path: './build',
+    filename: 'bundle.js'
+  }
+};
+```
 
-There is also an inlined mode without a GUI (status information is printed to the console). In this mode you need to add the runtime manually to your page. You can do this by adding it to the entry point or by adding an additional script tag to your html. See chapter "inlined mode" below.
+You have an app folder with your initial entry point that webpack will bundle into a *bundle.js* file in the build folder.
 
-The webpack-dev-server has a CLI and a node.js API.
+## Inline mode
+The webpack-dev-server will serve the files in the current directory, unless you configure a specific content base.
+
+```sh
+$ webpack-dev-server --content-base build/
+```
+
+Now webpack-dev-server will serve the files in your build folder. You will need to add an index.html that loads up your bundled files.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script src="bundle.js"></script>
+</body>
+</html>
+```
+
+By default go to `localhost:8080/` to launch your app.
+
+## Hot mode
+By adding a script to your index.html file and a special entry point in your configuration you will be able to get live reloads when doing changes to your files. Change your index.html file to this:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <!-- It is important that you point to the full url -->
+  <script src="http://localhost:8080/webpack-dev-server.js"></script>
+  <script src="bundle.js"></script>
+</body>
+</html>
+```
+
+And make sure you have the special `webpack/hot/dev-server` entry point in your configuration:
+
+```javascript
+module.exports = {
+  entry: {
+    app: ['webpack/hot/dev-server', './app/main.js']
+  },
+  output: {
+    path: './build',
+    filename: 'bundle.js'
+  }
+};
+```
+When you do changes to files the browser will automatically reload.
+
+## Hot mode with indication
+When running webpack-dev-server you can also head to `localhost:8080/webpack-dev-server`. Going to this URL will not only load your application, but also indicate when a rebundling is in progress. Using this url does not require you to insert the webpack-dev-server script. So using `localhost:8080/webpack-dev-server` with the current setup would require this index.html:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script src="bundle.js"></script>
+</body>
+</html>
+```
 
 ## CLI
 
@@ -55,30 +136,6 @@ server.listen(8080, "localhost", function() {});
 ```
 
 See [[webpack-dev-middleware]] for documentation on middleware options.
-
-## Inlined mode
-
-You can choose one of the following options to add to the runtime:
-
-### Add to entry point
-
-You need to pass the url of the webpack-dev-server to the runtime (`webpack-dev-server/client`) via query string.
-
-``` javascript
-{
-  entry: ["webpack-dev-server/client?http://localhost:8080", "yourEntry"]
-}
-```
-
-Or use the `--inline` CLI option and this will be added for you. (`--inline --hot` also adds the `webpack/hot/dev-server` entry.)
-
-### Add as script tag
-
-The webpack-dev-server also serves the runtime as standalone script under `/webpack-dev-server.js`. Just add it as script tag. The runtime extracts the url to the webpack-dev-server from the script tag (don't use defer or async).
-
-``` html
-<script src="http://localhost:8080/webpack-dev-server.js"></script>
-```
 
 ## Combining with an existing server
 
