@@ -147,7 +147,11 @@ Additonal options:
 
 ### [`ngMinPlugin`](http://github.com/jeffling/ngmin-webpack-plugin)
 ``` javascript
-new ngMinPlugin([options]);
+new webpack.optimize.UglifyJsPlugin({
+    compress: {
+        warnings: false
+    }
+})
 ```
 Runs the [ngmin](http://github.com/btford/ngmin) pre-minimizer to insert AngularJS DI annotations.
 
