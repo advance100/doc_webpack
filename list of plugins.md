@@ -139,7 +139,15 @@ new webpack.optimize.UglifyJsPlugin([options])
 
 Minimize all JavaScript output of chunks. Loaders are switched into minimizing mode. You can pass an object containing UglifyJs options.
 
-Additonal options:
+``` javascript
+new webpack.optimize.UglifyJsPlugin({
+    compress: {
+        warnings: false
+    }
+})
+```
+
+Additional options:
 
 `sourceMap` The plugin uses SourceMaps to map error message locations to modules. This slows down the compilation. (default `true`)
 
@@ -147,11 +155,7 @@ Additonal options:
 
 ### [`ngMinPlugin`](http://github.com/jeffling/ngmin-webpack-plugin)
 ``` javascript
-new webpack.optimize.UglifyJsPlugin({
-    compress: {
-        warnings: false
-    }
-})
+new ngMinPlugin([options]);
 ```
 Runs the [ngmin](http://github.com/btford/ngmin) pre-minimizer to insert AngularJS DI annotations.
 
