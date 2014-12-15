@@ -159,5 +159,9 @@ Example:
 * existing server on port 8080.
 * `<script src="http://localhost:8090/assets/bundle.js">`
 * `publicPath = "http://localhost:8090/assets/"`
-* `contentBase = "http://localhost:8080/"`
-* open `http://localhost:8090/webpack-dev-server`
+* iframe mode
+  * `contentBase = "http://localhost:8080/"`
+  * open `http://localhost:8090/webpack-dev-server/`
+* or inlined mode
+  * `--inline`
+  * open `http://localhost:8080`
