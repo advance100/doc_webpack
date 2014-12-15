@@ -162,6 +162,6 @@ Example:
 * iframe mode
   * `contentBase = "http://localhost:8080/"`
   * open `http://localhost:8090/webpack-dev-server/`
-* or inlined mode
+* or inline mode
   * `--inline`
   * open `http://localhost:8080`
