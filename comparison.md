@@ -25,7 +25,7 @@
 | replacement for browser | `web_modules`, `.web.js`, package.json field, alias config option | alias option | package.json field, alias option
 | minimizing | uglify | uglify, closure compiler | no |
 | mangle path names | **yes** | no | partial |
-| Runtime overhead | **243b + 20b per module + 4b per dependency** | 14.7kb + 0b per module + (3b + X) per dependency | 415b + 25b per module + (6b + 2X) per dependency |
+| Runtime overhead | **243b + 20b per module + 4b per dependency** | 14.7kb + 0b per module + (3b + X) per dependency | 415b + 25b per module + (6b + 2X) per dependency s|
 
 ♦ in production mode (opposite in development mode)
 
