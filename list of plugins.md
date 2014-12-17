@@ -65,8 +65,15 @@ new webpack.ResolverPlugin([
 ], ["normal", "loader"])
 ```
 
+### `ResolverPlugin.FileAppendPlugin`
 
+This plugin will append a path to the module directory to find a match, which can be useful if you have a module which has an incorrect "main" entry in its package.json/bower.json etc (e.g. `"main": "Gruntfile.js"`). You can use this plugin as a special case to load the correct file for this module. Example:
 
+``` javascript
+new webpack.ResolverPlugin([
+  new webpack.ResolverPlugin.FileAppendPlugin(['/dist/compiled-moduled.js'])
+])
+```
 
 ## output
 
