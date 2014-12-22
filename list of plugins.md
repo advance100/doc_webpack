@@ -180,13 +180,33 @@ Generates an extra chunk, which contains common modules shared between at least 
 <script src="entry.bundle.js" charset="utf-8"></script>
 ```
 
-`chunkNames` (string[]|string|null) The internal names of the commons chunks. You pass a name of an existing chunk to reuse it (i. e. to add stuff to the commons chunk). If the name doesn't exist a new entry chunk is created.
+`chunkNames` (string[]|string|null) The internal names of the commons chunks. You pass a name of an existing chunk to reuse it (i. e. to add stuff to the commons chunk). If the name doesn't exist a new entry chunk is created. If no name is provided `filenameTemplate` is used as name.
 
 `filenameTemplate` (string|null) The filename of the commons chunk (like `output.filename`). Accepts `[hash]`, `[chunkhash]`, etc. If you pass `null` the filename is not modified.
 
 `selectedChunks` (string[]|null|false) If `null` is passed all entry chunks will be used. If an array of chunks names is passed that will be used to generate the commons chunk. If `false` is passed and the children of the selected commons chunk(s) (`chunkNames`) are used. Default: `null`
 
-`minChunks` the number of entry point that need to have a module in common. By default it need to be in all selected chunks. Allowed values are `2` <= `minChunks` <= selected chunks or `Infinity`. Passing `Infinity` doesn't move any module into the commons chunk (use this if you want manual control over the content for better long-term-caching). You can also provide a `function(module, count)` that is called for each module with the number of chunks that share these module. Return a truty value to move it to the commons chunk
+`minChunks` the number of entry point that need to have a module in common. By default it need to be in all selected chunks. Allowed values are `2` <= `minChunks` <= selected chunks or `Infinity`. Passing `Infinity` doesn't move any module into the commons chunk (use this if you want manual control over the content for better long-term-caching). You can also provide a `function(module, count)` that is called for each module with the number of chunks that share these module. Return a truty value to move it to the commons chunk.
+
+Examples:
+
+``` javascript
+new CommonsChunkPlugin("commons.js")
+// Create a new "commons.js" entry chunk that contains all modules shared by all entry points
+
+new CommonsChunkPlugin("commons", "commons.js", 3)
+// Creates a new "commons" entry chunk (or reuse an existing) that contains modules shared by at least 3 entry points
+
+new CommonsChunkPlugin("commons", null, ["entryA", "entryB"])
+// Creates a new "commons" entry chunk (or reuse an existing) that contains modules shared by "entryA" and "entryB"
+// output.filename is used a filename for the "commons" entry chunk
+
+new CommonsChunkPlugin("entryA", null, false, 2)
+// Moves modules that are shared by at least 2 children for "entryA" into "entryA"
+
+new CommonsChunkPlugin(null, false)
+// Moves modules that are shared by all chunks of a common parent into the parent chunk
+```
 
 ### `AggressiveMergingPlugin`
 
