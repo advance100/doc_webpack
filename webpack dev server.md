@@ -151,17 +151,27 @@ See [[webpack-dev-middleware]] for documentation on middleware options.
 
 ## Combining with an existing server
 
-You can run the webpack-dev-server parallel to the existing server. Just use the complete path to the dev server in the `<script>` and the `publicPath`. Pass the URL to the existing server as `contentBase`.
+There are cases when you want to run the a backend server or a mock of it in development. You should **not** abuse the webpack-dev-server as backend. It's only intended to serve static (webpacked) assets.
 
-Example:
+You should run two server side-by-side: The webpack-dev-server and your backend server.
 
-* webpack-dev-server on port 8090.
-* existing server on port 8080.
-* `<script src="http://localhost:8090/assets/bundle.js">`
-* `publicPath = "http://localhost:8090/assets/"`
-* iframe mode
-  * `contentBase = "http://localhost:8080/"`
-  * open `http://localhost:8090/webpack-dev-server/`
-* or inline mode
+In this case you need to teach the webpack-generated assets to make requests to the webpack-dev-server even when running on a HTML-page sent by the backend server. On the other side you need to teach your backend server to generate HTML pages that include script tags that point to assets on the webpack-dev-server. In addition to that you need a connection between the webpack-dev-server and the webpack-dev-server runtime to trigger reloads on recompilation.
+
+To teach webpack to make requests (for chunk loading or HMR) to the webpack-dev-server you need to provide **a full URL in the `output.publicPath`** option.
+
+To make a connection between webpack-dev-server and its runtime best use the inline mode with `--inline`. The webpack-dev-server CLI automatically includes an entry point which establishs a WebSocket connection. (You can also use the iframe mode if you point `--content-base` of the webpack-dev-server to your backend server.
+
+When you use the inline mode just open the backend server URL in your web browsers. (If you use the iframe mode open the `/webpack-dev-server/` prefixed URL of the webpack-dev-server.)
+
+Summary and example:
+
+* webpack-dev-server on port 9090.
+* backend server on port 8080.
+* generate HTML pages with `<script src="http://localhost:9090/assets/bundle.js">`
+* webpack configuration `output.publicPath = "http://localhost:9090/assets/"`
+* inline mode
   * `--inline`
   * open `http://localhost:8080`
+* or iframe mode
+  * webpack-dev-server `contentBase = "http://localhost:8080/"` (`--content-base`)
+  * open `http://localhost:9090/webpack-dev-server/`
