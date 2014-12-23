@@ -49,6 +49,7 @@
 ## advanced Code Splitting
 
 * [aggressive merging of chunks](https://github.com/webpack/webpack/tree/master/examples/agressive-merging)
+* [moving modules between chunks](https://github.com/webpack/webpack/tree/master/examples/move-to-parent)
 * [routing with multiple entry points and Code Splitting](https://github.com/webpack/webpack/tree/master/examples/hybrid-routing)
 
 ## multi compiler
