@@ -34,5 +34,3 @@ X is the length of the path string
 
 
 
-
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
