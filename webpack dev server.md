@@ -15,13 +15,15 @@ module.exports = {
 You have an app folder with your initial entry point that webpack will bundle into a *bundle.js* file in the build folder.
 
 ## Inline mode
-The webpack-dev-server will serve the files in the current directory, unless you configure a specific content base.
+The webpack-dev-server will serve the files in the current directory, unless you configure a specific content base. 
 
 ```sh
 $ webpack-dev-server --content-base build/
 ```
 
-Now webpack-dev-server will serve the files in your build folder. You will need to add an index.html that loads up your bundled files.
+Using this config `webpack-dev-server` will serve the static files in your `build` folder and watch your source files for changes. When changes are made the project will be recompiled into a new bundle. Note that this modified bundle will be served directly from memory and not written to the destination directory. The bundle in memory will take precedence over the bundle on disk. When the server is stopped the original bundle file remains unchanged.
+ 
+To load your bundled files, you will need to create an `index.html` file. e.g.
 
 ```html
 <!DOCTYPE html>
@@ -36,7 +38,7 @@ Now webpack-dev-server will serve the files in your build folder. You will need 
 </html>
 ```
 
-By default go to `localhost:8080/` to launch your app.
+By default go to `localhost:8080/` to launch your app. 
 
 ## Hot mode
 By adding a script to your index.html file and a special entry point in your configuration you will be able to get live reloads when doing changes to your files. Change your index.html file to this:
