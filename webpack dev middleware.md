@@ -1,3 +1,5 @@
+> Note: The webpack-dev-middleware is for advanced users. See [[webpack-dev-server]] for a ready-to-use solution.
+
 The [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) is a small middleware for a connect-based middleware stack. It uses webpack to compile assets in-memory and serve them.  When a compilation is running every request to the served webpack assets is blocked until we have a stable bundle.
 
 
