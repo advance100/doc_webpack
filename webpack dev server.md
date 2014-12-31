@@ -21,7 +21,7 @@ The webpack-dev-server will serve the files in the current directory, unless you
 $ webpack-dev-server --content-base build/
 ```
 
-Using this config `webpack-dev-server` will serve the static files in your `build` folder and watch your source files for changes. When changes are made the bundle will be recompiled. This modified bundle is available only via the server and will not be written to disk. Where a bundle already exists, the bundle in memory will take precedence. When the server is stopped the original bundle file remains unchanged.
+Using this config `webpack-dev-server` will serve the static files in your `build` folder and watch your source files for changes. When changes are made the bundle will be recompiled. This modified bundle is served from memory at the relative path specified in `publicPath` (see [API](#API)). It will not be written to your configured output directory. Where a bundle already exists at the same url path the bundle in memory will take precedence.
  
 To load your bundled files, you will need to create an `index.html` file. e.g.
 
@@ -149,6 +149,8 @@ var server = new WebpackDevServer(compiler, {
 });
 server.listen(8080, "localhost", function() {});
 ```
+
+
 
 See [[webpack-dev-middleware]] for documentation on middleware options.
 
