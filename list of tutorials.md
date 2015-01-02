@@ -56,6 +56,16 @@ Comprehensive introduction to webpack, held at the [MNUG (munich node.js user gr
 22 Slides, short introduction<br>
 2014-06-11 @ryanseddon
 
+## Screencasts
+
+### [Testing with webpack and Mocha](https://www.youtube.com/watch?v=_sLLjPzOrXI)
+
+2015-01-02 @jesseskinner
+
+### [Trying webpack with React.js](https://www.youtube.com/watch?v=Ob1ruoUnc58)
+
+2014-12-27 @jesseskinner
+
 ---
 
 (Use the edit button at top right corner to add more)
