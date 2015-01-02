@@ -10,7 +10,7 @@ There are two ways to test web applications:
 The mocha-loader executes your code with the mocha framework. If you run the code it'll show the results in the web page.
 
 ``` sh
-webpack "mocha!./test.js" testBundle.js
+webpack "mocha\!./test.js" testBundle.js
 # index.html is a HTML page which loads testBundle.js
 open index.html
 ```
@@ -20,7 +20,7 @@ open index.html
 The webpack-dev-server will automatically create a HTML page which loads the script. It also re-executes the tests when files have changed.
 
 ``` sh
-webpack-dev-server "mocha!./test.js" --output-file test.js
+webpack-dev-server "mocha\!./test.js" --output-file test.js
 open http://localhost:8080/webpack-dev-server/test
 ```
 
