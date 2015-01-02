@@ -101,7 +101,7 @@ You can bind loaders to a RegExp via configuration:
 You can bind loaders to a extension via CLI:
 
 ``` sh
-$ webpack --module-bind jade --module-bind css=style!css
+$ webpack --module-bind jade --module-bind 'css=style!css'
 ```
 
 This uses the loader "jade" for ".jade" files and the loaders "style" and "css" for ".css" files.
