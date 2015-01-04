@@ -112,7 +112,7 @@ module "localModule" {}
 #### Pros
 
 * Static analysis is easy
-* Future-prove as ES standard
+* Future-proof as ES standard
 
 #### Cons
 
