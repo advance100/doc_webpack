@@ -29,6 +29,7 @@
 ## dialects
 
 * [`coffee`](https://github.com/webpack/coffee-loader): Loads coffee-script like JavaScript
+* [`coffee-jsx`](https://github.com/jsifalda/coffee-jsx-loader): Loads coffee-script with JSX like JavaScript
 * [`coffee-redux`](https://github.com/webpack/coffee-redux-loader): Loads coffee-script like JavaScript
 * [`json5`](https://github.com/webpack/json5-loader): Like json, but not so strict.
 * [`es6`](https://github.com/shama/es6-loader): Loads ES6 modules. (old)
