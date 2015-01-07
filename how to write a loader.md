@@ -97,7 +97,7 @@ module.exports = function(source) {
 
 ### resolve dependencies
 
-In many languages these is some schema to specify dependencies. i. e. in css there is `@import` and `url(...)`. These dependencies should be resolved by the module system.
+In many languages there is some schema to specify dependencies. i. e. in css there is `@import` and `url(...)`. These dependencies should be resolved by the module system.
 
 There are two options to do this:
 
