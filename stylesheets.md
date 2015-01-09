@@ -39,14 +39,12 @@ require("./stylesheet.css");
 
 # separate css bundle
 
-> WARNING: experimental
-
-In combination with the [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin) it's possible to generate a native css file.
+In combination with the [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin) it's possible to generate a native css output file.
 
 With Code Splitting we can use two different modes:
 
 * Create one css file per initial chunk (see [[Code Splitting]]) and embed stylesheets into additional chunks. (recommended)
-* Create one css file for the complete bundle.
+* Create one css file per initial chunk which also contains styles from additional chunks.
 
 The first mode is recommended because it's optimial in regards to initial page loading time. In small apps with multiple entry points the second mode could be better because of HTTP request overheads and caching.
 
