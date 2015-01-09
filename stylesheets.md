@@ -64,7 +64,7 @@ To use the plugin you need to flag modules that should be moved into the css fil
 
 A new asset is created for the extracted modules.
 
-## one css file per entry
+## styles from initial chunks into separate css output file
 
 This examples shows multiple entry points, but also works with a single entry point.
 
@@ -112,7 +112,7 @@ You'll get these output files:
 * `about.js` `about.css`
 * `1.js` `2.js` (contain embedded styles)
 
-## one css file for the bundle
+## all styles in separate css output file
 
 To use the second mode you just need to set the option `allChunks` to `true`:
 
@@ -130,15 +130,14 @@ module.exports = {
 
 You'll get these output files:
 
-* `posts.js`
-* `post.js`
-* `about.js`
+* `posts.js` `posts.css`
+* `post.js` `post.css`
+* `about.js` `about.css`
 * `1.js` `2.js` (don't contain embedded styles)
-* `style.css`
 
-## one css file per entry + commons chunk
+## styles in commons chunk
 
-You can use a separate css file in combination with the CommonsChunkPlugin. In this case a css file for the commons chunk is emitted too (`allChunks: false`).
+You can use a separate css file in combination with the CommonsChunkPlugin. In this case a css file for the commons chunk is emitted too.
 
 ``` javascript
 // ...
@@ -158,3 +157,7 @@ You'll get these output files:
 * `post.js` `post.css`
 * `about.js` `about.css`
 * `1.js` `2.js` (contain embedded styles)
+
+or with `allChunks: true`
+
+* `1.js` `2.js` (don't contain embedded styles)
