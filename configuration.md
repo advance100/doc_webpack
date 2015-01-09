@@ -90,7 +90,7 @@ If you use any hashing (`[hash]` or `[chunkhash]`) make sure to have a consisten
 
 ### `output.path`
 
-The output directory as **absolute path**.
+The output directory as **absolute path** (required).
 
 `[hash]` is replaced by the hash of the compilation.
 
@@ -102,23 +102,19 @@ The filename of the entry chunk as relative path inside the `output.path` direct
 
 `[hash]` is replaced by the hash of the compilation.
 
+> You **must** not specify an absolute path here! Use the `output.path` option.
+
 ### `output.chunkFilename`
 
 The filename of non-entry chunks as relative path inside the `output.path` directory.
 
 `[id]` is replaced by the id of the chunk.
 
+`[name]` is replaced by the name of the chunk (or with the id when the chunk has no name).
+
 `[hash]` is replaced by the hash of the compilation.
 
 `[chunkhash]` is replaced by the hash of the chunk.
-
-### `output.namedChunkFilename`
-
-The filename of named chunks as relative path inside the `output.path` directory.
-
-`[name]` is replaced by the name of the chunk.
-
-`[hash]` is replaced by the hash of the compilation.
 
 ### `output.sourceMapFilename`
 
