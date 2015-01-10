@@ -102,6 +102,8 @@ The filename of the entry chunk as relative path inside the `output.path` direct
 
 `[hash]` is replaced by the hash of the compilation.
 
+`[chunkhash]` is replaced by the hash of the chunk.
+
 > You **must** not specify an absolute path here! Use the `output.path` option.
 
 ### `output.chunkFilename`
