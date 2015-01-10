@@ -25,6 +25,8 @@
 * [`image`](https://github.com/tcoopman/image-webpack-loader): Compresses your images. Ideal to use together with `file` or `url`.
 * [`svgo-loader`](https://github.com/pozadi/svgo-loader): Compresses SVG images using [svgo](https://github.com/svg/svgo) library
 * [`baggage`](https://github.com/deepsweet/baggage-loader): Automatically require any resources related to the required one
+* ['polymer-loader'](https://github.com/JonDum/polymer-loader): Process HTML & CSS with preprocessor of choice and `require()` Web Components like first-class modules.
+
 
 ## dialects
 
