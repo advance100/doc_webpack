@@ -293,6 +293,8 @@ A array of applied pre and post loaders.
 
 A RegExp or an array of RegExps. Don't parse files matching.
 
+It's matched agains the full resolved request.
+
 This can boost performance when ignoring big libraries.
 
 The files are expected to have no call to `require`, `define` or similar. They are allowed to use `exports` and `module.exports`.
