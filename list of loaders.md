@@ -11,7 +11,7 @@
 * [`checksum`](https://github.com/naturalatlas/checksum-loader): Computes the checksum of a file
 * [`null`](https://github.com/webpack/null-loader): Emits an empty module.
 * [`cowsay`](https://github.com/nelix/cowsay-loader): Emits a module with a cowsay header.
-
+* [`dsv`](https://github.com/wbkd/dsv-loader): Loads csv/tsv files.
 ## packaging
 
 * [`file`](https://github.com/webpack/file-loader): Emits the file into the output folder and returns the (relative) url.
