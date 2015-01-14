@@ -137,7 +137,8 @@ var server = new WebpackDevServer(compiler, {
 	// Enable special support for Hot Module Replacement
 	// Page is no longer updated, but a "webpackHotUpdate" message is send to the content
 	// Use "webpack/hot/dev-server" as additional module in your entry point
-
+        // Note: this does _not_ add the `HotModuleReplacementPlugin` like the CLI option does. 
+  
 	// webpack-dev-middleware options
 	quiet: false,
 	noInfo: false,
