@@ -1,11 +1,24 @@
+# 1.5
+
+(2015-01-18)
+
+* API: Braeking change: changed casing for `node.Buffer` options
+* API: support loading of multiple chunks in a dependency block
+* API: added `node.setImmediate`
+* API: added `EnvironmentPlugin`
+* API: added `async` parameter to `CommonsChunksPlugin` to create a async loaded commons chunks
+* SUPPORT: Symlinks while resolving
+
 # 1.4
 
-(2014-09-22)
+(2014-12-28)
 
 * API: Breaking change: added options parameter to `module.hot.accept/check`
 * API: added 'hidden-sourcemap' devtool
 * API: added `NoErrorsPlugin`, which doesn't emit a bundle on errors
 * API: added hot-only dev-server, which doesn't reload the page on unaccepted update
+* API: more features for the CommonsChunkPlugin to process non-entry chunks
+* API: support library with commons chunks
 * BUG: rewrite module reasons on module moving
 * BUG: fixed bug, when extending Object.prototype
 * API: expose `sourceMap` flag to loaders
