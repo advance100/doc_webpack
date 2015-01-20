@@ -233,6 +233,50 @@ new CommonsChunkPlugin({
 })
 ```
 
+``` html
+<script src="vendor.js" charset="utf-8"></script>
+<script src="app.js" charset="utf-8"></script>
+```
+
+Hint: In combination with long term caching you may need to use [this plugin](https://github.com/diurnalist/chunk-manifest-webpack-plugin) to avoid that the vendor chunk changes. You should also use records to ensure stable module ids.
+
+#### 3. Move common modules into the parent chunk
+
+With Code Splitting multiple child chunks of a chunk can have common modules. You can move these common modules into the parent (This reduces overall size, but has a negative effect on the initial load time. It can be useful if it is expected that a user need to download many sibling chunks).
+
+``` js
+new CommonsChunkPlugin({
+  // names: ["app", "subPageA"]
+  // (choose the chunks, or omit for all chunks)
+
+  children: true,
+  // (select all children of chosen chunks)
+
+  // minChunks: 3,
+  // (3 children must share the module before it's moved)
+})
+```
+
+#### 4. Extra async commons chunk
+
+Similar to 3., but instead of moving common modules into the parent (which increases initial load time) a new async-loaded additional commons chunk is used. This is automatically downloaded in parallel when the additional chunk is downloaded.
+
+``` js
+new CommonsChunkPlugin({
+  // names: ["app", "subPageA"]
+  // (choose the chunks, or omit for all chunks)
+
+  children: true,
+  // (use all children of the chunk)
+
+  async: true,
+  // (create an async commons chunk)
+
+  // minChunks: 3,
+  // (3 children must share the module before it's separated)
+})
+```
+
 ### `AggressiveMergingPlugin`
 
 ``` javascript
