@@ -172,42 +172,65 @@ Runs the [ngmin](http://github.com/btford/ngmin) pre-minimizer to insert Angular
 ### `CommonsChunkPlugin`
 
 ``` javascript
-new webpack.optimize.CommonsChunkPlugin([chunkNames], filenameTemplate, [selectedChunks], [minChunks])
+new webpack.optimize.CommonsChunkPlugin(options)
 ```
 
-Generates an extra chunk, which contains common modules shared between at least `minChunks` entry points. You must load the generated chunk before the entry point:
+* `options.name` or `options.names` (`string|string[]`): The chunk name of the commons chunk. An existing chunk can be selected by passing a name of an exiting chunk. If an array of strings is passed this is equal to invoking the plugin multiple times for each chunk name. If omitted and `options.async` or `options.children` is set all chunks are used, elsewise `options.filename` is used as chunk name.
+* `options.filename` (`string`): (`The filename template for the commons chunk. Can contain the same placeholder as `output.filename`. If omitted the original filename is not modified (usually `output.filename` or `output.chunkFilename`).
+* `options.minChunks` (`number|Infinitiy|function(module, count) -> boolean`): The minimum number of chunks which need to contain a module before it's moved into the commons chunk. The number must be greater than or equal 2 and lower than or equal to the number of chunks. Passing `Infinity` just creates the commons chunk, but moves no modules into it. By providing a `function` you can add custom logic.
+* `options.chunks` (string[]`): Select the source chunks by chunk names. The chunk must be a child of the commons chunk. If omitted all entry chunks are selected.
+* `options.children` (`boolean`): If `true` all children of the commons chunk are selected
+* `options.async` (`boolean`): If `true` a new asnyc commons chunk is created as child of `options.name` and sibling of `options.chunks`. It is loaded in parallel with `options.chunks`.
+* `options.minSize` (`number`): Minimum size of all common module before a commons chunk is created.
+
+Examples:
+
+1. Commons chunk for entries
+
+Generate an extra chunk, which contains common modules shared between entry points.
+
+``` js
+new CommonsChunkPlugin({
+  name: "commons",
+  // (the commons chunk name)
+
+  filename: "commons.js",
+  // (the filename of the commons chunk)
+
+  // minChunks: 3,
+  // (Modules must be shared between 3 entries)
+
+  // chunks: ["pageA", "pageB"],
+  // (Only use these entries)
+})
+```
+
+You must load the generated chunk before the entry point:
 
 ``` html
 <script src="commons.js" charset="utf-8"></script>
 <script src="entry.bundle.js" charset="utf-8"></script>
 ```
 
-`chunkNames` (string[]|string|null) The internal names of the commons chunks. You pass a name of an existing chunk to reuse it (i. e. to add stuff to the commons chunk). If the name doesn't exist a new entry chunk is created. If no name is provided `filenameTemplate` is used as name.
+2. Explicit vendor chunk
 
-`filenameTemplate` (string|null) The filename of the commons chunk (like `output.filename`). Accepts `[hash]`, `[chunkhash]`, etc. If you pass `null` the filename is not modified.
+Split your code into vendor and application.
 
-`selectedChunks` (string[]|null|false) If `null` is passed all entry chunks will be used. If an array of chunks names is passed that will be used to generate the commons chunk. If `false` is passed and the children of the selected commons chunk(s) (`chunkNames`) are used. Default: `null`
+``` js
+entry: {
+  vendor: ["jquery", "other-lib"],
+  app: "./entry"
+}
+new CommonsChunkPlugin({
+  name: "vendor",
 
-`minChunks` the number of entry point that need to have a module in common. By default it need to be in all selected chunks. Allowed values are `2` <= `minChunks` <= selected chunks or `Infinity`. Passing `Infinity` doesn't move any module into the commons chunk (use this if you want manual control over the content for better long-term-caching). You can also provide a `function(module, count)` that is called for each module with the number of chunks that share these module. Return a truty value to move it to the commons chunk.
+  // filename: "vendor.js"
+  // (Give the chunk a different name)
 
-Examples:
-
-``` javascript
-new CommonsChunkPlugin("commons.js")
-// Create a new "commons.js" entry chunk that contains all modules shared by all entry points
-
-new CommonsChunkPlugin("commons", "commons.js", 3)
-// Creates a new "commons" entry chunk (or reuse an existing) that contains modules shared by at least 3 entry points
-
-new CommonsChunkPlugin("commons", null, ["entryA", "entryB"])
-// Creates a new "commons" entry chunk (or reuse an existing) that contains modules shared by "entryA" and "entryB"
-// output.filename is used a filename for the "commons" entry chunk
-
-new CommonsChunkPlugin("entryA", null, false, 2)
-// Moves modules that are shared by at least 2 children for "entryA" into "entryA"
-
-new CommonsChunkPlugin(null, false)
-// Moves modules that are shared by all chunks of a common parent into the parent chunk
+  minChunks: Infinity,
+  // (with more entries, this ensures that no other module
+  //  goes into the vendor chunk)
+})
 ```
 
 ### `AggressiveMergingPlugin`
