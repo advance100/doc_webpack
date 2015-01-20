@@ -18,7 +18,7 @@ The relative path is joined to the context directory and the resulting absolute 
 
 ## Resolving a module path
 
-For resolving a module we first gather all search directories for modules from the context directory. This process is similar to the [node.js resolving process](http://nodejs.org/api/modules.html), but the search directories are configurable with the configuration option `resolve.moduleDirectories`. In addition to this the directories in the configuration option `resolve.root` are prepended and directories in the configuration option `resolve.fallback` are appended.
+For resolving a module we first gather all search directories for modules from the context directory. This process is similar to the [node.js resolving process](http://nodejs.org/api/modules.html), but the search directories are configurable with the configuration option `resolve.modulesDirectories`. In addition to this the directories in the configuration option `resolve.root` are prepended and directories in the configuration option `resolve.fallback` are appended.
 
 The module is looked up in each module directory and resolved according to "Resolving an absolute path". If the first match has no success, the second is tried and so on.
 
