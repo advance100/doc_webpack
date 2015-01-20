@@ -623,7 +623,7 @@ Include polyfills or mocks for various node stuff:
 * `console`: `true` or `false`
 * `global`: `true` or `false`
 * `process`: `true`, `"mock"` or `false`
-* `buffer`: `true`, `"mock"` or `false`
+* `Buffer`: `true` or `false`
 * `__filename`: `true` (real filename), `"mock"` (`"/index.js"`) or `false`
 * `__dirname`: `true` (real dirname), `"mock"` (`"/"`) or `false`
 * `<node buildin>`: `true`, `"mock"`, `"empty"` or `false`
@@ -635,7 +635,7 @@ Include polyfills or mocks for various node stuff:
 	console: false,
 	process: true,
 	global: true,
-	buffer: true,
+	Buffer: true,
 	__filename: "mock",
 	__dirname: "mock"
 }
