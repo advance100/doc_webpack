@@ -185,7 +185,7 @@ new webpack.optimize.CommonsChunkPlugin(options)
 
 Examples:
 
-1. Commons chunk for entries
+##### 1. Commons chunk for entries
 
 Generate an extra chunk, which contains common modules shared between entry points.
 
@@ -212,7 +212,7 @@ You must load the generated chunk before the entry point:
 <script src="entry.bundle.js" charset="utf-8"></script>
 ```
 
-2. Explicit vendor chunk
+##### 2. Explicit vendor chunk
 
 Split your code into vendor and application.
 
