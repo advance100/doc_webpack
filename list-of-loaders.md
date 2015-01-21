@@ -42,6 +42,7 @@
 * [`livescript`](https://github.com/appedemic/livescript-loader): Loads LiveScript like JavaScript
 * [`sweetjs`](https://github.com/jlongster/sweetjs-loader): Use sweetjs macros. 
 * [`traceur`](https://github.com/jupl/traceur-loader): Use future JavaScript features with [Traceur](https://github.com/google/traceur-compiler).
+* [`ts`](https://github.com/jbrantly/ts-loader): Loads TypeScript like JavaScript.
 
 ## templating
 
