@@ -54,4 +54,4 @@ plugins: [
 
 The stats json contains a useful property `assetsByChunkName` which is a object containing chunk name as key and filename(s) as value.
 
-> Note: It's an array if you emitting multiple assets per chunk. I. e. a javascript file and a SourceMap. The first one is you javascript source.
+> Note: It's an array if you emitting multiple assets per chunk. I. e. a javascript file and a SourceMap. The first one is your javascript source.
