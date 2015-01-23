@@ -9,6 +9,8 @@ There are two ways to test web applications:
 
 The mocha-loader executes your code with the mocha framework. If you run the code it'll show the results in the web page.
 
+*Hint: when using `!` in the bash command line, you must escape it by prepending a `\`*
+
 ``` sh
 webpack 'mocha!./test.js' testBundle.js
 # index.html is a HTML page which loads testBundle.js
