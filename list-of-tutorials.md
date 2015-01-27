@@ -1,5 +1,10 @@
 ## Articles
 
+### [Creating a workflow with WebPack](http://christianalfoni.github.io/javascript/2014/12/13/did-you-know-webpack-and-react-is-awesome.html)
+
+long guide for using **react.js** with webpack<br>
+2014-12-13 @christianalfoni
+
 ### [webpack 基本的な使い方](http://aics-app.sakura.ne.jp/blog/2014/09/03/webpack-%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E4%BD%BF%E3%81%84%E6%96%B9/)
 
 basic sample and explanation of compiled bundle.js<br>
@@ -32,7 +37,11 @@ Cross develop for Node and the Browser without forking around<br>
 
 ### [Single Page Modules with Webpack](http://dontkry.com/posts/code/single-page-modules-with-webpack.html)
 
-2013-09-27 @shama 
+2013-09-27 @shama
+
+## Cookbooks
+
+### [react-webpack-cookbook](https://github.com/christianalfoni/react-webpack-cookbook/wiki)
 
 ## Talks
 
