@@ -38,6 +38,65 @@ gulp.task("webpack", function() {
 });
 ```
 
+## Use with [gulp-webpack-build](https://github.com/mdreizin/gulp-webpack-build)
+
+`gulp-webpack-build` also is a plugin that streams assets from webpack allowing a more idiomatic gulp way of building with webpack, but it uses `webpack.config.js` as source for stream instead of referencing entries.
+
+It has some benefits:
+
+- overrides any properties of `webpack.config.js` file via `webpack.compile` or `webpack.watch`;
+- control webpack stats output via `webpack.format`;
+- fail your build if `webpack` returns some errors or warnings via `webpack.failAfter`;
+- work in watching mode more productive via `webpack.watch` and have all benefits above.
+
+First install with `npm install gulp-webpack-build` and then use as follows:
+
+``` javascript
+'use strict';
+
+var path = require('path'),
+    gulp = require('gulp'),
+    webpack = require('gulp-webpack-build');
+
+var src = './src/**',
+    dest = './dist',
+    webpackOptions = {
+        debug: true,
+        devtool: '#source-map'
+    };
+
+gulp.task('webpack', [], function() {
+    return gulp.src(src)
+        .pipe(webpack.compile(webpackOptions))
+        .pipe(webpack.format({
+            version: false,
+            timings: true
+        }))
+        .pipe(webpack.failAfter({
+            errors: true,
+            warnings: true
+        }))
+        .pipe(gulp.dest(dest));
+});
+
+gulp.task('watch', function() {
+    gulp.watch(src).on('change', function(event) {
+        if (event.type === 'changed') {
+            webpack.watch(event.path, webpackOptions, { base: path.resolve(event.path) }, function(err, stats) {
+                gulp.src(event.path)
+                    .pipe(webpack.proxy(err, stats))
+                    .pipe(webpack.format({
+                        verbose: true,
+                        version: false
+                    }))
+                    .pipe(gulp.dest(dest));
+            });
+        }
+    });
+});
+
+```
+
 ## [[webpack-dev-server]]
 
 > Don't be too lazy to integrate the webpack-dev-server into your development process. It's an important tool for productivity.
