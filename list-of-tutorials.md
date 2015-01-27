@@ -2,7 +2,7 @@
 
 ### [Creating a workflow with WebPack](http://christianalfoni.github.io/javascript/2014/12/13/did-you-know-webpack-and-react-is-awesome.html)
 
-long guide for using **react.js** with webpack<br>
+long guide for using *react.js* with webpack<br>
 2014-12-13 @christianalfoni
 
 ### [webpack 基本的な使い方](http://aics-app.sakura.ne.jp/blog/2014/09/03/webpack-%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E4%BD%BF%E3%81%84%E6%96%B9/)
