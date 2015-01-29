@@ -1,6 +1,6 @@
 # What are loaders?
 
-Loaders are transformations that are applied on a resource file of your app. They are functions (running in node.js) that take the source of a resource file are parameter and return new source.
+Loaders are transformations that are applied on a resource file of your app. They are functions (running in node.js) that take the source of a resource file as parameter and return new source.
 
 ## Loader features
 
