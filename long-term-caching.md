@@ -1,13 +1,13 @@
-To effectively cache your files, they should have a hash or version in their url. You can emit or move the output files manually in a folder called `v1.3`. But this has several disadvantages: Extra work for the developer and unchanged files aren't loaded from cache.
+To effectively cache your files, they should have a hash or version in their URL. You can emit or move the output files manually in a folder called `v1.3`. But this has several disadvantages: Extra work for the developer and unchanged files aren't loaded from cache.
 
 Webpack can add hashes for the files to the filename. Loaders that emit files (worker-loader, file-loader) already do this. For the chunks you have to enable it. There are two levels:
 
 1. Compute a hash of all chunks and add it.
 2. Compute a hash per chunk and add it.
 
-## One hash for the bundle
+## Option 1: One hash for the bundle
 
-Option 1 is enabled by adding `[hash]` to the filename config options
+Option 1 is enabled by adding `[hash]` to the filename config options:
 
 `webpack ./entry output.[hash].bundle.js`
 
@@ -22,19 +22,21 @@ Option 1 is enabled by adding `[hash]` to the filename config options
 }
 ```
 
-## One hash per chunk
+## Option 2: One hash per chunk
 
 Option 2 is enabled by adding `[chunkhash]` to the chunk filename config option
 
 `--output-chunk-file [chunkhash].js`
 
-`output: { chunkFilename: "[chunkhash].bundle.js" }`
+```javascript
+output: { chunkFilename: "[chunkhash].bundle.js" }
+```
 
-Note that you need to reference the entry chunk with it's hash in your HTML. You may want to extract the hash or the filename from the stats.
+Note that you need to reference the entry chunk with its hash in your HTML. You may want to extract the hash or the filename from the stats.
 
 In combination with Hot Code Replacement your must use option 1, but not on the `publicPath` config option.
 
-## get filenames from stats
+## Get filenames from stats
 
 You probably want to access the final filename of the asset to embed it into you HTML. This information is available in the webpack stats. If you are using the CLI you can run it with `--json` to get the stats as JSON to stdout.
 
@@ -52,6 +54,6 @@ plugins: [
 ]
 ```
 
-The stats json contains a useful property `assetsByChunkName` which is a object containing chunk name as key and filename(s) as value.
+The stats JSON contains a useful property `assetsByChunkName` which is a object containing chunk name as key and filename(s) as value.
 
-> Note: It's an array if you emitting multiple assets per chunk. I. e. a javascript file and a SourceMap. The first one is your javascript source.
+> Note: It's an array if you are emitting multiple assets per chunk. I. e. a JavaScript file and a SourceMap. The first one is your JavaScript source.
