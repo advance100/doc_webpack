@@ -34,7 +34,7 @@ output: { chunkFilename: "[chunkhash].bundle.js" }
 
 Note that you need to reference the entry chunk with its hash in your HTML. You may want to extract the hash or the filename from the stats.
 
-In combination with Hot Code Replacement your must use option 1, but not on the `publicPath` config option.
+In combination with Hot Code Replacement you must use option 1, but not on the `publicPath` config option.
 
 ## Get filenames from stats
 
