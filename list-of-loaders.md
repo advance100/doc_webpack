@@ -3,10 +3,11 @@
 * [`json`](https://github.com/webpack/json-loader): Loads file as JSON
 * [`raw`](https://github.com/webpack/raw-loader): Loads raw content of a file (as utf-8)
 * [`val`](https://github.com/webpack/val-loader): Executes code as module and consider exports as JavaScript code
-* [`imports`](https://github.com/webpack/imports-loader): imports stuff to the module
-* [`exports`](https://github.com/webpack/exports-loader): exports stuff from the module
-* [`expose`](https://github.com/webpack/expose-loader): expose exports from a module to the global context
+* [`imports`](https://github.com/webpack/imports-loader): Imports stuff to the module
+* [`exports`](https://github.com/webpack/exports-loader): Exports stuff from the module
+* [`expose`](https://github.com/webpack/expose-loader): Expose exports from a module to the global context
 * [`script`](https://github.com/webpack/script-loader): Executes a JavaScript file once in global context (like in script tag), requires are not parsed.
+* [`legacy`](https://github.com/peerigon/legacy-loader): Prevents scripts from extending the window object
 * [`source-map`](https://github.com/webpack/source-map-loader): Extract `sourceMappingURL` comments from modules and offer it to webpack
 * [`checksum`](https://github.com/naturalatlas/checksum-loader): Computes the checksum of a file
 * [`null`](https://github.com/webpack/null-loader): Emits an empty module.
