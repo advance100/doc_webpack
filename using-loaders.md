@@ -1,6 +1,6 @@
 # What are loaders?
 
-Loaders are transformations that are applied on a resource file of your app. They are functions (running in node.js) that take the source of a resource file as parameter and return new source.
+Loaders are transformations that are applied on a resource file of your app. They are functions (running in node.js) that take the source of a resource file as the parameter and return the new source.
 
 ## Loader features
 
@@ -98,7 +98,7 @@ You can bind loaders to a RegExp via configuration:
 
 ## [[CLI]]
 
-You can bind loaders to a extension via CLI:
+You can bind loaders to an extension via CLI:
 
 ``` sh
 $ webpack --module-bind jade --module-bind 'css=style!css'
@@ -110,7 +110,7 @@ This uses the loader "jade" for ".jade" files and the loaders "style" and "css" 
 
 Loader can be passed query parameters via a query string (just like in the web). The query string is appended to the loader with `?`. I. e. `url-loader?mimetype=image/png`.
 
-Note: The format of the query string is up to the loader. See format in the loader documentation. The most loaders accept parameters in the normal query format (`?key=value&key2=value2`) and as JSON object (`?{"key":"value","key2":"value2"}`).
+Note: The format of the query string is up to the loader. See format in the loader documentation. Most loaders accept parameters in the normal query format (`?key=value&key2=value2`) and as JSON object (`?{"key":"value","key2":"value2"}`).
 
 ### in `require`
 
