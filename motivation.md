@@ -146,7 +146,7 @@ Both are used in the wild, but both are suboptimal:
 
 ## Chunked transferring
 
-A more flexible transferring is be better. A compromise between the extremes is better in most cases.
+A more flexible transferring would be better. A compromise between the extremes is better in most cases.
 
 → While compiling all modules: Split the set of modules into multiple smaller batches (chunks).
 
