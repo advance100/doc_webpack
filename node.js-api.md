@@ -2,6 +2,8 @@
 
 ``` javascript
 var webpack = require("webpack");
+
+// returns a Compiler instance
 webpack({
 	// configuration
 }, function(err, stats) {
@@ -14,6 +16,7 @@ webpack({
 ``` javascript
 var webpack = require("webpack");
 
+// returns a Compiler instance
 var compiler = webpack({
 	// configuration
 });
@@ -21,13 +24,32 @@ var compiler = webpack({
 compiler.run(function(err, stats) {
 	// ...
 });
-
+// or
 compiler.watch(/* watchDelay= */200, function(err, stats) {
 	// ...
 });
 ```
 
-> Note: `watch` will automatically run an initial build, so you should either call `run` or `watch`.
+
+
+## `Compiler`
+
+An instance of `Compiler` has the following methods
+
+`compiler.run(callback)` - Builds the bundle(s).
+* callback(err, stats) - A function that will be called with the build is complete.
+
+`var watcher = compiler.watch(watchDelay, handler)` - Builds the bundle(s) then starts the watcher, which rebuilds bundles whenever their source files change. Returns a `Watching` instance. Note: since this will automatically run an initial build, so you only need to run `watch` (and not `run`).
+* `watchDelay` - The delay (in milliseconds) after a change before the handler is called. Default: 300.
+* `handler(err, stats)` - A function that will be called when a build has been completed, or an error or warning has occurred.
+
+## `Watching`
+
+An instance of `Watching` has the following method:
+
+`watcher.close()` - stops the watcher.
+
+
 
 ## stats
 
@@ -110,3 +132,6 @@ webpack({
 	successfullyCompiled();
 });
 ```
+
+
+
