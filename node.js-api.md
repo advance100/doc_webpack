@@ -47,7 +47,8 @@ An instance of `Compiler` has the following methods
 
 An instance of `Watching` has the following method:
 
-`watcher.close()` - stops the watcher.
+`watcher.close(callback)` - stops the watcher.
+* `callback` - A function that's called when the watcher has closed.
 
 
 
