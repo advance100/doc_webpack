@@ -220,7 +220,7 @@ Nothing to do in the module. Any parent can accept it.
 
 #### ... a module with side effects
 
-The module needs a dispose handler, than any parent can accept it.
+The module needs a dispose handler, then any parent can accept it.
 
 #### ... a module with only side effects and no exports
 
