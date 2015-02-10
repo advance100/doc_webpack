@@ -130,10 +130,6 @@ var compiler = webpack({
 	// configuration
 });
 var server = new WebpackDevServer(compiler, {
-	// when using webpack-dev-server from the API you need to set the filename property
-	// as it is only given a default when used from the CLI
-	filename: "bundle.js",
-
 	// webpack-dev-server options
 	contentBase: "/path/to/directory",
 	// or: contentBase: "http://localhost/",
@@ -148,6 +144,7 @@ var server = new WebpackDevServer(compiler, {
 	quiet: false,
 	noInfo: false,
 	lazy: true,
+	filename: "bundle.js",
 	watchDelay: 300,
 	publicPath: "/assets/",
 	headers: { "X-Custom-Header": "yes" },
