@@ -20,6 +20,11 @@ A guide how to migrate the react-tutorial to webpack and using the Hot Module Re
 A no-BS cookbook for getting things done with webpack, taken from Instagram.com's best practices<br>
 2014-07-17 @petehunt
 
+### [Webpack 怎么用](http://segmentfault.com/blog/jiyinyiyong/1190000002552008)
+
+Chinese translation of Webpack-Howto above.  
+2015-02-12 @jiyinyiyong
+
 ### [RequireJS等はもう古い。WebPackとは？](http://ameblo.jp/ca-1pixel/entry-11884453208.html)
 
 Introductory tutorial (with real world samples)<br>
@@ -38,6 +43,11 @@ Cross develop for Node and the Browser without forking around<br>
 ### [Single Page Modules with Webpack](http://dontkry.com/posts/code/single-page-modules-with-webpack.html)
 
 2013-09-27 @shama
+
+### [Webpack 入门指迷](http://segmentfault.com/blog/jiyinyiyong/1190000002551952)
+
+Basic guide and some use cases of using Webpack to bundle SPAs in Chinese.  
+2015-02-12 @jiyinyiyong
 
 ## Cookbooks
 
