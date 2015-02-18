@@ -77,6 +77,12 @@ Comprehensive introduction to webpack, held at the [MNUG (munich node.js user gr
 
 ## Screencasts
 
+### [Intro to Webpack](https://egghead.io/lessons/javascript-intro-to-webpack)
+
+Free Egghead.io lesson by [Kent C. Dodds](https://twitter.com/kentcdodds)
+
+2015-02-18 @kentcdodds
+
 ### [Testing with webpack and Mocha](https://www.youtube.com/watch?v=_sLLjPzOrXI)
 
 2015-01-02 @jesseskinner
