@@ -113,6 +113,7 @@ There are some additional options:
 
 * `--content-base <file/directory/url>`: Base path for the content
 * `--quiet`: Don't output anything to the console
+* `--colors`: Add some colors to the output
 * `--no-info`: Suppress boring information
 * `--port <number>`
 * `--inline`: embed the webpack-dev-server runtime into the bundle
