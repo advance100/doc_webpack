@@ -13,6 +13,7 @@
 * [`null`](https://github.com/webpack/null-loader): Emits an empty module.
 * [`cowsay`](https://github.com/nelix/cowsay-loader): Emits a module with a cowsay header.
 * [`dsv`](https://github.com/wbkd/dsv-loader): Loads csv/tsv files.
+* [`glsl`](https://github.com/makio64/shader-loader): Loads glsl files and support glsl-chunks.
 
 ## packaging
 
