@@ -115,6 +115,7 @@ There are some additional options:
 * `--quiet`: Don't output anything to the console
 * `--colors`: Add some colors to the output
 * `--no-info`: Suppress boring information
+* `--host <hostname/ip>`
 * `--port <number>`
 * `--inline`: embed the webpack-dev-server runtime into the bundle
 * `--hot`: adds the `HotModuleReplacementPlugin` and switch the server to hot mode. (Note: make sure you don't add `HotModuleReplacementPlugin` twice)
