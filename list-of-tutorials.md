@@ -55,6 +55,10 @@ Basic guide and some use cases of using Webpack to bundle SPAs in Chinese.
 
 ## Talks
 
+### [Webpack is Awesome](https://unindented.github.io/webpack-presentation/#/)
+
+2014-12-31 @unindented
+
 ### [How instagram.com works](https://www.youtube.com/watch?v=VkTCL6Nqm6Y)
 
 Instagram.com renders almost all of its UI in JavaScript. Pete Hunt has talked about how instagrams packaging and push systems work in great detail, which are clever combinations of existing open-source tools (webpack, React).<br>
@@ -74,10 +78,6 @@ Comprehensive introduction to webpack, held at the [MNUG (munich node.js user gr
 
 22 Slides, short introduction<br>
 2014-06-11 @ryanseddon
-
-### [Webpack is Awesome](https://unindented.github.io/webpack-presentation/#/)
-
-2014-03-23 @unindented
 
 ## Screencasts
 
