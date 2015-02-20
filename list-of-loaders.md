@@ -39,7 +39,7 @@
 * [`json5`](https://github.com/webpack/json5-loader): Like json, but not so strict.
 * [`es6`](https://github.com/shama/es6-loader): Loads ES6 modules. (old)
 * [`esnext`](https://github.com/conradz/esnext-loader): Transpile ES6 code using [esnext](https://github.com/esnext/esnext).
-* [`babel`](tps://github.com/babel/babel-loader): Turn ES6 code into vanilla ES5 using [Babel](https://github.com/babel/babel).
+* [`babel`](https://github.com/babel/babel-loader): Turn ES6 code into vanilla ES5 using [Babel](https://github.com/babel/babel).
 * [`regenerator`](https://github.com/pjeby/regenerator-loader): Use ES6 generators via Facebook's [Regenerator](http://facebook.github.io/regenerator/) module.
 * [`livescript`](https://github.com/appedemic/livescript-loader): Loads LiveScript like JavaScript
 * [`sweetjs`](https://github.com/jlongster/sweetjs-loader): Use sweetjs macros. 
