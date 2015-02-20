@@ -75,6 +75,10 @@ Comprehensive introduction to webpack, held at the [MNUG (munich node.js user gr
 22 Slides, short introduction<br>
 2014-06-11 @ryanseddon
 
+### [Webpack is Awesome](https://unindented.github.io/webpack-presentation/#/)
+
+2014-03-23 @unindented
+
 ## Screencasts
 
 ### [Intro to Webpack](https://egghead.io/lessons/javascript-intro-to-webpack)
