@@ -149,7 +149,11 @@ var server = new WebpackDevServer(compiler, {
 	watchDelay: 300,
 	publicPath: "/assets/",
 	headers: { "X-Custom-Header": "yes" },
-	stats: { colors: true }
+	stats: { colors: true },
+
+        // set this as true if you want to access dev server from arbitrary url
+        // this is handy if you are using a html5 router
+        historyApiFallback: false,
 });
 server.listen(8080, "localhost", function() {});
 ```
