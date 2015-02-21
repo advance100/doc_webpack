@@ -42,11 +42,13 @@ Cross develop for Node and the Browser without forking around<br>
 
 ### [Single Page Modules with Webpack](http://dontkry.com/posts/code/single-page-modules-with-webpack.html)
 
+2013-09-27 @shama
+
 ### [How to use webpack with Rails](http://clarkdave.net/2015/01/how-to-use-webpack-with-rails/)
 
 A comprehensive guide to integrating webpack with a Rails app
 
-2013-09-27 @shama
+2015-01 @clarkdave
 
 ### [Webpack 入门指迷](http://segmentfault.com/blog/jiyinyiyong/1190000002551952)
 
