@@ -8,6 +8,7 @@
   * [[Using Loaders]]
   * [[Using Plugins]]
   * [[Dev Tools]]
+  * [[Troubleshooting]]
 * tutorials and examples
   * [Getting started](http://webpack.github.io/docs/tutorials/getting-started/)
   * [[List of tutorials]]
