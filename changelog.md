@@ -1,3 +1,13 @@
+# 1.6
+
+(2015-02-24)
+
+* API: allow more types in DefinePlugin
+* API: console colors are automatically
+* BUG: DedupePlugin is more reliable
+* SUPPORT: added support for relative inlinded AMD modules
+* TEST: more test cases
+
 # 1.5
 
 (2015-01-21)
