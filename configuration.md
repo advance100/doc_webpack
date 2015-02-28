@@ -514,7 +514,7 @@ Enforcing `amd` or `umd` in a external value will break if not compiling as amd/
 * `"webworker"` Compile as WebWorker
 * `"node"` Compile for usage in a node.js-like environment (use `require` to load chunks)
 * `"async-node"` Compile for usage in a node.js-like environment (use `fs` and `vm` to load chunks async)
-* `"node-webkit"` Compile for usage in webkit, uses jsonp chunk loading but also supports native node.js modules plus require("nw.gui") (experimental)
+* `"node-webkit"` Compile for usage in webkit, uses jsonp chunk loading but also supports builtin node.js modules plus require("nw.gui") (experimental)
 * `"atom"` Compile for usage in atom-shell, supports require for modules necessary to run Atom.
 
 
