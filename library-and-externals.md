@@ -34,9 +34,9 @@ Recommended configuration (only relevant stuff):
 {
 	output: {
 		// export itself to a global var
-		libraryTarget: "var"
+		libraryTarget: "var",
 		// name of the global var: "Foo"
-		library: "Foo",
+		library: "Foo"
 	},
 	externals: {
 		// require("jquery") is external and available
