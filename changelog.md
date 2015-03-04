@@ -1,3 +1,16 @@
+# 1.7
+
+(2015-03-04)
+
+* SUPPORT: added semicolon to end of bundle
+* API: Watching.close callback is optional
+* API: added experimental cheap source-map mode, which will be faster in the future
+* BUG: fixed nested objects in DefinePlugin
+* BUG: fixed HMR bug which caused unaffected modules to reload
+* API: allow functions as test in loaders list
+* API: allow arrays in loaders list, in which only one matches
+* API: allow "and" expressions in loaders list
+
 # 1.6
 
 (2015-02-24)
