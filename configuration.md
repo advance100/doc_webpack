@@ -178,7 +178,7 @@ The filename of the Hot Update Main File. It is inside the `output.path` directo
 
 ### `output.publicPath`
 
-The `output.path` from the view of the JavaScript.
+The `output.path` from the view of the Javascript / HTML page.
 
 ``` javascript
 // Example
