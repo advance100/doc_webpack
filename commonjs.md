@@ -60,7 +60,7 @@ the object of our module we want to show to the world.
 
 We're near but there's still a step missing: dependency definition.
 We've already defined every script as an independent module, but `world.js`
-still needs to now who defines `MySalute`:
+still needs to know who defines `MySalute`:
 
 ``` javascript
 // salute.js
