@@ -7,6 +7,7 @@ module.exports = {
   },
   output: {
     path: './build',
+    publicPath: "/assets/",
     filename: 'bundle.js'
   }
 };
@@ -22,6 +23,8 @@ $ webpack-dev-server --content-base build/
 ```
 
 Using this config `webpack-dev-server` will serve the static files in your `build` folder and watch your source files for changes. When changes are made the bundle will be recompiled. This modified bundle is served from memory at the relative path specified in `publicPath` (see [API](#API)). It will not be written to your configured output directory. Where a bundle already exists at the same url path the bundle in memory will take precedence.
+
+For example with the configuration above your bundle will be available at `localhost:8080/assets/bundle.js`
  
 To load your bundled files, you will need to create an `index.html` file. e.g.
 
