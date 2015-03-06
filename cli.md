@@ -103,3 +103,7 @@ Show more information about the reasons why a module is included.
 #### `--display-error-details`
 
 Show more information about the errors. I. e. this shows which paths are tried while resolving a module.
+
+#### `--display-modules`
+
+Show hidden modules. Modules are hidden from output by default when they live inside directories called `["node_modules", "bower_components", "jam", "components"]`
