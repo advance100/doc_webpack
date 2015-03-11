@@ -2,7 +2,7 @@ A (webpack) plugin is a object that has an `apply` method with one parameter, th
 
 Many objects in webpack extends the Tapable class, which exposes a `plugin` method. And with the `plugin` method, plugins can use that to bind custom stuff.
 
-The following examples is the Compiler exposing the `"compile"` plugin interface, which is called when the Compiler compiles
+The following example is the Compiler exposing the `"compile"` plugin interface, which is called when the Compiler compiles
 
 ``` javascript
 compiler.plugin("compile", function(params) {
