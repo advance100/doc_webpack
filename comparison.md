@@ -23,7 +23,7 @@
 | node.js built-in libs `require("path")` | **yes** | no | **yes** | **yes** |
 | other node.js stuff | process, __dir/filename, global | - | process, __dir/filename, global | process, __dir/filename, global for cjs |
 | replacement for browser | `web_modules`, `.web.js`, package.json field, alias config option | alias option | package.json field, alias option | package.json, alias option |
-| minimizing | uglify | uglify, closure compiler | no | yes |
+| minimizing | uglify | uglify, closure compiler | [uglifyify](https://github.com/hughsk/uglifyify) | yes |
 | mangle path names | **yes** | no | partial | no |
 | Runtime overhead | **243b + 20b per module + 4b per dependency** | 14.7kb + 0b per module + (3b + X) per dependency | 415b + 25b per module + (6b + 2X) per dependency | 5.5KB for self-executing bundles, 38KB for full loader and polyfill, 0 plain modules, 293b CJS, 139b ES6 System.register before gzip |
 
