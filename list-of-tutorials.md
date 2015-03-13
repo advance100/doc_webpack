@@ -93,6 +93,12 @@ Free Egghead.io lesson by [Kent C. Dodds](https://twitter.com/kentcdodds)
 
 2015-02-18 @kentcdodds
 
+### [Angular with Webpack](https://egghead.io/series/angular-and-webpack-for-modular-applications)
+
+Egghead.io series by [Kent C. Dodds](https://twitter.com/kentcdodds)
+
+2015-03-12 @kentcdodds
+
 ### [Testing with webpack and Mocha](https://www.youtube.com/watch?v=_sLLjPzOrXI)
 
 2015-01-02 @jesseskinner
