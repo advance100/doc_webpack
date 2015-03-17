@@ -52,6 +52,8 @@ webpack test.js /tmp/testBundle.js --target node
 mocha /tmp/testBundle.js
 ```
 
+> Hint: You can use the `null-loader` for stylesheets instead of the `style-loader!css-loader`. `style-loader` doesn't work in node.js as it requires a DOM.
+
 ### enhanced-require
 
 TODO
