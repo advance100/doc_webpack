@@ -124,7 +124,7 @@ That's enough to use hot code replacement with the dev-server.
 ``` sh
 npm install webpack webpack-dev-server -g
 npm install webpack css-loader style-loader
-webpack-dev-server webpack-dev-server/client?/ webpack/hot/dev-server ./entry --hot --module-bind "css=style!css"
+webpack-dev-server webpack-dev-server/client webpack/hot/dev-server ./entry --hot --module-bind "css=style!css"
 ```
 
 The dev server provides in memory records, which is good for development.
