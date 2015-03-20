@@ -59,6 +59,8 @@ The left side represents the initial compiler pass. The right side represents an
 
 You can use it in development as LiveReload replacement. Actually the webpack-dev-server supports a hot mode which try to update with HMR before trying to reload the whole page. You only need to add the `webpack/hot/dev-server` entry point and call the dev-server with `--hot`.
 
+`webpack/hot/dev-server` reloads the entire page after the HMR update fails. If you want to [reload the page on your own](https://github.com/webpack/webpack/issues/418), you can add `webpack/hot/only-dev-server` to the entry point instead.
+
 You can also use it in production as update mechanisms. Here you need to write you own management code that integrates HMR with your app.
 
 Some loaders already generate modules that are hot-updateable. I. e. the `style-loader` can exchange the stylesheet. You don't need to do something special.
