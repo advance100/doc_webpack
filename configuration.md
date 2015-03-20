@@ -605,7 +605,7 @@ Example:
 
 ## `devServer`
 
-Can be used to configure the behaviour of [webpack-dev-server](https://github.com/webpack/webpack-dev-server).
+Can be used to configure the behaviour of [webpack-dev-server](https://github.com/webpack/webpack-dev-server) when the webpack config is passed to webpack-dev-server CLI.
 
 Example:
 
