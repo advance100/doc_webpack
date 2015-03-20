@@ -110,7 +110,7 @@ $ webpack-dev-server --content-base build/ --hot
 $ webpack-dev-server <entry>
 ```
 
-All [[CLI]] options are valid for the dev-server too, but there is no `<output>` default argument. For the [[CLI]] a `webpack.config.js` is accepted too.
+All [[CLI]] options are valid for the dev-server too, but there is no `<output>` default argument. For the [[CLI]] a `webpack.config.js` (or the file passed by the `--config` option) is accepted as well.
 
 There are some additional options:
 
@@ -125,6 +125,20 @@ There are some additional options:
 * `--hot --inline` also adds the `webpack/hot/dev-server` entry.
 * `--https`: serves dev-server over HTTPS Protocol. Includes a self-signed certificate that is used when serving the requests.
 
+The additional options above can be set in `devServer` option in `webpack.config.js`. For example:
+
+```javascript
+module.exports = {
+    // ... webpack.config.js stuff ...
+    devServer: {
+        contentBase: "./build",
+        info: false, //  --no-info option
+        hot: true,
+        inline: true
+    }
+}
+```
+
 ## API
 
 ``` javascript
@@ -132,13 +146,13 @@ var WebpackDevServer = require("webpack-dev-server");
 var webpack = require("webpack");
 
 var compiler = webpack({
-	// configuration
+  // configuration
 });
 var server = new WebpackDevServer(compiler, {
   // webpack-dev-server options
   contentBase: "/path/to/directory",
   // or: contentBase: "http://localhost/",
-	
+  
   hot: true,
   // Enable special support for Hot Module Replacement
   // Page is no longer updated, but a "webpackHotUpdate" message is send to the content
@@ -163,8 +177,9 @@ server.listen(8080, "localhost", function() {});
 ```
 
 
-
 See [[webpack-dev-middleware]] for documentation on middleware options.
+
+Notice that webpack configuration is not passed to `WebpackDevServer` API, thus `devServer` option in webpack configuration is not used in this case. Also, there is no 'inline mode' for API. When webpack-dev-server API is used, `<script src="http://localhost:8080/webpack-dev-server.js"></script>` should be inserted to HTML page manually.
 
 ## Combining with an existing server
 
