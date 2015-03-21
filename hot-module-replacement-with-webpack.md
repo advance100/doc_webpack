@@ -126,19 +126,19 @@ That's enough to use hot code replacement with the dev-server.
 ``` sh
 npm install webpack webpack-dev-server -g
 npm install webpack css-loader style-loader
-webpack-dev-server webpack/hot/dev-server ./entry --hot --module-bind "css=style!css"
+webpack-dev-server ./entry --hot --inline --module-bind "css=style!css"
 ```
 
 The dev server provides in memory records, which is good for development.
 
-There is special management code for the dev-server at `webpack/hot/dev-server`.
+There is special management code for the dev-server at `webpack/hot/dev-server`, which is automatically added by `--inline`.
 
 The `style-loader` already includes hot replacement code.
 
-If you visit [http://localhost:8080](http://localhost:8080) you should see the page with a red background and a input box. Type some text into the input box and edit `style.css` to have another background color. 
+If you visit [http://localhost:8080/bundle](http://localhost:8080/bundle) you should see the page with a red background and a input box. Type some text into the input box and edit `style.css` to have another background color. 
 
 Voilà... The background updates but without full page refresh. Text and selection in the input box should stay.
 
 Read more about how to write you own hot replacement (management) code: [[hot module replacement]]
 
-Check the [example-app](http://webpack.github.io/example-app/) for a demo without coding
+Check the [example-app](http://webpack.github.io/example-app/) for a demo without coding. (*Note: It's a bit old, so don't look at the source code, because the HMR API changed a bit in between*)
