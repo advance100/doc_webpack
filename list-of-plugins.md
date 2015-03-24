@@ -459,10 +459,9 @@ When there are errors while compiling this plugin skips the emitting phase (and 
 ### `WatchIgnorePlugin`
 
 ``` javascript
-new webpack.WatchIgnorePlugin(requestRegExp)
+new webpack.WatchIgnorePlugin(paths)
 ```
 
-Does not watch specified files matching provided RegExp (can also use `path` to specific files).
+Does not watch specified files matching provided paths or RegExps.
 
-* `requestRegExp` a RegExp to test against
-
+* `paths` (array) an array of RegExps or absolute paths to directories or files to test against
