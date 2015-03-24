@@ -453,3 +453,16 @@ new webpack.NoErrorsPlugin()
 ```
 
 When there are errors while compiling this plugin skips the emitting phase (and recording phase), so there are no assets emitted that include errors. The `emitted` flag in the stats is `false` for all assets.
+
+
+
+### `WatchIgnorePlugin`
+
+``` javascript
+new webpack.WatchIgnorePlugin(requestRegExp)
+```
+
+Does not watch specified files matching provided RegExp (can also use `path` to specific files).
+
+* `requestRegExp` a RegExp to test against
+
