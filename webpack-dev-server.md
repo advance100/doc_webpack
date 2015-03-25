@@ -84,7 +84,7 @@ $ webpack-dev-server --content-base build/ --hot
 When you do changes to files the browser will automatically reload.
 
 ## Hot mode with indication
-When running webpack-dev-server you can also head to `localhost:8080/webpack-dev-server`. Going to this URL will not only load your application, but also indicate when a rebundling is in progress. Using this url does not require you to insert the webpack-dev-server script. So using `localhost:8080/webpack-dev-server` with the current setup would require this index.html:
+When running webpack-dev-server you can also head to `localhost:8080/webpack-dev-server/`. Going to this URL will not only load your application, but also indicate when a rebundling is in progress. Using this url does not require you to insert the webpack-dev-server script. So using `localhost:8080/webpack-dev-server/` with the current setup would require this index.html:
 
 ```html
 <!DOCTYPE html>
