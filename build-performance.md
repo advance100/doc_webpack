@@ -20,6 +20,8 @@ With [[`noParse` | http://webpack.github.io/docs/configuration.html#module-nopar
 
 There is an [analyse tool](http://webpack.github.io/analyse/) which visualise your build and also provides some hint how build size and build performance can be optimized.
 
+You can generate the required JSON file by running `webpack --profile --json > stats.json`
+
 # SourceMaps
 
 SourceMaps are slow.
