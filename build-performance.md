@@ -30,4 +30,4 @@ SourceMaps are slow.
 
 The best performance has `devtool: "eval"`, but it only maps to compiled source code per module. In many cases this is good enough. Hint: combine it with `output.pathinfo: true`.
 
-The UglifyJsPlugin uses SourceMaps to map errors to source code. And SourceMaps are slow. As you should only use this is production this is fine. If your production build is really slow you can disable it with `new UglifyJsPlugin({ sourceMap: false })`.
+The UglifyJsPlugin uses SourceMaps to map errors to source code. And SourceMaps are slow. As you should only use this in production this is fine. If your production build is really slow you can disable it with `new UglifyJsPlugin({ sourceMap: false })`.
