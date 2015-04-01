@@ -138,4 +138,4 @@ module.exports = {
 };
 ```
 
-See also [multiple-entry-points example](https://github.com/webpack/webpack/tree/master/examples/multiple-entry-points) and [advanced mulitple-commons-chunks example](https://github.com/webpack/webpack/tree/master/examples/multiple-commons-chunks).
+See also [multiple-entry-points example](https://github.com/webpack/webpack/tree/master/examples/multiple-entry-points) and [advanced multiple-commons-chunks example](https://github.com/webpack/webpack/tree/master/examples/multiple-commons-chunks).
