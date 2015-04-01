@@ -14,7 +14,7 @@ Useful when a file has dependencies that are not imported via `require()`.
 
 ## [`imports-loader`](https://github.com/webpack/imports-loader)
 
-This loader allows put some modules or arbitrary JavaScript onto a local variable of the file.
+This loader allows you to put some modules or arbitrary JavaScript onto a local variable of the file.
 
 Examples: 
 
