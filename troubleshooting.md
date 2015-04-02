@@ -3,7 +3,7 @@
 ## general resolving issues
 
 * `--display-error-details` give you more details.
-* Read the [[Configuration]] regading resolving starting at `resolve`
+* Read [[Configuration]] regarding resolving starting at `resolve`
   * loaders have their own resolving configuration `resolveLoader`
 
 ## `npm link`ed modules doesn't find their dependencies
