@@ -89,6 +89,7 @@
 ## translation
 
 * [`po`](https://github.com/dschissler/po-loader): Loads a PO gettext file and returns JSON
+* [`format-message`](https://github.com/thetalecrafter/format-message-loader): Compiles translations to ICU Message Format strings in [`formatMessage`](https://github.com/thetalecrafter/format-message) calls
 
 ## support
 
