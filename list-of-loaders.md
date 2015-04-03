@@ -27,6 +27,7 @@
 * [`react-proxy`](https://github.com/webpack/react-proxy-loader): Code Splitting for react components.
 * [`react-hot`](https://github.com/gaearon/react-hot-loader): Allows to live-edit React components while keeping them mounted and preserving their state.
 * [`image`](https://github.com/tcoopman/image-webpack-loader): Compresses your images. Ideal to use together with `file` or `url`.
+* [`img`](https://github.com/thetalecrafter/img-loader): Load and compress images with imagemin.
 * [`svgo-loader`](https://github.com/pozadi/svgo-loader): Compresses SVG images using [svgo](https://github.com/svg/svgo) library
 * [`baggage`](https://github.com/deepsweet/baggage-loader): Automatically require any resources related to the required one
 * [`polymer-loader`](https://github.com/JonDum/polymer-loader): Process HTML & CSS with preprocessor of choice and `require()` Web Components like first-class modules.
