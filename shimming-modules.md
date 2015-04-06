@@ -40,7 +40,7 @@ Example: Make `$` and `jQuery` available in every module without writing `requir
 new webpack.ProvidePlugin({
 	$: "jquery",
 	jQuery: "jquery",
-	"windows.jQuery": "jquery"
+	"window.jQuery": "jquery"
 })
 ```
 
@@ -127,7 +127,7 @@ Don't do this unless you really need this. (Better use the ProvidePlugin)
 
 ## [`expose-loader`](https://github.com/webpack/expose-loader)
 
-This loader expose the exports to a module to the global context.
+This loader exposes the exports to a module to the global context.
 
 Example: 
 
