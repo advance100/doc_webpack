@@ -158,6 +158,16 @@ Similar to `output.devtoolModuleFilenameTemplate`, but used in the case of dupli
 
 > Default: `"webpack:///[resourcePath]?[hash]"`
 
+### `output.devtoolLineToLine`
+
+Enable line to line mapped mode for all/specified modules. Line to line mapped mode uses a simple SourceMap where each line of the generated source is mapped to the same line of the original source. It's a performance optimization. Only use it if your performance need to be better and you are sure that input lines match which generated lines.
+
+`true` enables it for all modules (not recommended)
+
+An object `{test, include, exclude}` similar to `module.loaders` enables it for specific files.
+
+> Default: disabled
+
 ### `output.hotUpdateChunkFilename`
 
 The filename of the Hot Update Chunks. They are inside the `output.path` directory.
@@ -581,17 +591,27 @@ Choose a developer tool to enhance debugging.
 
 `eval-source-map` - Each module is executed with `eval` and a SourceMap is added as DataUrl to the `eval`.
 
-Prefixing `@`, `#` or `#@` will enforce a pragma style.
+`cheap-source-map` - A SourceMap without column-mappings. SourceMaps from loaders are not used.
+
+`cheap-module-source-map` - A SourceMap without column-mappings. SourceMaps from loaders are simplified to a single mapping per line.
+
+Prefixing `@`, `#` or `#@` will enforce a pragma style. (Defaults to `#`, recommended)
+
+Combinations are possible. `hidden`, `inline`, `eval` and pragma style are exclusive.
+
+i. e. `cheap-module-inline-source-map`, `cheap-eval-source-map`, `#@source-map`
 
 > Hint: If your modules already contain SourceMaps you'll need to use the [source-map-loader](https://github.com/webpack/source-map-loader) to merge it with the emitted SourceMap.
 
-> `eval` fast, fast rebuilds, development only, see generated code per module.
-
-> `source-map` slow, slow rebuilds, also production possible, see original code per module, additional file.
-
-> `inline-source-map` slow, slow rebuilds, development only, see original code per module.
-
-> `eval-source-map` slow, fast rebuilds, development only, see original code per module. 
+| devtool                      | build speed | rebuild speed | production supported | quality                  |
+|------------------------------|-------------|---------------|----------------------|--------------------------|
+| eval                         |     +++     |      +++      |       no       | generated code                |
+| cheap-eval-source-map        |      +      |      ++       |       no       | transformed code (lines only) |
+| cheap-source-map             |      +      |       -       |       yes      | transformed code (lines only) |
+| cheap-module-source-map      |      o      |      --       |       yes      | original source (lines only)  |
+| cheap-module-eval-source-map |      o      |      ++       |       no       | original source (lines only)  |
+| eval-source-map              |     ---     |       +       |       no       | original source               |
+| source-map                   |     ---     |      ---      |       yes      | original source               |
 
 Example:
 
@@ -602,6 +622,8 @@ Example:
 // =>
 //# sourceMappingURL=...
 ```
+
+> Note: With the next major version the default for `-d` will change to `cheap-module-eval-source-map`
 
 ## `devServer`
 
