@@ -1,9 +1,23 @@
+# 1.8
+
+(2015-04-07)
+
+* API: added filtering option for SourceMapPlugin
+* COMMUNITY: change rules regarding issues and chat room
+  Questions should move to stackoverflow
+* BUG: stores records relative to context
+* SUPPORT: support other compile-to-js langs for webpack config
+* API: added cheap SourceMaps with line to line mappings
+* API: more flexible SourceMap devtool configuration
+
 # 1.7
 
-(2015-03-04)
+(2015-03-11)
 
 * SUPPORT: added semicolon to end of bundle
+* SUPPORT: added HMR management code for node.js (serverside)
 * API: Watching.close callback is optional
+* API: Added WatchIgnorePlugin
 * API: added experimental cheap source-map mode, which will be faster in the future
 * BUG: fixed nested objects in DefinePlugin
 * BUG: fixed HMR bug which caused unaffected modules to reload
