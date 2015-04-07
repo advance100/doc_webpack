@@ -603,15 +603,15 @@ i. e. `cheap-module-inline-source-map`, `cheap-eval-source-map`, `#@source-map`
 
 > Hint: If your modules already contain SourceMaps you'll need to use the [source-map-loader](https://github.com/webpack/source-map-loader) to merge it with the emitted SourceMap.
 
-| devtool                      | build speed | rebuild speed | production supported | quality                  |
-|------------------------------|-------------|---------------|----------------------|--------------------------|
+| devtool                      | build speed | rebuild speed | production supported | quality                 |
+|------------------------------|-------------|---------------|----------------------|-------------------------|
 | eval                         |     +++     |      +++      |       no       | generated code                |
 | cheap-eval-source-map        |      +      |      ++       |       no       | transformed code (lines only) |
-| cheap-source-map             |      +      |       -       |       yes      | transformed code (lines only) |
-| cheap-module-source-map      |      o      |      --       |       yes      | original source (lines only)  |
+| cheap-source-map             |      +      |       o       |       yes      | transformed code (lines only) |
 | cheap-module-eval-source-map |      o      |      ++       |       no       | original source (lines only)  |
-| eval-source-map              |     ---     |       +       |       no       | original source               |
-| source-map                   |     ---     |      ---      |       yes      | original source               |
+| cheap-module-source-map      |      o      |       -       |       yes      | original source (lines only)  |
+| eval-source-map              |     --      |       +       |       no       | original source               |
+| source-map                   |     --      |       --      |       yes      | original source               |
 
 Example:
 
