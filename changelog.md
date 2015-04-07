@@ -3,7 +3,7 @@
 (2015-04-07)
 
 * API: added filtering option for SourceMapPlugin
-* COMMUNITY: change rules regarding issues and chat room
+* COMMUNITY: changed rules regarding issues and chat room.
   Questions should move to stackoverflow
 * BUG: stores records relative to context
 * SUPPORT: support other compile-to-js langs for webpack config
