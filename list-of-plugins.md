@@ -162,6 +162,20 @@ Additional options:
 
 `test`, `include`, `exclude` RegExp or array of RegExps to filter processed files (default `test: /\.js($|\?)/i`)
 
+Mangling names configuration
+
+A specific configuration is about mangling variable names. By default the mangle option is false. But you can say to the plugin avoid mangling a variable name passing a except list:
+
+```
+new webpack.optimize.UglifyJsPlugin({
+    mangle: {
+        except: ['$super', '$', 'exports', 'require']
+    }
+})
+```
+
+With this the plugin will not mangle any occurrence of '$super', '$', 'exports' or 'require'.
+ 
 ### [`ngMinPlugin`](http://github.com/jeffling/ngmin-webpack-plugin)
 ``` javascript
 new ngMinPlugin([options]);
