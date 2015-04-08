@@ -432,6 +432,52 @@ Create bundles with translations baked in. Then you can serve the translated bun
 
 
 
+## debugging
+
+### `SourceMapDevToolPlugin`
+
+``` javascript
+new webpack.SourceMapDevToolPlugin({
+  // asset matching
+  test: string | RegExp | Array,
+  include: string | RegExp | Array,
+  exclude: string | RegExp | Array,
+
+  // file and reference
+  filename: string,
+  append: bool | string,
+
+  // sources naming
+  moduleFilenameTemplate: string,
+  fallbackModuleFilenameTemplate: string,
+
+  // quality/performance
+  module: bool,
+  columns: bool,
+  lineToLine: bool | object
+})
+```
+
+Adds SourceMaps for assets.
+
+`test`, `include` and `exclude` are used to determine which assets should be processed. Each one can be a RegExp (asset filename is matched), a string (asset filename need to start with this string) or a Array of those (any of them need to be matched). `test` defaults to `.js` files if omitted.
+
+`filename` defines the output filename of the SourceMap. If no value is provided the SourceMap is inlined.
+
+`append` is appended to the orginal asset. Usually the `#sourceMappingURL` comment. `[url]` is replaced with a URL to the SourceMap file. `false` disables the appending.
+
+`moduleFilenameTemplate` and `fallbackModuleFilenameTemplate` see `output.devtoolModuleFilenameTemplate`.
+
+`module` (defaults to `true`) When `false` loaders do not generate SourceMaps and the transormed code is used as source instead.
+
+`columns` (defaults to `true`) When `false` column mappings in SorceMaps are ignored and a faster SourceMap implemention is used.
+
+`lineToLine` (an object `{test, include, exclude}` which is matched agains modules) matched modules uses simple (faster) line to line source mappings.
+
+
+
+
+
 ## other
 
 ### `HotModuleReplacementPlugin`
