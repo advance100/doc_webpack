@@ -24,12 +24,16 @@ You can generate the required JSON file by running `webpack --profile --json > s
 
 # SourceMaps
 
-SourceMaps are slow.
+Perfect SourceMaps are slow.
 
 `devtool: "source-map"` cannot cache SourceMaps for modules and need to regenerate complete SourceMap for the chunk. It's something for production...
 
-`devtool: "eval-source-map"` is really as good as `devtool: "source-map"`, but can cache SourceMaps for modules. It's much faster.
+`devtool: "eval-source-map"` is really as good as `devtool: "source-map"`, but can cache SourceMaps for modules. It's much faster for rebuilds.
+
+`devtool: "eval-cheap-module-source-map"` offers SourceMaps that only maps lines (no column mappings) and are much faster.
+
+`devtool: "eval-cheap-source-map"` is similar but doesn't generate SourceMaps for modules (i. e. jsx to js mappings).
 
 The best performance has `devtool: "eval"`, but it only maps to compiled source code per module. In many cases this is good enough. Hint: combine it with `output.pathinfo: true`.
 
-The UglifyJsPlugin uses SourceMaps to map errors to source code. And SourceMaps are slow. As you should only use this in production this is fine. If your production build is really slow you can disable it with `new UglifyJsPlugin({ sourceMap: false })`.
+The UglifyJsPlugin uses SourceMaps to map errors to source code. And SourceMaps are slow. As you should only use this in production this is fine. If your production build is really slow (or doesn't finish at all) you can disable it with `new UglifyJsPlugin({ sourceMap: false })`.
