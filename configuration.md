@@ -683,7 +683,7 @@ Custom values available in the loader context.
 
 Store/Load compiler state from/to a json file. This will result in persistent ids of modules and chunks.
 
-An **absolute path** is excepted. `recordsPath` is used for `recordsInputPath` and `recordsOutputPath` if they left undefined.
+An **absolute path** is expected. `recordsPath` is used for `recordsInputPath` and `recordsOutputPath` if they left undefined.
 
 This is required, when using Hot Code Replacement between multiple calls to the compiler.
 
