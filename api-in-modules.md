@@ -226,7 +226,14 @@ require.cache[module.id] !== module
 ### `require.context`
 
 ``` javascript
-require.context(directory: String, [includeSubdirs: Boolean, [filter: RegExp]])
+require.context(directory:String, includeSubdirs:Boolean /* optional, default true */, filter:RegExp /* optional */)
+```
+
+Example:
+```javascript
+var context = require.context('components', true, /\.html$/);
+
+var componentA = context.resolve('componentA');
 ```
 
 Style: webpack
