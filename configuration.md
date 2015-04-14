@@ -293,6 +293,29 @@ See more: [[loaders]]
 
 *IMPORTANT*: The loaders here are resolved *relative to the resource* which they are applied to. The means they are not resolved relative the the configuration file. If you have loaders installed from npm and your `node_modules` folder is not in a parent folder of all source files, webpack cannot find the loader. You need to add the `node_modules` folder as absolute path to the `resolveLoader.root` option. (`resolveLoader: { root: path.join(__dirname, "node_modules") }`)
 
+Example:
+
+``` js
+module.loaders: [
+  {
+    // "test" is commonly used to match the file extension
+    test: /\.jsx$/,
+
+    // "include" is commonly used to match the directories
+    include: [
+      path.resolve(__dirname, "app/src"),
+      path.resolve(__dirname, "app/test")
+    ],
+
+    // "exclude" should to used to exclude exceptions
+    // try to prever "include" when possible
+
+    // the "loader"
+    loader: "babel-loader"
+  }
+]
+```
+
 ### `module.preLoaders`, `module.postLoaders`
 
 Syntax like `module.loaders`.
