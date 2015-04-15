@@ -203,14 +203,20 @@ output: {
 }
 ```
 
-> If you don't know the publicPath while compiling you can omit it and set `__webpack_public_path__` on runtime.
-> 
+> If you don't know the publicPath while compiling you can omit it and set `__webpack_public_path__` on your entry point.
+> Note: Please make sure the Hot Module Replace Plugin is disabled, this could affect the require function.
+>
 > Example:
 > 
 > ``` javascript
 > var scripts = document.getElementsByTagName("script");
 > var src = scripts[scripts.length - 1].getAttribute("src");
 > __webpack_public_path__ = src.substr(0, src.lastIndexOf("/") + 1);
+> ```
+> Or
+>
+> ``` javascript
+> __webpack_public_path__ = window.resourcePublicPath
 > ```
 
 ### `output.jsonpFunction`
