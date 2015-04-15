@@ -204,6 +204,7 @@ output: {
 ```
 
 > If you don't know the publicPath while compiling you can omit it and set `__webpack_public_path__` on your entry point.
+>
 > Note: Please make sure the Hot Module Replace Plugin is disabled, this could affect the require function.
 >
 > Example:
