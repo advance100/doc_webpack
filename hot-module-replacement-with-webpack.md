@@ -131,7 +131,11 @@ webpack-dev-server ./entry --hot --inline --module-bind "css=style!css"
 
 The dev server provides in memory records, which is good for development.
 
-There is special management code for the dev-server at `webpack/hot/dev-server`, which is automatically added by `--inline`.
+The `--hot` switch enables hot code replacement.
+
+> This adds the `HotModuleReplacementPlugin`. Don't add it to your `webpack.config.js` if you are using the CLI.
+
+There is special management code for the dev-server at `webpack/hot/dev-server`, which is automatically added by `--inline`. (You don't have to add it to your `webpack.config.js`)
 
 The `style-loader` already includes hot replacement code.
 
