@@ -1,6 +1,6 @@
-AMD (Asynchronous Module Definition) was the response to those who thought the CommonJS Module system was not ready for the browser as it's nature was synchronous.
+AMD (Asynchronous Module Definition) was the response to those who thought the CommonJS Module system was not ready for the browser because its nature was synchronous.
 
-AMD specifies a solution for modular JavaScript such that modules can load its dependencies asynchronously, solving the problems synchronous loading incur.
+AMD specifies a standard for modular JavaScript such that modules can load their dependencies asynchronously, solving the problems associated with synchronous loading.
 
 ## Specification
 
