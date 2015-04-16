@@ -1,7 +1,7 @@
 ## Articles
 
 ### [Webpack & Angular: 3 part series](http://shmck.com/webpack-angular-part-1/)
-Setting up and understanding a webpack project with angular, handling dependencies & 6 ways to use 'require'.
+Setting up and understanding a webpack project with angular, handling dependencies & 6 ways to use 'require'.<br>
 2015-04-15 @Sh_McK
 
 ### [Creating a workflow with WebPack](http://christianalfoni.github.io/javascript/2014/12/13/did-you-know-webpack-and-react-is-awesome.html)
