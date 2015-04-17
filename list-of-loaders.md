@@ -31,6 +31,8 @@
 * [`svgo-loader`](https://github.com/pozadi/svgo-loader): Compresses SVG images using [svgo](https://github.com/svg/svgo) library
 * [`baggage`](https://github.com/deepsweet/baggage-loader): Automatically require any resources related to the required one
 * [`polymer-loader`](https://github.com/JonDum/polymer-loader): Process HTML & CSS with preprocessor of choice and `require()` Web Components like first-class modules.
+* [`uglify-loader`](https://github.com/bestander/uglify-loader): Uglify contents of a module. Unlike uglify plugin you can minify with mangling only your application files and not the libraries
+* [`html-minify-loader`](https://github.com/bestander/html-minify-loader): Minifies HTML using [minimize](https://github.com/Moveo/minimize)
 
 
 ## dialects
