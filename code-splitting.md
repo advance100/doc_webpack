@@ -90,7 +90,7 @@ A normal chunk contains no runtime. It only contains a bunch of modules. The str
 
 ### Initial chunk (non-entry)
 
-An initial chunk is a normal chunk. The only difference is that optimization threads it as more important because it counts toward the initial loading time (like entry chunks). That chunk type can occur in combination with the `CommonsChunkPlugin`.
+An initial chunk is a normal chunk. The only difference is that optimization treats it as more important because it counts toward the initial loading time (like entry chunks). That chunk type can occur in combination with the `CommonsChunkPlugin`.
 
 
 
