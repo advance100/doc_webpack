@@ -101,7 +101,7 @@ Read more about [[CommonJs]] and [[AMD]].
 
 ## ES6 modules
 
-EcmaScript6 adds same language constructs to JavaScript, which form another module system.
+EcmaScript6 adds some language constructs to JavaScript, which form another module system.
 
 ``` javascript
 import "jquery";
