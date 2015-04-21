@@ -9,6 +9,7 @@
 * SUPPORT: support other compile-to-js langs for webpack config
 * API: added cheap SourceMaps with line to line mappings
 * API: more flexible SourceMap devtool configuration
+* API: added crossOrginLoading option
 
 # 1.7
 
