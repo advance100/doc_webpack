@@ -276,6 +276,22 @@ Prefixes every line of the source in the bundle with this string.
 
 Default: `"\t"`
 
+### `output.crossOriginLoading`
+
+This option enables cross-origin loading of chunks.
+
+Possible values are:
+
+`false` - Disable cross-origin loading.
+
+`"anonymous"` - Cross-origin loading is enabled. When using `anonymous` no credentials will be send with the request.
+
+`"use-credentials"` - Cross-origin loading is enabled and credentials will be send with the request.
+
+For more information on cross-origin loading see [MDN](https://developer.mozilla.org/en/docs/Web/HTML/Element/script#attr-crossorigin)
+
+> Default: `false`
+
 
 
 ## `module`
