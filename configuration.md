@@ -274,7 +274,7 @@ If `output.library` is not set, but `output.libraryTarget` is set to a value oth
 
 Prefixes every line of the source in the bundle with this string.
 
-Default: `"\t"`
+> Default: `"\t"`
 
 ### `output.crossOriginLoading`
 
