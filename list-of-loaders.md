@@ -108,3 +108,4 @@
 * [`injectable`](https://github.com/jauco/webpack-injectable): Allow to inject dependencies into modules
 * [`transform`](https://github.com/webpack/transform-loader): Use browserify transforms as loader.
 * [`image-size`](https://github.com/patcoll/image-size-loader): Loads an image and returns its dimensions and type
+* [`csslint`](https://github.com/hyungjs/csslint-loader): PreLoader for linting code using CSSLint
