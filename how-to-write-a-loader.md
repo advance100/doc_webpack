@@ -119,6 +119,19 @@ url(~module) -> require("module")
 
 don't generate much code that is common in every module processed by that loader. Create a (runtime) file in the loader and generate a `require` to that common code.
 
+### should not embed absolute paths
+
+don't put absolute paths in to the module code. They break hashing when the root for the project is moved. There is a method [`stringifyRequest` in loader-utils](https://github.com/webpack/loader-utils#stringifyrequest) which converts an absolute path to an relative one.
+
+Example:
+
+``` js
+var loaderUtils = require("loader-utils");
+return "var runtime = require(" +
+  loaderUtils.stringifyRequest(this, "!" + require.resolve("module/runtime")) +
+  ");";
+```
+
 ### use a library as `peerDependencies` when they wrap it
 
 using a peerDependency allows the application developer to specify the exact version in his `package.json` if he wants to. The dependency should be relative open to allow updating the library without needing to publish a new loader version.
