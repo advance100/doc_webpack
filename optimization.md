@@ -2,7 +2,7 @@
 
 To minimize your scripts (and your css, if you use the css-loader) webpack supports a simple option:
 
-`--optimize-minimize` resp. `new webpack.optimize.UglifyJsPlugin()`
+`--optimize-minimize` resp. [`new webpack.optimize.UglifyJsPlugin()`](http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin)
 
 That's a simple but effective way to optimize your web app.
 
