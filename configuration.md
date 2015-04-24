@@ -331,7 +331,7 @@ module.loaders: [
     ],
 
     // "exclude" should to used to exclude exceptions
-    // try to prever "include" when possible
+    // try to prefer "include" when possible
 
     // the "loader"
     loader: "babel-loader"
