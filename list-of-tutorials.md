@@ -65,6 +65,11 @@ Basic guide and some use cases of using Webpack to bundle SPAs in Chinese.
 
 ## Talks
 
+### [An Efficient Static Assets Pipeline with Webpack](https://www.youtube.com/watch?v=w1dAb_Umt8o)
+
+This talk explains how to use Webpack to build an efficient static assets pipeline. The (sample app)[https://github.com/theasta/paris-webpack-react] and the (slides)[https://speakerdeck.com/theasta/an-efficient-static-assets-pipeline-with-webpack] are available online.
+2015-02-27 @theasta
+
 ### [Webpack is Awesome](https://unindented.github.io/webpack-presentation/#/)
 
 2014-12-31 @unindented
