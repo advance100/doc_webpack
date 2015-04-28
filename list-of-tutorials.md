@@ -1,5 +1,8 @@
 ## Articles
 
+### [The ultimate webpack setup](http://christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup)
+Using webpack with an express node server. Great for prototyping and generally good setup for any project.
+
 ### [Webpack & Angular: 3 part series](http://shmck.com/webpack-angular-part-1/)
 Setting up and understanding a webpack project with angular, handling dependencies & 6 ways to use 'require'.<br>
 2015-04-15 @Sh_McK
