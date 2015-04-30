@@ -190,7 +190,7 @@ new webpack.optimize.CommonsChunkPlugin(options)
 ```
 
 * `options.name` or `options.names` (`string|string[]`): The chunk name of the commons chunk. An existing chunk can be selected by passing a name of an exiting chunk. If an array of strings is passed this is equal to invoking the plugin multiple times for each chunk name. If omitted and `options.async` or `options.children` is set all chunks are used, elsewise `options.filename` is used as chunk name.
-* `options.filename` (`string`): (`The filename template for the commons chunk. Can contain the same placeholder as `output.filename`. If omitted the original filename is not modified (usually `output.filename` or `output.chunkFilename`).
+* `options.filename` (`string`): The filename template for the commons chunk. Can contain the same placeholder as `output.filename`. If omitted the original filename is not modified (usually `output.filename` or `output.chunkFilename`.
 * `options.minChunks` (`number|Infinitiy|function(module, count) -> boolean`): The minimum number of chunks which need to contain a module before it's moved into the commons chunk. The number must be greater than or equal 2 and lower than or equal to the number of chunks. Passing `Infinity` just creates the commons chunk, but moves no modules into it. By providing a `function` you can add custom logic.
 * `options.chunks` (string[]`): Select the source chunks by chunk names. The chunk must be a child of the commons chunk. If omitted all entry chunks are selected.
 * `options.children` (`boolean`): If `true` all children of the commons chunk are selected
