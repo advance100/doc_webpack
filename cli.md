@@ -35,7 +35,7 @@ It will be mapped to the configuration options `output.path` and `output.filenam
 
 
 
-### configuration options
+### Configuration options
 
 Many configuration options are mapped from CLI options. I. e. `--debug` maps to `debug: true`, or `--output-library-target` to `output.libraryTarget`.
 
@@ -43,7 +43,7 @@ You see a list of all options, if you don't pass any option.
 
 
 
-### plugins
+### Plugins
 
 Some plugins are mapped to CLI options. I. e. `--define <string>=<string>` maps to the `DefinePlugin`.
 
@@ -72,7 +72,7 @@ Watches all dependencies and recompile on change.
 
 Specifies a different configuration file to pick up. Use this if you want to specify something different than `webpack.config.js`, which is the default
 
-### display options
+### Display options
 
 #### `--progress`
 
