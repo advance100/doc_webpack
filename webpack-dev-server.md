@@ -123,7 +123,7 @@ There are some additional options:
 * `--inline`: embed the webpack-dev-server runtime into the bundle;
 * `--hot`: adds the `HotModuleReplacementPlugin` and switch the server to hot mode. Note: make sure you don't add `HotModuleReplacementPlugin` twice;
 * `--hot --inline` also adds the `webpack/hot/dev-server` entry;
-* `--https`: serves dev-server over HTTPS Protocol. Includes a self-signed certificate that is used when serving the requests.
+* `--https`: serves _webpack-dev-server_ over HTTPS Protocol. Includes a self-signed certificate that is used when serving the requests.
 
 The additional options above can be set in `devServer` option in `webpack.config.js`. For example:
 
@@ -199,7 +199,7 @@ In this case you need to teach the webpack-generated assets to make requests to 
 
 To teach _webpack_ to make requests (for chunk loading or HMR) to the _webpack-dev-server_ you need to provide **a full URL in the `output.publicPath`** option.
 
-To make a connection between _webpack-dev-server_ and its runtime best use the _inline mode_ with `--inline`. The _webpack-dev-server_ CLI automatically includes an entry point which establishs a _WebSocket_ connection. (You can also use the _iframe_ mode if you point `--content-base` of the _webpack-dev-server_ to your backend server.
+To make a connection between _webpack-dev-server_ and its runtime best use the _inline mode_ with `--inline`. The _webpack-dev-server_ CLI automatically includes an entry point which establishs a WebSocet connection. (You can also use the _iframe_ mode if you point `--content-base` of the _webpack-dev-server_ to your backend server.
 
 When you use the _inline mode_ just open the backend server URL in your web browsers. (If you use the _iframe mode_ open the `/webpack-dev-server/` prefixed URL of the _webpack-dev-server_.)
 
