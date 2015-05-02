@@ -1,4 +1,4 @@
-The webpack-dev-server is a little node.js express server, which uses the [[webpack-dev-middleware]] to serve a webpack bundle. It also has a little runtime which is connected to the server via socket.io. The server emits information about the compilation state to the client, which reacts to those events. You can choose between different modes, depending on your needs. So lets say you have the following config file:
+The _webpack-dev-server_ is a little node.js [Expres](http://expressjs.com/) server, which uses the [[webpack-dev-middleware]] to serve a _webpack bundle_. It also has a little runtime which is connected to the server via [Socket.IO](http://socket.io/). The server emits information about the compilation state to the client, which reacts to those events. You can choose between different modes, depending on your needs. So lets say you have the following config file:
 
 ```javascript
 module.exports = {
@@ -13,20 +13,20 @@ module.exports = {
 };
 ```
 
-You have an app folder with your initial entry point that webpack will bundle into a *bundle.js* file in the build folder.
+You have an `app` folder with your initial entry point that _webpack_ will bundle into a `bundle.js` file in the `build` folder.
 
 ## Inline mode
-The webpack-dev-server will serve the files in the current directory, unless you configure a specific content base. 
+The _webpack-dev-server_ will serve the files in the current directory, unless you configure a specific content base. 
 
 ```sh
 $ webpack-dev-server --content-base build/
 ```
 
-Using this config `webpack-dev-server` will serve the static files in your `build` folder and watch your source files for changes. When changes are made the bundle will be recompiled. This modified bundle is served from memory at the relative path specified in `publicPath` (see [API](#API)). It will not be written to your configured output directory. Where a bundle already exists at the same url path the bundle in memory will take precedence.
+Using this config _webpack-dev-server_ will serve the static files in your `build` folder and watch your source files for changes. When changes are made the _bundle_ will be recompiled. This modified _bundle_ is served from memory at the relative path specified in `publicPath` (see [API](#API)). It will not be written to your configured output directory. Where a _bundle_ already exists at the same url path the _bundle_ in memory will take precedence.
 
-For example with the configuration above your bundle will be available at `localhost:8080/assets/bundle.js`
+For example with the configuration above your _bundle_ will be available at `localhost:8080/assets/bundle.js`
  
-To load your bundled files, you will need to create an `index.html` file. e.g.
+To load your bundled files, you will need to create an `index.html` file. e.g:
 
 ```html
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ To load your bundled files, you will need to create an `index.html` file. e.g.
 By default go to `localhost:8080/` to launch your app. 
 
 ## Hot mode
-By adding a script to your index.html file and a special entry point in your configuration you will be able to get live reloads when doing changes to your files. Change your index.html file to this:
+By adding a script to your `index.html` file and a special entry point in your configuration you will be able to get live reloads when doing changes to your files. Change your `index.html` file to this:
 
 ```html
 <!DOCTYPE html>
@@ -84,7 +84,7 @@ $ webpack-dev-server --content-base build/ --hot
 When you do changes to files the browser will automatically reload.
 
 ## Hot mode with indication
-When running webpack-dev-server you can also head to `localhost:8080/webpack-dev-server/`. Going to this URL will not only load your application, but also indicate when a rebundling is in progress. Using this url does not require you to insert the webpack-dev-server script. So using `localhost:8080/webpack-dev-server/` with the current setup would require this index.html:
+When running _webpack-dev-server_ you can also head to `localhost:8080/webpack-dev-server/`. Going to this URL will not only load your application, but also indicate when a rebundling is in progress. Using this url does not require you to insert the `webpack-dev-server` script. So using `localhost:8080/webpack-dev-server/` with the current setup would require this `index.html`:
 
 ```html
 <!DOCTYPE html>
@@ -110,7 +110,7 @@ $ webpack-dev-server --content-base build/ --hot
 $ webpack-dev-server <entry>
 ```
 
-All [[CLI]] options are valid for the dev-server too, but there is no `<output>` default argument. For the [[CLI]] a `webpack.config.js` (or the file passed by the `--config` option) is accepted as well.
+All [[CLI]] options are valid for the _webpack-dev-server_ too, but there is no `<output>` default argument. For the CLI a `webpack.config.js` (or the file passed by the `--config` option) is accepted as well.
 
 There are some additional options:
 
@@ -187,31 +187,31 @@ server.listen(8080, "localhost", function() {});
 
 See [[webpack-dev-middleware]] for documentation on middleware options.
 
-Notice that webpack configuration is not passed to `WebpackDevServer` API, thus `devServer` option in webpack configuration is not used in this case. Also, there is no 'inline mode' for `WebpackDevServer` API. `<script src="http://localhost:8080/webpack-dev-server.js"></script>` should be inserted to HTML page manually.
+Notice that _webpack configuration_ is not passed to `WebpackDevServer` API, thus `devServer` option in _webpack configuration_ is not used in this case. Also, there is no _inline mode_ for `WebpackDevServer` API. `<script src="http://localhost:8080/webpack-dev-server.js"></script>` should be inserted to HTML page manually.
 
 ## Combining with an existing server
 
-There are cases when you want to run the a backend server or a mock of it in development. You should **not** abuse the webpack-dev-server as backend. It's only intended to serve static (webpacked) assets.
+There are cases when you want to run the a backend server or a mock of it in development. You should **not** abuse the _webpack-dev-server_ as backend. It's only intended to serve static (webpacked) assets.
 
-You should run two server side-by-side: The webpack-dev-server and your backend server.
+You should run two server side-by-side: The _webpack-dev-server_ and your backend server.
 
-In this case you need to teach the webpack-generated assets to make requests to the webpack-dev-server even when running on a HTML-page sent by the backend server. On the other side you need to teach your backend server to generate HTML pages that include script tags that point to assets on the webpack-dev-server. In addition to that you need a connection between the webpack-dev-server and the webpack-dev-server runtime to trigger reloads on recompilation.
+In this case you need to teach the webpack-generated assets to make requests to the _webpack-dev-serve_r even when running on a HTML-page sent by the backend server. On the other side you need to teach your backend server to generate HTML pages that include `script` tags that point to assets on the _webpack-dev-server_. In addition to that you need a connection between the _webpack-dev-server_ and the _webpack-dev-server_ runtime to trigger reloads on recompilation.
 
-To teach webpack to make requests (for chunk loading or HMR) to the webpack-dev-server you need to provide **a full URL in the `output.publicPath`** option.
+To teach _webpack_ to make requests (for chunk loading or HMR) to the _webpack-dev-server_ you need to provide **a full URL in the `output.publicPath`** option.
 
-To make a connection between webpack-dev-server and its runtime best use the inline mode with `--inline`. The webpack-dev-server CLI automatically includes an entry point which establishs a WebSocket connection. (You can also use the iframe mode if you point `--content-base` of the webpack-dev-server to your backend server.
+To make a connection between _webpack-dev-server_ and its runtime best use the _inline mode_ with `--inline`. The _webpack-dev-server_ CLI automatically includes an entry point which establishs a _WebSocket_ connection. (You can also use the _iframe_ mode if you point `--content-base` of the _webpack-dev-server_ to your backend server.
 
-When you use the inline mode just open the backend server URL in your web browsers. (If you use the iframe mode open the `/webpack-dev-server/` prefixed URL of the webpack-dev-server.)
+When you use the _inline mode_ just open the backend server URL in your web browsers. (If you use the _iframe mode_ open the `/webpack-dev-server/` prefixed URL of the _webpack-dev-server_.)
 
 Summary and example:
 
-* webpack-dev-server on port 9090.
-* backend server on port 8080.
+* _webpack-dev-server_ on port `9090`.
+* backend server on port `8080`.
 * generate HTML pages with `<script src="http://localhost:9090/assets/bundle.js">`
-* webpack configuration `output.publicPath = "http://localhost:9090/assets/"`
-* inline mode
+* _webpack configuration_ with `output.publicPath = "http://localhost:9090/assets/"`
+* _inline mode_
   * `--inline`
   * open `http://localhost:8080`
-* or iframe mode
-  * webpack-dev-server `contentBase = "http://localhost:8080/"` (`--content-base`)
+* or _iframe mode_
+  * _webpack-dev-server_ `contentBase = "http://localhost:8080/"` (`--content-base`)
   * open `http://localhost:9090/webpack-dev-server/`
