@@ -120,8 +120,8 @@ There are some additional options:
 * `--no-info`: suppress boring information;
 * `--host <hostname/ip>`: hostname or IP;
 * `--port <number>`: port;
-* `--inline`: embed the webpack-dev-server runtime into the bundle;
-* `--hot`: adds the `HotModuleReplacementPlugin` and switch the server to hot mode. Note: make sure you don't add `HotModuleReplacementPlugin` twice;
+* `--inline`: embed the _webpack-dev-server_ runtime into the _bundle_;
+* `--hot`: adds the `HotModuleReplacementPlugin` and switch the server to _hot mode_. Note: make sure you don't add `HotModuleReplacementPlugin` twice;
 * `--hot --inline` also adds the `webpack/hot/dev-server` entry;
 * `--https`: serves _webpack-dev-server_ over HTTPS Protocol. Includes a self-signed certificate that is used when serving the requests.
 
@@ -205,13 +205,13 @@ When you use the _inline mode_ just open the backend server URL in your web brow
 
 Summary and example:
 
-* _webpack-dev-server_ on port `9090`.
-* backend server on port `8080`.
-* generate HTML pages with `<script src="http://localhost:9090/assets/bundle.js">`
-* webpack configuration with `output.publicPath = "http://localhost:9090/assets/"`
-* _inline mode_
-  * `--inline`
-  * open `http://localhost:8080`
-* or _iframe mode_
-  * _webpack-dev-server_ `contentBase = "http://localhost:8080/"` (`--content-base`)
-  * open `http://localhost:9090/webpack-dev-server/`
+* _webpack-dev-server_ on port `9090`;
+* backend server on port `8080`;
+* generate HTML pages with `<script src="http://localhost:9090/assets/bundle.js">`;
+* webpack configuration with `output.publicPath = "http://localhost:9090/assets/"`;
+* _inline mode_:
+  * `--inline`;
+  * open `http://localhost:8080`.
+* or _iframe mode_:
+  * _webpack-dev-server_ `contentBase = "http://localhost:8080/"` (`--content-base`);
+  * open `http://localhost:9090/webpack-dev-server/`.
