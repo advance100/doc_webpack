@@ -1,4 +1,4 @@
-The _webpack-dev-server_ is a little node.js [Expres](http://expressjs.com/) server, which uses the [[webpack-dev-middleware]] to serve a _webpack bundle_. It also has a little runtime which is connected to the server via [Socket.IO](http://socket.io/). The server emits information about the compilation state to the client, which reacts to those events. You can choose between different modes, depending on your needs. So lets say you have the following config file:
+The **_webpack-dev-server_** is a little node.js [Expres](http://expressjs.com/) server, which uses the [[_webpack-dev-middleware_]] to serve a _webpack bundle_. It also has a little runtime which is connected to the server via [Socket.IO](http://socket.io/). The server emits information about the compilation state to the client, which reacts to those events. You can choose between different modes, depending on your needs. So lets say you have the following config file:
 
 ```javascript
 module.exports = {
@@ -110,7 +110,7 @@ $ webpack-dev-server --content-base build/ --hot
 $ webpack-dev-server <entry>
 ```
 
-All [[CLI]] options are valid for the _webpack-dev-server_ too, but there is no `<output>` default argument. For the CLI a `webpack.config.js` (or the file passed by the `--config` option) is accepted as well.
+All [[**_CLI_**]] options are valid for the _webpack-dev-server_ too, but there is no `<output>` default argument. For the _CLI_ a `webpack.config.js` (or the file passed by the `--config` option) is accepted as well.
 
 There are some additional options:
 
@@ -187,7 +187,7 @@ server.listen(8080, "localhost", function() {});
 
 See [[webpack-dev-middleware]] for documentation on middleware options.
 
-Notice that _webpack configuration_ is not passed to `WebpackDevServer` API, thus `devServer` option in _webpack configuration_ is not used in this case. Also, there is no _inline mode_ for `WebpackDevServer` API. `<script src="http://localhost:8080/webpack-dev-server.js"></script>` should be inserted to HTML page manually.
+Notice that _webpack configuration_ is not passed to `WebpackDevServer` API, thus `devServer` option in webpack configuration is not used in this case. Also, there is no _inline mode_ for `WebpackDevServer` API. `<script src="http://localhost:8080/webpack-dev-server.js"></script>` should be inserted to HTML page manually.
 
 ## Combining with an existing server
 
@@ -208,7 +208,7 @@ Summary and example:
 * _webpack-dev-server_ on port `9090`.
 * backend server on port `8080`.
 * generate HTML pages with `<script src="http://localhost:9090/assets/bundle.js">`
-* _webpack configuration_ with `output.publicPath = "http://localhost:9090/assets/"`
+* webpack configuration with `output.publicPath = "http://localhost:9090/assets/"`
 * _inline mode_
   * `--inline`
   * open `http://localhost:8080`
