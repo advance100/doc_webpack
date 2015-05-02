@@ -1,4 +1,4 @@
-The **_webpack-dev-server_** is a little node.js [Expres](http://expressjs.com/) server, which uses the [[_webpack-dev-middleware_]] to serve a _webpack bundle_. It also has a little runtime which is connected to the server via [Socket.IO](http://socket.io/). The server emits information about the compilation state to the client, which reacts to those events. You can choose between different modes, depending on your needs. So lets say you have the following config file:
+The **_webpack-dev-server_** is a little node.js [Expres](http://expressjs.com/) server, which uses the _[[webpack-dev-middleware]]_ to serve a _webpack bundle_. It also has a little runtime which is connected to the server via [Socket.IO](http://socket.io/). The server emits information about the compilation state to the client, which reacts to those events. You can choose between different modes, depending on your needs. So lets say you have the following config file:
 
 ```javascript
 module.exports = {
@@ -110,7 +110,7 @@ $ webpack-dev-server --content-base build/ --hot
 $ webpack-dev-server <entry>
 ```
 
-All [[**_CLI_**]] options are valid for the _webpack-dev-server_ too, but there is no `<output>` default argument. For the _CLI_ a `webpack.config.js` (or the file passed by the `--config` option) is accepted as well.
+All _webpack [[CLI]]_ options are valid for the _webpack-dev-server CLI_ too, but there is no `<output>` default argument. For the _webpack-dev-server CLI_ a `webpack.config.js` (or the file passed by the `--config` option) is accepted as well.
 
 There are some additional options:
 
