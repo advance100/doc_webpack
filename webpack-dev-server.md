@@ -121,7 +121,7 @@ There are some additional options:
 * `--host <hostname/ip>`: hostname or IP;
 * `--port <number>`: port;
 * `--inline`: embed the webpack-dev-server runtime into the bundle;
-* `--hot`: adds the `HotModuleReplacementPlugin` and switch the server to hot mode. (Note: make sure you don't add `HotModuleReplacementPlugin` twice);
+* `--hot`: adds the `HotModuleReplacementPlugin` and switch the server to hot mode. Note: make sure you don't add `HotModuleReplacementPlugin` twice;
 * `--hot --inline` also adds the `webpack/hot/dev-server` entry;
 * `--https`: serves dev-server over HTTPS Protocol. Includes a self-signed certificate that is used when serving the requests.
 
