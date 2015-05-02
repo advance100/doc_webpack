@@ -114,15 +114,15 @@ All [[CLI]] options are valid for the _webpack-dev-server_ too, but there is no 
 
 There are some additional options:
 
-* `--content-base <file/directory/url>`: Base path for the content
-* `--quiet`: Don't output anything to the console
-* `--colors`: Add some colors to the output
-* `--no-info`: Suppress boring information
-* `--host <hostname/ip>`
-* `--port <number>`
-* `--inline`: embed the webpack-dev-server runtime into the bundle
-* `--hot`: adds the `HotModuleReplacementPlugin` and switch the server to hot mode. (Note: make sure you don't add `HotModuleReplacementPlugin` twice)
-* `--hot --inline` also adds the `webpack/hot/dev-server` entry.
+* `--content-base <file/directory/url>`: base path for the content;
+* `--quiet`: don't output anything to the console;
+* `--colors`: add some colors to the output;
+* `--no-info`: suppress boring information;
+* `--host <hostname/ip>`: hostname or IP;
+* `--port <number>`: port;
+* `--inline`: embed the webpack-dev-server runtime into the bundle;
+* `--hot`: adds the `HotModuleReplacementPlugin` and switch the server to hot mode. (Note: make sure you don't add `HotModuleReplacementPlugin` twice);
+* `--hot --inline` also adds the `webpack/hot/dev-server` entry;
 * `--https`: serves dev-server over HTTPS Protocol. Includes a self-signed certificate that is used when serving the requests.
 
 The additional options above can be set in `devServer` option in `webpack.config.js`. For example:
