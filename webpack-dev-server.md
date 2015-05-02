@@ -110,7 +110,7 @@ $ webpack-dev-server --content-base build/ --hot
 $ webpack-dev-server <entry>
 ```
 
-All _webpack_ _[[CLI]]_ options are valid for the _webpack-dev-server CLI_ too, but there is no `<output>` default argument. For the _webpack-dev-server CLI_ a `webpack.config.js` (or the file passed by the `--config` option) is accepted as well.
+All _[[webpack CLI|cli]]_ options are valid for the _webpack-dev-server CLI_ too, but there is no `<output>` default argument. For the _webpack-dev-server CLI_ a `webpack.config.js` (or the file passed by the `--config` option) is accepted as well.
 
 There are some additional options:
 
