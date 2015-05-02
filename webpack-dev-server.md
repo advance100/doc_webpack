@@ -185,7 +185,7 @@ server.listen(8080, "localhost", function() {});
 ```
 
 
-See [[webpack-dev-middleware]] for documentation on middleware options.
+See _[[webpack-dev-middleware]]_ for documentation on middleware options.
 
 Notice that _webpack configuration_ is not passed to `WebpackDevServer` API, thus `devServer` option in webpack configuration is not used in this case. Also, there is no _inline mode_ for `WebpackDevServer` API. `<script src="http://localhost:8080/webpack-dev-server.js"></script>` should be inserted to HTML page manually.
 
