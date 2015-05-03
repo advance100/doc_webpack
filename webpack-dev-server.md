@@ -195,7 +195,7 @@ There are cases when you want to run the a backend server or a mock of it in dev
 
 You should run two server side-by-side: The _webpack-dev-server_ and your backend server.
 
-In this case you need to teach the webpack-generated assets to make requests to the _webpack-dev-serve_r even when running on a HTML-page sent by the backend server. On the other side you need to teach your backend server to generate HTML pages that include `script` tags that point to assets on the _webpack-dev-server_. In addition to that you need a connection between the _webpack-dev-server_ and the _webpack-dev-server_ runtime to trigger reloads on recompilation.
+In this case you need to teach the webpack-generated assets to make requests to the _webpack-dev-server_ even when running on a HTML-page sent by the backend server. On the other side you need to teach your backend server to generate HTML pages that include `script` tags that point to assets on the _webpack-dev-server_. In addition to that you need a connection between the _webpack-dev-server_ and the _webpack-dev-server_ runtime to trigger reloads on recompilation.
 
 To teach _webpack_ to make requests (for chunk loading or HMR) to the _webpack-dev-server_ you need to provide **a full URL in the `output.publicPath`** option.
 
