@@ -29,7 +29,7 @@ $ browserify --entry main.js --outfile bundle.js
 maps to `webpack` with this config:
 
 ``` javascript
-{
+module.exports = {
 	entry: "./main.js",
 	output: {
 		filename: "bundle.js"
@@ -37,7 +37,7 @@ maps to `webpack` with this config:
 }
 ```
 
-> Note: A `webpack.config.js` should **export** the configuration. I. e. in this way: `module.exports = {...}`.
+> Note: A `webpack.config.js` should **export** the configuration, hence the `module.exports = {...}` in the above example.
 
 ---
 
