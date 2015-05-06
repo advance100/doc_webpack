@@ -16,11 +16,11 @@ The entry chunks have higher priority for file size.
 
 ## Deduplication
 
-If you use some libraries with cool dependency trees, it may occur that some files are identical. Webpack can find these files and deduplicate them. This prevent to include duplicate code into your bundle and instead copy the function at runtime. It doesn't affect semantics. You can enable it with:
+If you use some libraries with cool dependency trees, it may occur that some files are identical. Webpack can find these files and deduplicate them. This prevents the inclusion of duplicate code into your bundle and instead applies a copy of the function at runtime. It doesn't affect semantics. You can enable it with:
 
 `--optimize-dedupe` resp. `new webpack.optimize.DedupePlugin()`
 
-The feature add some overhead to the entry chunk.
+This feature adds some overhead to the entry chunk.
 
 
 
