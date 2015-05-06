@@ -76,6 +76,12 @@ module.exports = function(source) {
 };
 ```
 
+### not keep state between runs and modules
+
+A loader should be independent of other modules compiled (expect of these issued by the loader).
+
+A loader should be independent of previous compilations of the same module.
+
 ### mark dependencies
 
 If a loader uses external resources (i. e. by reading from filesystem), they **must** tell about that. This information is used to invalidate cacheable loaders and recompile in watch mode.
