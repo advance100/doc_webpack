@@ -609,12 +609,25 @@ Only use it with the Node.js JavaScript api `webpack(options, fn)`.
 
 
 
-## `watchDelay`
+## `watch.aggregateTimeout`
+
+(only used when using [[CLI]])
 
 Delay the rebuilt after the first change. Value is a time in ms.
 
 > Default: 200
 
+
+
+## `watch.poll`
+
+(only used when using [[CLI]])
+
+`true`: use polling
+
+number: use polling with specified interval
+
+> Default: `undefined` 
 
 
 ## `debug`
