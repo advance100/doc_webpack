@@ -25,7 +25,11 @@ compiler.run(function(err, stats) {
 	// ...
 });
 // or
-compiler.watch(/* watchDelay= */200, function(err, stats) {
+compiler.watch({ // watch options:
+	aggregateTimeout: 300, // wait so long for more changes
+	poll: true // use polling instead of native watchers
+	// pass a number to set the polling interval
+}, function(err, stats) {
 	// ...
 });
 ```
@@ -39,8 +43,10 @@ An instance of `Compiler` has the following methods
 `compiler.run(callback)` - Builds the bundle(s).
 * callback(err, stats) - A function that will be called with the build is complete.
 
-`var watcher = compiler.watch(watchDelay, handler)` - Builds the bundle(s) then starts the watcher, which rebuilds bundles whenever their source files change. Returns a `Watching` instance. Note: since this will automatically run an initial build, so you only need to run `watch` (and not `run`).
-* `watchDelay` - The delay (in milliseconds) after a change before the handler is called. Default: 300.
+`var watcher = compiler.watch(watchOptions, handler)` - Builds the bundle(s) then starts the watcher, which rebuilds bundles whenever their source files change. Returns a `Watching` instance. Note: since this will automatically run an initial build, so you only need to run `watch` (and not `run`).
+* `watchOptions`
+  * `watchOptions.aggregateTimeout` - After a change the watcher waits that time (in milliseconds) for more changes. Default: 300.
+  * `watchOptions.poll` - The watcher uses polling instead of native watchers. `true` uses the default interval, a number specifies a interval in milliseconds. Default: undefined (automatic).
 * `handler(err, stats)` - A function that will be called when a build has been completed, or an error or warning has occurred. (Note that `handler` is called multiple times. I even can occur that `handler` is called for the same bundle multiple times. In this cases webpack is not sure about changes and rebuilds.)
 
 ## `Watching`
