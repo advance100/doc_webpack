@@ -8,7 +8,7 @@ Example:
 require("./template/" + name + ".jade");
 ```
 
-webpack parses the `require` statement and extract some information:
+webpack parses the `require` statement and extracts some information:
 
 * Directory: `./template`
 * Regular expression: `/^.*\.jade$/`
