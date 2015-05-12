@@ -605,23 +605,21 @@ You can pass an object to enable it and let webpack use the passed object as cac
 
 Enter watch mode, which rebuilds on file change.
 
-Only use it with the Node.js JavaScript api `webpack(options, fn)`.
 
 
+## `watchOptions.aggregateTimeout`
 
-## `watch.aggregateTimeout`
-
-(only used when using [[CLI]])
+(only used when using [[CLI]] or simple node.js API)
 
 Delay the rebuilt after the first change. Value is a time in ms.
 
-> Default: 200
+> Default: 300
 
 
 
-## `watch.poll`
+## `watchOptions.poll`
 
-(only used when using [[CLI]])
+(only used when using [[CLI]] or simple node.js API)
 
 `true`: use polling
 
