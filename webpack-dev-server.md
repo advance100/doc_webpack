@@ -191,9 +191,9 @@ Notice that _webpack configuration_ is not passed to `WebpackDevServer` API, thu
 
 ## Combining with an existing server
 
-There are cases when you want to run the a backend server or a mock of it in development. You should **not** abuse the _webpack-dev-server_ as backend. It's only intended to serve static (webpacked) assets.
+You may want to run a backend server or a mock of it in development. You should **not** use the _webpack-dev-server_ as a backend. Its only purpose is to serve static (webpacked) assets.
 
-You should run two server side-by-side: The _webpack-dev-server_ and your backend server.
+You can run two servers side-by-side: The _webpack-dev-server_ and your backend server.
 
 In this case you need to teach the webpack-generated assets to make requests to the _webpack-dev-server_ even when running on a HTML-page sent by the backend server. On the other side you need to teach your backend server to generate HTML pages that include `script` tags that point to assets on the _webpack-dev-server_. In addition to that you need a connection between the _webpack-dev-server_ and the _webpack-dev-server_ runtime to trigger reloads on recompilation.
 
