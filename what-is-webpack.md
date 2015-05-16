@@ -19,7 +19,7 @@ I tried to extend existing module bundlers, but it wasn't possible to achieve al
 * Ability to customize nearly every part of the module bundler
 * Suited for big projects
 
-## How webpack is different?
+## How is webpack different?
 
 #### [[Code Splitting]]
 
