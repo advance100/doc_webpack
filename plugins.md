@@ -1,8 +1,8 @@
-A (webpack) plugin is a object that has an `apply` method with one parameter, the compiler. For example, a plugin is a function, and the function prototype defines a `apply` method. But you also can define a "class" with the `apply` method.
+A (webpack) plugin is a object that has an `apply` method with one parameter, the compiler. For example, a plugin is a function, and the function prototype defines an `apply` method. But you can also define a "class" with the `apply` method.
 
-Many objects in webpack extends the Tapable class, which exposes a `plugin` method. And with the `plugin` method, plugins can use that to bind custom stuff.
+Many objects in webpack extend the Tapable class, which exposes a `plugin` method. And with the `plugin` method, plugins can bind custom stuff.
 
-The following example is the Compiler exposing the `"compile"` plugin interface, which is called when the Compiler compiles
+The following example is the Compiler exposing the `"compile"` plugin interface, which is called when the Compiler compiles.
 
 ``` javascript
 compiler.plugin("compile", function(params) {
@@ -11,7 +11,7 @@ compiler.plugin("compile", function(params) {
 });
 ```
 
-A plugin only gets a reference to the compiler object, so if it want to plugin stuff into other webpack objects it have to gain access to them. I. e. the Compilation object:
+A plugin only gets a reference to the compiler object, so if it wants to plug stuff into other webpack objects it has to gain access to them, i.e., to the Compilation object:
 
 ``` javascript
 compiler.plugin("compilation", function(compilation) {
@@ -32,9 +32,9 @@ There are multiple types of plugin interfaces.
 
 * Return value
 	* not bailing (default): No return value.
-	* bailing: The handlers are invoked in order until one handler return something.
-	* parallel bailing: The handlers are invoked parallel (async). The first (by order) returned value is significant.
-	* waterfall: Each handler get the result value of the last handler as argument.
+	* bailing: The handlers are invoked in order until one handler returns something.
+	* parallel bailing: The handlers are invoked in parallel (async). The first returned value (by order) is significant.
+	* waterfall: Each handler gets the result value of the last handler as an argument.
 
 ## `Compiler` instance
 
@@ -107,16 +107,16 @@ All plugins extracted from the options object are added to the resolvers.
 Before the factory starts resolving. The `data` object has this properties:
 
 * `context` The absolute path of the directory for resolving.
-* `request` The request of expression.
+* `request` The request of the expression.
 
-Plugins are allowed to modify the object or pass a new similar object to the callback.
+Plugins are allowed to modify the object or to pass a new similar object to the callback.
 
 ### `after-resolve(data)` async waterfall
 
 After the factory has resolved the request. The `data` object has this properties:
 
-* `request` The resolved request. It acts as identifier for the NormalModule.
-* `userRequest` The request the user entered. It's resolved, but do not contain pre or post loaders.
+* `request` The resolved request. It acts as an identifier for the NormalModule.
+* `userRequest` The request the user entered. It's resolved, but does not contain pre or post loaders.
 * `rawRequest` The unresolved request.
 * `loaders` A array of resolved loaders. This is passed to the NormalModule and they will be executed.
 * `resource` The resource. It will be loaded by the NormalModule.
@@ -134,7 +134,7 @@ After the factory has resolved the request. The `data` object has this propertie
 
 ### `seal`
 
-The sealing to the compilation has started.
+The sealing of the compilation has started.
 
 ### `optimize`
 
@@ -142,7 +142,7 @@ Optimize the compilation.
 
 ### `optimize-tree(chunks, modules)` async
 
-Async optimize of the tree.
+Async optimization of the tree.
 
 ### `optimize-modules(modules: Module[])`
 
@@ -246,30 +246,30 @@ Before a module build has started.
 
 ### `succeed-module`
 
-A module has been build successfully.
+A module has been built successfully.
 
 ### `failed-module`
 
-The module build has been failed.
+The module build has failed.
 
 ### `module-asset(module, filename)`
 
-An assets from a module was added to the compilation.
+An asset from a module was added to the compilation.
 
 ### `chunk-asset(chunk, filename)`
 
-An assets from a chunk was added to the compilation.
+An asset from a chunk was added to the compilation.
 
 
 ## `Parser` instance (`compiler.parser`)
 
 ### `program(ast)` bailing
 
-General purpose plugin interface for the while AST of a code fragment.
+General purpose plugin interface for the AST of a code fragment.
 
 ### `statement(statement: Statement)` bailing
 
-General purpose plugin interface for every statement of the code fragment.
+General purpose plugin interface for the statements of the code fragment.
 
 ### `call <identifier>(expr: Expression)` bailing
 
@@ -338,18 +338,18 @@ Evaluate a call to a member function of a successfully evaluated expression.
 
 Any plugin should use `this.fileSystem` as fileSystem, as it's cached. It only has async named functions, but they may behave sync, if the user uses a sync file system implementation (i. e. in enhanced-require).
 
-To join paths any plugin should use `this.join`. It normalize the paths. There is a `this.normalize` too.
+To join paths any plugin should use `this.join`. It normalizes the paths. There is a `this.normalize` too.
 
 A bailing async forEach implementation is available on `this.forEachBail(array, iterator, callback)`.
 
-To pass the request to other resolving plugins use the `this.doResolve(types: String|String[], request: Request, callback)` method. `types` are multiple possible request types that are tested in preference of order.
+To pass the request to other resolving plugins, use the `this.doResolve(types: String|String[], request: Request, callback)` method. `types` are multiple possible request types that are tested in order of preference.
 
 ``` javascript
 interface Request {
 	path: String // The current directory of the request
 	request: String // The current request string
-	query: String // The querystring of the request, if any
-	module: boolean // request begins with a module
+	query: String // The query string of the request, if any
+	module: boolean // The request begins with a module
 	directory: boolean // The request points to a directory
 	file: boolean // The request points to a file
 	resolved: boolean // The request is resolved/done
@@ -382,23 +382,23 @@ Before a single step in the resolving process starts.
 
 ### `module(request: Request)` async waterfall
 
-A module request is found and should be resolved
+A module request is found and should be resolved.
 
 ### `directory(request: Request)` async waterfall
 
-A directory request is found and should be resolved
+A directory request is found and should be resolved.
 
 ### `file(request: Request)` async waterfall
 
-A file request is found and should be resolved
+A file request is found and should be resolved.
 
 ### The plugins may offer more extensions points
 
-Here is a list what the default plugins in webpack offer. They are all `(request: Request)` async waterfall
+Here is a list what the default plugins in webpack offer. They are all `(request: Request)` async waterfall.
 
-The process for normal modules and contexts is `module -> module-module -> directory -> file`
+The process for normal modules and contexts is `module -> module-module -> directory -> file`.
 
-The process for loaders is `module -> module-loader-module -> module-module -> directory -> file`
+The process for loaders is `module -> module-loader-module -> module-module -> directory -> file`.
 
 #### `module-module`
 
