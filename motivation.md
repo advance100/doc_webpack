@@ -1,4 +1,4 @@
-Today websites are evolving into web apps:
+Today's websites are evolving into web apps:
 
 * More and more JavaScript is in a page.
 * You can do more stuff in modern browsers.
@@ -10,7 +10,7 @@ A big code base needs to be organized. Module systems offer the option to split 
 
 # Module system styles
 
-There are multiple standards how to define dependencies and export values:
+There are multiple standards for how to define dependencies and export values:
 
 * `<script>`-tag style (without a module system)
 * CommonJs
