@@ -1,6 +1,14 @@
+# 1.9
+
+(2015-05-18)
+
+* API: include/exclude for BannerPlugin
+* API: added watchOptions (i. e. polling)
+* API: sort by global order by default
+
 # 1.8
 
-(2015-04-07)
+(2015-04-29)
 
 * API: added filtering option for SourceMapPlugin
 * COMMUNITY: changed rules regarding issues and chat room.
@@ -10,6 +18,8 @@
 * API: added cheap SourceMaps with line to line mappings
 * API: more flexible SourceMap devtool configuration
 * API: added crossOrginLoading option
+* API: enable CSS SourceMaps by default
+* API: error when using CommonsChunkPlugin wrongly
 
 # 1.7
 
