@@ -119,6 +119,9 @@ Egghead.io series by [Kent C. Dodds](https://twitter.com/kentcdodds)
 
 2014-12-27 @jesseskinner
 
+### [How-to setup Webpack on an ES6 React Application with SASS?](http://www.jonathan-petitcolas.com/2015/05/15/howto-setup-webpack-on-es6-react-application-with-sass.html)
+A step-by-step guide to configure Webpack for React, including a killer feature: React Hot Loader
+
 ---
 
 (Use the edit button at top right corner to add more)
