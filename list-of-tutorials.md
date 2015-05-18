@@ -62,6 +62,10 @@ A comprehensive guide to integrating webpack with a Rails app
 Basic guide and some use cases of using Webpack to bundle SPAs in Chinese.  
 2015-02-12 @jiyinyiyong
 
+### [How-to setup Webpack on an ES6 React Application with SASS?](http://www.jonathan-petitcolas.com/2015/05/15/howto-setup-webpack-on-es6-react-application-with-sass.html)
+A step-by-step guide to configure Webpack for React, including a killer feature: React Hot Loader
+2015-05-15 @jpetitcolas
+
 ## Cookbooks
 
 ### [react-webpack-cookbook](https://github.com/christianalfoni/react-webpack-cookbook/wiki)
@@ -118,9 +122,6 @@ Egghead.io series by [Kent C. Dodds](https://twitter.com/kentcdodds)
 ### [Trying webpack with React.js](https://www.youtube.com/watch?v=Ob1ruoUnc58)
 
 2014-12-27 @jesseskinner
-
-### [How-to setup Webpack on an ES6 React Application with SASS?](http://www.jonathan-petitcolas.com/2015/05/15/howto-setup-webpack-on-es6-react-application-with-sass.html)
-A step-by-step guide to configure Webpack for React, including a killer feature: React Hot Loader
 
 ---
 
