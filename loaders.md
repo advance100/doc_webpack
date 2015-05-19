@@ -48,10 +48,10 @@ In many cases the correct loader can be inferred from the filename. Therefore lo
 After the file is read from the filesystem, loaders are executed against it in the 
 following order.
 
-1. [[preLoaders|configuration#modulepreloaders-modulepostloaders]] specified in the configuration
-2. [[loaders|configuration#moduleloaders]] specified in the configuration
+1. `preloaders` specified in the [[configuration]]
+2. `loaders` specified in the [[configuration]]
 3. loaders specified in the request (e.g. `require('raw!./file.js')`)
-4. [[postLoaders|configuration#modulepreloaders-modulepostloaders]] specified in the configuration
+4. `postLoaders` specified in the [[configuration]]
 
 You can also override the configuration loader order in the module request to suit special cases.
 
