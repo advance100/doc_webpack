@@ -132,7 +132,7 @@ module.exports = {
     // ... webpack.config.js stuff ...
     devServer: {
         contentBase: "./build",
-        info: false, //  --no-info option
+        noInfo: true, //  --no-info option
         hot: true,
         inline: true
     }
