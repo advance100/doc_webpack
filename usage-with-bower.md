@@ -36,7 +36,7 @@ So prefer to use the CommonJs-style module and let webpack build it.
 
 bower package vs. npm package
 
-> Note: the bower package is built with bowserify and envify (`NODE_ENV = "production"`)
+> Note: the bower package is built with browserify and envify (`NODE_ENV = "production"`)
 
 So we compare four configurations:
 

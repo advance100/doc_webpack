@@ -199,7 +199,7 @@ In this case you need to teach the webpack-generated assets to make requests to 
 
 To teach _webpack_ to make requests (for chunk loading or HMR) to the _webpack-dev-server_ you need to provide **a full URL in the `output.publicPath`** option.
 
-To make a connection between _webpack-dev-server_ and its runtime best use the _inline mode_ with `--inline`. The _webpack-dev-server_ CLI automatically includes an entry point which establishs a WebSocet connection. (You can also use the _iframe_ mode if you point `--content-base` of the _webpack-dev-server_ to your backend server.
+To make a connection between _webpack-dev-server_ and its runtime best use the _inline mode_ with `--inline`. The _webpack-dev-server_ CLI automatically includes an entry point which establishes a WebSocket connection. (You can also use the _iframe_ mode if you point `--content-base` of the _webpack-dev-server_ to your backend server.
 
 When you use the _inline mode_ just open the backend server URL in your web browsers. (If you use the _iframe mode_ open the `/webpack-dev-server/` prefixed URL of the _webpack-dev-server_.)
 

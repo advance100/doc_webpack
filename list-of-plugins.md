@@ -464,15 +464,15 @@ Adds SourceMaps for assets.
 
 `filename` defines the output filename of the SourceMap. If no value is provided the SourceMap is inlined.
 
-`append` is appended to the orginal asset. Usually the `#sourceMappingURL` comment. `[url]` is replaced with a URL to the SourceMap file. `false` disables the appending.
+`append` is appended to the original asset. Usually the `#sourceMappingURL` comment. `[url]` is replaced with a URL to the SourceMap file. `false` disables the appending.
 
 `moduleFilenameTemplate` and `fallbackModuleFilenameTemplate` see `output.devtoolModuleFilenameTemplate`.
 
-`module` (defaults to `true`) When `false` loaders do not generate SourceMaps and the transormed code is used as source instead.
+`module` (defaults to `true`) When `false` loaders do not generate SourceMaps and the transformed code is used as source instead.
 
-`columns` (defaults to `true`) When `false` column mappings in SorceMaps are ignored and a faster SourceMap implemention is used.
+`columns` (defaults to `true`) When `false` column mappings in SorceMaps are ignored and a faster SourceMap implementation is used.
 
-`lineToLine` (an object `{test, include, exclude}` which is matched agains modules) matched modules uses simple (faster) line to line source mappings.
+`lineToLine` (an object `{test, include, exclude}` which is matched against modules) matched modules uses simple (faster) line to line source mappings.
 
 
 

@@ -33,7 +33,7 @@ The format of the query string is up to the loader, so check the loaders documen
 
 ## loaders by config
 
-Specifing loaders in each module request can be brittle and repetative. Webpack provides a way to specify which loaders apply to different file types in your Webpack [[configuration]] file. Specifying loaders in the configuration is the recommended approach in most cases as it doesn't add any build specific syntax to the code, making it more reusable. 
+Specifing loaders in each module request can be brittle and repetitive. Webpack provides a way to specify which loaders apply to different file types in your Webpack [[configuration]] file. Specifying loaders in the configuration is the recommended approach in most cases as it doesn't add any build specific syntax to the code, making it more reusable.
 
 ```javascript
 {
