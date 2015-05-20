@@ -1,36 +1,41 @@
 # Introduction
 
-Loaders are transformations that are applied on files. They preprocess files. I. e. they can transform CoffeeScript to JavaScript.
+Loaders allow you to transform, or preprocess files as you `require()` or "load" them. Loaders are kind of like "tasks" are in other build tools, and provide a powerful way to handle frontend build steps. Loaders can transform files from a different language like, CoffeeScript to JavaScript, or inline images as data URLs. Loaders even allow you to do things like `require()` css files right in your JavaScript!
 
-Loaders resolve similar to modules. You can apply loaders to modules by prefixing them in the `require` call:
+To tell Webpack to transform a module with a loader, you can specify the loader in the module __request__, such as in a `require` call.
 
 ``` javascript
-var moduleWithOneLoader = require("loader!module");
-
-// Loader in current directory
-require("./loader.js!module");
-
-// multiple loaders
-require("loader1/main!./loader2!module");
+var moduleWithOneLoader = require("my-loader!./my-awesome-module");
 ```
 
-When using multiple loaders they are applied in a pipeline.
+Notice the `!` syntax separating the loader from the module path? Loaders, like modules can also be specified with a relative path (as if you were requiring it) instead of the loader name:
+
+```javascript
+require("./loaders/my-loader!./my-awesome-module");
+```
+
+Loaders can be also be chained together by separating loaders with the `!`. This is helpful for applying multiple transformations to a file in a pipeline.
+
+```javascript
+require("style-loader!css-loader!less-loader!./my-styles.less");
+```
+When chaining loaders, they are applied right to left (from the file, back). In the above example, `my-styles.less` will be transformed first by the `less-loader`converting it to css, and then passed to the `css-loader` where urls, fonts, and other resources are processed, and then finally passed to `style-loader` to be transformed into a `<style>` tag.
 
 ## parameters
 
-Loaders accept query parameters:
+Loaders can accept query parameters:
 
 ``` javascript
 require("loader?with=parameter!./file");
 ```
 
-The format of the query string is up to the loader, so check the loaders documentation to find out about the parameters the loader accept.
+The format of the query string is up to the loader, so check the loaders documentation to find out about the parameters the loader accept, but generally most loaders support the traditional query string format.
 
 ## loaders by config
 
-In many cases the correct loader can be inferred from the filename. Therefore loaders can be specified in the configuration:
+Specifing loaders in each module request can be brittle and repetative. Webpack provides a way to specify which loaders apply to different file types in your Webpack [[configuration]] file. Specifying loaders in the configuration is the recommended approach in most cases as it doesn't add any build specific syntax to the code, making it more reusable. 
 
-``` javascript
+```javascript
 {
 	module: {
 		loaders: [
@@ -42,6 +47,8 @@ In many cases the correct loader can be inferred from the filename. Therefore lo
 	}
 };
 ```
+
+See the [[configuration]] page for more information about configuring loaders.
 
 ## loader order
 
