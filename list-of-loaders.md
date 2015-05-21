@@ -113,3 +113,4 @@
 * [`image-size`](https://github.com/patcoll/image-size-loader): Loads an image and returns its dimensions and type
 * [`csslint`](https://github.com/hyungjs/csslint-loader): PreLoader for linting code using CSSLint
 * [`coffeelint-loader`](https://github.com/bline/coffeelint-loader): PreLoader for linting [CoffeeScript](http://coffeescript.org/).
+*['tslint-loader'](https://github.com/wbuchwalter/tslint-loader): PreLoader for TypeScript using [TSLint](https://github.com/palantir/tslint)
