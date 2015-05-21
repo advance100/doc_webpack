@@ -128,7 +128,7 @@ module.exports = function(content) {
 
 ### raw loader
 
-By default the resource file is threaded as `utf-8` string and passed as String to the loader. By setting `raw` to `true` the loader is passed the raw Buffer.
+By default the resource file is treated as `utf-8` string and passed as String to the loader. By setting `raw` to `true` the loader is passed the raw Buffer.
 
 Every loader is allowed to deliver its result as String or as Buffer. The compiler converts them between loaders.
 
