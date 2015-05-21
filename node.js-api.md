@@ -47,7 +47,7 @@ An instance of `Compiler` has the following methods
 * `watchOptions`
   * `watchOptions.aggregateTimeout` - After a change the watcher waits that time (in milliseconds) for more changes. Default: 300.
   * `watchOptions.poll` - The watcher uses polling instead of native watchers. `true` uses the default interval, a number specifies a interval in milliseconds. Default: undefined (automatic).
-* `handler(err, stats)` - A function that will be called when a build has been completed, or an error or warning has occurred. (Note that `handler` is called multiple times. I even can occur that `handler` is called for the same bundle multiple times. In this cases webpack is not sure about changes and rebuilds.)
+* `handler(err, stats)` - A function that will be called when a build has been completed, or an error or warning has occurred. (Note that `handler` is called multiple times. It even can occur that `handler` is called for the same bundle multiple times. In this cases webpack is not sure about changes and rebuilds.)
 
 ## `Watching`
 
