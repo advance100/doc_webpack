@@ -7,7 +7,7 @@
 | AMD `require` | **yes** | **yes** | no | yes |
 | AMD `require` loads on demand | **yes** | with manual configuration | no | yes |
 | generate a single bundle | **yes** | yes♦ | yes | yes |
-| load each file separate | no | no♦ | no | yes |
+| load each file separate | no | yes | no | yes |
 | multiple bundles | **yes** | with manual configuration | with manual configuration | yes |
 | additional chunks are loaded on demand | **yes** | **yes** | no | with bundle arithmetic |
 | multi pages build with common bundle | with manual configuration | **yes** | with manual configuration | with bundle arithmetic |
