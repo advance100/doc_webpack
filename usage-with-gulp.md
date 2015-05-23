@@ -44,10 +44,12 @@ gulp.task("webpack", function() {
 
 It has some benefits:
 
-- overrides any properties of `webpack.config.js` file via `webpack.compile` or `webpack.watch`;
-- control webpack stats output via `webpack.format`;
-- fail your build if `webpack` returns some errors or warnings via `webpack.failAfter`;
-- work in watching mode more productive via `webpack.watch` and have all benefits above.
+- overrides any properties of config files via `webpack.props`;
+- uses memory file system to prevents write files on disk via `webpack.init({useMemoryFs: true})`;
+- controls webpack stats output via `webpack.format`;
+- fails your build if `webpack` returns some errors or warnings via `webpack.failAfter`;
+- just compiles config files via `webpack.run`;
+- works in watching mode via `webpack.watch`.
 
 First install with `npm install gulp-webpack-build` and then use as follows:
 
@@ -73,9 +75,9 @@ var src = './src',
 
 gulp.task('webpack', [], function() {
     return gulp.src(path.join(src, '**', CONFIG_FILENAME), { base: path.resolve(src) })
-        .pipe(webpack.configure(webpackConfig))
-        .pipe(webpack.overrides(webpackOptions))
-        .pipe(webpack.compile())
+        .pipe(webpack.init(webpackConfig))
+        .pipe(webpack.props(webpackOptions))
+        .pipe(webpack.run())
         .pipe(webpack.format({
             version: false,
             timings: true
@@ -92,8 +94,8 @@ gulp.task('watch', function() {
         if (event.type === 'changed') {
             gulp.src(event.path, { base: path.resolve(src) })
                 .pipe(webpack.closest(CONFIG_FILENAME))
-                .pipe(webpack.configure(webpackConfig))
-                .pipe(webpack.overrides(webpackOptions))
+                .pipe(webpack.init(webpackConfig))
+                .pipe(webpack.props(webpackOptions))
                 .pipe(webpack.watch(function(err, stats) {
                     gulp.src(this.path, { base: this.base })
                         .pipe(webpack.proxy(err, stats))
