@@ -90,7 +90,7 @@ You need to enable HMR in the Compiler to let it add the HMR runtime.
 
 * It's experimental and not tested so well.
 * Expect some bugs
-* Theoretically usable in production, but it maybe to early to use it for something serious
+* Theoretically usable in production, but it maybe too early to use it for something serious
 * The module ids need to be tracked between compilations so you need to store them (`records`)
 * Optimizer cannot optimize module ids anymore after the first compilation. A bit impact on bundle size.
 * HMR runtime code increase bundle size.
