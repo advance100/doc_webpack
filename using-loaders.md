@@ -110,7 +110,7 @@ This uses the loader "jade" for ".jade" files and the loaders "style" and "css" 
 
 ## Query parameters
 
-Loader can be passed query parameters via a query string (just like in the web). The query string is appended to the loader with `?`. I. e. `url-loader?mimetype=image/png`.
+Loader can be passed query parameters via a query string (just like in the web). The query string is appended to the loader with `?`. i.e. `url-loader?mimetype=image/png`.
 
 Note: The format of the query string is up to the loader. See format in the loader documentation. Most loaders accept parameters in the normal query format (`?key=value&key2=value2`) and as JSON object (`?{"key":"value","key2":"value2"}`).
 
