@@ -418,10 +418,10 @@ Examples: Calling a require from `/abc/entry.js` with different alias settings.
 | `alias:` | `require("xyz")` | `require("xyz/file.js")` |
 |---|---|---|
 | `{}` | `/abc/node_modules/xyz/index.js` | `/abc/node_modules/xyz/file.js` |
-| `{ xyz: "/absolute/path/to/file.js" }` | `/absolute/path/to/file.js` | error |
-| `{ xyz$: "/absolute/path/to/file.js" }` | `/absolute/path/to/file.js` | `/abc/node_modules/xyz/file.js` |
-| `{ xyz: "./dir/file.js" }` | `/abc/dir/file.js` | error |
-| `{ xyz$: "./dir/file.js" }` | `/abc/dir/file.js` | `/abc/node_modules/xyz/file.js` |
+| `{ xyz: "/absolute/path/to/file.js" }` | `/absolute/path/to/file.js` | `/abc/node_modules/xyz/file.js` |
+| `{ xyz$: "/absolute/path/to/file.js" }` | `/absolute/path/to/file.js` | error |
+| `{ xyz: "./dir/file.js" }` | `/abc/dir/file.js` | `/abc/node_modules/xyz/file.js` |
+| `{ xyz$: "./dir/file.js" }` | `/abc/dir/file.js` | error |
 | `{ xyz: "/some/dir" }` | `/some/dir/index.js` | `/some/dir/file.js` |
 | `{ xyz$: "/some/dir" }` | `/some/dir/index.js` | `/abc/node_modules/xyz/file.js` |
 | `{ xyz: "./dir" }` | `/abc/dir/index.js` | `/abc/dir/file.js` |
