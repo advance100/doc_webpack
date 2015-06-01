@@ -125,10 +125,12 @@ Limit the chunk count to a defined value. Chunks are merged until it fits.
 ### `MinChunkSizePlugin`
 
 ``` javascript
-new webpack.optimize.MinChunkSizePlugin(minSize)
+new webpack.optimize.MinChunkSizePlugin(options)
 ```
 
 Merge small chunks that are lower than this min size (in chars). Size is approximated.
+
+`options.minChunkSize` (number) chunks smaller than this number will be merged
 
 ### `OccurenceOrderPlugin`
 
