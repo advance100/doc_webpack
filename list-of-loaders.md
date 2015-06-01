@@ -83,6 +83,7 @@
 * [`haml`](https://github.com/AlexanderPavlenko/haml-loader): Renders haml-coffee templates (.html.hamlc) and returns a string.
 * [`jinja`](https://github.com/pierreant-p/jinja-loader): Precompiles nunjucks and jinja2 templates
 * [`soy`](https://github.com/bendman/soy-loader): Compiles Google Closure templates and returns the namespace with render functions
+* [`smarty-loader`](https://github.com/zhiyan/smarty-loader): Pre-compiles php smarty templates and returns a function
 
 ## styling
 * [`bootstrap-sass`](https://github.com/justin808/bootstrap-sass-loader): Loads a configuration file for Twitter Bootstrap integration using Sass. Allows complete customization via Sass.
