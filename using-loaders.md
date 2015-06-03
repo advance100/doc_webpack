@@ -70,7 +70,7 @@ require("jade!./template.jade");
 // => uses the "jade-loader" (that is installed from npm to "node_modules")
 //    to transform the file "template.jade"
 
-require("style!css!less!bootstrap/less/bootstrap.less");
+require("!style!css!less!bootstrap/less/bootstrap.less");
 // => the file "bootstrap.less" in the folder "less" in the "bootstrap"
 //    module (that is installed from github to "node_modules") is
 //    transformed by the "less-loader". The result is transformed by the
