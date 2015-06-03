@@ -140,7 +140,7 @@ return "var runtime = require(" +
 
 ### use a library as `peerDependencies` when they wrap it
 
-using a peerDependency allows the application developer to specify the exact version in `package.json` if desired. The dependency should be relative open to allow updating the library without needing to publish a new loader version.
+using a peerDependency allows the application developer to specify the exact version in `package.json` if desired. The dependency should be relatively open to allow updating the library without needing to publish a new loader version.
 
 ``` javascript
 "peerDependencies": {
