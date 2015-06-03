@@ -138,7 +138,7 @@ Example:
 {
 	entry: { a: "./a", b: "./b" },
 	output: { filename: "[name].js" },
-	plugins: [ new webpack.CommonsChunkPlugin("init.js") ]
+	plugins: [ new webpack.optimize.CommonsChunkPlugin("init.js") ]
 }
 ```
 
