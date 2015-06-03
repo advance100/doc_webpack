@@ -41,7 +41,7 @@ To load your bundled files, you will need to create an `index.html` file. e.g:
 </html>
 ```
 
-By default go to `localhost:8080/` to launch your app. 
+By default go to `localhost:8080/` to launch your app. For example with the configuration above (with publicPath) go to `localhost:8080/assets/`.
 
 ## Hot mode
 By adding a script to your `index.html` file and a special entry point in your configuration you will be able to get live reloads when doing changes to your files. Change your `index.html` file to this:
