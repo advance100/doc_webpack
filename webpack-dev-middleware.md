@@ -51,11 +51,19 @@ In lazy mode: Switch request should trigger the compilation.
 
 In most cases this equals the webpack configuration option `output.filename`.
 
-#### `watchDelay`
+#### `watchOptions.aggregateTimeout`
 
-In watching mode: The delay after a change.
+Delay the rebuilt after the first change. Value is a time in ms.
 
 Default: `300`
+
+#### `watchOptions.poll`
+
+`true`: use polling
+
+number: use polling with specified interval
+
+Default: `undefined`
 
 #### `publicPath`
 
