@@ -164,7 +164,10 @@ var server = new WebpackDevServer(compiler, {
   noInfo: false,
   lazy: true,
   filename: "bundle.js",
-  watchDelay: 300,
+  watchOptions: {
+    aggregateTimeout: 300,
+    poll: 1000
+  },
   publicPath: "/assets/",
   headers: { "X-Custom-Header": "yes" },
   stats: { colors: true },
