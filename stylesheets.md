@@ -79,7 +79,7 @@ module.exports = {
 	output: {
 		filename: "[name].js",
 		chunkFilename: "[id].js"
-	}
+	},
 	module: {
 		loaders: [
 			// Extract css files
