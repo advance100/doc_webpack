@@ -7,7 +7,7 @@ Through using the `style-loader` and the `css-loader` it's possible to embed sty
 Install the loaders from npm.
 
 ``` text
-npm install style-loader css-loader --save
+npm install style-loader css-loader --save-dev
 ```
 
 ## configuration
