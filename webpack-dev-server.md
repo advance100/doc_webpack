@@ -3,12 +3,12 @@ The _webpack-dev-server_ is a little node.js [Express](http://expressjs.com/) se
 ```javascript
 module.exports = {
   entry: {
-    app: ['./app/main.js']
+    app: ["./app/main.js"]
   },
   output: {
-    path: './build',
-    publicPath: '/assets/',
-    filename: 'bundle.js'
+    path: "./build",
+    publicPath: "/assets/",
+    filename: "bundle.js"
   }
 };
 ```
@@ -66,11 +66,11 @@ And make sure you have the special `webpack/hot/dev-server` entry point in your 
 ```javascript
 module.exports = {
   entry: {
-    app: ['webpack/hot/dev-server', './app/main.js']
+    app: ["webpack/hot/dev-server", "./app/main.js"]
   },
   output: {
-    path: './build',
-    filename: 'bundle.js'
+    path: "./build",
+    filename: "bundle.js"
   }
 };
 ```
