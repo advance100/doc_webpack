@@ -16,7 +16,7 @@ The mandatory hello world example:
 
 ## Plain Simple JavaScript
 
-Here is an examples without CommonJS:
+Here is an example without CommonJS:
 
 We will define a value in a script file named `salute.js`.
 This script will contain just a value that will be used in other scripts:  
