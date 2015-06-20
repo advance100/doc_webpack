@@ -418,8 +418,16 @@ $("#item") // <= just works
 
 Use [rewire](https://github.com/jhnns/rewire) in webpack.
 
+### [`NgRequirePlugin`](https://github.com/randing89/ngrequire-webpack-plugin)
 
-
+Automatically require AngularJS modules without explicitly write `require` statement. 
+``` javascript
+{
+  plugins: [
+    new ngRequirePlugin(['file path list for your angular modules. eg: src/**/*.js'])
+  ]
+}
+```
 
 ## localization
 
