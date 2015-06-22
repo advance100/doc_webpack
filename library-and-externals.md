@@ -8,7 +8,7 @@ webpack has three [[configuration]] options that are relevant for that use cases
 
 `output.library` allows you to optionally specify a name of your library.
 
-`externals` allows you to specify dependencies for your library that are not resolved by webpack, but become dependencies of the output. This means they are imported from the environment while runtime.
+`externals` allows you to specify dependencies for your library that are not resolved by webpack, but become dependencies of the output. This means they are imported from the environment during runtime.
 
 ## Examples
 
