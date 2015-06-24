@@ -35,6 +35,7 @@
 * [`polymer-loader`](https://github.com/JonDum/polymer-loader): Process HTML & CSS with preprocessor of choice and `require()` Web Components like first-class modules.
 * [`uglify-loader`](https://github.com/bestander/uglify-loader): Uglify contents of a module. Unlike uglify plugin you can minify with mangling only your application files and not the libraries
 * [`html-minify-loader`](https://github.com/bestander/html-minify-loader): Minifies HTML using [minimize](https://github.com/Moveo/minimize)
+* [`vue-loader`](https://github.com/vuejs/vue-loader): Load single-file Vue.js components as modules, with loader-support for preprocessors.
 
 
 ## dialects
