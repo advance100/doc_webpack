@@ -97,6 +97,7 @@
 * [`postcss`](https://github.com/postcss/postcss-loader): Post-process CSS with Autoprefixer and [other PostCSS plugins](https://github.com/postcss/postcss#built-with-postcss)
 * [`autoprefixer`](https://github.com/passy/autoprefixer-loader): Add vendor prefixes to CSS rules using values from Can I Use
 * [`namespace-css`](https://github.com/jeffling/namespace-css-loader): Namespace your css with a given selector (for encapsulating all rules in one subset of your site)
+* [`fontgen`](https://www.npmjs.com/package/fontgen-loader): Create your own webfont with proper CSS on-the-fly and include it into WebPack.
 
 ## translation
 
