@@ -67,9 +67,10 @@ A step-by-step guide to configure Webpack for React, including a killer feature:
 
 2015-05-15 @jpetitcolas
 
-## Cookbooks
+## Books
 
 ### [react-webpack-cookbook](https://github.com/christianalfoni/react-webpack-cookbook/wiki)
+### [SurviveJS - Webpack and React](http://survivejs.com/)
 
 ## Talks
 
