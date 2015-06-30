@@ -69,6 +69,7 @@ A step-by-step guide to configure Webpack for React, including a killer feature:
 
 ### [Webpackin' your ES 2015 / Angular 1.x SPA](http://scottaddie.com/2015/06/29/webpackin-your-es-2015-angular-1-x-spa/)
 A basic walkthrough of Webpack setup & configuration for transpiling your Angular 1.x ES 2015 code to ES5 with Babel. Uses NPM exclusively for front-end dependencies.
+
 2015-06-29 @Scott_Addie
 
 ## Books
