@@ -703,7 +703,6 @@ Include polyfills or mocks for various node stuff:
 * `console`: `true` or `false`
 * `global`: `true` or `false`
 * `process`: `true`, `"mock"` or `false`
-* `setImmediate`: `true` or `false`
 * `Buffer`: `true` or `false`
 * `__filename`: `true` (real filename), `"mock"` (`"/index.js"`) or `false`
 * `__dirname`: `true` (real dirname), `"mock"` (`"/"`) or `false`
@@ -716,10 +715,10 @@ Include polyfills or mocks for various node stuff:
 	console: false,
 	global: true,
 	process: true,
-	setImmediate: true,
 	Buffer: true,
 	__filename: "mock",
-	__dirname: "mock"
+	__dirname: "mock",
+	setImmediate: true
 }
 ```
 
