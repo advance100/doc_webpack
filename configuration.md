@@ -715,7 +715,7 @@ Include polyfills or mocks for various node stuff:
 	console: false,
 	global: true,
 	process: true,
-        setImmediate: true,
+	setImmediate: true,
 	Buffer: true,
 	__filename: "mock",
 	__dirname: "mock"
