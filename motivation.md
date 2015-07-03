@@ -25,7 +25,7 @@ This is the way you would handle a modularized code base if you didn't use a mod
 ``` html
 <script src="module1.js"></script>
 <script src="module2.js"></script>
-<script src="libaryA.js"></script>
+<script src="libraryA.js"></script>
 <script src="module3.js"></script>
 ```
 
