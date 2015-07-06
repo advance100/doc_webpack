@@ -497,6 +497,8 @@ Like `resolve` but for loaders.
 }
 ```
 
+Note that you can use `alias` here and other features familiar from `resolve`. For example `{ txt: 'raw-loader' }` would shim `txt!templates/demo.txt` to use `raw-loader`.
+
 ### `resolveLoader.moduleTemplates`
 
 That's a `resolveLoader` only property.
