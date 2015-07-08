@@ -38,7 +38,7 @@ The AMD spec defines an asynchronous `require` method with this definition:
 require(dependencies, callback)
 ```
 
-When called all `dependencies` are loaded and the `callback` is called with the exports of the loaded `dependencies`.
+When called, all `dependencies` are loaded and the `callback` is called with the exports of the loaded `dependencies`.
 
 Example:
 
@@ -68,7 +68,7 @@ If two chunks contain the same modules, they are merged into one. This can cause
 
 If a module is available in all parents of a chunk, it's removed from that chunk.
 
-If a chunk contains all modules of another chunk, this is stored. It fulfill multiple chunks.
+If a chunk contains all modules of another chunk, this is stored. It fulfills multiple chunks.
 
 
 
