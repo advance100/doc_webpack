@@ -6,7 +6,7 @@ To minimize your scripts (and your css, if you use the css-loader) webpack suppo
 
 That's a simple but effective way to optimize your web app.
 
-As you already know (if you've read the remaining docs) webpack give your modules and chunks ids to identify them. Webpack can vary the distribution of the ids to get the smallest id length for often used ids with a simple option:
+As you already know (if you've read the remaining docs) webpack gives your modules and chunks ids to identify them. Webpack can vary the distribution of the ids to get the smallest id length for often used ids with a simple option:
 
 `--optimize-occurence-order` resp. `new webpack.optimize.OccurenceOrderPlugin()`
 
