@@ -110,6 +110,12 @@ Comprehensive introduction to webpack, held at the [MNUG (munich node.js user gr
 
 ## Screencasts
 
+### [Getting Started with webpack](https://www.youtube.com/watch?v=TaWKUpahFZM)
+
+Quick screencast on YouTube about getting started with webpack by [Kyle Robinson Young](https://twitter.com/shamakry)
+
+2015-07-06 @shamakry
+
 ### [Intro to Webpack](https://egghead.io/lessons/javascript-intro-to-webpack)
 
 Free Egghead.io lesson by [Kent C. Dodds](https://twitter.com/kentcdodds)
