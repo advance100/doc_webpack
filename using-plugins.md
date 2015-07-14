@@ -29,7 +29,7 @@ which can then be used as follows:
 var ComponentPlugin = require("component-webpack-plugin");
 module.exports = {
 	plugins: [
-		new ComponentPlugin();
+		new ComponentPlugin()
 	]
 }
 ```
