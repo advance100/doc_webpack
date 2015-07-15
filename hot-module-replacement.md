@@ -126,7 +126,7 @@ Throws an exceptions if `status()` is not `idle`.
 
 Check all currently loaded modules for updates and apply updates if found.
 
-If no update where found, the callback is called with `null`.
+If no update was found, the callback is called with `null`.
 
 If `autoApply` is truthy the callback will be called with all modules that were disposed. `apply()` is automatically called with `autoApply` as `options` parameter.
 
@@ -162,11 +162,11 @@ The HMR is waiting for your call the `check()`. When you call it the status will
 
 The HMR is checking for updates. If it doesn't find updates it will change back to `idle`.
 
-If updates where found it will go through the steps `prepare`, `dispose` and `apply`. Than back to `idle`.
+If updates were found it will go through the steps `prepare`, `dispose` and `apply`. Than back to `idle`.
 
 `watch`
 
-The HMR is in watch mode and will automatically be notified about changes. After the first change it will change to `watch-delay` and wait for a specified time to start the update process. Any change will reset the timeout, to accumulate more changes. When the update process is started it will go through the steps `prepare`, `dispose` and `apply`. Than back to `watch` or `watch-delay` if changes where detected while updating.
+The HMR is in watch mode and will automatically be notified about changes. After the first change it will change to `watch-delay` and wait for a specified time to start the update process. Any change will reset the timeout, to accumulate more changes. When the update process is started it will go through the steps `prepare`, `dispose` and `apply`. Than back to `watch` or `watch-delay` if changes were detected while updating.
 
 `prepare`
 
