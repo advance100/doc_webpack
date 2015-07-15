@@ -131,7 +131,7 @@ or
 ``` javascript
 {
 	test: /\.png$/,
-	loader: "url-loader"
+	loader: "url-loader",
 	query: { mimetype: "image/png" }
 }
 ```
