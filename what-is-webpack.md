@@ -6,7 +6,7 @@ webpack takes modules with dependencies and generates static assets representing
 
 ## Why another module bundler?
 
-Existing module bundlers are not well suited for big projects (big single page application). The most pressing reason for developing another module bundler was [[Code Splitting]] and that static assets should fit seamlessly together through modularization.
+Existing module bundlers are not well suited for big projects (big single page applications). The most pressing reason for developing another module bundler was [[Code Splitting]] and that static assets should fit seamlessly together through modularization.
 
 I tried to extend existing module bundlers, but it wasn't possible to achieve all goals.
 
