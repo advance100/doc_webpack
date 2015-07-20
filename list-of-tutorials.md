@@ -72,6 +72,11 @@ A basic walkthrough of Webpack setup & configuration for transpiling your Angula
 
 2015-06-29 @Scott_Addie
 
+### [TypeScript and webpack](http://www.jbrantly.com/typescript-and-webpack/)
+A tutorial for integrating TypeScript with webpack.
+
+2015-07-19 @jbrantly
+
 ## Books
 
 ### [react-webpack-cookbook](https://github.com/christianalfoni/react-webpack-cookbook/wiki)
