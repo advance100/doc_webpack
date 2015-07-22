@@ -58,6 +58,7 @@
 * [`purs-loader`](https://www.npmjs.com/package/purs-loader): Loads [PureScript](http://www.purescript.org/) like JavaScript.
 * [`oj`](https://github.com/DragonsInn/oj-loader): Loads [OJ](https://github.com/musictheory/oj) (an Objective-C like language) files and compiles them to plain JavaScript.
 * [`ulmus`](https://github.com/unindented/ulmus-loader): Loads [Elm](http://elm-lang.org/) files and compiles them to plain JavaScript.
+* [`miel`](https://github.com/collardeau/miel-loader): Loads [Miel](https://github.com/collardeau/miel) syntax and compiles to JavaScript.
 
 ## templating
 
