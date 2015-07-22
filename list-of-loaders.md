@@ -9,7 +9,6 @@
 * [`exports`](https://github.com/webpack/exports-loader): Exports stuff from the module
 * [`expose`](https://github.com/webpack/expose-loader): Expose exports from a module to the global context
 * [`script`](https://github.com/webpack/script-loader): Executes a JavaScript file once in global context (like in script tag), requires are not parsed.
-* [`legacy`](https://github.com/peerigon/legacy-loader): Prevents scripts from extending the window object
 * [`source-map`](https://github.com/webpack/source-map-loader): Extract `sourceMappingURL` comments from modules and offer it to webpack
 * [`checksum`](https://github.com/naturalatlas/checksum-loader): Computes the checksum of a file
 * [`null`](https://github.com/webpack/null-loader): Emits an empty module.
