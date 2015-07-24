@@ -99,6 +99,8 @@ An initial chunk is a normal chunk. The only difference is that optimization tre
 To split your app into 2 files, say `app.js` and `vendor.js`, you can `require` the vendor files in `vendor.js`. Then pass this name to the `CommonsChunkPlugin` as shown below.
 
 ``` javascript
+var webpack = require("webpack");
+
 module.exports = {
   entry: {
     app: "./app.js",
@@ -135,6 +137,7 @@ With the `CommonsChunkPlugin` the runtime is moved to the commons chunk. The ent
 Example:
 
 ``` javascript
+var webpack = require("webpack");
 {
 	entry: { a: "./a", b: "./b" },
 	output: { filename: "[name].js" },
