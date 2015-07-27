@@ -359,6 +359,16 @@ An asset from a chunk was added to the compilation.
 
 # The `Parser` instance (`compiler.parser`)
 
+The parser instance takes a String and callback and will return and expression when there's a match.
+
+```javascript
+compiler.parser.plugin("var rewire", function (expr) {
+    //if you original module has 'var rewire'
+    //you now have a handle on the expresssion object   
+    return true;
+});
+```
+
 ### `program(ast)` bailing
 
 General purpose plugin interface for the AST of a code fragment.
