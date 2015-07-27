@@ -36,7 +36,7 @@ There are multiple types of plugin interfaces.
 	* parallel bailing: The handlers are invoked in parallel (async). The first returned value (by order) is significant.
 	* waterfall: Each handler gets the result value of the last handler as an argument.
 
-## `Compiler` instance
+# `Compiler` instance
 
 ### `run(compiler: Compiler)` async
 
@@ -131,6 +131,11 @@ After the factory has resolved the request. The `data` object has this propertie
 ### `alternatives(options: Array)` async waterfall
 
 # `Compilation` instance
+
+compiler.plugin("compilation", function(compilation) {
+    //the main compilation instance
+    //all subsequent methods are derived from compilation.plugin
+});
 
 ### `normal-module-loader`
 
