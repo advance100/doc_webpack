@@ -1,4 +1,4 @@
-A Webpack plugin is essentially a object that has an `apply` method which takes one argument (the compiler). For example, a plugin is a function, and the function prototype defines an `apply` method. But you can also define a "class" with the `apply` method.
+A Webpack plug-in is essentially a object that has an `apply` method which takes one argument (the compiler). For example, a plugin is a function, and the function prototype defines an `apply` method. But you can also define a "class" with the `apply` method.
 
 Many objects in webpack extend the Tapable class, which exposes a `plugin` method. And with the `plugin` method, plugins can bind custom stuff.  You will see `compiler.plugin` and `compilation.plugin` used a lot.  Essentially, each one of these plugins is a function which responds to a method name and callback function
 
@@ -43,7 +43,17 @@ MyPlugin.prototype.apply = function (compiler) {
 module.exports = MyPlugin;
 ```
 
-## interface types
+In webpack.config.js
+
+```javascript
+    plugins: [
+        new MyPlugin({
+            optiones: 'nada'
+        })
+    ]
+```
+
+### Note on interface types
 
 There are two types of plugin interfaces.
 
