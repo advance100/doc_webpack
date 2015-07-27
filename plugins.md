@@ -38,6 +38,48 @@ There are multiple types of plugin interfaces.
 
 # `Compiler` instance
 
+Plugins need to have the apply method on their prototype chain (or bound to) in order to have access to the compiler instance.
+
+```javascript
+
+//MyPlugin.js
+
+function MyPlugin() {};
+MyPlugin.prototype.apply = function (compiler) {
+    //now you have access to all the compiler instance methods
+}
+module.exports = MyPlugin;
+```
+
+Something like this should also work
+
+```javascript
+//MyFunction.js
+
+function apply(options, compiler) {
+    //now you have access to the compiler instance
+}
+
+//this little trick makes it easier to pass and check options to the plugin
+module.exports = function(options) {
+    if (options instanceof Array) {
+        options = {
+            include: options
+        };
+    }
+
+    if (!Array.isArray(options.include)) {
+        options.include = [ options.include ];
+    }
+
+    return {
+        apply: apply.bind(this, options)
+    };
+};
+
+```
+
+
 ### `run(compiler: Compiler)` async
 
 The `run` method of the Compiler is used to start a compilation. This is not called in watch mode.
