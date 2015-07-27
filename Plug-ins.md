@@ -181,37 +181,7 @@ All plugins extracted from the options object are added to the compiler.
 
 All plugins extracted from the options object are added to the resolvers.
 
-## NormalModuleFactory
-
-### `before-resolve(data)` async waterfall
-
-Before the factory starts resolving. The `data` object has this properties:
-
-* `context` The absolute path of the directory for resolving.
-* `request` The request of the expression.
-
-Plugins are allowed to modify the object or to pass a new similar object to the callback.
-
-### `after-resolve(data)` async waterfall
-
-After the factory has resolved the request. The `data` object has this properties:
-
-* `request` The resolved request. It acts as an identifier for the NormalModule.
-* `userRequest` The request the user entered. It's resolved, but does not contain pre or post loaders.
-* `rawRequest` The unresolved request.
-* `loaders` A array of resolved loaders. This is passed to the NormalModule and they will be executed.
-* `resource` The resource. It will be loaded by the NormalModule.
-* `parser` The parser that will be used by the NormalModule.
-
-## ContextModuleFactory
-
-### `before-resolve(data)` async waterfall
-
-### `after-resolve(data)` async waterfall
-
-### `alternatives(options: Array)` async waterfall
-
-# `Compilation` instance
+# The `Compilation` instance
 The Compilation instance extends from the compiler.  ie. compiler.compilation  It is the literal compilation of all the objects in the require graph.  This object has access to all the modules and their dependencies (most of which are circular references).  In the compilation phase, modules are loaded, sealed, optimized, chunked, hashed and restored, etc.  This would be the main lifecycle of any operations of the compilation.
 
 ```javascript
@@ -387,7 +357,7 @@ An asset from a module was added to the compilation.
 An asset from a chunk was added to the compilation.
 
 
-# `Parser` instance (`compiler.parser`)
+# The `Parser` instance (`compiler.parser`)
 
 ### `program(ast)` bailing
 
@@ -455,8 +425,38 @@ Evaluate a identifier that is a defined var.
 
 Evaluate a call to a member function of a successfully evaluated expression.
 
+# The `NormalModuleFactory`
 
-## Resolvers
+### `before-resolve(data)` async waterfall
+
+Before the factory starts resolving. The `data` object has this properties:
+
+* `context` The absolute path of the directory for resolving.
+* `request` The request of the expression.
+
+Plugins are allowed to modify the object or to pass a new similar object to the callback.
+
+### `after-resolve(data)` async waterfall
+
+After the factory has resolved the request. The `data` object has this properties:
+
+* `request` The resolved request. It acts as an identifier for the NormalModule.
+* `userRequest` The request the user entered. It's resolved, but does not contain pre or post loaders.
+* `rawRequest` The unresolved request.
+* `loaders` A array of resolved loaders. This is passed to the NormalModule and they will be executed.
+* `resource` The resource. It will be loaded by the NormalModule.
+* `parser` The parser that will be used by the NormalModule.
+
+# The `ContextModuleFactory`
+
+### `before-resolve(data)` async waterfall
+
+### `after-resolve(data)` async waterfall
+
+### `alternatives(options: Array)` async waterfall
+
+
+# Resolvers
 
 * `compiler.resolvers.normal` Resolver for a normal module
 * `compiler.resolvers.context` Resolver for a context module
