@@ -212,7 +212,7 @@ Remove a registered status change handler.
 
 
 
-## How to care with ...
+## How to deal with ...
 
 #### ... a module without side effects (the standard case)
 
