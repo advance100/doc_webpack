@@ -6,7 +6,7 @@ The following example is how you might use the Webpack Compiler Instance to expo
 
 ``` javascript
 compiler.plugin("compile", function(params) {
-    // Just print a text
+    // Just log some text
     console.log("Compiling...");
 });
 ```
