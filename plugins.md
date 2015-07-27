@@ -6,8 +6,8 @@ The following example is the Compiler exposing the `"compile"` plugin interface,
 
 ``` javascript
 compiler.plugin("compile", function(params) {
-	// Just print a text
-	console.log("Compiling...");
+    // Just print a text
+    console.log("Compiling...");
 });
 ```
 
@@ -15,9 +15,9 @@ A plugin only gets a reference to the compiler object, so if it wants to plug st
 
 ``` javascript
 compiler.plugin("compilation", function(compilation) {
-	compilation.plugin("optimize", function() {
-		console.log("The compilation is now optimizing your stuff");
-	});
+    compilation.plugin("optimize", function() {
+	console.log("The compilation is now optimizing your stuff");
+    });
 });
 ```
 
@@ -104,6 +104,12 @@ A `ContextModuleFactory` is created. A plugin can use this to obtain a reference
 
 The Compiler starts compiling. This is used in normal and watch mode. Plugins can use this point to modify the `params` object (i. e. to decorate the factories).
 
+```javascript
+    compiler.plugin("compile", function(params) {
+        //you are now in the "compile" phase
+    });
+```
+
 ### `make(c: Compilation)` parallel
 
 Plugins can use this point to add entries to the compilation or prefetch modules. They can do this by calling `addEntry(context, entry, name, callback)` or `prefetch(context, dependency, callback)` on the Compilation.
@@ -173,6 +179,8 @@ After the factory has resolved the request. The `data` object has this propertie
 ### `alternatives(options: Array)` async waterfall
 
 # `Compilation` instance
+The Compilation instance extends from the compiler.  ie. compiler.compilation  It is the literal compilation of all the objects in the require graph.  This object has access to all the modules and their dependencies (most of which are circular references).  In the compilation phase, modules are loaded, sealed, optimized, chunked, hashed and restored, etc.  This would be the main lifecycle of any operations of the compilation.
+
 ```javascript
 compiler.plugin("compilation", function(compilation) {
     //the main compilation instance
@@ -181,6 +189,7 @@ compiler.plugin("compilation", function(compilation) {
 ```
 
 ### `normal-module-loader`
+The normal module loader, is the function that actually loads all the modules in the module graph (one-by-one).
 ```javascript
 compilation.plugin('normal-module-loader', function(loaderContext, module) {
     //this is where all the modules are loaded
@@ -189,28 +198,56 @@ compilation.plugin('normal-module-loader', function(loaderContext, module) {
 ```
 
 ### `seal`
-
 The sealing of the compilation has started.
+```javascript
+compilation.plugin('seal', function() {
+    //you are not accepting any more modules
+    //no arguments
+});
+```
 
 ### `optimize`
-
 Optimize the compilation.
+```javascript
+compilation.plugin('optimize', function() {
+    //webpack is begining the optimization phase
+    // no arguments
+});
+```
 
 ### `optimize-tree(chunks, modules)` async
-
 Async optimization of the tree.
+```javascript
+compilation.plugin('optimize-tree', function(chunks, modules) {
+
+});
+```
 
 ### `optimize-modules(modules: Module[])`
-
 Optimize the modules.
+```javascript
+compilation.plugin('optimize-tree', function(module) {
+    //handle to the module during tree optimization
+});
+```
 
 ### `after-optimize-modules(modules: Module[])`
-
 Optimizing the modules has finished.
 
 ### `optimize-chunks(chunks: Chunk[])`
-
 Optimize the chunks.
+```javascript
+compilation.plugin('optimize-chunks', function(chunks) {
+    //unless you specified multiple entries in your config
+    //there's only one chunk at this point
+    chunks.forEach(function (chunk) {
+        //chunks have circular references to their modules
+        chunk.modules.forEach(function (module){
+            //module.loaders, module.rawRequest, module.dependencies, etc.
+        }); 
+    });
+});
+```
 
 ### `after-optimize-chunks(chunks: Chunk[])`
 
@@ -317,7 +354,7 @@ An asset from a module was added to the compilation.
 An asset from a chunk was added to the compilation.
 
 
-## `Parser` instance (`compiler.parser`)
+# `Parser` instance (`compiler.parser`)
 
 ### `program(ast)` bailing
 
