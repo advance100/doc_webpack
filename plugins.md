@@ -130,7 +130,16 @@ After the factory has resolved the request. The `data` object has this propertie
 
 ### `alternatives(options: Array)` async waterfall
 
-## `Compilation` instance
+# `Compilation` instance
+
+### `normal-module-loader`
+
+```javascript
+compilation.plugin('normal-module-loader', function(loaderContext, module) {
+    //this is where all the modules are loaded
+    //one by one, no dependencies are created yet
+});
+```
 
 ### `seal`
 
