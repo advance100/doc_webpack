@@ -105,9 +105,9 @@ A `ContextModuleFactory` is created. A plugin can use this to obtain a reference
 The Compiler starts compiling. This is used in normal and watch mode. Plugins can use this point to modify the `params` object (i. e. to decorate the factories).
 
 ```javascript
-    compiler.plugin("compile", function(params) {
-        //you are now in the "compile" phase
-    });
+compiler.plugin("compile", function(params) {
+    //you are now in the "compile" phase
+});
 ```
 
 ### `make(c: Compilation)` parallel
@@ -226,7 +226,7 @@ compilation.plugin('optimize-tree', function(chunks, modules) {
 ### `optimize-modules(modules: Module[])`
 Optimize the modules.
 ```javascript
-compilation.plugin('optimize-tree', function(module) {
+compilation.plugin('optimize-modules', function(module) {
     //handle to the module during tree optimization
 });
 ```
