@@ -1,8 +1,8 @@
-A (webpack) plugin is a object that has an `apply` method with one parameter, the compiler. For example, a plugin is a function, and the function prototype defines an `apply` method. But you can also define a "class" with the `apply` method.
+A Webpack plugin is essentially a object that has an `apply` method which takes one argument (the compiler). For example, a plugin is a function, and the function prototype defines an `apply` method. But you can also define a "class" with the `apply` method.
 
-Many objects in webpack extend the Tapable class, which exposes a `plugin` method. And with the `plugin` method, plugins can bind custom stuff.
+Many objects in webpack extend the Tapable class, which exposes a `plugin` method. And with the `plugin` method, plugins can bind custom stuff.  You will compiler.plugin and compilation.plugin a lot.  Essentially, each one of these plugins responds to a method name and callback function
 
-The following example is the Compiler exposing the `"compile"` plugin interface, which is called when the Compiler compiles.
+The following example is how you might use the Webpack Compiler Instance to expose the `"compile"` plugin interface, which is called when the Compiler begins compiling.
 
 ``` javascript
 compiler.plugin("compile", function(params) {
@@ -11,7 +11,7 @@ compiler.plugin("compile", function(params) {
 });
 ```
 
-A plugin only gets a reference to the compiler object, so if it wants to plug stuff into other webpack objects it has to gain access to them, i.e., to the Compilation object:
+A plugin only gets a single reference to the compiler object, so if it wants to plug stuff into other webpack objects it has to gain access to them, i.e., to the Compilation object:
 
 ``` javascript
 compiler.plugin("compilation", function(compilation) {
@@ -21,9 +21,31 @@ compiler.plugin("compilation", function(compilation) {
 });
 ```
 
+The complete example might look like this:
+
+```javascript
+
+//MyPlugin.js
+
+function MyPlugin() {};
+MyPlugin.prototype.apply = function (compiler) {
+    compiler.plugin("compile", function(params) {
+        // Just log something
+        console.log("Compiling...");
+    });
+
+    compiler.plugin("compilation", function(compilation) {
+        compilation.plugin("optimize", function() {
+	    console.log("The compilation is now optimizing your stuff");
+        });
+    });
+}
+module.exports = MyPlugin;
+```
+
 ## interface types
 
-There are multiple types of plugin interfaces.
+There are two types of plugin interfaces.
 
 * Timing
 	* sync (default): As seen above. Use return.
