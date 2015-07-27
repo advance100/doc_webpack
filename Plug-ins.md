@@ -53,11 +53,11 @@ In webpack.config.js
     ]
 ```
 
-### Note on interface types
+### Note on interface types...
 
 There are two types of plugin interfaces.
 
-* Timing
+* Timing based
 	* sync (default): As seen above. Use return.
 	* async: Last parameter is a callback. Signature: function(err, result)
 	* parallel: The handlers are invoked parallel (async).
@@ -68,7 +68,7 @@ There are two types of plugin interfaces.
 	* parallel bailing: The handlers are invoked in parallel (async). The first returned value (by order) is significant.
 	* waterfall: Each handler gets the result value of the last handler as an argument.
 
-# `Compiler` instance
+# The `Compiler` instance
 
 Plugins need to have the apply method on their prototype chain (or bound to) in order to have access to the compiler instance.
 
