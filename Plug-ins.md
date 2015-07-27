@@ -90,6 +90,7 @@ Something like this should also work
 
 function apply(options, compiler) {
     //now you have access to the compiler instance
+    //and options
 }
 
 //this little trick makes it easier to pass and check options to the plugin
