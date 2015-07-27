@@ -131,14 +131,14 @@ After the factory has resolved the request. The `data` object has this propertie
 ### `alternatives(options: Array)` async waterfall
 
 # `Compilation` instance
-
+```javascript
 compiler.plugin("compilation", function(compilation) {
     //the main compilation instance
     //all subsequent methods are derived from compilation.plugin
 });
+```
 
 ### `normal-module-loader`
-
 ```javascript
 compilation.plugin('normal-module-loader', function(loaderContext, module) {
     //this is where all the modules are loaded
