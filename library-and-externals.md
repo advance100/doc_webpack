@@ -1,10 +1,10 @@
-You developed a library and want to distribute it in a compiled/bundled versions (in addition to the modularized version). You want to allow the user to use it in a `<script>`-tag or with a [[amd]] loader (i. e. `require.js`). Or you depend on various precompilations and want to take the pain for the user and distribute it as simple compiled [[commonjs]] module.
+You developed a library and want to distribute it in compiled/bundled versions (in addition to the modularized version). You want to allow the user to use it in a `<script>`-tag or with a [[amd]] loader (i. e. `require.js`). Or you depend on various precompilations and want to take the pain for the user and distribute it as simple compiled [[commonjs]] module.
 
 ## configuration options
 
-webpack has three [[configuration]] options that are relevant for that use cases: `output.library`, `output.libraryTarget` and `externals`.
+webpack has three [[configuration]] options that are relevant for these use cases: `output.library`, `output.libraryTarget` and `externals`.
 
-`output.libraryTarget` allows you to specify the kind to the output. I. e. CommonJs, AMD, for usage in a script tag or as UMD module.
+`output.libraryTarget` allows you to specify the kind to the output. I.e. CommonJs, AMD, for usage in a script tag or as UMD module.
 
 `output.library` allows you to optionally specify a name of your library.
 
@@ -64,7 +64,7 @@ var Foo = (/* ... webpack bootstrap ... */
 
 ## Applications and externals
 
-You can use the `externals` options for applications too, when you want to import an existing API into the bundle. I. e. you want to use jquery from CDN (separate `<script>` tag) and still want to `require("jquery")` in your bundle. Just specify it as external: `{ externals: { jquery: "jQuery" } }`.
+You can use the `externals` options for applications too, when you want to import an existing API into the bundle. I.e. you want to use jquery from CDN (separate `<script>` tag) and still want to `require("jquery")` in your bundle. Just specify it as external: `{ externals: { jquery: "jQuery" } }`.
 
 ## Resolving and externals
 
