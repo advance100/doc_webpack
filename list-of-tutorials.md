@@ -1,5 +1,8 @@
 ## Articles
 
+### [Webpack + React + React router + Flux (Altjs)](https://underthehood.myob.com/changing-of-the-guard-in-web-technologies/)
+Beginner friendly introduction to Webpack to build a simple React + Alt.js example application.
+
 ### [The ultimate webpack setup](http://christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup)
 Using webpack with an express node server. Great for prototyping and generally good setup for any project.
 
