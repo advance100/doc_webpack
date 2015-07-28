@@ -229,8 +229,8 @@ compilation.plugin('optimize-tree', function(chunks, modules) {
 ### `optimize-modules(modules: Module[])`
 Optimize the modules.
 ```javascript
-compilation.plugin('optimize-modules', function(module) {
-    //handle to the module during tree optimization
+compilation.plugin('optimize-modules', function(modules) {
+    //handle to the modules array during tree optimization
 });
 ```
 
