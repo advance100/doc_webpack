@@ -113,27 +113,27 @@ module.exports = function(options) {
 ```
 
 
-### `run(compiler: Compiler)` async
+#### `run(compiler: Compiler)` async
 
 The `run` method of the Compiler is used to start a compilation. This is not called in watch mode.
 
-### `watch-run(watching: Watching)` async
+#### `watch-run(watching: Watching)` async
 
 The `watch` method of the Compiler is used to start a watching compilation. This is not called in normal mode.
 
-### `compilation(c: Compilation, params: Object)`
+#### `compilation(c: Compilation, params: Object)`
 
 A `Compilation` is created. A plugin can use this to obtain a reference to the `Compilation` object. The `params` object contains useful references.
 
-### `normal-module-factory(nmf: NormalModuleFactory)`
+#### `normal-module-factory(nmf: NormalModuleFactory)`
 
 A `NormalModuleFactory` is created. A plugin can use this to obtain a reference to the `NormalModuleFactory` object.
 
-### `context-module-factory(cmf: ContextModuleFactory)`
+#### `context-module-factory(cmf: ContextModuleFactory)`
 
 A `ContextModuleFactory` is created. A plugin can use this to obtain a reference to the `ContextModuleFactory` object.
 
-### `compile(params)`
+#### `compile(params)`
 
 The Compiler starts compiling. This is used in normal and watch mode. Plugins can use this point to modify the `params` object (i. e. to decorate the factories).
 
@@ -143,41 +143,41 @@ compiler.plugin("compile", function(params) {
 });
 ```
 
-### `make(c: Compilation)` parallel
+#### `make(c: Compilation)` parallel
 
 Plugins can use this point to add entries to the compilation or prefetch modules. They can do this by calling `addEntry(context, entry, name, callback)` or `prefetch(context, dependency, callback)` on the Compilation.
 
-### `after-compile(c: Compilation)` async
+#### `after-compile(c: Compilation)` async
 
 The compile process is finished and the modules are sealed. The next step is to emit the generated stuff. Here modules can use the results in some cool ways.
 
 The handlers are not copied to child compilers.
 
-### `emit(c: Compilation)` async
+#### `emit(c: Compilation)` async
 
 The Compiler begins with emitting the generated assets. Here plugins have the last chance to add assets to the `c.assets` array.
 
-### `after-emit(c: Compilation)` async
+#### `after-emit(c: Compilation)` async
 
 The Compiler has emitted all assets.
 
-### `done(stats: Stats)`
+#### `done(stats: Stats)`
 
 All is done.
 
-### `failed(err: Error)`
+#### `failed(err: Error)`
 
 The Compiler is in watch mode and a compilation has failed hard.
 
-### `invalid()`
+#### `invalid()`
 
 The Compiler is in watch mode and a file change is detected. The compilation will be begin shortly (`options.watchDelay`).
 
-### `after-plugins()`
+#### `after-plugins()`
 
 All plugins extracted from the options object are added to the compiler.
 
-### `after-resolvers()`
+#### `after-resolvers()`
 
 All plugins extracted from the options object are added to the resolvers.
 
@@ -191,7 +191,7 @@ compiler.plugin("compilation", function(compilation) {
 });
 ```
 
-### `normal-module-loader`
+#### `normal-module-loader`
 The normal module loader, is the function that actually loads all the modules in the module graph (one-by-one).
 ```javascript
 compilation.plugin('normal-module-loader', function(loaderContext, module) {
@@ -200,7 +200,7 @@ compilation.plugin('normal-module-loader', function(loaderContext, module) {
 });
 ```
 
-### `seal`
+#### `seal`
 The sealing of the compilation has started.
 ```javascript
 compilation.plugin('seal', function() {
@@ -209,7 +209,7 @@ compilation.plugin('seal', function() {
 });
 ```
 
-### `optimize`
+#### `optimize`
 Optimize the compilation.
 ```javascript
 compilation.plugin('optimize', function() {
@@ -218,7 +218,7 @@ compilation.plugin('optimize', function() {
 });
 ```
 
-### `optimize-tree(chunks, modules)` async
+#### `optimize-tree(chunks, modules)` async
 Async optimization of the tree.
 ```javascript
 compilation.plugin('optimize-tree', function(chunks, modules) {
@@ -226,7 +226,7 @@ compilation.plugin('optimize-tree', function(chunks, modules) {
 });
 ```
 
-### `optimize-modules(modules: Module[])`
+#### `optimize-modules(modules: Module[])`
 Optimize the modules.
 ```javascript
 compilation.plugin('optimize-modules', function(modules) {
@@ -234,10 +234,10 @@ compilation.plugin('optimize-modules', function(modules) {
 });
 ```
 
-### `after-optimize-modules(modules: Module[])`
+#### `after-optimize-modules(modules: Module[])`
 Optimizing the modules has finished.
 
-### `optimize-chunks(chunks: Chunk[])`
+#### `optimize-chunks(chunks: Chunk[])`
 Optimize the chunks.
 ```javascript
 compilation.plugin('optimize-chunks', function(chunks) {
@@ -252,71 +252,71 @@ compilation.plugin('optimize-chunks', function(chunks) {
 });
 ```
 
-### `after-optimize-chunks(chunks: Chunk[])`
+#### `after-optimize-chunks(chunks: Chunk[])`
 
 Optimizing the chunks has finished.
 
-### `revive-modules(modules: Module[], records)`
+#### `revive-modules(modules: Module[], records)`
 
 Restore module info from records.
 
-### `optimize-module-order(modules: Module[])`
+#### `optimize-module-order(modules: Module[])`
 
 Sort the modules in order of importance. The first is the most important module. It will get the smallest id.
 
-### `optimize-module-ids(modules: Module[])`
+#### `optimize-module-ids(modules: Module[])`
 
 Optimize the module ids.
 
-### `after-optimize-module-ids(modules: Module[])`
+#### `after-optimize-module-ids(modules: Module[])`
 
 Optimizing the module ids has finished.
 
-### `record-modules(modules: Module[], records)`
+#### `record-modules(modules: Module[], records)`
 
 Store module info to the records.
 
-### `revive-chunks(chunks: Chunk[], records)`
+#### `revive-chunks(chunks: Chunk[], records)`
 
 Restore chunk info from records.
 
-### `optimize-chunk-order(chunks: Chunk[])`
+#### `optimize-chunk-order(chunks: Chunk[])`
 
 Sort the chunks in order of importance. The first is the most important chunk. It will get the smallest id.
 
-### `optimize-chunk-ids(chunks: Chunk[])`
+#### `optimize-chunk-ids(chunks: Chunk[])`
 
 Optimize the chunk ids.
 
-### `after-optimize-chunk-ids(chunks: Chunk[])`
+#### `after-optimize-chunk-ids(chunks: Chunk[])`
 
 Optimizing the chunk ids has finished.
 
-### `record-chunks(chunks: Chunk[], records)`
+#### `record-chunks(chunks: Chunk[], records)`
 
 Store chunk info to the records.
 
-### `before-hash`
+#### `before-hash`
 
 Before the compilation is hashed.
 
-### `after-hash`
+#### `after-hash`
 
 After the compilation is hashed.
 
-### `before-chunk-assets`
+#### `before-chunk-assets`
 
 Before creating the chunk assets.
 
-### `additional-chunk-assets(chunks: Chunk[])`
+#### `additional-chunk-assets(chunks: Chunk[])`
 
 Create additional assets for the chunks.
 
-### `record(compilation, records)`
+#### `record(compilation, records)`
 
 Store info about the compilation to the records
 
-### `optimize-chunk-assets(chunks: Chunk[])` async
+#### `optimize-chunk-assets(chunks: Chunk[])` async
 
 Optimize the assets for the chunks.
 
@@ -324,7 +324,7 @@ The assets are stored in `this.assets`, but not all of them are chunk assets. A 
 
 #### `after-optimize-chunk-assets(chunks: Chunk[])`
 
-The chunk assets have been optimized. Here's an example plugin that tells you exactly what went into each chunk.  
+The chunk assets have been optimized. Here's an example plugin from @boopathi that outputs exactly what went into each chunk.  
 
 ```javascript
 var PrintChunksPlugin = function() {};
@@ -345,33 +345,33 @@ PrintChunksPlugin.prototype.apply = function(compiler) {
 };
 ```
 
-### `optimize-assets(assets: Object{name: Source})` async
+#### `optimize-assets(assets: Object{name: Source})` async
 
 Optimize all assets.
 
 The assets are stored in `this.assets`.
 
-### `after-optimize-assets(assets: Object{name: Source})`
+#### `after-optimize-assets(assets: Object{name: Source})`
 
 The assets has been optimized.
 
-### `build-module`
+#### `build-module`
 
 Before a module build has started.
 
-### `succeed-module`
+#### `succeed-module`
 
 A module has been built successfully.
 
-### `failed-module`
+#### `failed-module`
 
 The module build has failed.
 
-### `module-asset(module, filename)`
+#### `module-asset(module, filename)`
 
 An asset from a module was added to the compilation.
 
-### `chunk-asset(chunk, filename)`
+#### `chunk-asset(chunk, filename)`
 
 An asset from a chunk was added to the compilation.
 
@@ -388,75 +388,75 @@ compiler.parser.plugin("var rewire", function (expr) {
 });
 ```
 
-### `program(ast)` bailing
+#### `program(ast)` bailing
 
 General purpose plugin interface for the AST of a code fragment.
 
-### `statement(statement: Statement)` bailing
+#### `statement(statement: Statement)` bailing
 
 General purpose plugin interface for the statements of the code fragment.
 
-### `call <identifier>(expr: Expression)` bailing
+#### `call <identifier>(expr: Expression)` bailing
 
 `abc(1)` => `call abc`
 
 `a.b.c(1)` => `call a.b.c`
 
-### `expression <identifier>(expr: Expression)` bailing
+#### `expression <identifier>(expr: Expression)` bailing
 
 `abc` => `expression abc`
 
 `a.b.c` => `expression a.b.c`
 
-### `expression ?:(expr: Expression)` bailing
+#### `expression ?:(expr: Expression)` bailing
 
 `(abc ? 1 : 2)` => `expression ?!`
 
 Return a boolean value to omit parsing of the wrong path.
 
-### `typeof <identifier>(expr: Expression)` bailing
+#### `typeof <identifier>(expr: Expression)` bailing
 
 `typeof a.b.c` => `typeof a.b.c`
 
-### `statement if(statement: Statement)` bailing
+#### `statement if(statement: Statement)` bailing
 
 `if(abc) {}` => `statement if`
 
 Return a boolean value to omit parsing of the wrong path.
 
-### `label <labelname>(statement: Statement)` bailing
+#### `label <labelname>(statement: Statement)` bailing
 
 `xyz: abc` => `label xyz`
 
-### `var <name>(statement: Statement)` bailing
+#### `var <name>(statement: Statement)` bailing
 
 `var abc, def` => `var abc` + `var def`
 
 Return `false` to not add the variable to the known definitions.
 
-### `evaluate <expression type>(expr: Expression)` bailing
+#### `evaluate <expression type>(expr: Expression)` bailing
 
 Evaluate an expression.
 
-### `evaluate typeof <identifier>(expr: Expression)` bailing
+#### `evaluate typeof <identifier>(expr: Expression)` bailing
 
 Evaluate the type of an identifier.
 
-### `evaluate Identifier <identifier>(expr: Expression)` bailing
+#### `evaluate Identifier <identifier>(expr: Expression)` bailing
 
 Evaluate a identifier that is a free var.
 
-### `evaluate defined Identifier <identifier>(expr: Expression)` bailing
+#### `evaluate defined Identifier <identifier>(expr: Expression)` bailing
 
 Evaluate a identifier that is a defined var.
 
-### `evaluate CallExpression .<property>(expr: Expression)` bailing
+#### `evaluate CallExpression .<property>(expr: Expression)` bailing
 
 Evaluate a call to a member function of a successfully evaluated expression.
 
 # The `NormalModuleFactory`
 
-### `before-resolve(data)` async waterfall
+#### `before-resolve(data)` async waterfall
 
 Before the factory starts resolving. The `data` object has this properties:
 
@@ -465,7 +465,7 @@ Before the factory starts resolving. The `data` object has this properties:
 
 Plugins are allowed to modify the object or to pass a new similar object to the callback.
 
-### `after-resolve(data)` async waterfall
+#### `after-resolve(data)` async waterfall
 
 After the factory has resolved the request. The `data` object has this properties:
 
@@ -478,11 +478,11 @@ After the factory has resolved the request. The `data` object has this propertie
 
 # The `ContextModuleFactory`
 
-### `before-resolve(data)` async waterfall
+#### `before-resolve(data)` async waterfall
 
-### `after-resolve(data)` async waterfall
+#### `after-resolve(data)` async waterfall
 
-### `alternatives(options: Array)` async waterfall
+#### `alternatives(options: Array)` async waterfall
 
 
 # Resolvers
@@ -527,27 +527,27 @@ interface Request {
 }
 ```
 
-### `resolve(context: String, request: String)`
+#### `resolve(context: String, request: String)`
 
 Before the resolving process starts.
 
-### `resolve-step(types: String[], request: Request)`
+#### `resolve-step(types: String[], request: Request)`
 
 Before a single step in the resolving process starts.
 
-### `module(request: Request)` async waterfall
+#### `module(request: Request)` async waterfall
 
 A module request is found and should be resolved.
 
-### `directory(request: Request)` async waterfall
+#### `directory(request: Request)` async waterfall
 
 A directory request is found and should be resolved.
 
-### `file(request: Request)` async waterfall
+#### `file(request: Request)` async waterfall
 
 A file request is found and should be resolved.
 
-### The plugins may offer more extensions points
+#### The plugins may offer more extensions points
 
 Here is a list what the default plugins in webpack offer. They are all `(request: Request)` async waterfall.
 
