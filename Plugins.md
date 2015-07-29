@@ -322,9 +322,28 @@ Optimize the assets for the chunks.
 
 The assets are stored in `this.assets`, but not all of them are chunk assets. A `Chunk` has a property `files` which points to all files created by this chunk. The additional chunk assets are stored in `this.additionalChunkAssets`.
 
-### `after-optimize-chunk-assets(chunks: Chunk[])`
+#### `after-optimize-chunk-assets(chunks: Chunk[])`
 
-The chunk assets has been optimized.
+The chunk assets have been optimized. Here's an example plugin that tells you exactly what went into each chunk.  
+
+```javascript
+var PrintChunksPlugin = function() {};
+PrintChunksPlugin.prototype.apply = function(compiler) {
+    compiler.plugin('compilation', function(compilation, params) {
+        compilation.plugin('after-optimize-chunk-assets', function(chunks) {
+            console.log(chunks.map(function(c) {
+                return {
+                    id: c.id,
+                    name: c.name,
+                    includes: c.modules.map(function(m) {
+                        return m.request;
+                    })
+                };
+            }));
+        });
+    });
+};
+```
 
 ### `optimize-assets(assets: Object{name: Source})` async
 
