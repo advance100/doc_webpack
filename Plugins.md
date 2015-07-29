@@ -129,6 +129,15 @@ A `Compilation` is created. A plugin can use this to obtain a reference to the `
 
 A `NormalModuleFactory` is created. A plugin can use this to obtain a reference to the `NormalModuleFactory` object.
 
+```javascript
+
+compiler.plugin("normal-module-factory", function(nmf) {
+    nmf.plugin("after-resolve", function(data) {
+        data.loaders.unshift(path.join(__dirname, "postloader.js"));
+    });
+});
+```
+
 #### `context-module-factory(cmf: ContextModuleFactory)`
 
 A `ContextModuleFactory` is created. A plugin can use this to obtain a reference to the `ContextModuleFactory` object.
