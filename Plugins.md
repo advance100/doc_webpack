@@ -389,6 +389,21 @@ An asset from a module was added to the compilation.
 
 An asset from a chunk was added to the compilation.
 
+# The `MainTemplate` instance
+
+#### `startup(source, module, hash)`
+```javascript
+    compilation.mainTemplate.plugin('startup', function(source, module, hash) {
+      if (!module.chunks.length && source.indexOf('__ReactStyle__') === -1) {
+        var originName = module.origins && module.origins.length ? module.origins[0].name : 'main';
+        return ['if (typeof window !== "undefined") {',
+            '  window.__ReactStyle__ = ' + JSON.stringify(classNames[originName]) + ';',
+            '}'
+          ].join('\n') + source;
+      }
+      return source;
+    });
+```
 
 # The `Parser` instance (`compiler.parser`)
 
