@@ -132,7 +132,7 @@ The filename of the SourceMaps for the JavaScript files. They are inside the `ou
 
 ### `output.devtoolModuleFilenameTemplate`
 
-Filename template for the `sources` array in a generated SourceMap.
+Filename template string of function for the `sources` array in a generated SourceMap.
 
 `[resource]` is replaced by the path used by Webpack to resolve the file, including the query params to the rightmost loader (if any).
 
@@ -151,6 +151,18 @@ Filename template for the `sources` array in a generated SourceMap.
 > Default (devtool=`[inline-]source-map`): `"webpack:///[resource-path]"`  
 > Default (devtool=`eval`): `"webpack:///[resource-path]?[loaders]"`  
 > Default (devtool=`eval-source-map`): `"webpack:///[resource-path]?[hash]"`
+
+Can also be defined as a function instead of a string template.
+The function will accept an `info` object parameter which exposes the following properties:
+- identifier
+- shortIdentifier
+- resource
+- resourcePath
+- absoluteResourcePath
+- allLoaders
+- query
+- moduleId
+- hash
 
 ### `output.devtoolFallbackModuleFilenameTemplate`
 
