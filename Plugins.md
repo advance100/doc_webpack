@@ -324,7 +324,7 @@ The assets are stored in `this.assets`, but not all of them are chunk assets. A 
 
 #### `after-optimize-chunk-assets(chunks: Chunk[])`
 
-The chunk assets have been optimized. Here's an example plugin from (@boopathi)[https://github.com/boopathi] that outputs exactly what went into each chunk.  
+The chunk assets have been optimized. Here's an example plugin from [@boopathi](https://github.com/boopathi) that outputs exactly what went into each chunk.  
 
 ```javascript
 var PrintChunksPlugin = function() {};
