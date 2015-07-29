@@ -322,6 +322,20 @@ Optimize the assets for the chunks.
 
 The assets are stored in `this.assets`, but not all of them are chunk assets. A `Chunk` has a property `files` which points to all files created by this chunk. The additional chunk assets are stored in `this.additionalChunkAssets`.
 
+Here's an example that simply adds a banner to each chunk.
+
+```javascript
+compilation.plugin("optimize-chunk-assets", function(chunks, callback) {
+    chunks.forEach(function(chunk) {
+        chunk.files.forEach(function(file) {
+            compilation.assets[file] = new ConcatSource("\/**Sweet Banner**\/", "\n", compilation.assets[file]);
+        });
+    });
+    callback();
+});
+```
+
+
 #### `after-optimize-chunk-assets(chunks: Chunk[])`
 
 The chunk assets have been optimized. Here's an example plugin from [@boopathi](https://github.com/boopathi) that outputs exactly what went into each chunk.  
