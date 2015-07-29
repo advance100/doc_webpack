@@ -382,13 +382,29 @@ The assets has been optimized.
 
 Before a module build has started.
 
+```javascript
+compilation.plugin('build-module', function(){
+    console.log('build module');
+});
+```
+
 #### `succeed-module`
 
 A module has been built successfully.
+```javascript
+compilation.plugin('succeed-module', function(){
+    console.log('succeed module');
+});
+```
 
 #### `failed-module`
 
 The module build has failed.
+```javascript
+compilation.plugin('failed-module', function(){
+    console.log('failed module');
+});
+```
 
 #### `module-asset(module, filename)`
 
