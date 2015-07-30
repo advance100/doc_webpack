@@ -22,7 +22,7 @@ Examples:
 
 `require("imports?$=jquery!./file.js")`
 
-##### `file.js` expect its configuration on a global variable `xConfig` and you want it do be `{value:123}`.
+##### `file.js` expect its configuration on a global variable `xConfig` and you want it to be `{value:123}`.
 
 `require("imports?xConfig=>{value:123}!./file.js")`
 
