@@ -82,7 +82,7 @@ Display a compilation progress to stderr.
 
 Write JSON to stdout instead of a human readable format.
 
-> Hint: Try to put the result into the [anaylse tool](http://webpack.github.com/analyse).
+> Hint: Try to put the result into the [analyse tool](http://webpack.github.com/analyse).
 
 #### `--colors`
 
