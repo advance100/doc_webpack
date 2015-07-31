@@ -1,14 +1,14 @@
-Usage with Visual Studio
+## Usage with Visual Studio
 
-It is a simple task to integrate Visual Studio with webpack, all you need to do is use the external tool feature.
+It is a simple task to integrate Visual Studio with Webpack. All you need to do is use the external tool feature. After following the instructions below, you'll see a new command button on the ribbon within the IDE. Clicking the button will toggle Webpack's watch mode on and off. When turned on, a change to any bundle dependencies will trigger the Webpack build process. The output will appear within Visual Studio's Output window. 
 
 ## You can add an external tool to the Tools menu. 
 
 1. Open the External Tools dialog box and click Add.
-1. Title: field use webpack
-1. Command: path to webpack `webpack.cmd` - Assuming webpack was installed globally with npm.
+1. Title: webpack
+1. Command: The path to the `webpack.cmd` file. Assuming Webpack was installed globally with npm, the path is:
    `C:\Users\{{username}}\AppData\Roaming\npm\webpack.cmd`
-1. Arguments: `-w`
+1. Arguments: `-w` (can also specify other [CLI options](http://webpack.github.io/docs/cli.html), such as `--display-modules`)
 1. Check `Use Output window`
 
 ![Visual Studio External Tool](http://d3m4lzjblc2qwl.cloudfront.net/webpack-tool.png)
