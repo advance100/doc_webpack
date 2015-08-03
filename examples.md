@@ -2,7 +2,7 @@
 
 ## Basic usage
 
-* [CommonsJs](https://github.com/webpack/webpack/tree/master/examples/commonjs)
+* [CommonJs](https://github.com/webpack/webpack/tree/master/examples/commonjs)
 
 ## Code Splitting
 
