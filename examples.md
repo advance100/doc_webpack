@@ -16,7 +16,7 @@
 ## module styles
 
 * [labeled modules](https://github.com/webpack/webpack/tree/master/examples/labeled-modules)
-* [CommonsJs, AMD and labeled modules mixed](https://github.com/webpack/webpack/tree/master/examples/mixed)
+* [CommonJs, AMD and labeled modules mixed](https://github.com/webpack/webpack/tree/master/examples/mixed)
 * [Component modules](https://github.com/webpack/webpack/tree/master/examples/component)
 
 ## library and externals
@@ -42,7 +42,7 @@
 
 # advanced examples
 
-## advanced CommonsJs
+## advanced CommonJs
 
 * [require.resolve](https://github.com/webpack/webpack/tree/master/examples/require.resolve)
 
