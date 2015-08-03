@@ -178,11 +178,11 @@ new webpack.optimize.UglifyJsPlugin({
 
 With this the plugin will not mangle any occurrence of '$super', '$', 'exports' or 'require'.
  
-### [`ngMinPlugin`](http://github.com/jeffling/ngmin-webpack-plugin)
+### [`ngAnnotatePlugin`](https://github.com/jeffling/ng-annotate-webpack-plugin)
 ``` javascript
-new ngMinPlugin([options]);
+new ngAnnotatePlugin([options]);
 ```
-Runs the [ngmin](http://github.com/btford/ngmin) pre-minimizer to insert AngularJS DI annotations.
+Runs the [ng-annotate](https://github.com/olov/ng-annotate) pre-minimizer to insert AngularJS dependency injection annotations.
 
 
 ### `CommonsChunkPlugin`
