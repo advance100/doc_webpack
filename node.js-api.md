@@ -68,7 +68,7 @@ Returns `true` if there were errors while compiling.
 
 ### `stats.hasWarnings`
 
-Returns `true` if there were errors while compiling.
+Returns `true` if there were warnings while compiling.
 
 ### `stats.toJson(options)`
 
