@@ -22,7 +22,7 @@ The _webpack-dev-server_ will serve the files in the current directory, unless y
 $ webpack-dev-server --content-base build/
 ```
 
-Using this config _webpack-dev-server_ will serve the static files in your `build` folder and watch your source files for changes. When changes are made the _bundle_ will be recompiled. This modified _bundle_ is served from memory at the relative path specified in `publicPath` (see [API](#API)). It will not be written to your configured output directory. Where a _bundle_ already exists at the same url path the _bundle_ in memory will take precedence.
+Using this config _webpack-dev-server_ will serve the static files in your `build` folder and watch your source files for changes. When changes are made the _bundle_ will be recompiled. This modified _bundle_ is served from memory at the relative path specified in `publicPath` (see [API](#api)). It will not be written to your configured output directory. Where a _bundle_ already exists at the same url path the _bundle_ in memory will take precedence.
 
 For example with the configuration above your _bundle_ will be available at `localhost:8080/assets/bundle.js`
  
