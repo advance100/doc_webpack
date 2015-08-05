@@ -1,10 +1,21 @@
+# 1.10
+
+(2015-08-05)
+
+* API: added (experimental) NamedModulesPlugin
+* API: added stats presets
+* beautified source code and enforced beautified source code in CI
+
 # 1.9
 
-(2015-05-18)
-
+* BUG: fixed hashing problems
+* CLI: allow webpack.config.babel.js
+* CLI: fixed passing entries over CLI
+* API: rename target atom to electron
 * API: include/exclude for BannerPlugin
 * API: added watchOptions (i. e. polling)
 * API: sort by global order by default
+* BUG: Support webpack bundles with externals in webpack bundles
 
 # 1.8
 
