@@ -249,6 +249,8 @@ Optimizing the modules has finished.
 #### `optimize-chunks(chunks: Chunk[])`
 Optimize the chunks.
 ```javascript
+//optimize chunks may be run several times in a compilation
+
 compilation.plugin('optimize-chunks', function(chunks) {
     //unless you specified multiple entries in your config
     //there's only one chunk at this point
