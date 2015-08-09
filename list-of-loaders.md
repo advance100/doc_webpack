@@ -117,7 +117,7 @@
 * [`eslint`](https://github.com/MoOx/eslint-loader): PreLoader for linting code using ESLint.
 * [`jshint`](https://github.com/webpack/jshint-loader): PreLoader for linting code.
 * [`jscs`](https://github.com/unindented/jscs-loader): PreLoader for style checking.
-* [`standard`](https://github.com/timoxley/standard-loader): Conform to standard code style.
+* [`standard`](https://github.com/timoxley/standard-loader): Conform to [standard](https://github.com/feross/standard) code style.
 * [`injectable`](https://github.com/jauco/webpack-injectable): Allow to inject dependencies into modules
 * [`transform`](https://github.com/webpack/transform-loader): Use browserify transforms as loader.
 * [`image-size`](https://github.com/patcoll/image-size-loader): Loads an image and returns its dimensions and type
