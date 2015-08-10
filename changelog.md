@@ -1,6 +1,6 @@
 # 1.11
 
-(2015-08-10)
+(2015-08-06)
 
 * BUG: fix for incorrect order with extract-text-webpack-plugin and in output files
 
