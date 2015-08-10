@@ -22,6 +22,12 @@ There is an [analyse tool](http://webpack.github.io/analyse/) which visualise yo
 
 You can generate the required JSON file by running `webpack --profile --json > stats.json`
 
+# Chunks
+
+Generating the source file from internal representation is expensive. Each chunk is cached on it's own, but only if nothing changes in this chunk. Most chunks only depend on the included modules, but the entry chunk is also considered as dirty if the additional chunk name changes. So by using `[hash]` or `[chunkhash]` in filenames the entry chunks need to be regenerated on (nearly) every change.
+
+By using HMR the entry chunk need to embed the hash of the compilation and is also considered as dirty on every compilation.
+
 # SourceMaps
 
 Perfect SourceMaps are slow.
