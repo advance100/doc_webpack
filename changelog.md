@@ -1,6 +1,10 @@
-# 1.10
+# 1.11
 
-(2015-08-05)
+(2015-08-10)
+
+* BUG: fix for incorrect order with extract-text-webpack-plugin and in output files
+
+# 1.10
 
 * API: added (experimental) NamedModulesPlugin
 * API: added stats presets
