@@ -23,7 +23,7 @@
 * [`file`](https://github.com/webpack/file-loader): Emits the file into the output folder and returns the (relative) url.
 * [`url`](https://github.com/webpack/url-loader): The url loader works like the file loader, but can return a Data Url if the file is smaller than a limit.
 * [`worker`](https://github.com/webpack/worker-loader): The worker loader creates a WebWorker for the provided file. The bundling of dependencies of the Worker is transparent.
-* [`shared-worker`](https://github.com/mrtnbroder/shared-worker-loader): The Shared Worker loader creates a SharedWorker for the provided file.
+* [`shared-worker`](https://github.com/mrtnbroder/shared-worker-loader): Like the worker loader, but for [Shared Workers](https://developer.mozilla.org/de/docs/Web/API/SharedWorker).
 * [`serviceworker`](https://github.com/markdalgleish/serviceworker-loader): Like the worker loader, but designed for [Service Workers](http://www.w3.org/TR/service-workers).
 * [`bundle`](https://github.com/webpack/bundle-loader): Wraps request in a `require.ensure` block (callback)
 * [`promise`](https://github.com/gaearon/promise-loader): Wraps request in a `require.ensure` block (promise)
