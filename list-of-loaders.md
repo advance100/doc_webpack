@@ -17,6 +17,7 @@
 * [`glsl`](https://github.com/makio64/shader-loader): Loads glsl files and support glsl-chunks.
 * [`render-placement`](https://github.com/zackify/render-placement-loader): Adds React.render to your component for you (not very practical in most cases)
 * [`xml`](https://github.com/gisikw/xml-loader): Loads XML as JSON.
+* [`svg-react`](https://github.com/jhamlet/svg-react-loader): Load SVG files as JSX-ified React.createClass declarations.
 
 ## packaging
 
