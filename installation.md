@@ -40,6 +40,13 @@ There are two versions of webpack available. The stable one and a beta version. 
 $ npm install webpack@1.2.x --save-dev
 ```
 
+## Dev Server
+If you want to use `webpack-dev-server` you should install it:
+``` sh
+$ npm install webpack-dev-server --save-dev
+```
+
+
 ## Continue reading
 
 You can continue reading [[Usage]].
