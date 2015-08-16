@@ -1,5 +1,9 @@
 ## Articles
 
+
+### [Webpack Demos](https://github.com/ruanyf/webpack-demos)
+a collection of simple demos of Webpack
+
 ### [Webpack vs Browserify](https://medium.com/@housecor/browserify-vs-webpack-b3d7ca08a0a9)
 Comparison of Webpack and Browserify
 
