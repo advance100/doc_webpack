@@ -81,6 +81,8 @@ The exported function has a property `resolve` which is a function and returns t
 
 The exported function has another property `keys` which is a function that returns all possible requests that the context module can handle.
 
+And the exported function has another property `id` which is the module id of the context module. This may be useful for `module.hot.accept`.
+
 Example:
 
 ``` javascript
@@ -94,6 +96,9 @@ var tableTemplateId = req.resolve("./table.jade");
 
 req.keys();
 // is ["./table.jade", "./table-row.jade", "./directory/folder.jade"]
+
+req.id;
+// is i. e. 42
 ```
 
 Note: `keys` depends on `Object.keys`. You may need to polyfill it for older browsers.
