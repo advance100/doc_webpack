@@ -28,7 +28,7 @@ Examples:
 
 ##### `file.js` expect that `this` is the global context.
 
-`require("imports?this=>window")` or `require("imports?this=>global")`
+`require("imports?this=>window!./file.js")` or `require("imports?this=>global!./file.js")`
 
 ## [[plugin | list of plugins]] `ProvidePlugin`
 
