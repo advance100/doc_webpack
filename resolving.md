@@ -30,7 +30,7 @@ When trying to "resolve a module path" the module name is matched to the `resolv
 
 ## Caching
 
-Every filesystem access is cached so that multiple parallel or serial requests to the same thing are merged. In watching mode only cached files are removed from cache (the watcher knows which files got changed). In non-watching mode the cache is purged before every compilation.
+Every filesystem access is cached so that multiple parallel or serial requests to the same thing are merged. In watching mode only changed files are removed from cache (the watcher knows which files got changed). In non-watching mode the cache is purged before every compilation.
 
 ## Unsafe caching
 
