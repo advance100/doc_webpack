@@ -138,7 +138,7 @@ Example:
 
 ``` javascript
 var webpack = require("webpack");
-{
+module.exports = {
 	entry: { a: "./a", b: "./b" },
 	output: { filename: "[name].js" },
 	plugins: [ new webpack.optimize.CommonsChunkPlugin("init.js") ]
