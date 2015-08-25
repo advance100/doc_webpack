@@ -1,6 +1,12 @@
-# 1.11
+# 1.12
 
-(2015-08-06)
+(2015-08-25)
+
+* API: emit empty argument list for AMD in UMD
+* updated to esprima 2
+* CI: Test on node.js and io.js, Test for beautify source code
+
+# 1.11
 
 * BUG: fix for incorrect order with extract-text-webpack-plugin and in output files
 
