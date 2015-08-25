@@ -16,7 +16,7 @@ A plugin only gets a single reference to the compiler object, so if it wants to 
 ``` javascript
 compiler.plugin("compilation", function(compilation) {
     compilation.plugin("optimize", function() {
-	console.log("The compilation is now optimizing your stuff");
+        console.log("The compilation is now optimizing your stuff");
     });
 });
 ```
@@ -25,7 +25,7 @@ The complete example might look like this:
 
 ```javascript
 
-//MyPlugin.js
+// MyPlugin.js
 
 function MyPlugin() {};
 MyPlugin.prototype.apply = function (compiler) {
