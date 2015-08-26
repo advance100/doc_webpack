@@ -282,6 +282,10 @@ Which format to export the library:
 
 If `output.library` is not set, but `output.libraryTarget` is set to a value other than `var`, every property of the exported object is copied (Except `amd`, `commonjs2` and `umd`).
 
+### `output.umdNamedDefine`
+
+If `output.libraryTarget` is set to `umd` and `output.library` is set, setting this to `true` will name the AMD module.
+
 ### `output.sourcePrefix`
 
 Prefixes every line of the source in the bundle with this string.
