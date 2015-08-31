@@ -140,5 +140,18 @@ webpack({
 });
 ```
 
+## compile to memory
 
+``` js
+var MemoryFS = require("memory-fs");
+var webpack = require("webpack");
+
+var fs = new MemoryFS();
+var compiler = webpack({ ... });
+compiler.outputFileSystem = fs;
+compiler.run(function(err, stats) {
+  // ...
+  var fileContent = fs.readFileSync("...");
+});
+```
 
