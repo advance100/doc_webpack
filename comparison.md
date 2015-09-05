@@ -9,7 +9,7 @@
 | generate a single bundle | **yes** | yes♦ | yes | yes |
 | load each file separate | no | yes | no | yes |
 | multiple bundles | **yes** | with manual configuration | with manual configuration | yes |
-| additional chunks are loaded on demand | **yes** | **yes** | no | with bundle arithmetic |
+| additional chunks are loaded on demand | **yes** | **yes** | no | [System.import](https://github.com/systemjs/systemjs/blob/master/docs/system-api.md#systemimportmodulename--normalizedparentname---promisemodule) |
 | multi pages build with common bundle | with manual configuration | **yes** | with manual configuration | with bundle arithmetic |
 | concat in require `require("./fi" + "le")` | **yes** | no♦ | no | no |
 | indirect require `var r = require; r("./file")` | **yes** | no♦ | no | no |
@@ -24,7 +24,7 @@
 | other node.js stuff | process, __dir/filename, global | - | process, __dir/filename, global | process, __dir/filename, global for cjs |
 | replacement for browser | `web_modules`, `.web.js`, package.json field, alias config option | alias option | package.json field, alias option | package.json, alias option |
 | minimizing | uglify | uglify, closure compiler | [uglifyify](https://github.com/hughsk/uglifyify) | yes |
-| mangle path names | **yes** | no | partial | no |
+| mangle path names | **yes** | no | partial | yes |
 | Runtime overhead | **243b + 20b per module + 4b per dependency** | 14.7kb + 0b per module + (3b + X) per dependency | 415b + 25b per module + (6b + 2X) per dependency | 5.5KB for self-executing bundles, 38KB for full loader and polyfill, 0 plain modules, 293b CJS, 139b ES6 System.register before gzip |
 
 ♦ in production mode (opposite in development mode)
