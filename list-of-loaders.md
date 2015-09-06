@@ -39,6 +39,7 @@
 * [`html-minify-loader`](https://github.com/bestander/html-minify-loader): Minifies HTML using [minimize](https://github.com/Moveo/minimize)
 * [`vue-loader`](https://github.com/vuejs/vue-loader): Load single-file Vue.js components as modules, with loader-support for preprocessors.
 * [`tojson-loader`](https://github.com/timoxley/tojson-loader) Serialize module exports as JSON. Cache generated static data as JSON at build time.
+* [`zip-it-loader`](https://github.com/bmagnantb/zip-it-loader) Convert files and directories to zip. Great with `file`.
 
 
 ## dialects
