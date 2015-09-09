@@ -92,7 +92,7 @@ module.exports = function( value ){
 
 ``` javascript
 // moduleB.js
-var multiplyBy2 = require('moduleA');
+var multiplyBy2 = require('./moduleA');
 var result = multiplyBy2( 4 );
 ```
 
