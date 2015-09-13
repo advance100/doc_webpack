@@ -112,6 +112,7 @@
 * [`format-message`](https://github.com/thetalecrafter/format-message-loader): Compiles translations to ICU Message Format strings in [`formatMessage`](https://github.com/thetalecrafter/format-message) calls
 * [`jsxlate-loader`](https://github.com/drd/jsxlate-loader): Transform React source code for use with [`jsxlate`](https://github.com/drd/jsxlate)
 * [`webpack-angular-translate`](https://github.com/DatenMetzgerX/webpack-angular-translate): Extracts [angular-translate](https://angular-translate.github.io) translation id's and default text's
+* [`angular-gettext-extract-loader`](https://github.com/wombleton/angular-gettext-extract-loader) Extracts strings for translation into a nominated `.pot` file.
 
 ## support
 
