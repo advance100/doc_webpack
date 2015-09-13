@@ -1,5 +1,3 @@
-WIP
-
 # Incremental builds
 
 Make sure you don't do a full rebuild. webpack has a great caching layer that allows to keep already compiled modules in memory. There are some tools that help to use it:
