@@ -139,6 +139,8 @@ module.exports = {
 }
 ```
 
+And if you use `hot: true` instead of `--hot`, make sure you include `HotModuleReplacementPlugin`. Otherwise you will get error.
+
 ## API
 
 ``` javascript
