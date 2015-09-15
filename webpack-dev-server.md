@@ -1,12 +1,13 @@
 The _webpack-dev-server_ is a little node.js [Express](http://expressjs.com/) server, which uses the _[[webpack-dev-middleware]]_ to serve a _webpack bundle_. It also has a little runtime which is connected to the server via [Socket.IO](http://socket.io/). The server emits information about the compilation state to the client, which reacts to those events. You can choose between different modes, depending on your needs. So lets say you have the following config file:
 
 ```javascript
+var path = require("path");
 module.exports = {
   entry: {
     app: ["./app/main.js"]
   },
   output: {
-    path: "./build",
+    path: path.resolve(__dirname, "build"),
     publicPath: "/assets/",
     filename: "bundle.js"
   }
@@ -15,18 +16,18 @@ module.exports = {
 
 You have an `app` folder with your initial entry point that _webpack_ will bundle into a `bundle.js` file in the `build` folder.
 
-## Inline mode
+## Content Base
 The _webpack-dev-server_ will serve the files in the current directory, unless you configure a specific content base. 
 
 ```sh
-$ webpack-dev-server --content-base build/
+$ webpack-dev-server --content-base public/
 ```
 
-Using this config _webpack-dev-server_ will serve the static files in your `build` folder and watch your source files for changes. When changes are made the _bundle_ will be recompiled. This modified _bundle_ is served from memory at the relative path specified in `publicPath` (see [API](#api)). It will not be written to your configured output directory. Where a _bundle_ already exists at the same url path the _bundle_ in memory will take precedence.
+Using this config _webpack-dev-server_ will serve the static files in your `public` folder. It'll watch your source files for changes and when changes are made the _bundle_ will be recompiled. This modified _bundle_ is served from memory at the relative path specified in `publicPath` (see [API](#api)). It will not be written to your configured output directory. Where a _bundle_ already exists at the same url path the _bundle_ in memory will take precedence (by default).
 
 For example with the configuration above your _bundle_ will be available at `localhost:8080/assets/bundle.js`
  
-To load your bundled files, you will need to create an `index.html` file. e.g:
+To load your bundled files, you will need to create an `index.html` file in the `public` folder from which static files are served (`--content-base` option). e.g:
 
 ```html
 <!DOCTYPE html>
@@ -43,64 +44,99 @@ To load your bundled files, you will need to create an `index.html` file. e.g:
 
 By default go to `localhost:8080/` to launch your app. For example with the configuration above (with publicPath) go to `localhost:8080/assets/`.
 
-## Hot mode
-By adding a script to your `index.html` file and a special entry point in your configuration you will be able to get live reloads when doing changes to your files. Change your `index.html` file to this:
+## Automatic Refresh
+
+The _webpack-dev-server_ supports multiple modes to automatic refresh the page:
+
+* Iframe mode (page is embedded in an iframe and reloaded on change)
+* Inline mode (a small webpack-dev-server client entry is added to the bundle which refresh the page on change)
+
+Each mode also supports Hot Module Replacement in which the bundle is notified that a change happened instead of a full page reload. A Hot Module Replacement runtime could than load the updated modules and inject them into the running app.
+
+### Iframe mode
+To use the iframe mode no additional configuration is needed. Just navigate the browser to `http://<host>:<port>/webpack-dev-server/<path>`. I. e. with the above configuration `http://localhost:8080/webpack-dev-server/index.html`.
+
+* No configuration change needed.
+* Nice information bar on top of your app.
+* Url changes in the app are **not** reflected in the browsers url bar.
+
+### Inline mode
+To the use inline mode specify `--inline` on the command line (you cannot specify it in the configuration). This adds the webpack-dev-server client entry point to the webpack configuration. There is no change in the url required. Just navigate to `http://<host>:<port>/<path>`. I. e. with the above configuration `http://localhost:8080/index.html`.
+
+* Command line flag needed.
+* Status information in the browser log.
+* Url changes in the app are reflected in the browsers url bar.
+
+
+#### Inline mode with node.js API
+
+There is no `inline: true` flag in the webpack-dev-server configuration, because the webpack-dev-server module has no access to the webpack configuration. Instead the user have to add the webpack-dev-server client entry point to the webpack configuration.
+
+To do this just add `webpack-dev-server/client?http://<path>:<port>` to (all) entry point(s). I. e. with the above configuration:
+
+``` js
+var config = require("./webpack.config.js");
+config.entry.app.unshift("webpack-dev-server?http://localhost:8080");
+var compiler = webpack(config);
+var server = new webpackDevServer(compiler, {...});
+server.listen(8080);
+```
+
+
+#### Inline mode in HTML
+
+There is also the option to add a reference to the webpack-dev-server client script to the HTML page:
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-<body>
-  <!-- It is important that you point to the full url -->
-  <script src="http://localhost:8080/webpack-dev-server.js"></script>
-  <script src="bundle.js"></script>
-</body>
-</html>
+<script src="http://localhost:8080/webpack-dev-server.js"></script>
 ```
 
-And make sure you have the special `webpack/hot/dev-server` entry point in your configuration:
 
-```javascript
-module.exports = {
-  entry: {
-    app: ["webpack/hot/dev-server", "./app/main.js"]
-  },
-  output: {
-    path: "./build",
-    filename: "bundle.js"
-  }
-};
+### Hot Module Replacement
+To enable Hot Module Replacement with the webpack-dev-server specify `--hot` on the command line. This adds the `HotModuleReplacementPlugin` to the webpack configuration.
+
+The easiest way to use Hot Module Replacement with the webpack-dev-server is to use the inline mode.
+
+
+#### Hot Module Replacement with Inline mode on CLI
+
+There is nothing more needed. `--inline --hot` does all the relevant work automatically. The CLI of the webpack-dev-server automatically adds the special `webpack/hot/dev-server` entry point to your configuration.
+
+Just navigate to `http://<host>:<port>/<path>` and let the magic happen.
+
+You should see the following messages in the browser log:
+
+``` text
+[HMR] Waiting for update signal from WDS...
+[WDS] Hot Module Replacement enabled.
 ```
 
-Now run:
+Messages prefixed with `[HMR]` orginate from the `webpack/hot/dev-server` module. Messages prefixed with `[WDS]` orginate from the webpack-dev-server client.
 
-```sh
-$ webpack-dev-server --content-base build/ --hot
-```
+It's important the specify a correct `output.publicPath` elsewise hot update chunks cannot be loaded.
 
-When you do changes to files the browser will automatically reload.
 
-## Hot mode with indication
-When running _webpack-dev-server_ you can also head to `localhost:8080/webpack-dev-server/`. The trailing `/` is required. Going to this URL will not only load your application, but also indicate when a rebundling is in progress. Using this url does not require you to insert the `webpack-dev-server` script. So using `localhost:8080/webpack-dev-server/` with the current setup would require this `index.html`:
+#### Hot Module Replacement with node.js API
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-<body>
-  <script src="bundle.js"></script>
-</body>
-</html>
-```
+Similar to the inline mode the user have to do changes to the webpack configuration.
 
-```sh
-$ webpack-dev-server --content-base build/ --hot
+Three changes are needed:
+
+* add an entry point to the webpack configuration: `webpack/hot/dev-server`.
+* add the `new webpack.HotModuleReplacementPlugin()` to the webpack configuration.
+* add `hot: true` the the webpack-dev-server configuration to enable HMR on the server.
+
+I. e. with the above configuration:
+
+``` js
+var config = require("./webpack.config.js");
+config.entry.app.unshift("webpack-dev-server?http://localhost:8080", "webpack/hot/dev-server");
+var compiler = webpack(config);
+var server = new webpackDevServer(compiler, {
+  hot: true
+  ...
+});
+server.listen(8080);
 ```
 
 
@@ -114,32 +150,20 @@ All _webpack_ [[CLI|cli]] options are valid for the _webpack-dev-server_ CLI too
 
 There are some additional options:
 
-* `--content-base <file/directory/url>`: base path for the content;
-* `--quiet`: don't output anything to the console;
-* `--colors`: add some colors to the output;
-* `--no-info`: suppress boring information;
-* `--host <hostname/ip>`: hostname or IP;
-* `--port <number>`: port;
-* `--inline`: embed the _webpack-dev-server_ runtime into the _bundle_;
-* `--hot`: adds the `HotModuleReplacementPlugin` and switch the server to _hot mode_. Note: make sure you don't add `HotModuleReplacementPlugin` twice;
-* `--hot --inline` also adds the `webpack/hot/dev-server` entry;
+* `--content-base <file/directory/url/port>`: base path for the content.
+* `--quiet`: don't output anything to the console.
+* `--no-info`: suppress boring information.
+* `--colors`: add some colors to the output.
+* `--no-colors`: don't used colors in the output.
+* `--host <hostname/ip>`: hostname or IP.
+* `--port <number>`: port.
+* `--inline`: embed the _webpack-dev-server_ runtime into the _bundle_.
+* `--hot`: adds the `HotModuleReplacementPlugin` and switch the server to _hot mode_. Note: make sure you don't add `HotModuleReplacementPlugin` twice.
+* `--hot --inline` also adds the `webpack/hot/dev-server` entry.
+* `--lazy`: no watching, compiles on request (cannot be combined with `--hot`).
 * `--https`: serves _webpack-dev-server_ over HTTPS Protocol. Includes a self-signed certificate that is used when serving the requests.
+* `--cert`, `--cacert`, `--key`: Paths the certificate files.
 
-The additional options above can be set in `devServer` option in `webpack.config.js`. For example:
-
-```javascript
-module.exports = {
-    // ... webpack.config.js stuff ...
-    devServer: {
-        contentBase: "./build",
-        noInfo: true, //  --no-info option
-        hot: true,
-        inline: true
-    }
-}
-```
-
-And if you use `hot: true` instead of `--hot`, make sure you include `HotModuleReplacementPlugin`. Otherwise you will get error.
 
 ## API
 
@@ -152,27 +176,15 @@ var compiler = webpack({
 });
 var server = new WebpackDevServer(compiler, {
   // webpack-dev-server options
+
   contentBase: "/path/to/directory",
   // or: contentBase: "http://localhost/",
-  
+
   hot: true,
   // Enable special support for Hot Module Replacement
   // Page is no longer updated, but a "webpackHotUpdate" message is send to the content
   // Use "webpack/hot/dev-server" as additional module in your entry point
   // Note: this does _not_ add the `HotModuleReplacementPlugin` like the CLI option does. 
-  
-  // webpack-dev-middleware options
-  quiet: false,
-  noInfo: false,
-  lazy: true,
-  filename: "bundle.js",
-  watchOptions: {
-    aggregateTimeout: 300,
-    poll: 1000
-  },
-  publicPath: "/assets/",
-  headers: { "X-Custom-Header": "yes" },
-  stats: { colors: true },
 
   // Set this as true if you want to access dev server from arbitrary url.
   // This is handy if you are using a html5 router.
@@ -185,6 +197,19 @@ var server = new WebpackDevServer(compiler, {
   proxy: {
     "*": "http://localhost:9090"
   }
+
+  // webpack-dev-middleware options
+  quiet: false,
+  noInfo: false,
+  lazy: true,
+  filename: "bundle.js",
+  watchOptions: {
+    aggregateTimeout: 300,
+    poll: 1000
+  },
+  publicPath: "/assets/",
+  headers: { "X-Custom-Header": "yes" },
+  stats: { colors: true },
 });
 server.listen(8080, "localhost", function() {});
 ```
@@ -193,6 +218,7 @@ server.listen(8080, "localhost", function() {});
 See _[[webpack-dev-middleware]]_ for documentation on middleware options.
 
 Notice that _webpack configuration_ is not passed to `WebpackDevServer` API, thus `devServer` option in webpack configuration is not used in this case. Also, there is no _inline mode_ for `WebpackDevServer` API. `<script src="http://localhost:8080/webpack-dev-server.js"></script>` should be inserted to HTML page manually.
+
 
 ## Combining with an existing server
 
@@ -210,13 +236,15 @@ When you use the _inline mode_ just open the backend server URL in your web brow
 
 Summary and example:
 
-* _webpack-dev-server_ on port `9090`;
-* backend server on port `8080`;
-* generate HTML pages with `<script src="http://localhost:9090/assets/bundle.js">`;
-* webpack configuration with `output.publicPath = "http://localhost:9090/assets/"`;
+* _webpack-dev-server_ on port `8080`.
+* backend server on port `9090`.
+* generate HTML pages with `<script src="http://localhost:8080/assets/bundle.js">`.
+* webpack configuration with `output.publicPath = "http://localhost:8080/assets/"`.
 * _inline mode_:
-  * `--inline`;
-  * open `http://localhost:8080`.
+  * `--inline`.
+  * open `http://localhost:9090`.
 * or _iframe mode_:
-  * _webpack-dev-server_ `contentBase = "http://localhost:8080/"` (`--content-base`);
-  * open `http://localhost:9090/webpack-dev-server/`.
+  * _webpack-dev-server_ `contentBase = "http://localhost:9090/"` (`--content-base`).
+  * open `http://localhost:8080/webpack-dev-server/`.
+
+Or use the proxy option...
