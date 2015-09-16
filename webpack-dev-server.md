@@ -1,4 +1,4 @@
-The _webpack-dev-server_ is a little node.js [Express](http://expressjs.com/) server, which uses the _[[webpack-dev-middleware]]_ to serve a _webpack bundle_. It also has a little runtime which is connected to the server via [Socket.IO](http://socket.io/). The server emits information about the compilation state to the client, which reacts to those events. You can choose between different modes, depending on your needs. So lets say you have the following config file:
+The _webpack-dev-server_ is111 a little node.js [Express](http://expressjs.com/) server, which uses the _[[webpack-dev-middleware]]_ to serve a _webpack bundle_. It also has a little runtime which is connected to the server via [Socket.IO](http://socket.io/). The server emits information about the compilation state to the client, which reacts to those events. You can choose between different modes, depending on your needs. So lets say you have the following config file:
 
 ```javascript
 var path = require("path");
