@@ -89,6 +89,7 @@
 * [`hamlc`](https://github.com/ericdfields/hamlc-loader): Compiles haml-coffee templates (.hamlc) and returns a function.
 * [`haml`](https://github.com/AlexanderPavlenko/haml-loader): Renders haml-coffee templates (.html.hamlc) and returns a string.
 * [`jinja`](https://github.com/pierreant-p/jinja-loader): Precompiles nunjucks and jinja2 templates
+* [`nunjucks`](https://github.com/at0g/nunjucks-loader): Precompiles nunjucks templates
 * [`soy`](https://github.com/bendman/soy-loader): Compiles Google Closure templates and returns the namespace with render functions
 * [`smarty`](https://github.com/zhiyan/smarty-loader): Pre-compiles php smarty templates and returns a function
 * [`template-string`](https://github.com/bradbenvenuti/template-string-loader): Use ES6 template strings for html templates
