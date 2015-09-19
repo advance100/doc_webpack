@@ -27,7 +27,7 @@ The manifest contains the new compilation hash and a list of all update chunks (
 
 The update chunks contains code for all updated modules in this chunk (or a flag if a module was removed).
 
-The compiler additionally makes sure that module and chunk ids as consistent between these builds. It uses a "records" json file to store them between builds (on it store them in memory).
+The compiler additionally makes sure that module and chunk ids are consistent between these builds. It uses a "records" json file to store them between builds (or it stores them in memory).
 
 ### From the module view
 
