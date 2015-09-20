@@ -311,6 +311,9 @@ A plugin for a more aggressive chunk merging strategy. Even similar chunks are m
 
 Generates a HTML5 Application Cache manifest
 
+### [`OfflinePlugin`](https://github.com/NekR/offline-plugin)
+
+Plugin which brings offline support into your project. It generates `ServiceWorker` based on output files and chosen update strategy. `AppCache` is used as a fallback when `ServiceWorker` is not available.
 
 
 ## module styles
