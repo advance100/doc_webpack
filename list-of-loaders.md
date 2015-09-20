@@ -29,6 +29,7 @@
 * [`serviceworker`](https://github.com/markdalgleish/serviceworker-loader): Like the worker loader, but designed for [Service Workers](http://www.w3.org/TR/service-workers).
 * [`bundle`](https://github.com/webpack/bundle-loader): Wraps request in a `require.ensure` block (callback)
 * [`promise`](https://github.com/gaearon/promise-loader): Wraps request in a `require.ensure` block (promise)
+* [`async-module`](https://github.com/NekR/async-module-loader): Same as `bundle`, but provides a way to handle script loading errors. Wraps request in a `require.ensure` block (callback, errback)
 * [`react-proxy`](https://github.com/webpack/react-proxy-loader): Code Splitting for react components.
 * [`react-hot`](https://github.com/gaearon/react-hot-loader): Allows to live-edit React components while keeping them mounted and preserving their state.
 * [`image`](https://github.com/tcoopman/image-webpack-loader): Compresses your images. Ideal to use together with `file` or `url`.
