@@ -72,6 +72,7 @@
 * [`riot`](https://github.com/esnunes/riotjs-loader): Load RiotJS tags and convert them to javascript.
 * [`jade`](https://github.com/webpack/jade-loader): Loads jade template and returns a function
 * [`jade-html`](https://github.com/bline/jade-html-loader): Loads jade template and returns generated HTML
+* [`jade-react`](https://github.com/halhenke/jade-react-loader): Uses jade templates for React rendering instead of JSX
 * [`template-html`](https://github.com/jtangelder/template-html-loader): Loads any template with consolidate.js and returns generated HTML
 * [`handlebars`](https://github.com/altano/handlebars-loader): Loads handlebars template and returns a function
 * [`dust`](https://github.com/avaly/dust-loader): Loads dust template and returns a function
