@@ -96,6 +96,7 @@
 * [`soy`](https://github.com/bendman/soy-loader): Compiles Google Closure templates and returns the namespace with render functions
 * [`smarty`](https://github.com/zhiyan/smarty-loader): Pre-compiles php smarty templates and returns a function
 * [`template-string`](https://github.com/bradbenvenuti/template-string-loader): Use ES6 template strings for html templates
+* [`ect`](https://github.com/cusspvz/ect-loader): Compile [ectjs](http://ectjs.com/) templates
 
 ## styling
 * [`bootstrap-sass`](https://github.com/justin808/bootstrap-sass-loader): Loads a configuration file for Twitter Bootstrap integration using Sass. Allows complete customization via Sass.
