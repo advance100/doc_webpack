@@ -51,7 +51,7 @@ The _webpack-dev-server_ supports multiple modes to automatic refresh the page:
 * Iframe mode (page is embedded in an iframe and reloaded on change)
 * Inline mode (a small webpack-dev-server client entry is added to the bundle which refresh the page on change)
 
-Each mode also supports Hot Module Replacement in which the bundle is notified that a change happened instead of a full page reload. A Hot Module Replacement runtime could than load the updated modules and inject them into the running app.
+Each mode also supports Hot Module Replacement in which the bundle is notified that a change happened instead of a full page reload. A Hot Module Replacement runtime could then load the updated modules and inject them into the running app.
 
 ### Iframe mode
 To use the iframe mode no additional configuration is needed. Just navigate the browser to `http://<host>:<port>/webpack-dev-server/<path>`. I. e. with the above configuration `http://localhost:8080/webpack-dev-server/index.html`.
