@@ -344,7 +344,7 @@ module.loaders: [
       path.resolve(__dirname, "app/test")
     ],
 
-    // "exclude" should to used to exclude exceptions
+    // "exclude" should be used to exclude exceptions
     // try to prefer "include" when possible
 
     // the "loader"
