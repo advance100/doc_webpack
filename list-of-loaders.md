@@ -139,3 +139,4 @@
 * [`tslint-loader`](https://github.com/wbuchwalter/tslint-loader): PreLoader for linting TypeScript using [TSLint](https://github.com/palantir/tslint)
 * [`parker`](https://github.com/tanem/parker-loader): Output a stylesheet analysis report using [parker](https://github.com/katiefenn/parker).
 * [`sjsp`](https://github.com/3100/sjsp-loader): Inject some codes for profiling using [node-sjsp](https://github.com/45deg/node-sjsp).
+* [`amdcheck`](https://github.com/mehdishojaei/amdcheck-loader): Uses AST to find and remove unused dependencies in AMD modules using [amdextract](https://github.com/mehdishojaei/amdextract).
