@@ -61,12 +61,6 @@ HelloCompilationPlugin.prototype.apply = function(compiler) {
       console.log("Assets are being optimized.");
     });
   });
-  
-  // Setup async callback:
-  compiler.plugin("emit", function(compilation, callback) {
-    console.log("Assets are being emitted.");
-    callback();
-  });
 });
 
 module.exports = HelloCompilationPlugin;
