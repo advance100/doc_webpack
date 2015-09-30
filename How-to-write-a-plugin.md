@@ -62,10 +62,6 @@ HelloCompilationPlugin.prototype.apply = function(compiler) {
     compilation.plugin("optimize", function() {
       console.log("Assets are being optimized.");
     });
-
-    compilation.plugin("emit", function() {
-      console.log("Assets are being emitted.");
-    });
   });
 });
 
