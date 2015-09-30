@@ -22,7 +22,7 @@
   * [[Optimization]]
   * [[Long-term Caching]]
   * [[How to write a loader]]
-  * How to write a plugin
+  * [[How to write a plugin]]
   * [[Multiple entry points]]
   * [[Library and externals]]
   * [[Shimming modules]]
