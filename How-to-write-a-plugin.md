@@ -2,13 +2,13 @@ Plugins expose the full potential of the Webpack engine to third-party developer
 
 ## Compiler and Compilation
 
-Among the two most important resources while developing plugins are the `compiler` and `compilation` objects. Understanding their roles is an important first step in extended the Webpack engine.
+Among the two most important resources while developing plugins are the `compiler` and `compilation` objects. Understanding their roles is an important first step in extending the Webpack engine.
 
 - The `compiler` object represents the fully configured Webpack environment. This object is built once upon starting Webpack, and is configured with all operational settings including options, loaders, and plugins. When applying a plugin to the Webpack environment, the plugin will receive a reference to this compiler. Use the compiler to access the main Webpack environment.
 
-- A `compilation` object represents a single build of versioned assets. While running Webpack development middleware, a new compilation will be created each time a file change is detected, thus generating a new set of compiled assets. A compilation surfaces information about the present state of module resources, compiled assets, changed files, and watched dependencies. The compilation also provides many callback points at which a plugin may choose to step in and perform actions.
+- A `compilation` object represents a single build of versioned assets. While running Webpack development middleware, a new compilation will be created each time a file change is detected, thus generating a new set of compiled assets. A compilation surfaces information about the present state of module resources, compiled assets, changed files, and watched dependencies. The compilation also provides many callback points at which a plugin may choose to perform custom actions.
 
-These two components are an integral part of any Webpack plugin (especially the `compilation`), so developers will benefit by familiarizing themselves with these source files:
+These two components are an integral part of any Webpack plugin (especially a `compilation`), so developers will benefit by familiarizing themselves with these source files:
 
 - [Compiler Source](https://github.com/webpack/webpack/blob/master/lib/Compiler.js)
 - [Compilation Source](https://github.com/webpack/webpack/blob/master/lib/Compilation.js)
@@ -31,7 +31,7 @@ HelloWorldPlugin.prototype.apply = function(compiler) {
 module.exports = HelloWorldPlugin;
 ```
 
-Then to install the plugin, just include an instance of it in your Webpack config `plugins` array:
+Then to install the plugin, just include an instance in your Webpack config `plugins` array:
 
 ```javascript
 var HelloWorldPlugin = require('hello-world');
