@@ -1,55 +1,38 @@
 For a high-level introduction to writing plugins, start with [[How to write a plugin]].
 
-Many objects in Webpack extend the Tapable class, which exposes a `plugin` method. And with the `plugin` method, plugins can bind custom stuff.  You will see `compiler.plugin` and `compilation.plugin` used a lot.  Essentially, each one of these plugins is a function which responds to a method name and callback function
+Many objects in Webpack extend the Tapable class, which exposes a `plugin` method. And with the `plugin` method, plugins can inject custom build steps.  You will see `compiler.plugin` and `compilation.plugin` used a lot.  Essentially, each one of these `plugin` calls binds a callback to fire at specific steps along the build process.
 
-The following example is how you might use the Webpack Compiler Instance to expose the `"compile"` plugin interface, which is called when the Compiler begins compiling.
-
-``` javascript
-compiler.plugin("compile", function(params) {
-    // Just log some text
-    console.log("Compiling...");
-});
-```
-
-A plugin only gets a single reference to the compiler object, so if it wants to plug stuff into other webpack objects it has to gain access to them, i.e., to the Compilation object:
-
-``` javascript
-compiler.plugin("compilation", function(compilation) {
-    compilation.plugin("optimize", function() {
-        console.log("The compilation is now optimizing your stuff");
-    });
-});
-```
-
-The complete example might look like this:
+A plugin is installed once as Webpack start up. Webpack installs a plugin by calling its `apply` method, and passing it a reference to the Webpack `compiler` object. You may then plugin to the `compiler` object to access each individual asset compilation. An example would look like this:
 
 ```javascript
-
 // MyPlugin.js
 
-function MyPlugin() {};
-MyPlugin.prototype.apply = function (compiler) {
-    compiler.plugin("compile", function(params) {
-        // Just log something
-        console.log("Compiling...");
-    });
-
-    compiler.plugin("compilation", function(compilation) {
-        compilation.plugin("optimize", function() {
-	    console.log("The compilation is now optimizing your stuff");
-        });
-    });
+function MyPlugin(options) {
+  // Configure your plugin with options...
 }
+
+MyPlugin.prototype.apply = function(compiler) {
+  compiler.plugin("compile", function(params) {
+    console.log("The compiler is starting to compile...");
+  });
+
+  compiler.plugin("compilation", function(compilation) {
+    console.log("The compiler is starting a new compilation...");
+
+    compilation.plugin("optimize", function() {
+      console.log("The compilation is starting to optimize files...");
+    });
+  });
+}
+
 module.exports = MyPlugin;
 ```
 
-In webpack.config.js
+Then in `webpack.config.js`
 
 ```javascript
     plugins: [
-        new MyPlugin({
-            optiones: 'nada'
-        })
+        new MyPlugin({optiones: 'nada'})
     ]
 ```
 
