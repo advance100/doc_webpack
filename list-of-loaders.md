@@ -121,7 +121,6 @@
 * [`angular-gettext-extract-loader`](https://github.com/wombleton/angular-gettext-extract-loader) Extracts strings for translation into a nominated `.pot` file.
 
 ## support
-
 * [`mocha`](https://github.com/webpack/mocha-loader): do tests with mocha in browser or node.js
 * [`coverjs`](https://github.com/webpack/coverjs-loader): PostLoader to code coverage with CoverJs
 * [`istanbul-instrumenter`](https://github.com/deepsweet/istanbul-instrumenter-loader): [Istanbul](https://github.com/gotwarlost/istanbul) postLoader to code coverage with [karma-webpack](https://github.com/webpack/karma-webpack) and [karma-coverage](https://github.com/karma-runner/karma-coverage)
@@ -140,3 +139,4 @@
 * [`parker`](https://github.com/tanem/parker-loader): Output a stylesheet analysis report using [parker](https://github.com/katiefenn/parker).
 * [`sjsp`](https://github.com/3100/sjsp-loader): Inject some codes for profiling using [node-sjsp](https://github.com/45deg/node-sjsp).
 * [`amdcheck`](https://github.com/mehdishojaei/amdcheck-loader): Uses AST to find and remove unused dependencies in AMD modules using [amdextract](https://github.com/mehdishojaei/amdextract).
+* [`manifest-loader`](https://github.com/RinconStrategies/manifest-loader): A loader to generate JSON asset manifests to pass to preloading systems.
