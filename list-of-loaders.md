@@ -119,6 +119,7 @@
 * [`jsxlate-loader`](https://github.com/drd/jsxlate-loader): Transform React source code for use with [`jsxlate`](https://github.com/drd/jsxlate)
 * [`webpack-angular-translate`](https://github.com/DatenMetzgerX/webpack-angular-translate): Extracts [angular-translate](https://angular-translate.github.io) translation id's and default text's
 * [`angular-gettext-extract-loader`](https://github.com/wombleton/angular-gettext-extract-loader) Extracts strings for translation into a nominated `.pot` file.
+* [`jsx-gettext-extract-loader`](https://github.com/mrblueblue/jsx-gettext-extract-loader): Extracts gettext readable strings from jsx.
 
 ## support
 * [`mocha`](https://github.com/webpack/mocha-loader): do tests with mocha in browser or node.js
