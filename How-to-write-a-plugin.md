@@ -71,3 +71,5 @@ HelloCompilationPlugin.prototype.apply = function(compiler) {
 
 module.exports = HelloCompilationPlugin;
 ```
+
+For more information on what callbacks are available on the `compiler`, `compilation`, and other important objects, see the [[plugins API|plugins]] doc. 
