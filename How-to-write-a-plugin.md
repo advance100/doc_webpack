@@ -12,3 +12,54 @@ These two components are an integral part of any Webpack plugin (especially the 
 
 - [Compiler Source](https://github.com/webpack/webpack/blob/master/lib/Compiler.js)
 - [Compilation Source](https://github.com/webpack/webpack/blob/master/lib/Compilation.js)
+
+## Basic Plugin Architecture
+
+Plugins are instanceable objects with an `apply` method on their prototype. This `apply` method is called once by the Webpack compiler while installing the plugin. The `apply` method is given a reference to the underlying Webpack compiler, which grants access to compiler callbacks. A simple plugin is structured as follows:
+
+```javascript
+function HelloWorldPlugin(options) {
+  // Setup the plugin instance with options...
+}
+
+HelloWorldPlugin.prototype.apply = function(compiler) {
+  compiler.plugin('done', function() {
+    console.log('Hello World!'); 
+  });
+};
+```
+
+Then to install the plugin, just include an instance of it in your Webpack config `plugins` array:
+
+```javascript
+var HelloWorldPlugin = require('hello-world');
+
+var webpackConfig = {
+  // ... config settings here ...
+  plugins: [
+    new HelloWorldPlugin()
+  ]
+};
+```
+
+## Accessing the compilation
+
+Using the compiler object, you may bind callbacks that provide a reference to each new compilation. These compilations provide callbacks for hooking into numerous steps within the build process. 
+
+```javascript
+function HelloCompilationPlugin(options) {
+  // Setup the plugin instance with options...
+}
+
+HelloCompilationPlugin.prototype.apply = function(compiler) {
+
+  // Setup callback for accessing a compilation:
+  compiler.plugin("compilation", function(compilation) {
+    
+    // Now setup callbacks for accessing compilation steps:
+    compilation.plugin("optimize", function() {
+      console.log("The compilation is now optimizing your stuff");
+    });
+  });
+});
+```
