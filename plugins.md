@@ -1,8 +1,8 @@
 For a high-level introduction to writing plugins, start with [[How to write a plugin]].
 
-Many objects in Webpack extend the Tapable class, which exposes a `plugin` method. And with the `plugin` method, plugins can inject custom build steps.  You will see `compiler.plugin` and `compilation.plugin` used a lot.  Essentially, each one of these `plugin` calls binds a callback to fire at specific steps along the build process.
+Many objects in Webpack extend the Tapable class, which exposes a `plugin` method. And with the `plugin` method, plugins can inject custom build steps.  You will see `compiler.plugin` and `compilation.plugin` used a lot.  Essentially, each one of these plugin calls binds a callback to fire at specific steps throughout the build process.
 
-A plugin is installed once as Webpack start up. Webpack installs a plugin by calling its `apply` method, and passing it a reference to the Webpack `compiler` object. You may then plugin to the `compiler` object to access each individual asset compilation. An example would look like this:
+A plugin is installed once as Webpack starts up. Webpack installs a plugin by calling its `apply` method, and passes a reference to the Webpack `compiler` object. You may then call `compiler.plugin` to access asset compilations and their individual build steps. An example would look like this:
 
 ```javascript
 // MyPlugin.js
@@ -21,6 +21,10 @@ MyPlugin.prototype.apply = function(compiler) {
 
     compilation.plugin("optimize", function() {
       console.log("The compilation is starting to optimize files...");
+    });
+
+    compilation.plugin("emit", function() {
+      console.log("The compilation is going to emit files...");
     });
   });
 }
