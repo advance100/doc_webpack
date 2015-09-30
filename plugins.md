@@ -1,4 +1,4 @@
-For a high-level introduction to writing plugins, start with [[How to write a plugin]].
+For a high-level introduction to writing plugins, start with [How to write a plugin](https://github.com/webpack/docs/wiki/How-to-write-a-plugin).
 
 Many objects in Webpack extend the Tapable class, which exposes a `plugin` method. And with the `plugin` method, plugins can inject custom build steps.  You will see `compiler.plugin` and `compilation.plugin` used a lot.  Essentially, each one of these plugin calls binds a callback to fire at specific steps throughout the build process.
 
