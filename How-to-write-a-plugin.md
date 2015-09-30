@@ -70,20 +70,20 @@ For more information on what callbacks are available on the `compiler`, `compila
 
 ## Async compilation plugins
 
-Some plugin callbacks are asynchronous, and pass a callback that must be invoked when your plugin is finished.
+Some compilation plugin steps are asynchronous, and pass a callback function that _must_ be invoked when your plugin is finished running.
 
 ```javascript
 function HelloAsyncPlugin(options) {}
 
 HelloAsyncPlugin.prototype.apply = function(compiler) {
-
   compiler.plugin("emit", function(compilation, callback) {
-    console.log("Doing something asynchronously...");
 
+    // Do something async...
     setTimeout(function() {
       console.log("Done with async work...");
       callback();
     }, 1000);
+
   });
 });
 
