@@ -39,7 +39,7 @@ var HelloWorldPlugin = require('hello-world');
 var webpackConfig = {
   // ... config settings here ...
   plugins: [
-    new HelloWorldPlugin({ ... options ... })
+    new HelloWorldPlugin({options: true})
   ]
 };
 ```
