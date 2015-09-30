@@ -27,6 +27,8 @@ HelloWorldPlugin.prototype.apply = function(compiler) {
     console.log('Hello World!'); 
   });
 };
+
+module.exports = HelloWorldPlugin;
 ```
 
 Then to install the plugin, just include an instance of it in your Webpack config `plugins` array:
@@ -66,4 +68,6 @@ HelloCompilationPlugin.prototype.apply = function(compiler) {
     });
   });
 });
+
+module.exports = HelloCompilationPlugin;
 ```
