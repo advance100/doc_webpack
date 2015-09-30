@@ -13,7 +13,7 @@ These two components are an integral part of any Webpack plugin (especially the 
 - [Compiler Source](https://github.com/webpack/webpack/blob/master/lib/Compiler.js)
 - [Compilation Source](https://github.com/webpack/webpack/blob/master/lib/Compilation.js)
 
-## Basic Plugin Architecture
+## Basic plugin architecture
 
 Plugins are instanceable objects with an `apply` method on their prototype. This `apply` method is called once by the Webpack compiler while installing the plugin. The `apply` method is given a reference to the underlying Webpack compiler, which grants access to compiler callbacks. A simple plugin is structured as follows:
 
@@ -94,7 +94,7 @@ module.exports = HelloAsyncPlugin;
 
 Once we can latch onto the Webpack compiler and each individual compilations, the possibilities become endless for what we can do with the engine itself. We can reformat existing files, create derivative files, or fabricate entirely new assets.
 
-As a simple example, let's write a plugin that generates a `filelist.md` file within our build, the contents of which will list out all of our build's file assets. This plugin might look something like this:
+Let's write a simple example plugin that generates a new build file called `filelist.md`; the contents of which will list all of the asset files in our build. This plugin might look something like this:
 
 ```javascript
 function FileListPlugin(options) {}
