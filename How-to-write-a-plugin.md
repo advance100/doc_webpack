@@ -46,12 +46,10 @@ var webpackConfig = {
 
 ## Accessing the compilation
 
-Using the compiler object, you may bind callbacks that provide a reference to each new compilation. These compilations provide callbacks for hooking into numerous steps within the build process. Some plugin callbacks are asynchronous, and pass a callback that must be invoked when your plugin is finished.
+Using the compiler object, you may bind callbacks that provide a reference to each new compilation. These compilations provide callbacks for hooking into numerous steps within the build process.
 
 ```javascript
-function HelloCompilationPlugin(options) {
-  // Setup the plugin instance with options...
-}
+function HelloCompilationPlugin(options) {}
 
 HelloCompilationPlugin.prototype.apply = function(compiler) {
 
@@ -74,4 +72,26 @@ HelloCompilationPlugin.prototype.apply = function(compiler) {
 module.exports = HelloCompilationPlugin;
 ```
 
-For more information on what callbacks are available on the `compiler`, `compilation`, and other important objects, see the [[plugins API|plugins]] doc. 
+For more information on what callbacks are available on the `compiler`, `compilation`, and other important objects, see the [[plugins API|plugins]] doc.
+
+## Async compilation plugins
+
+Some plugin callbacks are asynchronous, and pass a callback that must be invoked when your plugin is finished.
+
+```javascript
+function HelloAsyncPlugin(options) {}
+
+HelloAsyncPlugin.prototype.apply = function(compiler) {
+
+  compiler.plugin("emit", function(compilation, callback) {
+    console.log("Doing something asynchronously...");
+
+    setTimeout(function() {
+      console.log("Done with async work...");
+      callback();
+    }, 1000);
+  });
+});
+
+module.exports = HelloAsyncPlugin;
+```
