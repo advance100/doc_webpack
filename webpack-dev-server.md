@@ -76,7 +76,7 @@ To do this just add `webpack-dev-server/client?http://<path>:<port>` to (all) en
 
 ``` js
 var config = require("./webpack.config.js");
-config.entry.app.unshift("webpack-dev-server?http://localhost:8080");
+config.entry.app.unshift("webpack-dev-server/client?http://localhost:8080");
 var compiler = webpack(config);
 var server = new webpackDevServer(compiler, {...});
 server.listen(8080);
@@ -130,7 +130,7 @@ I. e. with the above configuration:
 
 ``` js
 var config = require("./webpack.config.js");
-config.entry.app.unshift("webpack-dev-server?http://localhost:8080", "webpack/hot/dev-server");
+config.entry.app.unshift("webpack-dev-server/client?http://localhost:8080", "webpack/hot/dev-server");
 var compiler = webpack(config);
 var server = new webpackDevServer(compiler, {
   hot: true
