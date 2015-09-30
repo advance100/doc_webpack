@@ -22,12 +22,13 @@ MyPlugin.prototype.apply = function(compiler) {
     compilation.plugin("optimize", function() {
       console.log("The compilation is starting to optimize files...");
     });
-
-    compilation.plugin("emit", function() {
-      console.log("The compilation is going to emit files...");
-    });
   });
-}
+
+  compiler.plugin("emit", function(compilation, callback) {
+    console.log("The compilation is going to emit files...");
+    callback();
+  });
+};
 
 module.exports = MyPlugin;
 ```
