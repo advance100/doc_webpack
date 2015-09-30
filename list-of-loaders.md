@@ -58,7 +58,7 @@
 * [`livescript`](https://github.com/appedemic/livescript-loader): Loads LiveScript like JavaScript
 * [`sweetjs`](https://github.com/jlongster/sweetjs-loader): Use sweetjs macros. 
 * [`traceur`](https://github.com/jupl/traceur-loader): Use future JavaScript features with [Traceur](https://github.com/google/traceur-compiler).
-* [`ts`](https://github.com/jbrantly/ts-loader): Loads TypeScript like JavaScript.
+* [`ts`](https://github.com/TypeStrong/ts-loader): Loads TypeScript like JavaScript.
 * [`typescript`](https://github.com/andreypopp/typescript-loader): Loads TypeScript like JavaScript.
 * [`typescript-simple-loader`](https://github.com/blakeembrey/typescript-simple-loader): Loads TypeScript with syntactic and semantic errors.
 * [`awesome-typescript-loader`](https://github.com/s-panferov/awesome-typescript-loader): Loads TypeScript like JavaScript with watching support. **Works with TypeScript 1.5-alfa**
