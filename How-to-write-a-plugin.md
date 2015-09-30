@@ -58,7 +58,11 @@ HelloCompilationPlugin.prototype.apply = function(compiler) {
     
     // Now setup callbacks for accessing compilation steps:
     compilation.plugin("optimize", function() {
-      console.log("The compilation is now optimizing your stuff");
+      console.log("Assets are being optimized.");
+    });
+
+    compilation.plugin("emit", function() {
+      console.log("Assets are being emitted.");
     });
   });
 });
