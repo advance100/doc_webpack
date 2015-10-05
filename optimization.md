@@ -48,7 +48,7 @@ If you use the HTML5 History API to reflect the current content page in the URL,
 <script src="3.chunk.js" type="text/javascript" charset="utf-8"></script>
 ```
 
-You can extract the chunk filename from the stats.
+You can extract the chunk filename from the stats. ([stats-webpack-plugin](https://www.npmjs.com/package/stats-webpack-plugin) could be used for exports the build stats)
 
 
 
