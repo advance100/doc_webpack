@@ -132,7 +132,7 @@ It's possible to [[configure | configuration]] multiple entry points that will r
 
 ### Running multiple entry points
 
-With the `CommonsChunkPlugin` the runtime is moved to the commons chunk. The entry points are now in initial chunks. While only one entry chunk can be loaded, multiple initial chunks can be loaded. This exposes the possibility to run multiple entry points in a single page.
+With the `CommonsChunkPlugin` the runtime is moved to the commons chunk. The entry points are now in initial chunks. While only one initial chunk can be loaded, multiple entry chunks can be loaded. This exposes the possibility to run multiple entry points in a single page.
 
 Example:
 
