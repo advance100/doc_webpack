@@ -241,6 +241,7 @@ Summary and example:
 * backend server on port `9090`.
 * generate HTML pages with `<script src="http://localhost:8080/assets/bundle.js">`.
 * webpack configuration with `output.publicPath = "http://localhost:8080/assets/"`.
+* when compiling files for production, use `--output-public-path /assets/`.
 * _inline mode_:
   * `--inline`.
   * open `http://localhost:9090`.
