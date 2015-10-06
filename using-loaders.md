@@ -18,7 +18,7 @@ For example, you can use loaders to tell webpack to load CoffeeScript or JSX.
 * Loaders can emit additional arbitrary files.
 * [[etc. | loaders]]
 
-If you are interested in some loader examples head of to the [[list of loaders]].
+If you are interested in some loader examples head off to the [[list of loaders]].
 
 # Resolving loaders
 
