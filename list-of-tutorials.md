@@ -115,7 +115,7 @@ Instagram.com renders almost all of its UI in JavaScript. Pete Hunt has talked a
 
 2014-08-28 @okonetchnikov
 
-### [Managing your front-end with webpack](http://peerigon.github.io/presentations/2014-07-09-MNUG-webpack)
+### [Managing your front-end with webpack](http://peerigon.github.io/talks/2014-07-09-MNUG-webpack)
 
 Comprehensive introduction to webpack, held at the [MNUG (munich node.js user group)](http://mnug.de/)<br>
 [video](https://www.youtube.com/watch?v=EBlUng3IU4E)<br>
