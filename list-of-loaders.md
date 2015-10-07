@@ -136,7 +136,7 @@
 * [`standard`](https://github.com/timoxley/standard-loader): Conform to [standard](https://github.com/feross/standard) code style.
 * [`injectable`](https://github.com/jauco/webpack-injectable): Allow to inject dependencies into modules
 * [`transform`](https://github.com/webpack/transform-loader): Use browserify transforms as loader.
-* [`falafel`](https://github.com/wombleton/falafel-loader): Use falafel transforms as a loader.
+* [`falafel`](https://github.com/wombleton/falafel-loader): Use falafel AST transforms as a loader.
 * [`image-size`](https://github.com/patcoll/image-size-loader): Loads an image and returns its dimensions and type
 * [`csslint`](https://github.com/hyungjs/csslint-loader): PreLoader for linting code using CSSLint
 * [`coffeelint-loader`](https://github.com/bline/coffeelint-loader): PreLoader for linting [CoffeeScript](http://coffeescript.org/).
