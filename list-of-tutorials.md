@@ -90,6 +90,11 @@ A tutorial for integrating TypeScript with webpack.
 
 2015-07-19 @jbrantly
 
+### [Harnessing Webpack with Visual Studio Code](http://scottaddie.com/2015/10/07/harnessing-webpack-with-visual-studio-code/)
+An explanation of integrating Webpack with the tasks.json file in Visual Studio Code.
+
+2015-10-07 @Scott_Addie
+
 ## Books
 
 ### [react-webpack-cookbook](https://github.com/christianalfoni/react-webpack-cookbook/wiki)
