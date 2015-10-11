@@ -197,7 +197,7 @@ var server = new WebpackDevServer(compiler, {
   // and has many other use cases (see https://github.com/webpack/webpack-dev-server/pull/127 ).
   proxy: {
     "*": "http://localhost:9090"
-  }
+  },
 
   // webpack-dev-middleware options
   quiet: false,
