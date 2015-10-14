@@ -166,7 +166,7 @@ Additional options:
 
 Mangling names configuration
 
-A specific configuration is about mangling variable names. By default the mangle option is false. But you can say to the plugin avoid mangling a variable name passing a except list:
+A specific configuration is about mangling variable names. By default the mangle option is false. But you can configure the plugin to avoid mangling specific variable names by passing an except list:
 
 ```
 new webpack.optimize.UglifyJsPlugin({
