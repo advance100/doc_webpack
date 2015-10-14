@@ -139,6 +139,51 @@ var server = new webpackDevServer(compiler, {
 server.listen(8080);
 ```
 
+## Proxy
+
+The Webpack dev server makes use of [node-http-proxy](https://github.com/nodejitsu/node-http-proxy) to optionally proxy requests to a separate, possibly external, backend server. A sample configuration is below.
+
+```javascript
+{
+    devServer: {
+        proxy: {
+            '/some/path*': {
+                target: 'https://other-server.example.com',
+                secure: false,
+            },
+        },
+    },
+}
+```
+
+See the [node-http-proxy Options documentation](https://github.com/nodejitsu/node-http-proxy#options) for available configuration.
+
+Proxying some URLs can be useful for a variety of configurations. One example is to serve JavaScript files and other static assets from the local development server but still send API requests to an external backend development server. Another example is splitting requests between two separate backend servers such as an authentication backend and a application backend.
+
+### Bypass the Proxy
+
+(Added in v1.13.0.) The proxy can be optionally bypassed based on the return from a function. The function can inspect the HTTP request, response, and any given proxy options. It must return either `false` or a URL path that will be served _instead_ of continuing to proxy the request.
+
+For example, the configuration below will not proxy HTTP requests that originate from a browser. This is similar to the `historyApiFallback` option: browser requests will receive the HTML file as normal but API requests will be proxied to the backend server.
+
+```javascript
+{
+    devServer: {
+        proxy: {
+            '/some/path*': {
+                target: 'https://other-server.example.com',
+                secure: false,
+                bypass: function(req, res, proxyOptions) {
+                    if (req.headers.accept.indexOf('html') !== -1) {
+                        console.log('Skipping proxy for browser request.');
+                        return '/index.html';
+                    }
+                },
+            },
+        },
+    },
+}
+```
 
 ## webpack-dev-server CLI
 
