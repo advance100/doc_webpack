@@ -85,4 +85,4 @@ Manually invalidate the compilation. Useful if stuff of the compiler has changed
 
 ### `middleware.fileSystem`
 
-A readable (in-memory) filesystem the access the compiled data.
+A readable (in-memory) filesystem that can access the compiled data.
