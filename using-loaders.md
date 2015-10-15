@@ -6,7 +6,7 @@ For example, you can use loaders to tell webpack to load CoffeeScript or JSX.
 
 ## Loader features
 
-* Loaders can be chained. They are applied in a pipeline to the resource. The final loader is expected to return JavaScript, the other can return arbitrary format (which is passed to the next loader)
+* Loaders can be chained. They are applied in a pipeline to the resource. The final loader is expected to return JavaScript, the others can return arbitrary format (which is passed to the next loader)
 * Loaders can be synchronous and asynchronous.
 * Loaders run in node.js and can do everything that's possible there.
 * Loaders accept query parameters. This can be used to pass configuration to the loader.
