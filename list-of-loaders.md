@@ -135,6 +135,7 @@
 * [`jshint`](https://github.com/webpack/jshint-loader): PreLoader for linting code.
 * [`jscs`](https://github.com/unindented/jscs-loader): PreLoader for style checking.
 * [`standard`](https://github.com/timoxley/standard-loader): Conform to [standard](https://github.com/feross/standard) code style.
+* [`inject`](https://github.com/plasticine/inject-loader): A Webpack loader for injecting code into modules via their dependencies
 * [`injectable`](https://github.com/jauco/webpack-injectable): Allow to inject dependencies into modules
 * [`transform`](https://github.com/webpack/transform-loader): Use browserify transforms as loader.
 * [`falafel`](https://github.com/wombleton/falafel-loader): Use falafel AST transforms as a loader.
