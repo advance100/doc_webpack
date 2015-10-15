@@ -40,6 +40,7 @@
   * [[List of loaders]]
   * [[List of plugins]]
   * [[List of tutorials]]
+  * [[List of hints]]
 * API
   * [[Configuration]]
   * [[CLI]]
