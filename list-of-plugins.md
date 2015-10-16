@@ -538,3 +538,24 @@ new webpack.WatchIgnorePlugin(paths)
 Does not watch specified files matching provided paths or RegExps.
 
 * `paths` (array) an array of RegExps or absolute paths to directories or files to test against
+
+### [`S3Plugin`](https://github.com/MikaAK/s3-plugin-webpack)
+
+``` javascript
+new S3Plugin({
+  exclude: RegExp,
+  s3Options: {
+    accessKeyId: string,
+    secretAccessKey: string,
+    region: string
+  },
+  s3UploadOptions: {
+    Bucket: string
+  },
+  cdnizerConfig: {
+    defaultCDNBase: string
+  }
+})
+```
+
+Uploads your content to s3. Can also run your html files through [cdnizer](https://www.npmjs.com/package/cdnizer) to change the url to match
