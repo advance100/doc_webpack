@@ -22,8 +22,8 @@ open index.html
 The webpack-dev-server will automatically create a HTML page which loads the script. It also re-executes the tests when files have changed.
 
 ``` sh
-webpack-dev-server 'mocha!./test.js' --output-filename test.js
-open http://localhost:8080/webpack-dev-server/test
+webpack-dev-server 'mocha!./test.js' --hot --inline --output-filename test.js
+open http://localhost:8080/test
 ```
 
 Hint: Use `--hot` and it'll only execute tests which have changed or have changed dependencies.
