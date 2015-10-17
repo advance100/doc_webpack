@@ -6,6 +6,27 @@ webpack crashcourse<br>
 2015-10-16 @Anahkiasen
 
 
+### [Debugging Webpack applications in WebStorm](https://blog.jetbrains.com/webstorm/2015/09/debugging-webpack-applications-in-webstorm/)
+
+2015-09-28 @prigara
+
+
+### [How to Use Webpack for Killer Refactoring](https://snipcart.com/blog/how-to-use-webpack-for-killer-refactoring)
+
+2015-09-08 @couellet
+
+
+### [Unlocking ES2015 Features With Webpack And Babel](http://blog.xebia.com/2015/08/31/unlocking-es2015-features-with-webpack-and-babel/)
+
+Integrate webpack with babel for ES2015 features. Plus SourceMaps for debugging.<br>
+2015-08-31 Marc Rooding
+
+
+### [Building Modular JavaScript with Webpack](http://blog.librato.com/posts/webpack)
+
+2015-08-20 @adamyonk
+
+
 ### [A Changing Of The Guard In Web Technology](https://underthehood.myob.com/changing-of-the-guard-in-web-technologies/)
 
 Webpack + React + React router + Flux (Altjs)Beginner friendly introduction to Webpack to build a simple React + Alt.js example application.<br>
@@ -16,6 +37,11 @@ Webpack + React + React router + Flux (Altjs)Beginner friendly introduction to W
 
 Comparison of Webpack and Browserify<br>
 2015-07-27 @coryhouse
+
+### [Durandal And Webpack: Introduction](http://blog.craigsworks.com/durandal-and-webpack-introduction/)
+
+How to utilise the power of the Webpack module bundler with an existing (or perhaps new) Durandal application<br>
+2015-07-26 @Craga89
 
 
 ### [The ultimate webpack setup](http://christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup)
@@ -28,6 +54,12 @@ Using webpack with an express node server. Great for prototyping and generally g
 
 Setting up and understanding a webpack project with angular, handling dependencies & 6 ways to use 'require'.<br>
 2015-04-15 @Sh_McK
+
+
+### [Ditching RequireJS for Webpack: the reasons and lessons learned.](http://blog.player.me/ditching-requirejs-webpack-reasons-lessons-learned/)
+
+A list of the steps I did, the roadblocks I have encoutered and the lessons learned.<br>
+2015-03-15 @maktouch
 
 
 ### [Creating a workflow with WebPack](http://christianalfoni.github.io/javascript/2014/12/13/did-you-know-webpack-and-react-is-awesome.html)
