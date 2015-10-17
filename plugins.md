@@ -37,7 +37,7 @@ Then in `webpack.config.js`
 
 ```javascript
     plugins: [
-        new MyPlugin({optiones: 'nada'})
+        new MyPlugin({options: 'nada'})
     ]
 ```
 
