@@ -1,3 +1,13 @@
+## Books
+
+### [SurviveJS - Webpack and React](http://survivejs.com/)
+
+### [react-webpack-cookbook](https://github.com/christianalfoni/react-webpack-cookbook/wiki)
+
+### [Book of Modern frontend tooling](http://tooling.github.io/book-of-modern-frontend-tooling/dependency-management/webpack/getting-started.html)
+
+
+
 ## Articles
 
 ### [Webpack your bags](http://blog.madewithlove.be/post/webpack-your-bags/)
@@ -144,16 +154,6 @@ A tutorial for integrating TypeScript with webpack.
 An explanation of integrating Webpack with the tasks.json file in Visual Studio Code.
 
 2015-10-07 @Scott_Addie
-
-
-
-## Books
-
-### [SurviveJS - Webpack and React](http://survivejs.com/)
-
-### [react-webpack-cookbook](https://github.com/christianalfoni/react-webpack-cookbook/wiki)
-
-### [Book of Modern frontend tooling](http://tooling.github.io/book-of-modern-frontend-tooling/dependency-management/webpack/getting-started.html)
 
 
 
