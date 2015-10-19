@@ -26,7 +26,7 @@
   * Hint: Use the `stats-webpack-plugin` or the `--json` CLI option to get the stats
   * Hint: Use the `profile` option to gather more performance stats
 * Extract common modules into separate script file: improves caching for switching between pages, at the cost of additional requests for the initial page (App, for app with multiple entry points)
-* Remove duplication with `npm dedupe`/`npm 2` and the `DedupePlugin`: improve total download size (App, for app using npm)
+* Remove duplication with `npm dedupe`/`npm 4` and the `DedupePlugin`: improve total download size (App, for app using npm)
 * Do CSS processing with webpack:  (App/Developer, for every app)
   * static assets (font/image/...) processing with webpack. (for every app)
     * inline static assets with the url-loader: improves time to initial view (by reducing roundtrips), at the cost of total download size (for every app)
