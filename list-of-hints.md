@@ -20,6 +20,7 @@
 * Add hashes to output files and enable Long Caching time on server: improves times for second visit (App, for every app)
   * Hint: Use records to keep module/chunk ids as consistent as possible
   * Hint for static HTML pages: Use the html-webpack-plugin
+* Don't delete no longer used assets immediately after they are no longer used. Wait a few weeks before deleting them from server. Result: No 404s for users that keep browser windows open for long time (App, for every app)
 * Use the `DefinePlugin` to pass configuration from config to app: Embedded into bundle, Conditional code is removed with minimized (App, for apps with configuration)
   * Use the `EnvironmentPlugin` to pass `process.env` from build to app
 * Check bundle stats with analyse tool for problems: Improve total download size, Improve cohesion (App/Developer, for big apps)
