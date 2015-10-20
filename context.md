@@ -103,7 +103,9 @@ req.id;
 or
 
 ``` javascript
-function requireAll(requireContext) { return requireContext.keys().map(requireContext); }
+function requireAll(requireContext) {
+  return requireContext.keys().map(requireContext);
+}
 // requires and returns all modules that match
 
 var modules = requireAll(require.context("./spec", true, /^\.\/.*\.js$/));
