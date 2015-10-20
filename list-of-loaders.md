@@ -126,6 +126,7 @@
 * [`preprocessor`](https://github.com/artificialtrends/preprocess-loader): The preprocessor-loader provides the ability to preprocess source files through user defined regular expressions, macros, and callback routines. All user defined logic can be applied to line scope or source scope.
 
 ## support
+* [`ng-annotate-loader`](https://github.com/huston007/ng-annotate-loader): A loader to annotate dependency injections in `Angular.js` applications.
 * [`mocha`](https://github.com/webpack/mocha-loader): do tests with mocha in browser or node.js
 * [`coverjs`](https://github.com/webpack/coverjs-loader): PostLoader to code coverage with CoverJs
 * [`istanbul-instrumenter`](https://github.com/deepsweet/istanbul-instrumenter-loader): [Istanbul](https://github.com/gotwarlost/istanbul) postLoader to code coverage with [karma-webpack](https://github.com/webpack/karma-webpack) and [karma-coverage](https://github.com/karma-runner/karma-coverage)
