@@ -21,7 +21,7 @@
 * [`xml`](https://github.com/gisikw/xml-loader): Loads XML as JSON.
 * [`svg-react`](https://github.com/jhamlet/svg-react-loader): Load SVG files as JSX-ified React.createClass declarations.
 * [`base64`](https://github.com/antelle/base64-loader): Loads file content as base64 string
-* [`ng-annotate-loader`](https://github.com/huston007/ng-annotate-loader): A loader to annotate dependency injections in `Angular.js` applications.
+* [`ng-annotate`](https://github.com/huston007/ng-annotate-loader): A loader to annotate dependency injections in `Angular.js` applications.
 
 ## packaging
 
@@ -120,7 +120,7 @@
 * [`po`](https://github.com/perchlayer/po-loader): Loads a PO gettext file and returns JSON
 * [`format-message`](https://github.com/thetalecrafter/format-message-loader): Compiles translations to ICU Message Format strings in [`formatMessage`](https://github.com/thetalecrafter/format-message) calls
 * [`jsxlate-loader`](https://github.com/drd/jsxlate-loader): Transform React source code for use with [`jsxlate`](https://github.com/drd/jsxlate)
-* [`angular-gettext-loader`](https://github.com/princed/angular-gettext-loader) Compiles `.po` files as `Angular.js` module or `json` to be used with `angular-gettext`.
+* [`angular-gettext`](https://github.com/princed/angular-gettext-loader) Compiles `.po` files as `Angular.js` module or `json` to be used with `angular-gettext`.
 * [`webpack-angular-translate`](https://github.com/DatenMetzgerX/webpack-angular-translate): Extracts [angular-translate](https://angular-translate.github.io) translation id's and default text's
 * [`angular-gettext-extract-loader`](https://github.com/wombleton/angular-gettext-extract-loader) Extracts strings for translation into a nominated `.pot` file.
 * [`gettext-loader`](https://github.com/mrblueblue/gettext-loader): Compiles a Gettext PO file from code source.
