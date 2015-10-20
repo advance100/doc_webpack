@@ -83,7 +83,7 @@ The exported function has another property `keys` which is a function that retur
 
 And the exported function has another property `id` which is the module id of the context module. This may be useful for `module.hot.accept`.
 
-Example:
+Examples:
 
 ``` javascript
 var req = require.context("./templates", true, /^\.\/.*\.jade$/);
@@ -99,6 +99,15 @@ req.keys();
 
 req.id;
 // is i. e. 42
+```
+or
+
+``` javascript
+function requireAll(requireContext) { return requireContext.keys().map(requireContext); }
+// requires and returns all modules that match
+
+var modules = requireAll(require.context("./spec", true, /^\.\/.*\.js$/));
+// is an array containing all the matching modules
 ```
 
 Note: `keys` depends on `Object.keys`. You may need to polyfill it for older browsers.
