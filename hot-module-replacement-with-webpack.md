@@ -99,7 +99,7 @@ You need to enable HMR in the Compiler to let it add the HMR runtime.
 
 # Tutorial
 
-To use hot code replacement with webpack you need to four things:
+To use hot code replacement with webpack you need four things:
 
 * records (`--records-path`, `recordsPath: ...`)
 * global enable hot code replacement (`HotModuleReplacementPlugin`)
