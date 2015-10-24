@@ -198,7 +198,7 @@ require.ensure([], function(require) {
 });
 ```
 
-`require.include` can be useful if a module is in multiple child chunks. A `require.include` in the parent would include the module and the instances of the modules in the chunk chunks would disappear.
+`require.include` can be useful if a module is in multiple child chunks. A `require.include` in the parent would include the module and the instances of the modules in the child chunks would disappear.
 
 
 
