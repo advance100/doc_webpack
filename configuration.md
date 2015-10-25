@@ -20,6 +20,10 @@ webpack({
 }, callback);
 ```
 
+### multiple configurations
+
+In both cases you can also use a array of configurations, which are processed in parallel. They share filesystem cache and watchers so this is more efficent than calling webpack multiple times.
+
 
 
 
