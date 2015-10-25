@@ -69,6 +69,7 @@
 * [`oj`](https://github.com/DragonsInn/oj-loader): Loads [OJ](https://github.com/musictheory/oj) (an Objective-C like language) files and compiles them to plain JavaScript.
 * [`ulmus`](https://github.com/unindented/ulmus-loader): Loads [Elm](http://elm-lang.org/) files and compiles them to plain JavaScript.
 * [`miel`](https://github.com/collardeau/miel-loader): Loads [Miel](https://github.com/collardeau/miel) syntax and compiles to JavaScript.
+* [`wisp`](https://github.com/girvo/wisp-loader): Loads [Wisp](https://github.com/Gozala/wisp) modules and compiles them to JavaScript.
 
 ## templating
 
