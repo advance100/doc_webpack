@@ -101,7 +101,7 @@
 * [`smarty`](https://github.com/zhiyan/smarty-loader): Pre-compiles php smarty templates and returns a function
 * [`template-string`](https://github.com/bradbenvenuti/template-string-loader): Use ES6 template strings for html templates
 * [`ect`](https://github.com/cusspvz/ect-loader): Compile [ectjs](http://ectjs.com/) templates
-* [`tmodjs`](https://github.com/xosuperpig/tmodjs-loader): Compile [art-template](https://github.com/aui/artTemplate), which is widely used in China.
+* [`tmodjs`](https://github.com/xosuperpig/tmodjs-loader): Load [art-template](https://github.com/aui/artTemplate) , a template-engine that is widely used in China.
 
 ## styling
 * [`bootstrap-webpack`](https://github.com/gowravshekar/bootstrap-webpack): Loads a configuration file for Twitter Bootstrap integration using Less. Allows complete customisation via Less.
