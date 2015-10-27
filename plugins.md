@@ -502,7 +502,7 @@ Evaluate a call to a member function of a successfully evaluated expression.
 
 #### `before-resolve(data)` async waterfall
 
-Before the factory starts resolving. The `data` object has this properties:
+Before the factory starts resolving. The `data` object has these properties:
 
 * `context` The absolute path of the directory for resolving.
 * `request` The request of the expression.
