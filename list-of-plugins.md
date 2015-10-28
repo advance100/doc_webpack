@@ -196,7 +196,7 @@ new webpack.optimize.CommonsChunkPlugin(options)
 * `options.minChunks` (`number|Infinity|function(module, count) -> boolean`): The minimum number of chunks which need to contain a module before it's moved into the commons chunk. The number must be greater than or equal 2 and lower than or equal to the number of chunks. Passing `Infinity` just creates the commons chunk, but moves no modules into it. By providing a `function` you can add custom logic. (Defaults to the number of chunks)
 * `options.chunks` (string[]`): Select the source chunks by chunk names. The chunk must be a child of the commons chunk. If omitted all entry chunks are selected.
 * `options.children` (`boolean`): If `true` all children of the commons chunk are selected
-* `options.async` (`boolean`): If `true` a new asnyc commons chunk is created as child of `options.name` and sibling of `options.chunks`. It is loaded in parallel with `options.chunks`.
+* `options.async` (`boolean`): If `true` a new async commons chunk is created as child of `options.name` and sibling of `options.chunks`. It is loaded in parallel with `options.chunks`.
 * `options.minSize` (`number`): Minimum size of all common module before a commons chunk is created.
 
 Examples:
