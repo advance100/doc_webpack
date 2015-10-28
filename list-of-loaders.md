@@ -22,6 +22,7 @@
 * [`svg-react`](https://github.com/jhamlet/svg-react-loader): Load SVG files as JSX-ified React.createClass declarations.
 * [`base64`](https://github.com/antelle/base64-loader): Loads file content as base64 string
 * [`ng-annotate`](https://github.com/huston007/ng-annotate-loader): A loader to annotate dependency injections in `Angular.js` applications.
+* [`node`](https://github.com/webpack/node-loader): Loads `.node` files that are produced using node-gyp.
 
 ## packaging
 
