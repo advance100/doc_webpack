@@ -148,7 +148,7 @@ Assign the module and chunk ids by occurrence count. Ids that are used often get
 new webpack.optimize.UglifyJsPlugin([options])
 ```
 
-Minimize all JavaScript output of chunks. Loaders are switched into minimizing mode. You can pass an object containing UglifyJs options.
+Minimize all JavaScript output of chunks. Loaders are switched into minimizing mode. You can pass an object containing [UglifyJS options](https://github.com/mishoo/UglifyJS2#usage).
 
 ``` javascript
 new webpack.optimize.UglifyJsPlugin({
