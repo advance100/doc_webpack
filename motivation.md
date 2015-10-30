@@ -175,6 +175,7 @@ Why should a module system only help the developer with JavaScript? There are ma
 And also:
 
 * coffeescript → javascript
+* elm → javascript
 * less stylesheets → css stylesheets
 * jade templates → javascript which generates html
 * i18n files → something
