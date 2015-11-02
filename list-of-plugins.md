@@ -552,7 +552,7 @@ new S3Plugin({
   s3UploadOptions: {
     Bucket: string
   },
-  cdnizerConfig: {
+  cdnizerOptions: {
     defaultCDNBase: string
   }
 })
