@@ -34,6 +34,11 @@ module.exports = {
 }
 ```
 
+When installing third party plugins via npm it is advised to use this tool:
+[https://www.npmjs.com/package/webpack-load-plugins](https://www.npmjs.com/package/webpack-load-plugins)
+
+It checks for all third party plugins installed in your dependencies and lazyloads them when you need them.
+
 ## See also
 
 * [[list of plugins]]
