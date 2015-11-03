@@ -6,7 +6,7 @@
 
 ### [Book of Modern frontend tooling](http://tooling.github.io/book-of-modern-frontend-tooling/dependency-management/webpack/getting-started.html)
 
-
+### [Webpack 中文指南](http://zhaoda.net/webpack-handbook/)
 
 ## Articles
 
