@@ -276,7 +276,7 @@ Which format to export the library:
 
 `"commonjs2"` - Export by setting `module.exports`: `module.exports = xxx`
 
-`"amd"` - Export to AMD (optionally named)
+`"amd"` - Export to AMD (optionally named - set the name via the library option)
 
 `"umd"` - Export to AMD, CommonJS2 or as property in root
 
