@@ -328,7 +328,7 @@ Support Labeled Modules.
 
 ### [`ComponentPlugin`](https://github.com/webpack/component-webpack-plugin)
 
-Use [component](https://github.com/component/component) with webpack.
+Use [component](https://github.com/component/component) with webpack. This project has been deprecated.
 
 ### [`AngularPlugin`](https://github.com/stackfull/angular-webpack-plugin)
 
