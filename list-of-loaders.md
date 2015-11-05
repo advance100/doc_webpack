@@ -104,6 +104,8 @@
 * [`ect`](https://github.com/cusspvz/ect-loader): Compile [ectjs](http://ectjs.com/) templates
 * [`tmodjs`](https://github.com/xosuperpig/tmodjs-loader): Load [art-template](https://github.com/aui/artTemplate) , a template-engine that is widely used in China.
 * [`layout`](https://github.com/uxnow/layout-loader): You can use require directly in html now!
+* [`swig`](https://github.com/coditorium/nodejs-swig-loader): Webpack Swig loader
+
 
 ## styling
 * [`bootstrap-webpack`](https://github.com/gowravshekar/bootstrap-webpack): Loads a configuration file for Twitter Bootstrap integration using Less. Allows complete customisation via Less.
