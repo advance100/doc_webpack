@@ -40,6 +40,7 @@
 * [`img`](https://github.com/thetalecrafter/img-loader): Load and compress images with imagemin.
 * [`svgo-loader`](https://github.com/pozadi/svgo-loader): Compresses SVG images using [svgo](https://github.com/svg/svgo) library
 * [`svg-sprite`](https://github.com/kisenka/webpack-svg-sprite-loader): Like style-loader but for SVG: it creates a single SVG sprite from a set of images, appends it to DOM and returns relative `symbol` url to be used with svg's `<use>`.
+* [`line-art-loader`](https://github.com/tptee/line-art-loader): Inlines SVG files, converting all of its nodes to paths. Useful for line art animations in React components.
 * [`baggage`](https://github.com/deepsweet/baggage-loader): Automatically require any resources related to the required one
 * [`polymer-loader`](https://github.com/JonDum/polymer-loader): Process HTML & CSS with preprocessor of choice and `require()` Web Components like first-class modules.
 * [`uglify-loader`](https://github.com/bestander/uglify-loader): Uglify contents of a module. Unlike uglify plugin you can minify with mangling only your application files and not the libraries
