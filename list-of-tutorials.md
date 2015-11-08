@@ -229,6 +229,13 @@ Egghead.io series by [Kent C. Dodds](https://twitter.com/kentcdodds)
 2014-12-27 @jesseskinner
 
 
+### [Webpack Screencast (in Russian)](https://learn.javascript.ru/webpack-screencast)
+
+На русском языке.
+
+40 series of in-depth webpack tutorials
+
+2015-11-08 @iliakan
 
 ## Demos, Examples and Starters
 
