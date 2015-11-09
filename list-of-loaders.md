@@ -76,6 +76,7 @@
 ## templating
 
 * [`html`](https://github.com/webpack/html-loader): Exports HTML as string, require references to static resources.
+* [`dom`](https://github.com/Wizcorp/dom-loader): Exports HTML in a DOM element container.
 * [`riot`](https://github.com/esnunes/riotjs-loader): Load RiotJS tags and convert them to javascript.
 * [`jade`](https://github.com/webpack/jade-loader): Loads jade template and returns a function
 * [`jade-html`](https://github.com/bline/jade-html-loader): Loads jade template and returns generated HTML
