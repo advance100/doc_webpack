@@ -157,3 +157,4 @@
 * [`sjsp`](https://github.com/3100/sjsp-loader): Inject some codes for profiling using [node-sjsp](https://github.com/45deg/node-sjsp).
 * [`amdcheck`](https://github.com/mehdishojaei/amdcheck-loader): Uses AST to find and remove unused dependencies in AMD modules using [amdextract](https://github.com/mehdishojaei/amdextract).
 * [`manifest-loader`](https://github.com/RinconStrategies/manifest-loader): A loader to generate JSON asset manifests to pass to preloading systems.
+* [`gulp-rev-loader`](https://github.com/adjavaherian/gulp-rev-loader): Use in tandem with gulp-rev to replace assets from rev-manifest.
