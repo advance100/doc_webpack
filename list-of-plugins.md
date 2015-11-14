@@ -458,7 +458,7 @@ new webpack.SourceMapDevToolPlugin({
 
   // file and reference
   filename: string,
-  append: bool | string,
+  append: false | string,
 
   // sources naming
   moduleFilenameTemplate: string,
