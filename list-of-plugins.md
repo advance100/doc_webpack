@@ -307,6 +307,75 @@ A plugin for a more aggressive chunk merging strategy. Even similar chunks are m
 
 `options.entryChunkMultiplicator` When `options.moveToParents` is set, moving to an entry chunk is more expensive. Defaults to `10`, which means moving to an entry chunk is ten times more expensive than moving to an normal chunk.
 
+### `DllPlugin`
+
+Output "dll" bundles. Dll bundles doesn't execute any of your module's code. They only include modules. A dll bundle exports a function which can be used to "require" modules by id (the internal require function). In addition to that a manifest json file is written to a specified location which contains mappings from real request to module id.
+
+Combine this plugins with `output.library` option to expose the dll function i. e. into the global scope.
+
+``` js
+new DllPlugin({
+  path: path.join(__dirname, "manifest.json"),
+  name: "[name]_[hash]",
+  context: __dirname
+})
+```
+
+* `path`: **absolute path** to the manifest json file (output)
+* `name`: name of the exposed dll function (keep consistent with `output.library`)
+* `context` (optional): context of requests in the manifest file, defaults to the webpack context
+
+[Usage example](https://github.com/webpack/webpack/tree/master/examples/dll)
+
+### `DllReferencePlugin`
+
+References a dll function which is expected to be available. A manifest file can be used to map names to module ids accessible by this dll function.
+
+Can be used to consume a dll bundle + manifest created by the `DllPlugin`.
+
+Can be used in two different modes:
+
+**Scoped mode**
+
+The content of the dll is accessible under a module prefix. i. e. with `scope = "xyz"` a file `abc` in the dll can be access via `require("xyz/abc")`.
+
+**Mapped mode**
+
+The content of the dll is mapped to the current directory. If a required file matches a file in the dll (after resolving), then the file from the dll is used instead. Note: because this happens after resolving every file in the dll must be also available for the dll user at the same path. i. e. if the dll contains `jquery` and the file `abc`, `require("jquery")` and `require("./abc")` will be used from the dll.
+
+``` js
+new DllReferencePlugin({
+  context: __dirname,
+  scope: "xyz",
+  manifest: require("./manifest.json"),
+  name: "./my-dll.js",
+  sourceType: "commonsjs2",
+  content: { ... }
+})
+```
+
+* `context`: (**absolute path**) context of requests in the manifest (or content property)
+* `scope` (optional): prefix which is used for accessing the content of the dll
+* `minifest` (object): an object containing `content` and `name`
+* `name` (optional): the name where the dll is exposed (defaults to `manifest.name`) (see also `externals`)
+* `sourceType` (optional): the type how the dll is exposed (defaults to `"var"`) (see also `externals`)
+* `content` (optional): the mappings from request to module id (defaults to `manifest.content`)
+
+[Usage example](https://github.com/webpack/webpack/tree/master/examples/dll-user)
+
+#### Using dlls via `<script>` tags
+
+Dll bundle: `output.library = "[name]_[hash]"` `output.libraryTarget = "var"` `DllPlugin.name = "[name]_[hash]"`
+
+Dll consumer: `DllReferencePlugin.sourceType = "var"`
+
+#### Using dlls via node.js
+
+Dll bundle: `output.libraryTarget = "commonjs2"`
+
+Dll consumer: `DllReferencePlugin.sourceType = "commonjs2"` `DllReferencePlugin.name = "./path/to/dll.js"`
+
+
 ### [`AppCachePlugin`](https://github.com/lettertwo/appcache-webpack-plugin)
 
 Generates a HTML5 Application Cache manifest
