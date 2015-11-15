@@ -107,6 +107,7 @@
 * [`tmodjs`](https://github.com/xosuperpig/tmodjs-loader): Load [art-template](https://github.com/aui/artTemplate) , a template-engine that is widely used in China.
 * [`layout`](https://github.com/uxnow/layout-loader): You can use require directly in html now!
 * [`swig`](https://github.com/coditorium/nodejs-swig-loader): Webpack Swig loader
+* [`twig`](https://github.com/zimmo-be/twig-loader): Webpack Twig.js loader
 
 
 ## styling
