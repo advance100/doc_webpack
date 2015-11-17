@@ -38,6 +38,10 @@ The best performance has `devtool: "eval"`, but it only maps to compiled source 
 
 The UglifyJsPlugin uses SourceMaps to map errors to source code. And SourceMaps are slow. As you should only use this in production this is fine. If your production build is really slow (or doesn't finish at all) you can disable it with `new UglifyJsPlugin({ sourceMap: false })`.
 
+# `resolve.root` vs `resolve.modulesDirectories`
+
+Only use [`resolve.modulesDirectories`](http://webpack.github.io/docs/configuration.html#resolve-modulesdirectories) for nested paths, most paths should use [`resolve.root`](http://webpack.github.io/docs/configuration.html#resolve-root). This can give [significant performance gains](https://github.com/webpack/webpack/issues/1574#issuecomment-157520561). See also [this discussion](https://github.com/webpack/webpack/issues/472#issuecomment-55706013).
+
 # Optimization plugins
 
 Only use optimization plugins in production builds.
