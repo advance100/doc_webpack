@@ -30,8 +30,8 @@ new webpack.IgnorePlugin(requestRegExp, [contextRegExp])
 
 Don't generate modules for requests matching the provided RegExp.
 
-* `requestRegExp` A RegExp to test the request again.
-* `contextRegExp` (optional) A RegExp to test the context (directory) again.
+* `requestRegExp` A RegExp to test the request against.
+* `contextRegExp` (optional) A RegExp to test the context (directory) against.
 
 ### `PrefetchPlugin`
 
