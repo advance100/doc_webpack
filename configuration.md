@@ -460,6 +460,20 @@ The directory (**absolute path**) that contains your modules. May also be an arr
 
 > It **must** be an **absolute path**! Don't pass something like `./app/modules`.
 
+Example:
+
+```javascript
+var path = require('path');
+
+// ...
+resolve: {
+  root: [
+    path.resolve('./app/modules'),
+    path.resolve('./vendor/modules')
+  ]
+}
+```
+
 ### `resolve.modulesDirectories`
 
 An array of directory names to be resolved to the current directory as well as its ancestors, and searched for modules. This functions similarly to how node finds "node_modules" directories. For example, if the value is `["mydir"]`, webpack will look in "./mydir", "../mydir", "../../mydir", etc.
