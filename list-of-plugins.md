@@ -106,7 +106,7 @@ new webpack.optimize.DedupePlugin()
 
 Search for equal or similar files and deduplicate them in the output. This comes with some overhead for the entry chunk, but can reduce file size effectively.
 
-This is experimental and may crash, because of some missing implementations. (Report an issue)
+This doesn't change the module semantics at all. Don't expect to solve problems with multiple module instance. They won't be one instance after deduplication.
 
 ### `LimitChunkCountPlugin`
 
