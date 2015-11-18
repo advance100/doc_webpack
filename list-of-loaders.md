@@ -91,6 +91,7 @@
 * [`ejs`](https://github.com/okonet/ejs-loader): Loads EJS ([underscore](http://underscorejs.org/#template)( templating engine) template and returns a pre-compiled function
 * [`mustache`](https://github.com/deepsweet/mustache-loader): Pre-compiles Mustache templates with [Hogan.js](https://github.com/twitter/hogan.js) and returns a function
 * [`yaml`](https://github.com/okonet/yaml-loader): Converts YAML to JSON
+* [`front-matter`](https://github.com/elliottsj/front-matter-loader): Extracts YAML frontmatter
 * [`markdown`](https://github.com/peerigon/markdown-loader): Compiles Markdown to HTML
 * [`remarkable`](https://github.com/unindented/remarkable-loader): Compiles Markdown to HTML using the Remarkable parser
 * [`markdown-it`](https://github.com/unindented/markdown-it-loader): Compiles Markdown to HTML using the markdown-it parser
