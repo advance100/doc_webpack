@@ -22,7 +22,7 @@ webpack({
 
 ### multiple configurations
 
-In both cases you can also use a array of configurations, which are processed in parallel. They share filesystem cache and watchers so this is more efficent than calling webpack multiple times.
+In both cases you can also use an array of configurations, which are processed in parallel. They share filesystem cache and watchers so this is more efficent than calling webpack multiple times.
 
 
 
@@ -318,7 +318,7 @@ Options affecting the normal modules (`NormalModuleFactory`)
 
 ### `module.loaders`
 
-A array of automatically applied loaders.
+An array of automatically applied loaders.
 
 Each item can have these properties:
 
@@ -326,7 +326,7 @@ Each item can have these properties:
 * `exclude`: A condition that must not be met
 * `include`: A condition that must be met
 * `loader`: A string of "!" separated loaders
-* `loaders`: A array of loaders as string
+* `loaders`: An array of loaders as string
 
 A condition may be a `RegExp`, a `string` containing the absolute path, a `function(absPath): bool`, or an array of one of these combined with "and".
 
@@ -361,7 +361,7 @@ module.loaders: [
 
 Syntax like `module.loaders`.
 
-A array of applied pre and post loaders.
+An array of applied pre and post loaders.
 
 ### `module.noParse`
 
