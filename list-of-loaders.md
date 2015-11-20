@@ -126,6 +126,7 @@
 * [`namespace-css`](https://github.com/jeffling/namespace-css-loader): Namespace your css with a given selector (for encapsulating all rules in one subset of your site)
 * [`fontgen`](https://www.npmjs.com/package/fontgen-loader): Create your own webfont with proper CSS on-the-fly and include it into WebPack.
 * [`classnames`](https://github.com/itsmepetrov/classnames-loader): Automatically bind [css-modules](https://github.com/css-modules/css-modules) to [classnames](https://github.com/JedWatson/classnames).
+* [`modernizr`](https://github.com/peerigon/modernizr-loader): Get your modernizr build bundled with webpack
 
 ## translation
 
