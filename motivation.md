@@ -1,4 +1,4 @@
-Today's websites are evolving into web apps:
+今日的网站已经进化成了 WEB APP：
 
 * More and more JavaScript is in a page.
 * You can do more stuff in modern browsers.
