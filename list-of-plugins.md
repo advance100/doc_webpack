@@ -108,6 +108,8 @@ Search for equal or similar files and deduplicate them in the output. This comes
 
 This doesn't change the module semantics at all. Don't expect to solve problems with multiple module instance. They won't be one instance after deduplication.
 
+Note: Don't use it in watch mode. Only for production builds.
+
 ### `LimitChunkCountPlugin`
 
 ``` javascript
