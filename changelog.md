@@ -1,7 +1,13 @@
 # 1.12
 
-(2015-08-25)
+(2015-11-20)
 
+* CLI: config file can return a Promise
+* BUG: made path to `module` module context-independent
+* BUG: upgrade uglify-js version
+* BUG: fixes for the CommonsChunkPlugin with multiple commons chunks
+* API: added `umdNamedDefine` option for named AMD
+* CLI: added `--watch-stdin` to watch for stdin closing
 * API: emit empty argument list for AMD in UMD
 * updated to esprima 2
 * CI: Test on node.js and io.js, Test for beautify source code
