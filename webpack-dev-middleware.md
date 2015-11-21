@@ -65,7 +65,7 @@ number: use polling with specified interval
 
 Default: `undefined`
 
-#### `publicPath`
+#### `publicPath` (**required**)
 
 The path where to bind the middleware to the server.
 
