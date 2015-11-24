@@ -244,11 +244,6 @@ Egghead.io series by [Kent C. Dodds](https://twitter.com/kentcdodds)
 a collection of simple demos of Webpack
 
 
-### [Single page Application with Webpack and React](https://github.com/lvBingo/Angelcrunch-react)
-
-Angelcrunch.com mobile site demo. Webpack + React + React Router + jQuery + Altjs.
-
-
 
 
 
