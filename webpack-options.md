@@ -1,3 +1,4 @@
+``` js
 'use strict';
 /*eslint no-process-env:0*/
 
@@ -163,3 +164,4 @@ var wConfig = {
 wConfig.pushPlugins();
 
 module.exports = wConfig;
+```
