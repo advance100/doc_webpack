@@ -158,7 +158,7 @@ An explanation of integrating Webpack with the tasks.json file in Visual Studio 
 ### [Set up Webpack](http://alexhusakov.com/posts/Set-up-Webpack)
 A tutorial for configuring a basic workflow.
 
-2015-07-19 @jbrantly
+2015-11-28 @zoomchik
 ## Talks
 
 ### [An Efficient Static Assets Pipeline with Webpack](https://www.youtube.com/watch?v=w1dAb_Umt8o)
