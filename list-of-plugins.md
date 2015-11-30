@@ -596,7 +596,7 @@ Adds useful free vars to the bundle.
 new webpack.NoErrorsPlugin()
 ```
 
-When there are errors while compiling this plugin skips the emitting phase (and recording phase), so there are no assets emitted that include errors. The `emitted` flag in the stats is `false` for all assets.  **Note**: the webpack process will not exit with an error code.  If you want webpack to "fail", for example if you are chaining build tasks, please checkout the `bail` option.
+When there are errors while compiling this plugin skips the emitting phase (and recording phase), so there are no assets emitted that include errors. The `emitted` flag in the stats is `false` for all assets.  If you are using the CLI, the webpack process will _not exit with an error code_ by enabling this plugin.  If you want webpack to "fail" when using the CLI, please check out the `bail` option.
 
 
 
