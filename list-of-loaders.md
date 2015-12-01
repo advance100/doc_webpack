@@ -69,7 +69,7 @@
 * [`webpack-typescript`](https://github.com/denvned/webpack-typescript): Loads TypeScript like JavaScript. Supports watch mode and source maps. Works with TypeScript 1.5, 1.6, and nightly builds of TypeScript 1.7 and 1.8.
 * [`purs-loader`](https://www.npmjs.com/package/purs-loader): Loads [PureScript](http://www.purescript.org/) like JavaScript.
 * [`oj`](https://github.com/DragonsInn/oj-loader): Loads [OJ](https://github.com/musictheory/oj) (an Objective-C like language) files and compiles them to plain JavaScript.
-* [`ulmus`](https://github.com/unindented/ulmus-loader): Loads [Elm](http://elm-lang.org/) files and compiles them to plain JavaScript.
+* [`elm-webpack`](https://github.com/rtfeldman/elm-webpack-loader): Loads [Elm](http://elm-lang.org/) files and compiles them to plain JavaScript.
 * [`miel`](https://github.com/collardeau/miel-loader): Loads [Miel](https://github.com/collardeau/miel) syntax and compiles to JavaScript.
 * [`wisp`](https://github.com/girvo/wisp-loader): Loads [Wisp](https://github.com/Gozala/wisp) modules and compiles them to JavaScript.
 
