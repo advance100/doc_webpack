@@ -124,7 +124,7 @@ Three changes are needed:
 
 * add an entry point to the webpack configuration: `webpack/hot/dev-server`.
 * add the `new webpack.HotModuleReplacementPlugin()` to the webpack configuration.
-* add `hot: true` the the webpack-dev-server configuration to enable HMR on the server.
+* add `hot: true` to the webpack-dev-server configuration to enable HMR on the server.
 
 I. e. with the above configuration:
 
@@ -277,7 +277,7 @@ In this case you need to teach the webpack-generated assets to make requests to 
 
 To teach _webpack_ to make requests (for chunk loading or HMR) to the _webpack-dev-server_ you need to provide **a full URL in the `output.publicPath`** option.
 
-To make a connection between _webpack-dev-server_ and its runtime best use the _inline mode_ with `--inline`. The _webpack-dev-server_ CLI automatically includes an entry point which establishes a WebSocket connection. (You can also use the _iframe_ mode if you point `--content-base` of the _webpack-dev-server_ to your backend server.  **If you need a websocket connection to your backend server**, you'll have to use iframe mode.
+To make a connection between _webpack-dev-server_ and its runtime best, use the _inline mode_ with `--inline`. The _webpack-dev-server_ CLI automatically includes an entry point which establishes a WebSocket connection. (You can also use the _iframe_ mode if you point `--content-base` of the _webpack-dev-server_ to your backend server.  **If you need a websocket connection to your backend server**, you'll have to use iframe mode.
 
 When you use the _inline mode_ just open the backend server URL in your web browsers. (If you use the _iframe mode_ open the `/webpack-dev-server/` prefixed URL of the _webpack-dev-server_.)
 
