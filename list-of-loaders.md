@@ -48,6 +48,7 @@
 * [`vue-loader`](https://github.com/vuejs/vue-loader): Load single-file Vue.js components as modules, with loader-support for preprocessors.
 * [`tojson-loader`](https://github.com/timoxley/tojson-loader) Serialize module exports as JSON. Cache generated static data as JSON at build time.
 * [`zip-it-loader`](https://github.com/bmagnantb/zip-it-loader) Convert files and directories to zip. Great with `file`.
+* [`lzstring-loader`](https://github.com/nickdeis/lzstring-loader) Compresses large strings inline using lz-string, and decompresses them at runtime
 
 
 ## dialects
