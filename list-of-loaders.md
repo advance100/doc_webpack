@@ -163,3 +163,4 @@
 * [`amdcheck`](https://github.com/mehdishojaei/amdcheck-loader): Uses AST to find and remove unused dependencies in AMD modules using [amdextract](https://github.com/mehdishojaei/amdextract).
 * [`manifest-loader`](https://github.com/RinconStrategies/manifest-loader): A loader to generate JSON asset manifests to pass to preloading systems.
 * [`gulp-rev-loader`](https://github.com/adjavaherian/gulp-rev-loader): Use in tandem with gulp-rev to replace assets from rev-manifest.
+* [`html-test-loader`](https://github.com/wombleton/html-test-loader) Test your html templates (for example) for analytics.
