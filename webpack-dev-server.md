@@ -20,14 +20,14 @@ You have an `app` folder with your initial entry point that _webpack_ will bundl
 The _webpack-dev-server_ will serve the files in the current directory, unless you configure a specific content base. 
 
 ```sh
-$ webpack-dev-server --content-base public/
+$ webpack-dev-server --content-base build/
 ```
 
-Using this config _webpack-dev-server_ will serve the static files in your `public` folder. It'll watch your source files for changes and when changes are made the _bundle_ will be recompiled. This modified _bundle_ is served from memory at the relative path specified in `publicPath` (see [API](#api)). It will not be written to your configured output directory. Where a _bundle_ already exists at the same url path the _bundle_ in memory will take precedence (by default).
+Using this config _webpack-dev-server_ will serve the static files in your `build` folder. It'll watch your source files for changes and when changes are made the _bundle_ will be recompiled. This modified _bundle_ is served from memory at the relative path specified in `publicPath` (see [API](#api)). It will not be written to your configured output directory. Where a _bundle_ already exists at the same url path the _bundle_ in memory will take precedence (by default).
 
 For example with the configuration above your _bundle_ will be available at `localhost:8080/assets/bundle.js`
  
-To load your bundled files, you will need to create an `index.html` file in the `public` folder from which static files are served (`--content-base` option). e.g:
+To load your bundled files, you will need to create an `index.html` file in the `build` folder from which static files are served (`--content-base` option). e.g:
 
 ```html
 <!DOCTYPE html>
