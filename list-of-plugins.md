@@ -600,6 +600,15 @@ When there are errors while compiling this plugin skips the emitting phase (and 
 
 
 
+### `ProgressPlugin`
+
+``` javascript
+new webpack.ProgressPlugin(function handler(percentage, msg) {/* ... */})
+```
+
+Hook into the compiler to extract progress information. The `handler` must have the signature `function(percentage, message)`. It's called with `0 <= percentage <= 1`. `percentage == 0` indicates the start. `percentage == 1` indicates the end.
+
+
 ### `WatchIgnorePlugin`
 
 ``` javascript
