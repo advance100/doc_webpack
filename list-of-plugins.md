@@ -134,10 +134,10 @@ Merge small chunks that are lower than this min size (in chars). Size is approxi
 
 `options.minChunkSize` (number) chunks smaller than this number will be merged
 
-### `OccurenceOrderPlugin`
+### `OccurrenceOrderPlugin`
 
 ``` javascript
-new webpack.optimize.OccurenceOrderPlugin(preferEntry)
+new webpack.optimize.OccurrenceOrderPlugin(preferEntry)
 ```
 
 Assign the module and chunk ids by occurrence count. Ids that are used often get lower (shorter) ids. This make ids predictable, reduces to total file size and is recommended.
