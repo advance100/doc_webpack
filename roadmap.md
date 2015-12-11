@@ -1,5 +1,5 @@
 ## 2
-
+(for the most up to date version see https://docs.google.com/document/d/1tRc0MzvRdGK7EbG2LRW8vSyoxKhR_EvRUz3AQRyFZso/edit?pli=1)
 * native ES6 import, export and System.import
 * Tree Shaking for ES6
 * Needs Promise polyfill in old browsers
