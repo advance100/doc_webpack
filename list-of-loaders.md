@@ -23,7 +23,7 @@
 * [`base64`](https://github.com/antelle/base64-loader): Loads file content as base64 string
 * [`ng-annotate`](https://github.com/huston007/ng-annotate-loader): A loader to annotate dependency injections in `Angular.js` applications.
 * [`node`](https://github.com/webpack/node-loader): Loads `.node` files that are produced using node-gyp.
-* [`required`](https://www.npmjs.com/package/required-loader): Require a whole directory of trees in bulk
+* [`required`](https://www.npmjs.com/package/required-loader): Require a whole directory of trees in bulk. Require JS, Import CSS and imports stuff in it.
 
 ## packaging
 
