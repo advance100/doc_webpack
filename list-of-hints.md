@@ -14,7 +14,7 @@
 
 ## App performance
 
-* Minimize you bundle with the `UglifyJsPlugin` (App, for every app)
+* Minimize your bundle with the `UglifyJsPlugin` (App, for every app)
 * Use Code Splitting: improves initial download size, at the cost of more requests (App, for big apps)
   * Hint for React apps: Use the react-proxy-loader
 * Add hashes to output files and enable Long Caching time on server: improves times for second visit (App, for every app)
