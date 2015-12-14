@@ -200,6 +200,13 @@ Comprehensive introduction to webpack, held at the [MNUG (munich node.js user gr
 
 ## Screencasts
 
+### [Webpack screencast RUS only](https://www.youtube.com/playlist?list=PLDyvV36pndZHfBThhg4Z0822EEG9VGenn)
+
+Complete webpack introduction on YouTube by Ilya Kantor.
+
+2015-12-14 @yaroslavya
+
+
 ### [Getting Started with webpack](https://www.youtube.com/watch?v=TaWKUpahFZM)
 
 Quick screencast on YouTube about getting started with webpack by [Kyle Robinson Young](https://twitter.com/shamakry)
