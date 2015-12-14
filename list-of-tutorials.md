@@ -200,9 +200,9 @@ Comprehensive introduction to webpack, held at the [MNUG (munich node.js user gr
 
 ## Screencasts
 
-### [Webpack screencast RUS only](https://www.youtube.com/playlist?list=PLDyvV36pndZHfBThhg4Z0822EEG9VGenn)
+### [Webpack screencast (russian language only)](https://www.youtube.com/playlist?list=PLDyvV36pndZHfBThhg4Z0822EEG9VGenn)
 
-Complete webpack introduction on YouTube by Ilya Kantor.
+Complete webpack introduction on YouTube by Ilya Kantor, russian language only.
 
 2015-12-14 @yaroslavya
 
