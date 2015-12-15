@@ -156,15 +156,18 @@ An explanation of integrating Webpack with the tasks.json file in Visual Studio 
 2015-10-07 @Scott_Addie
 
 
+### [Set up Webpack](http://alexhusakov.com/posts/Set-up-Webpack)
+A tutorial for configuring a basic workflow.
+
+2015-11-28 @zoomchik
+
+
 ### [A Practical Approach to Cache Busting with Webpack and ASP.NET 5](http://scottaddie.com/2015/12/14/a-practical-approach-to-cache-busting-with-webpack-and-asp-net-5/)
 A demonstration of implementing cache busting for client-side assets with Webpack in an ASP.NET MVC 6 application.
 
 2015-12-14 @Scott_Addie
 
-### [Set up Webpack](http://alexhusakov.com/posts/Set-up-Webpack)
-A tutorial for configuring a basic workflow.
 
-2015-11-28 @zoomchik
 ## Talks
 
 ### [An Efficient Static Assets Pipeline with Webpack](https://www.youtube.com/watch?v=w1dAb_Umt8o)
