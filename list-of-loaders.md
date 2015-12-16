@@ -39,18 +39,18 @@
 * [`react-hot`](https://github.com/gaearon/react-hot-loader): Allows to live-edit React components while keeping them mounted and preserving their state.
 * [`image`](https://github.com/tcoopman/image-webpack-loader): Compresses your images. Ideal to use together with `file` or `url`.
 * [`img`](https://github.com/thetalecrafter/img-loader): Load and compress images with imagemin.
-* [`svgo-loader`](https://github.com/pozadi/svgo-loader): Compresses SVG images using [svgo](https://github.com/svg/svgo) library
+* [`svgo`](https://github.com/pozadi/svgo-loader): Compresses SVG images using [svgo](https://github.com/svg/svgo) library
 * [`svg-sprite`](https://github.com/kisenka/webpack-svg-sprite-loader): Like style-loader but for SVG: it creates a single SVG sprite from a set of images, appends it to DOM and returns relative `symbol` url to be used with svg's `<use>`.
-* [`line-art-loader`](https://github.com/tptee/line-art-loader): Inlines SVG files, converting all of its nodes to paths. Useful for line art animations in React components.
+* [`line-art`](https://github.com/tptee/line-art-loader): Inlines SVG files, converting all of its nodes to paths. Useful for line art animations in React components.
 * [`baggage`](https://github.com/deepsweet/baggage-loader): Automatically require any resources related to the required one
-* [`polymer-loader`](https://github.com/JonDum/polymer-loader): Process HTML & CSS with preprocessor of choice and `require()` Web Components like first-class modules.
-* [`uglify-loader`](https://github.com/bestander/uglify-loader): Uglify contents of a module. Unlike uglify plugin you can minify with mangling only your application files and not the libraries
-* [`html-minify-loader`](https://github.com/bestander/html-minify-loader): Minifies HTML using [minimize](https://github.com/Moveo/minimize)
-* [`vue-loader`](https://github.com/vuejs/vue-loader): Load single-file Vue.js components as modules, with loader-support for preprocessors.
-* [`tojson-loader`](https://github.com/timoxley/tojson-loader) Serialize module exports as JSON. Cache generated static data as JSON at build time.
-* [`zip-it-loader`](https://github.com/bmagnantb/zip-it-loader) Convert files and directories to zip. Great with `file`.
-* [`lzstring-loader`](https://github.com/nickdeis/lzstring-loader) Compresses large strings inline using lz-string, and decompresses them at runtime
-* [`modernizr-loader`](https://github.com/peerigon/modernizr-loader) Get your modernizr build bundled with webpack
+* [`polymer`](https://github.com/JonDum/polymer-loader): Process HTML & CSS with preprocessor of choice and `require()` Web Components like first-class modules.
+* [`uglify`](https://github.com/bestander/uglify-loader): Uglify contents of a module. Unlike uglify plugin you can minify with mangling only your application files and not the libraries
+* [`html-minify`](https://github.com/bestander/html-minify-loader): Minifies HTML using [minimize](https://github.com/Moveo/minimize)
+* [`vue`](https://github.com/vuejs/vue-loader): Load single-file Vue.js components as modules, with loader-support for preprocessors.
+* [`tojson`](https://github.com/timoxley/tojson-loader) Serialize module exports as JSON. Cache generated static data as JSON at build time.
+* [`zip-it`](https://github.com/bmagnantb/zip-it-loader) Convert files and directories to zip. Great with `file`.
+* [`lzstring`](https://github.com/nickdeis/lzstring-loader) Compresses large strings inline using lz-string, and decompresses them at runtime
+* [`modernizr`](https://github.com/peerigon/modernizr-loader) Get your modernizr build bundled with webpack
 
 
 ## dialects
@@ -68,9 +68,9 @@
 * [`traceur`](https://github.com/jupl/traceur-loader): Use future JavaScript features with [Traceur](https://github.com/google/traceur-compiler).
 * [`ts`](https://github.com/TypeStrong/ts-loader): Loads TypeScript like JavaScript.
 * [`typescript`](https://github.com/andreypopp/typescript-loader): Loads TypeScript like JavaScript.
-* [`awesome-typescript-loader`](https://github.com/s-panferov/awesome-typescript-loader): Loads TypeScript like JavaScript with watching support. **Works with TypeScript 1.5-alfa**
+* [`awesome-typescript`](https://github.com/s-panferov/awesome-typescript-loader): Loads TypeScript like JavaScript with watching support. **Works with TypeScript 1.5-alfa**
 * [`webpack-typescript`](https://github.com/denvned/webpack-typescript): Loads TypeScript like JavaScript. Supports watch mode and source maps. Works with TypeScript 1.5, 1.6, and nightly builds of TypeScript 1.7 and 1.8.
-* [`purs-loader`](https://www.npmjs.com/package/purs-loader): Loads [PureScript](http://www.purescript.org/) like JavaScript.
+* [`purs`](https://www.npmjs.com/package/purs-loader): Loads [PureScript](http://www.purescript.org/) like JavaScript.
 * [`oj`](https://github.com/DragonsInn/oj-loader): Loads [OJ](https://github.com/musictheory/oj) (an Objective-C like language) files and compiles them to plain JavaScript.
 * [`elm-webpack`](https://github.com/rtfeldman/elm-webpack-loader): Loads [Elm](http://elm-lang.org/) files and compiles them to plain JavaScript.
 * [`miel`](https://github.com/collardeau/miel-loader): Loads [Miel](https://github.com/collardeau/miel) syntax and compiles to JavaScript.
@@ -135,11 +135,11 @@
 
 * [`po`](https://github.com/perchlayer/po-loader): Loads a PO gettext file and returns JSON
 * [`format-message`](https://github.com/thetalecrafter/format-message-loader): Compiles translations to ICU Message Format strings in [`formatMessage`](https://github.com/thetalecrafter/format-message) calls
-* [`jsxlate-loader`](https://github.com/drd/jsxlate-loader): Transform React source code for use with [`jsxlate`](https://github.com/drd/jsxlate)
+* [`jsxlate`](https://github.com/drd/jsxlate-loader): Transform React source code for use with [`jsxlate`](https://github.com/drd/jsxlate)
 * [`angular-gettext`](https://github.com/princed/angular-gettext-loader) Compiles `.po` files as `Angular.js` module or `json` to be used with `angular-gettext`.
 * [`webpack-angular-translate`](https://github.com/DatenMetzgerX/webpack-angular-translate): Extracts [angular-translate](https://angular-translate.github.io) translation id's and default text's
-* [`angular-gettext-extract-loader`](https://github.com/wombleton/angular-gettext-extract-loader) Extracts strings for translation into a nominated `.pot` file.
-* [`gettext-loader`](https://github.com/mrblueblue/gettext-loader): Compiles a Gettext PO file from code source.
+* [`angular-gettext-extract`](https://github.com/wombleton/angular-gettext-extract-loader) Extracts strings for translation into a nominated `.pot` file.
+* [`gettext`](https://github.com/mrblueblue/gettext-loader): Compiles a Gettext PO file from code source.
 * [`preprocessor`](https://github.com/artificialtrends/preprocess-loader): The preprocessor-loader provides the ability to preprocess source files through user defined regular expressions, macros, and callback routines. All user defined logic can be applied to line scope or source scope.
 
 ## support
@@ -158,11 +158,11 @@
 * [`falafel`](https://github.com/wombleton/falafel-loader): Use falafel AST transforms as a loader.
 * [`image-size`](https://github.com/patcoll/image-size-loader): Loads an image and returns its dimensions and type
 * [`csslint`](https://github.com/hyungjs/csslint-loader): PreLoader for linting code using CSSLint
-* [`coffeelint-loader`](https://github.com/bline/coffeelint-loader): PreLoader for linting [CoffeeScript](http://coffeescript.org/).
-* [`tslint-loader`](https://github.com/wbuchwalter/tslint-loader): PreLoader for linting TypeScript using [TSLint](https://github.com/palantir/tslint)
+* [`coffeelint`](https://github.com/bline/coffeelint-loader): PreLoader for linting [CoffeeScript](http://coffeescript.org/).
+* [`tslint`](https://github.com/wbuchwalter/tslint-loader): PreLoader for linting TypeScript using [TSLint](https://github.com/palantir/tslint)
 * [`parker`](https://github.com/tanem/parker-loader): Output a stylesheet analysis report using [parker](https://github.com/katiefenn/parker).
 * [`sjsp`](https://github.com/3100/sjsp-loader): Inject some codes for profiling using [node-sjsp](https://github.com/45deg/node-sjsp).
 * [`amdcheck`](https://github.com/mehdishojaei/amdcheck-loader): Uses AST to find and remove unused dependencies in AMD modules using [amdextract](https://github.com/mehdishojaei/amdextract).
-* [`manifest-loader`](https://github.com/RinconStrategies/manifest-loader): A loader to generate JSON asset manifests to pass to preloading systems.
-* [`gulp-rev-loader`](https://github.com/adjavaherian/gulp-rev-loader): Use in tandem with gulp-rev to replace assets from rev-manifest.
-* [`html-test-loader`](https://github.com/wombleton/html-test-loader) Test your html templates (for example) for analytics.
+* [`manifest`](https://github.com/RinconStrategies/manifest-loader): A loader to generate JSON asset manifests to pass to preloading systems.
+* [`gulp-rev`](https://github.com/adjavaherian/gulp-rev-loader): Use in tandem with gulp-rev to replace assets from rev-manifest.
+* [`html-test`](https://github.com/wombleton/html-test-loader) Test your html templates (for example) for analytics.
