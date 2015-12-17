@@ -5,30 +5,27 @@
 
 其结果就是在你的客户端有了一堆的代码！！！
 
-A big code base needs to be organized. Module systems offer the option to split your code base into modules.
+一个庞大的代码库需要被管理，而模块系统提供了将你的代码库归类到模块中去的机会。
 
-# Module system styles
+# 模块系统风格
 
-There are multiple standards for how to define dependencies and export values:
-
-* `<script>`-tag style (without a module system)
+这里有多种如何定义依赖和输出(exports)的标准：
+* `<script>`-标签风格 (非模块系统)
 * CommonJs
-* AMD and some dialects of it
-* ES6 modules
-* and more...
+* AMD以及其中的一些方言
+* ES6模块
+* 还有其他的...
 
-## `<script>`-tag style
+## `<script>`-标签风格
 
-This is the way you would handle a modularized code base if you didn't use a module system.
-
+如果你并没有使用模块化系统，这个将是你用来处理模块化的代码库的方式
 ``` html
 <script src="module1.js"></script>
 <script src="module2.js"></script>
 <script src="libraryA.js"></script>
 <script src="module3.js"></script>
 ```
-
-Modules export an interface to the global object, i. e. the `window` object. Modules can access the interface of dependencies over the global object.
+每个模块暴露向全局对象暴露出一个接口，例如window对象。其他模块可以通过全局对象过去其依赖的模块
 
 #### Common problems
 
