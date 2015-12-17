@@ -1,10 +1,9 @@
-Today's websites are evolving into web apps:
+如今的网站正在向wepapp快速发展：
+* 网页中出现了越来越多的javascript.
+* 在现代的浏览器你可以往里面塞进更多的代码.
+* 整页的刷新变少了 ，更多的代码被留在同一页面执行.
 
-* More and more JavaScript is in a page.
-* You can do more stuff in modern browsers.
-* Fewer full page reloads → even more code in a page.
-
-As a result there is a **lot** of code on the client side!
+其结果就是在你的客户端有了一堆的代码！！！
 
 A big code base needs to be organized. Module systems offer the option to split your code base into modules.
 
