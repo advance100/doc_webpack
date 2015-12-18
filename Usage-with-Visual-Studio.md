@@ -1,6 +1,6 @@
 ## Usage with Visual Studio
 
-It is a simple task to integrate Visual Studio with Webpack. All you need to do is use the external tool feature. After following the instructions below, you'll see a new command button on the ribbon within the IDE. Clicking the button will toggle Webpack's watch mode on and off. When turned on, a change to any bundle dependencies will trigger the Webpack build process. The output will appear within Visual Studio's Output window. 
+For users of Visual Studio 2015, there's an extension available for Task Runner Explorer [here](https://visualstudiogallery.msdn.microsoft.com/5497fd10-b1ba-474c-8991-1438ae47012a). For older versions of Visual Studio, it is a simple task to integrate Visual Studio with Webpack. All you need to do is use the external tool feature. After following the instructions below, you'll see a new command button on the ribbon within the IDE. Clicking the button will toggle Webpack's watch mode on and off. When turned on, a change to any bundle dependencies will trigger the Webpack build process. The output will appear within Visual Studio's Output window. 
 
 ## You can add an external tool to the Tools menu. 
 
