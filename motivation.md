@@ -27,14 +27,14 @@
 ```
 每个模块暴露向全局对象暴露出一个接口，例如window对象。其他模块可以通过全局对象过去其依赖的模块
 
-#### Common problems
+#### 普遍问题
 
-* Conflicts in the global object.
-* Order of loading is important.
-* Developers have to resolve dependencies of modules/libraries.
-* In big projects the list can get really long and difficult to manage.
+* 在全局对象中的命名冲突问题.
+* 加载的顺序很重要.
+* 开发者们不得不解决modules/libraries间的依赖问题.
+* 在大项目中这个script列表将会很长并且很难去管理。
 
-## CommonJs: synchronous `require`
+## CommonJs: 异步方式的`require`
 
 This style uses a synchronous `require` method to load a dependency and return an exported interface. A module can specify exports by adding properties to the `exports` object or setting the value of `module.exports`.
 
