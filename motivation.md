@@ -177,7 +177,7 @@ Read more about [[Code Splitting]].
 * i18n files → something
 * etc.
 
-它们应该下面被轻松使用:
+它们应该像下面一样被轻松使用:
 
 ``` javascript
 require("./style.css");
@@ -197,10 +197,10 @@ Read more about [[Using loaders]] and [[Loaders]].
 
 当我们在编译模块时，会通过静态分析发现它们的依赖关系。
 
-Traditionally this could only find simple stuff without expression, but i.e. `require("./template/" + templateName + ".jade")` is a common construct.
+通常来讲它无法使用表达式，只能发现一些简单的依赖关系，然而像`require("./template/" + templateName + ".jade")` 这种语法很普遍.
 
-Many libraries are written in different styles. Some of them are very weird...
+许多类库被写成多种不同的风格，它们有些看起来很奇怪...
 
-## Strategy
+## 策略
 
-A clever parser would allow most existing code to run. If the developer does something weird it would try to find the most compatible solution.
+需要一种更智能的解析器来允许现有的代码运行。如果开发者干了些奇怪的事，也要尝试用最兼容的方式解决
