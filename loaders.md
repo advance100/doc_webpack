@@ -1,35 +1,35 @@
-# Introduction
+# 介绍
 
-Loaders allow you to preprocess files as you `require()` or "load" them. Loaders are kind of like "tasks" are in other build tools, and provide a powerful way to handle frontend build steps. Loaders can transform files from a different language like, CoffeeScript to JavaScript, or inline images as data URLs. Loaders even allow you to do things like `require()` css files right in your JavaScript!
+加载器(Loaders)能够在你require或者load文件的时候帮你做某些事情。它们有点像是某种像task这样的构建工具，提供了一种非常强大的方式来处理前段构建的步骤。 加载器能够能够转化不同的语言，例如将CoffeeScript转成JavaScript, 或者将在线图片转成url数据.它甚至可以让你干些像在javascript中`require` css文件这样的事。
 
-To tell Webpack to transform a module with a loader, you can specify the loader in the module __request__, such as in a `require` call.
+为了通知webpack用加载器转换一个模块，你可以在__request__模块中定制加载器, 比如调用require方法。
 
 ``` javascript
 var moduleWithOneLoader = require("my-loader!./my-awesome-module");
 ```
 
-Notice the `!` syntax separating the loader from the module path? Loaders, like modules can also be specified with a relative path (as if you were requiring it) instead of the loader name:
+注意到`!`符号将加载器从模块路径中分隔开了吗？加载器同样也可以像模块那样通过一个相对路径来指定,而不是仅仅使用加载器名称。
 
 ```javascript
 require("./loaders/my-loader!./my-awesome-module");
 ```
 
-Loaders can be also be chained together by separating loaders with the `!`. This is helpful for applying multiple transformations to a file in a pipeline.
+多个加载器也可以通过`！`符号分隔，一起使用，形成链式。这对于需要通过管道使用多种转换处理文件的时候非常有用。
 
 ```javascript
 require("style-loader!css-loader!less-loader!./my-styles.less");
 ```
-When chaining loaders, they are applied right to left (from the file, back). In the above example, `my-styles.less` will be transformed first by the `less-loader`converting it to css, and then passed to the `css-loader` where urls, fonts, and other resources are processed, and then finally passed to `style-loader` to be transformed into a `<style>` tag.
+当我们链式地调用加载器的时候，它们会按从右到左的顺序依次执行。在上面的例子中，`my-styles.less` 首先会被`less-loader`转换成css, 然后传送给`css-loader`处理urls, fonts 还有其他资源, 最终传送给`style-loader` 被转换成`<style>`标签.
 
-## parameters
+## 参数
 
-Loaders can accept query parameters:
+加载器能够接收参数:
 
 ``` javascript
 require("loader?with=parameter!./file");
 ```
 
-The format of the query string is up to the loader, so check the loaders documentation to find out about the parameters the loader accept, but generally most loaders support the traditional query string format.
+query字符串的格式取决于加载器, 所以请查看加载器介绍文档了解它所接受的参数, 不过多数的加载器都会支持传统的query string的格式。
 
 ## loaders by config
 
