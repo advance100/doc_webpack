@@ -115,7 +115,7 @@ module.exports = {
 };
 ```
 
-This will remove all modules in the `vendor` chunk from the `app` chunk. The `bundle.js` will now contain just your app code, without any of it's dependencies. These are in `vendor.bundle.js`.
+This will remove all modules in the `vendor` chunk from the `app` chunk. The `bundle.js` will now contain just your app code, without any of its dependencies. These are in `vendor.bundle.js`.
 
 In your HTML page load `vendor.bundle.js` before `bundle.js`.
 
