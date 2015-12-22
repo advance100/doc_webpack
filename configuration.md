@@ -328,7 +328,7 @@ Each item can have these properties:
 * `loader`: A string of "!" separated loaders
 * `loaders`: An array of loaders as string
 
-A condition may be a `RegExp`, a `string` containing the absolute path, a `function(absPath): bool`, or an array of one of these combined with "and".
+A condition may be a `RegExp` (tested against absolute path), a `string` containing the absolute path, a `function(absPath): bool`, or an array of one of these combined with "and".
 
 See more: [[loaders]]
 
