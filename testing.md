@@ -54,6 +54,15 @@ mocha /tmp/testBundle.js
 
 > Hint: You can use the `null-loader` for stylesheets instead of the `style-loader!css-loader`. `style-loader` doesn't work in node.js as it requires a DOM.
 
+To make debugging tests easier, you can add source map support using [node-source-map-support](https://github.com/evanw/node-source-map-support):
+
+```sh
+webpack test.js /tmp/testBundle.js --target node
+mocha --require source-map-support/register /tmp/testBundle.js
+```
+
+Make sure to configure the [`devtool`](http://webpack.github.io/docs/configuration.html#devtool) option to output the source map.
+
 ### enhanced-require
 
 TODO
