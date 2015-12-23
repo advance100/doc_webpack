@@ -1,6 +1,7 @@
 | extension | semantic | loader examples |
 |-----------|----------|-----------------|
 | `.js` | returns module exports | nothing |
+| `.ts` | returns module exports | `ts-loader` |
 | `.coffee` | returns module exports | `coffee-loader`<br>`coffee-redux-loader` |
 | `.jsx` | returns module exports (react component) | `jsx-loader`<br>`react-hot-loader!jsx-loader` |
 | `.json`<br>`.json5` | returns json value | `json-loader`<br>`json5-loader` |
