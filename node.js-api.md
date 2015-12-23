@@ -92,6 +92,8 @@ You can specify the information by the `options` argument: (Boolean)
 
 `options.modules` add built modules information
 
+`options.children` add children information
+
 `options.cached` add also information about cached (not built) modules
 
 `options.reasons` add information about the reasons why modules are included
