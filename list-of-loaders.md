@@ -25,6 +25,7 @@
 * [`ng-annotate`](https://github.com/huston007/ng-annotate-loader): A loader to annotate dependency injections in `Angular.js` applications.
 * [`node`](https://github.com/webpack/node-loader): Loads `.node` files that are produced using node-gyp.
 * [`required`](https://www.npmjs.com/package/required-loader): Require a whole directory of trees in bulk. Require JS, Import CSS and imports stuff in it.
+* [`icons`](https://www.npmjs.com/package/icons-loader) Generates iconfont from .svg files (uses gulp-iconfont)
 
 ## packaging
 
@@ -52,7 +53,6 @@
 * [`zip-it`](https://github.com/bmagnantb/zip-it-loader) Convert files and directories to zip. Great with `file`.
 * [`lzstring`](https://github.com/nickdeis/lzstring-loader) Compresses large strings inline using lz-string, and decompresses them at runtime
 * [`modernizr`](https://github.com/peerigon/modernizr-loader) Get your modernizr build bundled with webpack
-* [`icons`](https://www.npmjs.com/package/icons-loader) Generates iconfonts from .svg files (uses gulp-iconfont)
 
 ## dialects
 
