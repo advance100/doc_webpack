@@ -76,6 +76,7 @@
 * [`elm-webpack`](https://github.com/rtfeldman/elm-webpack-loader): Loads [Elm](http://elm-lang.org/) files and compiles them to plain JavaScript.
 * [`miel`](https://github.com/collardeau/miel-loader): Loads [Miel](https://github.com/collardeau/miel) syntax and compiles to JavaScript.
 * [`wisp`](https://github.com/girvo/wisp-loader): Loads [Wisp](https://github.com/Gozala/wisp) modules and compiles them to JavaScript.
+* [`sibilant`](https://github.com/jbr/sibilant-webpack-loader): Loads [Sibilant](https://github.com/jbr/sibilant) files and compiles them to JavaScript.
 
 ## templating
 
