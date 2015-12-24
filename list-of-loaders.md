@@ -52,7 +52,7 @@
 * [`zip-it`](https://github.com/bmagnantb/zip-it-loader) Convert files and directories to zip. Great with `file`.
 * [`lzstring`](https://github.com/nickdeis/lzstring-loader) Compresses large strings inline using lz-string, and decompresses them at runtime
 * [`modernizr`](https://github.com/peerigon/modernizr-loader) Get your modernizr build bundled with webpack
-
+* [`icons`](https://www.npmjs.com/package/icons-loader) Generates iconfonts from .svg files (uses gulp-iconfont)
 
 ## dialects
 
