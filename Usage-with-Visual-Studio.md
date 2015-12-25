@@ -22,3 +22,5 @@ For users of Visual Studio 2015, there's an extension available for Task Runner 
 1. On the left lit item, select `Tools` and than select the `External Command X` item where X is the index of your tool that appears in the `Tools` menu (starting index => 1). In my example `External Command 6`.
 ![Visual Studio customize toolbar](http://d3m4lzjblc2qwl.cloudfront.net/add-command.png)
 1. Click `Ok` and then `Close`.
+
+Or you can try Visual Studio extension - WebPack Task Runner. https://visualstudiogallery.msdn.microsoft.com/5497fd10-b1ba-474c-8991-1438ae47012a
