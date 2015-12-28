@@ -70,7 +70,7 @@ To the use inline mode specify `--inline` on the command line (you cannot specif
 
 #### Inline mode with node.js API
 
-There is no `inline: true` flag in the webpack-dev-server configuration, because the webpack-dev-server module has no access to the webpack configuration. Instead the user have to add the webpack-dev-server client entry point to the webpack configuration.
+There is no `inline: true` flag in the webpack-dev-server configuration, because the webpack-dev-server module has no access to the webpack configuration. Instead the user must add the webpack-dev-server client entry point to the webpack configuration.
 
 To do this just add `webpack-dev-server/client?http://<path>:<port>` to (all) entry point(s). I. e. with the above configuration:
 
@@ -100,7 +100,7 @@ The easiest way to use Hot Module Replacement with the webpack-dev-server is to 
 
 #### Hot Module Replacement with Inline mode on CLI
 
-There is nothing more needed. `--inline --hot` does all the relevant work automatically. The CLI of the webpack-dev-server automatically adds the special `webpack/hot/dev-server` entry point to your configuration.
+Nothing more is needed. `--inline --hot` does all the relevant work automatically. The CLI of the webpack-dev-server automatically adds the special `webpack/hot/dev-server` entry point to your configuration.
 
 Just navigate to `http://<host>:<port>/<path>` and let the magic happen.
 
@@ -111,14 +111,14 @@ You should see the following messages in the browser log:
 [WDS] Hot Module Replacement enabled.
 ```
 
-Messages prefixed with `[HMR]` orginate from the `webpack/hot/dev-server` module. Messages prefixed with `[WDS]` orginate from the webpack-dev-server client.
+Messages prefixed with `[HMR]` originate from the `webpack/hot/dev-server` module. Messages prefixed with `[WDS]` originate from the webpack-dev-server client.
 
 It's important the specify a correct `output.publicPath` elsewise hot update chunks cannot be loaded.
 
 
 #### Hot Module Replacement with node.js API
 
-Similar to the inline mode the user have to do changes to the webpack configuration.
+Similar to the inline mode the user must make changes to the webpack configuration.
 
 Three changes are needed:
 
