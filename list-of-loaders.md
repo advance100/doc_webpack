@@ -88,6 +88,7 @@
 * [`jade-react`](https://github.com/halhenke/jade-react-loader): Uses jade templates for React rendering instead of JSX
 * [`template-html`](https://github.com/jtangelder/template-html-loader): Loads any template with consolidate.js and returns generated HTML
 * [`handlebars`](https://github.com/altano/handlebars-loader): Loads handlebars template and returns a function
+* [`handlebars-template-loader`](https://github.com/emaphp/handlebars-template-loader): Loads handlebars template and returns a function (alternative)
 * [`dust`](https://github.com/avaly/dust-loader): Loads dust template and returns a function
 * [`ractive`](https://github.com/rstacruz/ractive-loader): Pre-compiles Ractive templates for interactive DOM manipulation
 * [`jsx`](https://github.com/petehunt/jsx-loader): Transform jsx code for [React](http://facebook.github.io/react/) to js code.
