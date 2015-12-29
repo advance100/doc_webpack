@@ -109,6 +109,8 @@ Specifies the name of each output file on disk. You must **not** specify an abso
 // writes to disk: ./built/bundle.js
 ```
 
+**multiple entries**
+
 If your configuration creates more than a single "chunk" (as with multiple entry points or when using plugins like CommonsChunkPlugin), you should use substitutions below to ensure that each file has a unique name.
 
 `[name]` is replaced by the name of the chunk.
@@ -117,7 +119,6 @@ If your configuration creates more than a single "chunk" (as with multiple entry
 
 `[chunkhash]` is replaced by the hash of the chunk.
 
-**multiple entries**
 ```javascript
 {
   entry: {
@@ -130,10 +131,8 @@ If your configuration creates more than a single "chunk" (as with multiple entry
   }
 }
 
-// outputs: ./built/app.js, ./built/vendor.js
+// writes to disk: ./built/app.js, ./built/vendor.js
 ```
-
-**Note:** 
 
 ### `output.path`
 
