@@ -6,12 +6,11 @@ It's an opt-in feature. You can define split points in your code base. Webpack t
 To clarify a common misunderstanding: Code Splitting is not just about extracting common code into a shared chunk. The more notable feature is that Code Splitting can be used to split code into an **on demand** loaded chunk. This can keep the initial download small and downloads code on demand when requested by the application.
 
 
-
 ## Defining a split point
 
 AMD and CommonJs specify different methods to load code on demand. Both are supported and act as split points:
 
-### `require.ensure` (CommonJs)
+### CommonJs: `require.ensure`
 
 ``` javascript
 require.ensure(dependencies, callback)
@@ -30,7 +29,7 @@ require.ensure(["module-a", "module-b"], function(require) {
 
 Note: `require.ensure` only loads the modules, it doesn't evaluate them.
 
-### `require` (AMD)
+### AMD: `require`
 
 The AMD spec defines an asynchronous `require` method with this definition:
 
@@ -52,7 +51,30 @@ Note: AMD `require` loads and evaluate the modules. In webpack modules are evalu
 
 Note: It's allowed to omit the callback.
 
+### ES6 Modules
 
+**tldr: Webpack doesn't support es6 modules, use `require.ensure` or `require` directly depending on which module format your transpiler creates.**
+
+Webpack `1.x.x` (coming in `2.0.0`!) does not natively support or understand ES6 modules. However, you can get around that by using a transpiler, like Babel, to turning the ES6 `import` syntax into CommonJs or AMD modules. This approach is effective but has one important caveat for dynamic loading.
+
+The module _syntax_ addition (`import x from 'foo'`) is intentionally designed to be _statically_ analyzable, which means that you cannot do dynamic imports.
+
+```javascript
+// INVALID!!!!!!!!!
+['lodash', 'backbone'].forEach(name => import name )
+```
+
+Luckily, there is a JavaScript API "loader" specification being written to handle the dynamic use case: `System.load` (or `System.import`). This API will be the native equivalent to the above `require` variations. However, __most transpilers do not support converting `System.load` calls to `require.ensure`__ so you have to do that directly if you want to make use of dynamic code splitting.
+
+```javascript
+//static imports
+import _ from 'lodash'
+
+// dynamic imports
+require.ensure([], function(require) {
+  let contacts = require('./contacts')
+})
+```
 
 ## Chunk content
 
