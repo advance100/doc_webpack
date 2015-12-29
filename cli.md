@@ -107,3 +107,13 @@ Show more information about the errors. I. e. this shows which paths are tried w
 #### `--display-modules`
 
 Show hidden modules. Modules are hidden from output by default when they live inside directories called `["node_modules", "bower_components", "jam", "components"]`
+
+### Profiling
+
+If you wish to have a more in-depth idea of what is taking how long, you can use the `--profile` switch. This will cause WebPack to display more detailed timing informations. Combine this with the switches above to get a very detailed message and information set, which will contain the timings of your modules.
+
+#### The timing "keys"
+
+- `factory`: The time it took to build the module information.
+- `building`: The time that was spent building the module (loaders, for example).
+- `dependencies`: The time that was spent gathering and conencting the dependencies.
