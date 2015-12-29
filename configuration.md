@@ -88,19 +88,28 @@ If you pass an object: Multiple entry bundles are created. The key is the chunk 
 
 ## `output`
 
-Options affecting the output.
+Options affecting the output of the compilation. `output` options tell Webpack how to write the compiled files to disk. Note, that while there can be multiple `entry` points, only one `output` configuration is specified.
 
 If you use any hashing (`[hash]` or `[chunkhash]`) make sure to have a consistent ordering of modules. Use the `OccurenceOrderPlugin` or `recordsPath`.
 
-### `output.path`
-
-The output directory as **absolute path** (required).
-
-`[hash]` is replaced by the hash of the compilation.
-
 ### `output.filename`
 
-The filename of the entry chunk as relative path inside the `output.path` directory.
+Specifies the name of each output file on disk. You must **not** specify an absolute path here! The `output.path` option determines the location on disk the files are written to, `filename` is used solely for naming the individual files.
+
+**single entry**
+```javascript
+{
+  entry: './src/app.js',
+  output: {
+    filename: 'bundle.js',
+    path: './built'
+  }
+}
+
+// writes to disk: ./built/bundle.js
+```
+
+If your configuration creates more than a single "chunk" (as with multiple entry points or when using plugins like CommonsChunkPlugin), you should use substitutions below to ensure that each file has a unique name.
 
 `[name]` is replaced by the name of the chunk.
 
@@ -108,7 +117,70 @@ The filename of the entry chunk as relative path inside the `output.path` direct
 
 `[chunkhash]` is replaced by the hash of the chunk.
 
-> You must **not** specify an absolute path here! Use the `output.path` option.
+**multiple entries**
+```javascript
+{
+  entry: {
+    app: './src/app.js',
+    vendor: ['lodash', 'backbone']
+  },
+  output: {
+    filename: '[name].js',
+    path: __dirname + '/built'
+  }
+}
+
+// outputs: ./built/app.js, ./built/vendor.js
+```
+
+**Note:** 
+
+### `output.path`
+
+The output directory as **absolute path** (required).
+
+`[hash]` is replaced by the hash of the compilation.
+
+
+### `output.publicPath`
+
+The `publicPath` specifies the public URL address of the output files when referenced in a browser. For loaders that embed `<script>` or `<link>` tags or reference assets like images, `publicPath` is used as the `href` or `url()` to the file when it's different then their location on disk (as specified by `path`). This can be helpful when you want to host some or all output files on a different domain or on a CDN. The Webpack Dev Server also takes a hint from `publicPath` using it to determine where to serve the output files from. As with `path` you can use the `[hash]` substitution for a better caching profile.
+
+**config.js**
+
+``` javascript
+output: {
+	path: "/home/proj/public/assets",
+	publicPath: "/assets/"
+}
+
+```
+
+**index.html**
+```html
+<head>
+  <link href="/assets/spinner.gif"/>
+</head>
+```
+And a more complicated example of using a CDN and hashes for assets.
+
+**config.js**
+```javascript
+
+output: {
+	path: "/home/proj/cdn/assets/[hash]",
+	publicPath: "http://cdn.example.com/assets/[hash]/"
+}
+```
+
+**Note:** In cases when the eventual `publicPath` of of output files isn't known at compile time, it can be left blank and set dynamically at runtime in the entry point file.
+If you don't know the `publicPath` while compiling you can omit it and set `__webpack_public_path__` on your entry point.
+
+```javascript
+ __webpack_public_path__ = myRuntimePublicPath
+
+// rest of your application entry
+```
 
 ### `output.chunkFilename`
 
@@ -201,38 +273,6 @@ The filename of the Hot Update Main File. It is inside the `output.path` directo
 `[hash]` is replaced by the hash of the compilation. (The last hash stored in the records)
 
 > Default: `"[hash].hot-update.json"`
-
-### `output.publicPath`
-
-The `output.path` from the view of the Javascript / HTML page.
-
-``` javascript
-// Example
-output: {
-	path: "/home/proj/public/assets",
-	publicPath: "/assets/"
-}
-// Example CDN
-output: {
-	path: "/home/proj/cdn/assets/[hash]",
-	publicPath: "http://cdn.example.com/assets/[hash]/"
-}
-```
-
-> If you don't know the publicPath while compiling you can omit it and set `__webpack_public_path__` on your entry point.
->
-> Example:
-> 
-> ``` javascript
-> var scripts = document.getElementsByTagName("script");
-> var src = scripts[scripts.length - 1].getAttribute("src");
-> __webpack_public_path__ = src.substr(0, src.lastIndexOf("/") + 1);
-> ```
-> Or
->
-> ``` javascript
-> __webpack_public_path__ = window.resourcePublicPath
-> ```
 
 ### `output.jsonpFunction`
 
