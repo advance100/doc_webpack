@@ -123,7 +123,7 @@ If your configuration creates more than a single "chunk" (as with multiple entry
 {
   entry: {
     app: './src/app.js',
-    vendor: ['lodash', 'backbone']
+    search: './src/search.js'
   },
   output: {
     filename: '[name].js',
@@ -131,7 +131,7 @@ If your configuration creates more than a single "chunk" (as with multiple entry
   }
 }
 
-// writes to disk: ./built/app.js, ./built/vendor.js
+// writes to disk: ./built/app.js, ./built/search.js
 ```
 
 ### `output.path`
