@@ -168,6 +168,11 @@ A demonstration of implementing cache busting for client-side assets with Webpac
 2015-12-14 @Scott_Addie
 
 
+### [Compilando el Frontend con webpack](https://medium.com/@sergiodxa/compilando-el-frontend-con-webpack-d251f7a632ec)
+
+2015-09-28 @sergiodxa
+
+
 ## Talks
 
 ### [An Efficient Static Assets Pipeline with Webpack](https://www.youtube.com/watch?v=w1dAb_Umt8o)
