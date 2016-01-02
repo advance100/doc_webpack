@@ -12,6 +12,8 @@ Hot Module Replacement (HMR) exchanges, adds, or removes modules while an applic
 
 ## How does it work?
 
+Webpacks adds a small HMR runtime to the bundle during building that runs inside your app. When the build completes, Webpack does not exit but stays active, watching the source files for changes. If Webpack detects a source file change, it rebuilds only the changed module(s). Depending on the settings, Webpack will either send a signal to the HMR runtime, or the HMR runtime will poll webpack for changes. Either way, the changed module is sent to the HMR runtime which then tries to apply the hot update. First it checks whether the updated module can self-accept. If not, it checks those modules that have `require`d the updated module. If these too do not accept the update, it bubbles up another level, to the modules that `require`d the modules that `require`d the changed module. This bubbling-up will continue until either the update is accepted, or the app entry point is reached, in which case hot update fails.
+
 ### From the app view
 
 The app code asks the HMR runtime to check for updates. The HMR runtime downloads the updates (async) and tell the app code that an update is available. The app code asks the HMR runtime to apply updates. The HMR runtime applies the update (sync). The app code may or may not require user interaction in this process (you decide).
@@ -133,7 +135,7 @@ The dev server provides in memory records, which is good for development.
 
 The `--hot` switch enables hot code replacement.
 
-> This adds the `HotModuleReplacementPlugin`. Don't add it to your `webpack.config.js` if you are using the CLI.
+> This adds the `HotModuleReplacementPlugin`. Make sure to use either the `--hot` flag, or the `HotModuleReplacementPlugin` in your `webpack.config.js`, but never both at the same time as in that case, the HMR plugin will actually be added twice, breaking the setup. 
 
 There is special management code for the dev-server at `webpack/hot/dev-server`, which is automatically added by `--inline`. (You don't have to add it to your `webpack.config.js`)
 
