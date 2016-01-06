@@ -170,3 +170,4 @@
 * [`manifest`](https://github.com/RinconStrategies/manifest-loader): A loader to generate JSON asset manifests to pass to preloading systems.
 * [`gulp-rev`](https://github.com/adjavaherian/gulp-rev-loader): Use in tandem with gulp-rev to replace assets from rev-manifest.
 * [`html-test`](https://github.com/wombleton/html-test-loader) Test your html templates (for example) for analytics.
+* [`stylelint`](https://github.com/adrianhall/stylelint-loader) Preloader for linting SASS and SCSS with stylelint
