@@ -84,9 +84,9 @@ Write JSON to stdout instead of a human readable format.
 
 > Hint: Try to put the result into the [analyse tool](http://webpack.github.com/analyse).
 
-#### `--colors`
+#### `--no-color`
 
-Use colors to display the statistics.
+Disable colors to display the statistics.
 
 #### `--sort-modules-by`, `--sort-chunks-by`, `--sort-assets-by`
 
