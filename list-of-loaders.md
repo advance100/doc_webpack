@@ -42,6 +42,7 @@
 * [`react-hot`](https://github.com/gaearon/react-hot-loader): Allows to live-edit React components while keeping them mounted and preserving their state.
 * [`image`](https://github.com/tcoopman/image-webpack-loader): Compresses your images. Ideal to use together with `file` or `url`.
 * [`img`](https://github.com/thetalecrafter/img-loader): Load and compress images with imagemin.
+* [`responsive`](https://github.com/herrstucki/responsive-loader): Create multiple resized images for use with `srcset` and CSS media queries
 * [`svgo`](https://github.com/pozadi/svgo-loader): Compresses SVG images using [svgo](https://github.com/svg/svgo) library
 * [`svg-sprite`](https://github.com/kisenka/webpack-svg-sprite-loader): Like style-loader but for SVG: it creates a single SVG sprite from a set of images, appends it to DOM and returns relative `symbol` url to be used with svg's `<use>`.
 * [`line-art`](https://github.com/tptee/line-art-loader): Inlines SVG files, converting all of its nodes to paths. Useful for line art animations in React components.
