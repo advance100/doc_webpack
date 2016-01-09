@@ -644,7 +644,7 @@ Enforcing `amd` or `umd` in a external value will break if not compiling as amd/
 * `"node"` Compile for usage in a node.js-like environment (use `require` to load chunks)
 * `"async-node"` Compile for usage in a node.js-like environment (use `fs` and `vm` to load chunks async)
 * `"node-webkit"` Compile for usage in webkit, uses jsonp chunk loading but also supports builtin node.js modules plus require("nw.gui") (experimental)
-* `"atom"` Compile for usage in electron (formerly known as atom-shell), supports require for modules necessary to run Electron.
+* `"electron"` Compile for usage in [Electron](http://electron.atom.io/) – supports `require`-ing Electron-specific modules.
 
 
 
