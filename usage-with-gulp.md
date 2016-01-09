@@ -50,7 +50,7 @@ gulp.task("webpack-dev-server", function(callback) {
 
 ## Example
 
-Take a look at a example gulpfile. It covers three modes:
+Take a look at an example gulpfile. It covers three modes:
 
 * webpack-dev-server
 * build - watch cycle
