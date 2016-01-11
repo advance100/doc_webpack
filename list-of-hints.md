@@ -55,7 +55,7 @@
 * Use `karma` with `karma-webpack` to test modules in the browser (Developer, for every app)
 * Use `target` to build for other environments than the browser (Developer, for non-browser apps)
 * Use the `BannerPlugin` to add comments to the output assets: Licensing (Developer, for libraries)
-* Use `debug` to switch loaders to debug mode which provide more debug information (if the loader supports it): Better debugging experiance (Developer, for every app)
+* Use `debug` to switch loaders to debug mode which provide more debug information (if the loader supports it): Better debugging experience (Developer, for every app)
 * Use `include` instead of `exclude` in `module.loaders`: less error prone and easier to add paths (Developer, for every app)
 
 ## Build performance
