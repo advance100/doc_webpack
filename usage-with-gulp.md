@@ -10,7 +10,7 @@ gulp.task('default', function() {
     .pipe(gulp.dest('dist/'));
 });
 ```
-The above will compile src/entry.js into assets with webpack into dist/ with the output filename of [hash].js (webpack generated hash of the build). See [webpack-stream](https://github.com/shama/webpack-stream) for more options and details.
+The above will compile src/entry.js into assets with webpack into dist/ with the output filename of [hash].js (webpack generated hash of the build). 
 
 Or just pass in your `webpack.config.js`:
 ```js
@@ -18,7 +18,7 @@ return gulp.src('src/entry.js')
   .pipe(webpack( require('./webpack.config.js') ))
   .pipe(gulp.dest('dist/'));
 ```
-
+See [webpack-stream](https://github.com/shama/webpack-stream) for more options and details.
 ## Without `webpack-stream`
 
 ``` javascript
