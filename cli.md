@@ -116,4 +116,4 @@ If you wish to have a more in-depth idea of what is taking how long, you can use
 
 - `factory`: The time it took to build the module information.
 - `building`: The time that was spent building the module (loaders, for example).
-- `dependencies`: The time that was spent gathering and conencting the dependencies.
+- `dependencies`: The time that was spent gathering and connecting the dependencies.
