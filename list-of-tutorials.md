@@ -266,7 +266,9 @@ Egghead.io series by [Kent C. Dodds](https://twitter.com/kentcdodds)
 
 a collection of simple demos of Webpack
 
+### [webpack-step-by-step](https://github.com/abhijeetNmishra/webpack-step-by-step)
 
+2016-01-16 @abhijeetNmishra
 
 
 
