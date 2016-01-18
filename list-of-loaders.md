@@ -146,6 +146,7 @@
 * [`angular-gettext-extract`](https://github.com/wombleton/angular-gettext-extract-loader) Extracts strings for translation into a nominated `.pot` file.
 * [`gettext`](https://github.com/mrblueblue/gettext-loader): Compiles a Gettext PO file from code source.
 * [`preprocessor`](https://github.com/artificialtrends/preprocess-loader): The preprocessor-loader provides the ability to preprocess source files through user defined regular expressions, macros, and callback routines. All user defined logic can be applied to line scope or source scope.
+* [`amdi18n-loader`](https://github.com/TooBug/webpack-amdi18n-loader): I18n loader similar to require.js i18n plugin. The language packs support AMD/CommonJS module and can be written in `.json` / `.js` / `.coffee` files.
 
 ## support
 * [`mocha`](https://github.com/webpack/mocha-loader): do tests with mocha in browser or node.js
