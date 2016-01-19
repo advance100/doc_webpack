@@ -209,6 +209,7 @@ There are some additional options:
 * `--https`: serves _webpack-dev-server_ over HTTPS Protocol. Includes a self-signed certificate that is used when serving the requests.
 * `--cert`, `--cacert`, `--key`: Paths the certificate files.
 * `--open`: opens the url in default browser.
+* `--history-api-fallback`: enables support for history API fallback.
 
 Configuration under `devServer` in `webpack.config.js` are merged with the CLI options. For options under `devServer` see next section.
 
