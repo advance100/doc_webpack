@@ -422,7 +422,7 @@ An asset from a chunk was added to the compilation.
 
 # The `Parser` instance (`compiler.parser`)
 
-The parser instance takes a String and callback and will return and expression when there's a match.
+The parser instance takes a String and callback and will return an expression when there's a match.
 
 ```javascript
 compiler.parser.plugin("var rewire", function (expr) {
