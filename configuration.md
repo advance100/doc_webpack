@@ -172,7 +172,7 @@ output: {
 }
 ```
 
-**Note:** In cases when the eventual `publicPath` of of output files isn't known at compile time, it can be left blank and set dynamically at runtime in the entry point file.
+**Note:** In cases when the eventual `publicPath` of output files isn't known at compile time, it can be left blank and set dynamically at runtime in the entry point file.
 If you don't know the `publicPath` while compiling you can omit it and set `__webpack_public_path__` on your entry point.
 
 ```javascript
