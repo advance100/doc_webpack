@@ -263,10 +263,18 @@ server.listen(8080, "localhost", function() {});
 // server.close();
 ```
 
-
 See _[[webpack-dev-middleware]]_ for documentation on middleware options.
 
 Notice that _webpack configuration_ is not passed to `WebpackDevServer` API, thus `devServer` option in webpack configuration is not used in this case. Also, there is no _inline mode_ for `WebpackDevServer` API. `<script src="http://localhost:8080/webpack-dev-server.js"></script>` should be inserted to HTML page manually.
+
+### The `historyApiFallback` option
+
+If you are using the HTML5 history API you probably need to serve your `index.html` in place of 404 responses, which can be done by setting `historyApiFallback: true`. However, if you have modified `output.publicPath` in your Webpack configuration, you need to specify the URL to redirect to. This is done using the `historyApiFallback.index` option:
+
+    // output.publicPath: '/foo-app/'
+    historyApiFallback: {
+      index: '/foo-app/'
+    }
 
 
 ## Combining with an existing server
