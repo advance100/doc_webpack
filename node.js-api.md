@@ -60,7 +60,7 @@ An instance of `Watching` has the following method:
 
 ## stats
 
-The `Stats` object expose this methods:
+The `Stats` object exposes these methods:
 
 ### `stats.hasErrors`
 
