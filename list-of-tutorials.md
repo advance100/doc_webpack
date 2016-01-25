@@ -270,7 +270,9 @@ a collection of simple demos of Webpack
 
 2016-01-16 @abhijeetNmishra
 
+### [Learning Webpack](https://github.com/Code-by-practice/learning-webpack)
 
+This training kit has been developed to learn the basics of Webpack module bundler 
 
 ---
 
