@@ -1,5 +1,7 @@
 ## Books
 
+### [Pro React - Webpack Appendix](http://www.pro-react.com/materials/appendixA/)
+
 ### [SurviveJS - Webpack and React](http://survivejs.com/)
 
 ### [react-webpack-cookbook](https://github.com/christianalfoni/react-webpack-cookbook/wiki)
