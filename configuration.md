@@ -675,34 +675,6 @@ You can pass `false` to disable it.
 You can pass an object to enable it and let webpack use the passed object as cache. This way you can share the cache object between multiple compiler calls. Note: Don't share the cache between calls with different options.
 
 
-
-## `watch`
-
-Enter watch mode, which rebuilds on file change.
-
-
-
-## `watchOptions.aggregateTimeout`
-
-Delay the rebuilt after the first change. Value is a time in ms.
-
-> Default: 300
-
-> **Note**: The node.js API doesn't read watchOptions from configuration. Instead the watchOptions object need to be passed as argument to `.watch`.
-
-
-
-## `watchOptions.poll`
-
-`true`: use polling
-
-number: use polling with specified interval
-
-> Default: `undefined` 
-
-> **Note**: The node.js API doesn't read watchOptions from configuration. Instead the watchOptions object need to be passed as argument to `.watch`.
-
-
 ## `debug`
 
 Switch loaders to debug mode.
