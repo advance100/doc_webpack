@@ -70,7 +70,8 @@ Watches all dependencies and recompile on change.
 
 ### Configuration file `--config example.config.js`
 
-Specifies a different configuration file to pick up. Use this if you want to specify something different than `webpack.config.js`, which is the default
+Specifies a different configuration file to pick up. Use this if you want to specify something different than `webpack.config.js`, which is the default.
+
 
 ### Display options
 
@@ -117,3 +118,42 @@ If you wish to have a more in-depth idea of what is taking how long, you can use
 - `factory`: The time it took to build the module information.
 - `building`: The time that was spent building the module (loaders, for example).
 - `dependencies`: The time that was spent gathering and connecting the dependencies.
+
+### Additional configuration options
+
+When using the CLI it's possible to have the following options in the configuration file. They passed in other ways when using the node.js API.
+
+
+
+
+#### `watch`
+
+Enter watch mode, which rebuilds on file change.
+
+
+
+#### `watchOptions.aggregateTimeout`
+
+Delay the rebuilt after the first change. Value is a time in ms.
+
+> Default: 300
+
+> **Note**: The node.js API doesn't read watchOptions from configuration. Instead the watchOptions object need to be passed as argument to `.watch`.
+
+
+
+#### `watchOptions.poll`
+
+`true`: use polling
+
+number: use polling with specified interval
+
+> Default: `undefined` 
+
+> **Note**: The node.js API doesn't read watchOptions from configuration. Instead the watchOptions object need to be passed as argument to `.watch`.
+
+
+
+#### `stats`
+
+Display options. See [[node.js API]] `Stats.toString()` for more details.
