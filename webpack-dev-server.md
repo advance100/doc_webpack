@@ -144,15 +144,11 @@ server.listen(8080);
 The Webpack dev server makes use of [node-http-proxy](https://github.com/nodejitsu/node-http-proxy) to optionally proxy requests to a separate, possibly external, backend server. A sample configuration is below.
 
 ```javascript
-{
-    devServer: {
-        proxy: {
-            '/some/path*': {
-                target: 'https://other-server.example.com',
-                secure: false,
-            },
-        },
-    },
+proxy: {
+  '/some/path*': {
+    target: 'https://other-server.example.com',
+    secure: false,
+  },
 }
 ```
 
@@ -167,21 +163,16 @@ Proxying some URLs can be useful for a variety of configurations. One example is
 For example, the configuration below will not proxy HTTP requests that originate from a browser. This is similar to the `historyApiFallback` option: browser requests will receive the HTML file as normal but API requests will be proxied to the backend server.
 
 ```javascript
-{
-    devServer: {
-        proxy: {
-            '/some/path*': {
-                target: 'https://other-server.example.com',
-                secure: false,
-                bypass: function(req, res, proxyOptions) {
-                    if (req.headers.accept.indexOf('html') !== -1) {
-                        console.log('Skipping proxy for browser request.');
-                        return '/index.html';
-                    }
-                },
-            },
-        },
-    },
+proxy: {
+  '/some/path*': {
+    target: 'https://other-server.example.com',
+    secure: false,
+    bypass: function(req, res, proxyOptions) {
+      if (req.headers.accept.indexOf('html') !== -1) {
+        console.log('Skipping proxy for browser request.');
+        return '/index.html';
+    }
+  }
 }
 ```
 
@@ -212,6 +203,21 @@ There are some additional options:
 * `--history-api-fallback`: enables support for history API fallback.
 
 Configuration under `devServer` in `webpack.config.js` are merged with the CLI options. For options under `devServer` see next section.
+
+### Additional configuration options
+
+When using the CLI it's possible to have the webpack-dev-server options in the configuration file under the key `devServer`.
+
+Example
+
+``` js
+module.exports = {
+  // ...
+  devServer: {
+    hot: true
+  }
+}
+```
 
 ## API
 
