@@ -84,7 +84,7 @@ If you pass an object: Multiple entry bundles are created. The key is the chunk 
 }
 ```
 
-> **NOTE**: It is not possible to configure other options specific to entry points. If you need entry point specific configuration you need to use [multiple configuration](#multiple-configurations).
+> **NOTE**: It is not possible to configure other options specific to entry points. If you need entry point specific configuration you need to use [multiple configurations](#multiple-configurations).
 
 
 
