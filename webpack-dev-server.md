@@ -202,11 +202,9 @@ There are some additional options:
 * `--open`: opens the url in default browser.
 * `--history-api-fallback`: enables support for history API fallback.
 
-Configuration under `devServer` in `webpack.config.js` are merged with the CLI options. For options under `devServer` see next section.
-
 ### Additional configuration options
 
-When using the CLI it's possible to have the webpack-dev-server options in the configuration file under the key `devServer`.
+When using the CLI it's possible to have the webpack-dev-server options in the configuration file under the key `devServer`. Options passed via CLI arguments override options in configuration file. For options under `devServer` see next section.
 
 Example
 
