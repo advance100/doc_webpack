@@ -684,23 +684,23 @@ Enter watch mode, which rebuilds on file change.
 
 ## `watchOptions.aggregateTimeout`
 
-(only used when using [[CLI]] or simple node.js API)
-
 Delay the rebuilt after the first change. Value is a time in ms.
 
 > Default: 300
 
+> **Note**: The node.js API doesn't read watchOptions from configuration. Instead the watchOptions object need to be passed as argument to `.watch`.
+
 
 
 ## `watchOptions.poll`
-
-(only used when using [[CLI]] or simple node.js API)
 
 `true`: use polling
 
 number: use polling with specified interval
 
 > Default: `undefined` 
+
+> **Note**: The node.js API doesn't read watchOptions from configuration. Instead the watchOptions object need to be passed as argument to `.watch`.
 
 
 ## `debug`
