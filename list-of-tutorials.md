@@ -264,7 +264,7 @@ Egghead.io series by [Kent C. Dodds](https://twitter.com/kentcdodds)
 
 ## Demos, Examples and Starters
 
-### [Exercise Module of Guanghe.tv on Mobile Device](https://github.com/lvBingo/exercises-module)
+### [Exercise Module Of Guanghe.tv On Mobile Device](https://github.com/lvBingo/exercises-module)
 A large and complex project use React, Redux, webpack, React-root, ES6. No detailed code introduction, Need some development experience to Read.
 
 ### [Webpack Demos](https://github.com/ruanyf/webpack-demos)
