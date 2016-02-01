@@ -639,3 +639,14 @@ new S3Plugin({
 ```
 
 Uploads your content to s3. Can also run your html files through [cdnizer](https://www.npmjs.com/package/cdnizer) to change the url to match
+
+[`Bell on bundler error`](https://github.com/senotrusov/bell-on-bundler-error)
+### `NormalModuleReplacementPlugin`
+
+
+``` javascript
+new webpack.NormalModuleReplacementPlugin(resourceRegExp, newResource)
+```
+
+Replace resources that matches `resourceRegExp` with `newResource`. If `newResource` is relative, it is resolve relative to the previous resource.
+If `newResource` is a function, it is expected to overwrite the 'request' attribute of the supplied object.
