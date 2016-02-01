@@ -652,4 +652,4 @@ plugins: [
 }
 ```
 
-Notification on bundler build errors by writing bell character to stderr output.
+Get notification on bundler build errors. On that occasion, a bell character will be written to STDERR output.
