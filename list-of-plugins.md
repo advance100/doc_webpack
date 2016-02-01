@@ -639,3 +639,17 @@ new S3Plugin({
 ```
 
 Uploads your content to s3. Can also run your html files through [cdnizer](https://www.npmjs.com/package/cdnizer) to change the url to match
+
+### [`BellOnBundlerErrorPlugin `](https://github.com/senotrusov/bell-on-bundler-error-plugin)
+
+``` javascript
+var BellOnBundlerErrorPlugin = require('bell-on-bundler-error-plugin')
+
+{
+plugins: [
+  new BellOnBundlerErrorPlugin()
+  ]
+}
+```
+
+Notification on bundler build errors by writing bell character to stderr output.
