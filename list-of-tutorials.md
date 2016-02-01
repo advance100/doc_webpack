@@ -265,6 +265,9 @@ Egghead.io series by [Kent C. Dodds](https://twitter.com/kentcdodds)
 ## Demos, Examples and Starters
 
 ### [Webpack Demos](https://github.com/ruanyf/webpack-demos)
+A large and complex project use React, Redux, webpack, React-root, ES6. No detailed code introduction, Need some development experience to Read.
+
+### [Webpack Demos](https://github.com/ruanyf/webpack-demos)
 
 a collection of simple demos of Webpack
 
