@@ -27,6 +27,7 @@
 * [`required`](https://www.npmjs.com/package/required-loader): Require a whole directory of trees in bulk. Require JS, Import CSS and imports stuff in it.
 * [`icons`](https://www.npmjs.com/package/icons-loader) Generates iconfont from .svg files (uses gulp-iconfont)
 * [`block-loader`](https://www.npmjs.com/package/block-loader) Generic loader for rewriting only parts of files, based on content start/end delimiters.
+* [`bundler-configuration`](https://www.npmjs.com/package/bundler-configuration-loader) Bundler configuration loader, a tool to include bundler configuration in the resulting build.
 
 ## packaging
 
