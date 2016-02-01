@@ -3,7 +3,7 @@
 Make sure you don't do a full rebuild. webpack has a great caching layer that allows to keep already compiled modules in memory. There are some tools that help to use it:
 
 * [[webpack-dev-server]]: Serves all webpack assets from memory. Best performance.
-* [[webpack-dev-middleware]]: The same as middleware for advanced users.
+* [[webpack-dev-middleware]]: The same performance as webpack-dev-server for advanced users.
 * [[webpack --watch | cli]] or [[`watch: true` | node.js API]]: Caches stuff but write assets to disk. Ok performance.
 
 # Exclude modules from parsing
