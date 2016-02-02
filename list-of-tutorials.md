@@ -264,6 +264,9 @@ Egghead.io series by [Kent C. Dodds](https://twitter.com/kentcdodds)
 
 ## Demos, Examples and Starters
 
+### [React Webpack Tutorial](http://jansoren.github.io/react-webpack-tutorial/)
+This is a tutorial on how to get started developing a client side application using ReactJS, Webpack and Npm
+
 ### [Exercise Module Of Guanghe.tv On Mobile Device](https://github.com/lvBingo/exercises-module)
 A large and complex project use React, Redux, webpack, React-root, ES6. No detailed code introduction, Need some development experience to Read.
 
