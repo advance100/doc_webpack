@@ -61,7 +61,7 @@ To use the iframe mode no additional configuration is needed. Just navigate the 
 * Url changes in the app are **not** reflected in the browsers url bar.
 
 ### Inline mode
-To the use inline mode specify `--inline` on the command line (you cannot specify it in the configuration). This adds the webpack-dev-server client entry point to the webpack configuration. There is no change in the url required. Just navigate to `http://<host>:<port>/<path>`. I. e. with the above configuration `http://localhost:8080/index.html`.
+To use the inline mode specify `--inline` on the command line (you cannot specify it in the configuration). This adds the webpack-dev-server client entry point to the webpack configuration. There is no change in the url required. Just navigate to `http://<host>:<port>/<path>`. I. e. with the above configuration `http://localhost:8080/index.html`.
 
 * Command line flag needed.
 * Status information in the browser log.
