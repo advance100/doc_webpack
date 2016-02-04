@@ -144,7 +144,7 @@ module.exports.raw = true;
 
 ### pitching loader
 
-The loaders are called from right to left. But in some cases loaders doesn't care for the results of the previous loader or the resource. They only care for metadata. The `pitch` method on the loaders is called from left to right before the loaders are called. If a loader delivers a result in the pitch method the process turns around and skips the remaining loaders, continuing with the calls to the more left loaders. `data` can be passed between pitch and normal call.
+The loaders are called from right to left. But in some cases loaders do not care about the results of the previous loader or the resource. They only care for metadata. The `pitch` method on the loaders is called from left to right before the loaders are called. If a loader delivers a result in the pitch method the process turns around and skips the remaining loaders, continuing with the calls to the more left loaders. `data` can be passed between pitch and normal call.
 
 ``` javascript
 module.exports = function(content) {
