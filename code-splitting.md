@@ -212,7 +212,7 @@ require.ensure(["./file"], function(require) {
   require("./file2");
 });
 
-// is equals to
+// is equal to
 
 require.ensure([], function(require) {
   require.include("./file");
