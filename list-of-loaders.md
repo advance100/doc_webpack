@@ -99,6 +99,7 @@
 * [`react-templates`](https://github.com/AlexanderPavlenko/react-templates-loader): Loads react-template and returns a function
 * [`em`](https://github.com/yoshdog/emblem-loader): Compiles [Emblem](http://emblemjs.com/) to Handlebars.js
 * [`ejs`](https://github.com/okonet/ejs-loader): Loads EJS ([underscore](http://underscorejs.org/#template)( templating engine) template and returns a pre-compiled function
+* [`ejs-html`](https://github.com/akim-mcmath/ejs-html-loader): Loads [EJS](http://ejs.co/) templates and returns generated HTML.
 * [`mustache`](https://github.com/deepsweet/mustache-loader): Pre-compiles Mustache templates with [Hogan.js](https://github.com/twitter/hogan.js) and returns a function
 * [`yaml`](https://github.com/okonet/yaml-loader): Converts YAML to JSON
 * [`front-matter`](https://github.com/elliottsj/front-matter-loader): Extracts YAML frontmatter
