@@ -1,3 +1,7 @@
+# 2.0.x beta
+
+[What's new in webpack 2.0](https://gist.github.com/sokra/27b24881210b56bbaff7)
+
 # 1.12
 
 (2015-11-20)
