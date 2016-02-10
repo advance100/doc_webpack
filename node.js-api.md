@@ -76,7 +76,7 @@ Return information as json object
 
 You can specify the information by the `options` argument: (Boolean)
 
-`options.context` context directory for request shortening
+`options.context` (string) context directory for request shortening
 
 `options.hash` add the hash of the compilation
 
