@@ -1,3 +1,5 @@
+Use plugins to add functionality typically related to bundles in webpack.  For example, the [https://github.com/senotrusov/bell-on-bundler-error-plugin](BellOnBundlerErrorPlugin) will notify you of an error in the bundler build process.  
+
 ## Built-in plugins
 
 Plugins are included in your module by using the plugins property in the webpack config.
