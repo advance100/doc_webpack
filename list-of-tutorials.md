@@ -12,6 +12,10 @@
 
 ## Articles
 
+### [Webpack nitty gritties explained](https://medium.com/@ashwin01/webpack-for-the-fast-and-the-furious-bf8d3746adbd#.ptmeqb7gd)
+
+2016-2-11 @ashwin01
+
 ### [Webpack your bags](http://blog.madewithlove.be/post/webpack-your-bags/)
 
 webpack crashcourse<br>
