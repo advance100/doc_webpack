@@ -622,6 +622,7 @@ Does not watch specified files matching provided paths or RegExps.
 ### [`S3Plugin`](https://github.com/MikaAK/s3-plugin-webpack)
 
 ``` javascript
+S3Plugin = require('webpack-s3-plugin')
 new S3Plugin({
   exclude: RegExp,
   s3Options: {
