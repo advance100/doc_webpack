@@ -468,9 +468,9 @@ Options affecting the resolving of modules.
 
 ### `resolve.alias`
 
-Replace modules by other modules or paths.
+Replace modules with other modules or paths.
 
-Expected is a object with keys being module names. The value is the new path. It's similar to a replace but a bit more clever. If the the key ends with `$` only the exact match (without the `$`) will be replaced.
+Expected an object with keys being module names. The value is the new path. It's similar to a replace but a bit more clever. If the the key ends with `$` only the exact match (without the `$`) will be replaced.
 
 If the value is a relative path it will be relative to the file containing the require.
 
