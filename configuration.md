@@ -249,7 +249,7 @@ Similar to `output.devtoolModuleFilenameTemplate`, but used in the case of dupli
 
 ### `output.devtoolLineToLine`
 
-Enable line to line mapped mode for all/specified modules. Line to line mapped mode uses a simple SourceMap where each line of the generated source is mapped to the same line of the original source. It's a performance optimization. Only use it if your performance need to be better and you are sure that input lines match which generated lines.
+Enable line to line mapped mode for all/specified modules. Line to line mapped mode uses a simple SourceMap where each line of the generated source is mapped to the same line of the original source. It's a performance optimization. Only use it if your performance needs to be better and you are sure that input lines match which generated lines.
 
 `true` enables it for all modules (not recommended)
 
