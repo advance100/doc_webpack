@@ -12,15 +12,15 @@ Hot Module Replacement (HMR) exchanges, adds, or removes modules while an applic
 
 ## How does it work?
 
-Webpacks adds a small HMR runtime to the bundle during building that runs inside your app. When the build completes, Webpack does not exit but stays active, watching the source files for changes. If Webpack detects a source file change, it rebuilds only the changed module(s). Depending on the settings, Webpack will either send a signal to the HMR runtime, or the HMR runtime will poll webpack for changes. Either way, the changed module is sent to the HMR runtime which then tries to apply the hot update. First it checks whether the updated module can self-accept. If not, it checks those modules that have `require`d the updated module. If these too do not accept the update, it bubbles up another level, to the modules that `require`d the modules that `require`d the changed module. This bubbling-up will continue until either the update is accepted, or the app entry point is reached, in which case hot update fails.
+Webpacks adds a small HMR runtime to the bundle, during the build process, that runs inside your app. When the build completes, Webpack does not exit but stays active, watching the source files for changes. If Webpack detects a source file change, it rebuilds only the changed module(s). Depending on the settings, Webpack will either send a signal to the HMR runtime, or the HMR runtime will poll webpack for changes. Either way, the changed module is sent to the HMR runtime which then tries to apply the hot update. First it checks whether the updated module can self-accept. If not, it checks those modules that have `require`d the updated module. If these too do not accept the update, it bubbles up another level, to the modules that `require`d the modules that `require`d the changed module. This bubbling-up will continue until either the update is accepted, or the app entry point is reached, in which case the hot update fails.
 
 ### From the app view
 
-The app code asks the HMR runtime to check for updates. The HMR runtime downloads the updates (async) and tell the app code that an update is available. The app code asks the HMR runtime to apply updates. The HMR runtime applies the update (sync). The app code may or may not require user interaction in this process (you decide).
+The app code asks the HMR runtime to check for updates. The HMR runtime downloads the updates (async) and tells the app code that an update is available. The app code asks the HMR runtime to apply updates. The HMR runtime applies the update (sync). The app code may or may not require user interaction in this process (you decide).
 
 ### From the compiler (webpack) view
 
-In addition to the normal assets the compiler needs to emit the "Update" to allow updating from previous version to this version. The "Update" contains two parts:
+In addition to the normal assets, the compiler needs to emit the "Update" to allow updating the previous version to the current version. The "Update" contains two parts:
 
 1. the update manifest (json)
 2. one or multiple update chunks (js)
@@ -29,11 +29,11 @@ The manifest contains the new compilation hash and a list of all update chunks (
 
 The update chunks contains code for all updated modules in this chunk (or a flag if a module was removed).
 
-The compiler additionally makes sure that module and chunk ids are consistent between these builds. It uses a "records" json file to store them between builds (or it stores them in memory).
+The compiler also makes sure that module and chunk ids are consistent between these builds. It uses a "records" json file to store them between builds (or it stores them in memory).
 
 ### From the module view
 
-HMR is a opt-in feature, so it only affects modules that contains HMR code. The documentation describes the API that is available in modules. In general the module developer writes handlers that are called when a dependency of this module is updated. He can also write a handler that are called when this module is updated.
+HMR is an opt-in feature, so it only affects modules that contain HMR code. The documentation describes the API that is available in modules. In general, the module developer writes handlers that are called when a dependency of this module is updated. He can also write a handler that is called when this module is updated.
 
 In most cases it's not mandatory to write HMR code in every module. If a module has no HMR handlers the update bubbles up. This means a single handler can handle an update to a complete module tree. If a single module in this tree is updated, the complete module tree is reloaded (only reloaded not transferred).
 
@@ -43,11 +43,11 @@ For the module system runtime is additional code emitted to track module `parent
 
 On the management side the runtime supports two methods: `check` and `apply`.
 
-A `check` does a HTTP request to the update manifest. When this request fails, there is no update available. Otherwise the list of updated chunks is compared to the list of currently loaded chunks. For each loaded chunk the corresponding update chunk is downloaded. All module updates as stored in the runtime as update. The runtime switches into the `ready` state, meaning an update has been downloaded and is ready to be applied.
+A `check` does an HTTP request to the update manifest. When this request fails, there is no update available. Otherwise the list of updated chunks is compared to the list of currently loaded chunks. For each loaded chunk the corresponding update chunk is downloaded. All module updates are stored in the runtime as update. The runtime switches into the `ready` state, meaning an update has been downloaded and is ready to be applied.
 
 For each new chunk request in the ready state the update chunk is also downloaded.
 
-The `apply` method flags all updated modules as invalid. For each invalid module there need to be a update handler in the module or update handlers in every parent. Else the invalid bundles up and mark all parents as invalid too. This process continues until no more "bubble up" occurs. If it bubbles up from an entry point the process fails.
+The `apply` method flags all updated modules as invalid. For each invalid module there needs to be a update handler in the module or update handlers in every parent. Else the invalid module bundles up and marks all parents as invalid too. This process continues until no more "bubbling up" occurs. If it bubbles up from an entry point the process fails.
 
 Now all invalid modules are disposed (dispose handler) and unloaded. Then the current hash is updated and all "accept" handlers are called. The runtime switches back to the `idle` state and everything continues as normal.
 
@@ -61,16 +61,16 @@ The left side represents the initial compiler pass. The right side represents an
 
 You can use it in development as a replacement for LiveReload. Actually the webpack-dev-server supports a hot mode which tries to update with HMR before trying to reload the whole page. You only need to add the `webpack/hot/dev-server` entry point and call the dev-server with `--hot`.
 
-`webpack/hot/dev-server` reloads the entire page after the HMR update fails. If you want to [reload the page on your own](https://github.com/webpack/webpack/issues/418), you can add `webpack/hot/only-dev-server` to the entry point instead.
+`webpack/hot/dev-server` will reload the entire page if the HMR update fails. If you want to [reload the page on your own](https://github.com/webpack/webpack/issues/418), you can add `webpack/hot/only-dev-server` to the entry point instead.
 
-You can also use it in production as update mechanisms. Here you need to write you own management code that integrates HMR with your app.
+You can also use it in production as an updating mechanism. Here you would need to write your own management code that integrates HMR with your app.
 
-Some loaders already generate modules that are hot-updateable. I. e. the `style-loader` can exchange the stylesheet. You don't need to do anything special.
+Some loaders already generate modules that are hot-updateable (e.g. the `style-loader` can exchange a stylesheet). In these cases, you don't need to do anything special.
 
 
 ## What is needed to use it?
 
-A module can only be updated if you "accept" it. So you need to `module.hot.accept` the module in the parents or the parents of the parents... I. e. a Router is a good place or a subview.
+A module can only be updated if you "accept" it. So you need to `module.hot.accept` the module in the parents or the parents of the parents. For example, a router or a subview would be a good place.
 
 If you only want to use it with the webpack-dev-server, just add `webpack/hot/dev-server` as entry point. Else you need some HMR management code that calls `check` and `apply`.
 
@@ -81,11 +81,11 @@ You need to enable HMR in the Compiler to let it add the HMR runtime.
 
 ## What makes it so cool?
 
-* It's like LiveReload but for every module, so to say.
+* It's like LiveReload but for every module, so to speak.
 * You can use it in production.
 * The updates respect your Code Splitting and only download updates for the changed parts of your app.
 * You can use it for parts of your application and it doesn't affect other modules.
-* If HMR is disabled all HMR code is removed by the compiler (wrap it in `if(module.hot)`
+* If HMR is disabled all HMR code is removed by the compiler (wrap it in `if(module.hot)`)
 
 
 ## Caveats
@@ -104,7 +104,7 @@ You need to enable HMR in the Compiler to let it add the HMR runtime.
 To use hot code replacement with webpack you need four things:
 
 * records (`--records-path`, `recordsPath: ...`)
-* global enable hot code replacement (`HotModuleReplacementPlugin`)
+* globally enable hot code replacement (`HotModuleReplacementPlugin`)
 * hot replacement code in your code `module.hot.accept`
 * hot replacement management code in your code `module.hot.check`, `module.hot.apply`
 
