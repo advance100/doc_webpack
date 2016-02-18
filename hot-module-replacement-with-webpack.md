@@ -59,13 +59,13 @@ The left side represents the initial compiler pass. The right side represents an
 
 ## What can I do with it?
 
-You can use it in development as LiveReload replacement. Actually the webpack-dev-server supports a hot mode which try to update with HMR before trying to reload the whole page. You only need to add the `webpack/hot/dev-server` entry point and call the dev-server with `--hot`.
+You can use it in development as a replacement for LiveReload. Actually the webpack-dev-server supports a hot mode which tries to update with HMR before trying to reload the whole page. You only need to add the `webpack/hot/dev-server` entry point and call the dev-server with `--hot`.
 
 `webpack/hot/dev-server` reloads the entire page after the HMR update fails. If you want to [reload the page on your own](https://github.com/webpack/webpack/issues/418), you can add `webpack/hot/only-dev-server` to the entry point instead.
 
 You can also use it in production as update mechanisms. Here you need to write you own management code that integrates HMR with your app.
 
-Some loaders already generate modules that are hot-updateable. I. e. the `style-loader` can exchange the stylesheet. You don't need to do something special.
+Some loaders already generate modules that are hot-updateable. I. e. the `style-loader` can exchange the stylesheet. You don't need to do anything special.
 
 
 ## What is needed to use it?
@@ -81,21 +81,21 @@ You need to enable HMR in the Compiler to let it add the HMR runtime.
 
 ## What makes it so cool?
 
-* It's LiveReload but for every module kind.
+* It's like LiveReload but for every module, so to say.
 * You can use it in production.
-* The updates respect your Code Splitting and only download updates for the used parts of your app.
-* You can use in for a part of your application and it doesn't affect other modules
+* The updates respect your Code Splitting and only download updates for the changed parts of your app.
+* You can use it for parts of your application and it doesn't affect other modules.
 * If HMR is disabled all HMR code is removed by the compiler (wrap it in `if(module.hot)`
 
 
 ## Caveats
 
-* It's experimental and not tested so well.
+* It's experimental and not tested thoroughly.
 * Expect some bugs
 * Theoretically usable in production, but it maybe too early to use it for something serious
 * The module ids need to be tracked between compilations so you need to store them (`records`)
-* Optimizer cannot optimize module ids anymore after the first compilation. A bit impact on bundle size.
-* HMR runtime code increase bundle size.
+* Optimizer cannot optimize module ids anymore after the first compilation. Therefore the bundle size is affected a little bit.
+* HMR runtime code increases bundle size.
 * For production usage additional testing is required to test the HMR handlers. This could be pretty difficult.
 
 
