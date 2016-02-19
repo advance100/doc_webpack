@@ -184,7 +184,7 @@ For example, the configuration below will rewrite the HTTP requests to remove th
 
 ```javascript
 proxy: {
-  '/api/some/path*': {
+  '/api/*': {
     target: 'https://other-server.example.com',
     rewrite: function(req) {
       req.url = req.replace(/\/^api/, '');
