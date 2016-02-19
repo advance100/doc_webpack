@@ -176,6 +176,23 @@ proxy: {
 }
 ```
 
+### Rewriting URLs of proxy request
+
+(Added in v???) The request to the proxy can be optionally rewritten by providing a function. The function can inspect and change the HTTP request.
+
+For example, the configuration below will rewrite the HTTP requests to remove the part `/api` at the beginning of the URL.
+
+```javascript
+proxy: {
+  '/api/some/path*': {
+    target: 'https://other-server.example.com',
+    rewrite: function(req) {
+      req.url = req.replace(/\/^api/, '');
+    }
+  }
+}
+```
+
 ## webpack-dev-server CLI
 
 ``` sh
