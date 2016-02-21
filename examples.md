@@ -1,3 +1,5 @@
+# ХУЙ
+
 # simple examples
 
 ## Basic usage
