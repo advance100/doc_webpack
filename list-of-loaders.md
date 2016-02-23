@@ -106,6 +106,7 @@
 * [`markdown`](https://github.com/peerigon/markdown-loader): Compiles Markdown to HTML
 * [`remarkable`](https://github.com/unindented/remarkable-loader): Compiles Markdown to HTML using the Remarkable parser
 * [`markdown-it`](https://github.com/unindented/markdown-it-loader): Compiles Markdown to HTML using the markdown-it parser
+* [`markdownattrs`](https://github.com/pikulev/markdownattrs-loader): Compiles Markdown to HTML using the markdown-it-attrs parser that allows you to set classes, identifiers and attributes to your markdown.
 * [`ng-cache`](https://github.com/teux/ng-cache-loader): Puts HTML partials in the Angular's $templateCache
 * [`ngtemplate`](https://github.com/WearyMonkey/ngtemplate-loader): Bundles your AngularJS templates and Pre-loads the template cache.
 * [`hamlc`](https://github.com/ericdfields/hamlc-loader): Compiles haml-coffee templates (.hamlc) and returns a function.
