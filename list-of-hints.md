@@ -37,9 +37,9 @@
 
 ## Developer performance
 
-* Use a configuration file (webpack.config.js) instead of passing CLI options: Easier to mantain, more options (Developer, for every app)
+* Use a configuration file (webpack.config.js) instead of passing CLI options: Easier to maintain, more options (Developer, for every app)
 * Don't rewrite incompatible JS, but use `imports-loader`/`exports-loader` to make it compatible: Easier to upgrade to new version (Developer, for every app)
-* Use webpack devtools for debugging in browser: Better debugging experiance, real source code, real module names, at the cost of slower build and difference to production build (Developer, for every app)
+* Use webpack devtools for debugging in browser: Better debugging experience, real source code, real module names, at the cost of slower build and difference to production build (Developer, for every app)
 * Write modules with ES6 module syntax: This is more future proof and allows more advanced optimizations (Developer/App/Build, for every app)
   * Current Status: Use the `babel-loader` to transform ES6 module syntax to CommonJS
   * Future: webpack 2 understand ES6 module syntax
