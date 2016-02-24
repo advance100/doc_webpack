@@ -20,7 +20,7 @@
 | Plugins | **yes** | yes | **yes** | yes | yes |
 | Preprocessing | **loaders, [transforms](https://github.com/webpack/transform-loader)** | loaders | transforms | plugin translate | plugin transforms |
 | Watch mode | yes | not required | yes | not needed in dev | no |
-| Debugging support | **SourceUrl, SourceMaps** | not required | SourceMaps | SourceUrl, SourceMaps | **SourceUrl, SourceMaps** |
+| Debugging support | **SourceUrl, SourceMaps** | not required | SourceMaps | **SourceUrl, SourceMaps** | **SourceUrl, SourceMaps** |
 | Node.js built-in libs `require("path")` | **yes** | no | **yes** | **yes** | [npm-plugin](https://github.com/rollup/rollup-plugin-npm)
 | Other Node.js stuff | process, __dir/filename, global | - | process, __dir/filename, global | process, __dir/filename, global for cjs | global ([commonjs-plugin](https://github.com/rollup/rollup-plugin-commonjs)) |
 | Replacement for browser | `web_modules`, `.web.js`, package.json field, alias config option | alias option | package.json field, alias option | package.json, alias option | no |
