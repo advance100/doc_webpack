@@ -187,7 +187,7 @@ proxy: {
   '/api/*': {
     target: 'https://other-server.example.com',
     rewrite: function(req) {
-      req.url = req.url.replace(/\/^api/, '');
+      req.url = req.url.replace(/^\/api/, '');
     }
   }
 }
