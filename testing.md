@@ -45,7 +45,7 @@ mocha test/*
 
 ### Compile and test
 
-If you use webpack-specific features it may not possible to run the code with node.js. webpack allows to configure a target system: i. e. you can compile code so that it can run in node.js (configuration option `target: "node"`). Then use a node.js testing framework to run the bundle.
+If you use webpack-specific features it may not be possible to run the code with node.js. webpack allows to configure a target system: i. e. you can compile code so that it can run in node.js (configuration option `target: "node"`). Then use a node.js testing framework to run the bundle.
 
 ``` sh
 webpack test.js /tmp/testBundle.js --target node
