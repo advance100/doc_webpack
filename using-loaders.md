@@ -61,6 +61,8 @@ There are multiple ways to use loaders in your app:
 
 It's possible to specify the loaders in the `require` statement (or `define`, `require.ensure`, etc.). Just separate loaders from resource with `!`. Each part is resolved relative to the current directory.
 
+It's possible to overwrite any loaders in the configuration by prefixing the entire rule with `!`.
+
 ``` javascript
 require("./loader!./dir/file.txt");
 // => uses the file "loader.js" in the current directory to transform
@@ -69,12 +71,14 @@ require("./loader!./dir/file.txt");
 require("jade!./template.jade");
 // => uses the "jade-loader" (that is installed from npm to "node_modules")
 //    to transform the file "template.jade"
+//    If configuration has some transforms bound to the file, they will still be applied.
 
 require("!style!css!less!bootstrap/less/bootstrap.less");
 // => the file "bootstrap.less" in the folder "less" in the "bootstrap"
 //    module (that is installed from github to "node_modules") is
 //    transformed by the "less-loader". The result is transformed by the
 //    "css-loader" and then by the "style-loader".
+//    If configuration has some transforms bound to the file, they will not be applied.
 ```
 
 
