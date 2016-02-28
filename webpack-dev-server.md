@@ -113,7 +113,7 @@ You should see the following messages in the browser log:
 
 Messages prefixed with `[HMR]` originate from the `webpack/hot/dev-server` module. Messages prefixed with `[WDS]` originate from the webpack-dev-server client.
 
-It's important the specify a correct `output.publicPath` elsewise hot update chunks cannot be loaded.
+It's important to specify a correct `output.publicPath` otherwise the hot update chunks cannot be loaded.
 
 
 #### Hot Module Replacement with node.js API
