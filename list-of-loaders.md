@@ -126,7 +126,9 @@
 ## styling
 * [`bootstrap-webpack`](https://github.com/gowravshekar/bootstrap-webpack): Loads a configuration file for Twitter Bootstrap integration using Less. Allows complete customisation via Less.
 * [`font-awesome-webpack`](https://github.com/gowravshekar/font-awesome-webpack): Loads a configuration file for Font Awesome integration using Less. Allows complete customisation via Less.
-* [`bootstrap-sass`](https://github.com/justin808/bootstrap-sass-loader): Loads a configuration file for Twitter Bootstrap integration using Sass. Allows complete customization via Sass.
+* [`bootstrap-sass`](https://github.com/shakacode/bootstrap-sass-loader): Deprecated. See [`bootstrap`](https://github.com/shakacode/bootstrap-loader).
+* [`bootstrap`](https://github.com/shakacode/bootstrap-loader): Loads a configuration file for Twitter Bootstrap integration using Sass. Allows complete customization via Sass. Supports CSS modules and both Bootstrap 3 and 4.
+* [`font-awesome`](https://github.com/shakacode/font-awesome-loader): Easy integration of font-awesome with customization via Sass.
 * [`style`](https://github.com/webpack/style-loader): Add exports of a module as style to DOM
 * [`css`](https://github.com/webpack/css-loader): Loads css file with resolved imports and returns css code
 * [`less`](https://github.com/webpack/less-loader): Loads and compiles a less file
