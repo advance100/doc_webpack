@@ -90,6 +90,7 @@
 * [`jade`](https://github.com/webpack/jade-loader): Loads jade template and returns a function
 * [`jade-html`](https://github.com/bline/jade-html-loader): Loads jade template and returns generated HTML
 * [`jade-react`](https://github.com/halhenke/jade-react-loader): Uses jade templates for React rendering instead of JSX
+* [`virtual-jade`](https://github.com/tdumitrescu/virtual-jade-loader): Use jade templates to produce [`virtual-dom`](https://github.com/Matt-Esch/virtual-dom) hyperscript output
 * [`template-html`](https://github.com/jtangelder/template-html-loader): Loads any template with consolidate.js and returns generated HTML
 * [`handlebars`](https://github.com/altano/handlebars-loader): Loads handlebars template and returns a function
 * [`handlebars-template-loader`](https://github.com/emaphp/handlebars-template-loader): Loads handlebars template and returns a function (alternative)
