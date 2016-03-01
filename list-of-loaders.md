@@ -57,6 +57,7 @@
 * [`zip-it`](https://github.com/bmagnantb/zip-it-loader) Convert files and directories to zip. Great with `file`.
 * [`lzstring`](https://github.com/nickdeis/lzstring-loader) Compresses large strings inline using lz-string, and decompresses them at runtime
 * [`modernizr`](https://github.com/peerigon/modernizr-loader) Get your modernizr build bundled with webpack
+* [`s3`](https://github.com/benderTheCrime/s3-loader "s3-loader") Pull assets from s3 based on filename, path, and desired environment.
 
 ## dialects
 
