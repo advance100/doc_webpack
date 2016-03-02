@@ -132,6 +132,7 @@
 * [`bootstrap`](https://github.com/shakacode/bootstrap-loader): Loads a configuration file for Twitter Bootstrap integration using Sass. Allows complete customization via Sass. Supports CSS modules and both Bootstrap 3 and 4.
 * [`font-awesome`](https://github.com/shakacode/font-awesome-loader): Easy integration of font-awesome with customization via Sass.
 * [`style`](https://github.com/webpack/style-loader): Add exports of a module as style to DOM
+* [`isomorphic-style`](https://github.com/kriasoft/isomorphic-style-loader): Ad-hoc replacement to `style-loader` adding support of isomorphic apps and critical path CSS
 * [`css`](https://github.com/webpack/css-loader): Loads css file with resolved imports and returns css code
 * [`less`](https://github.com/webpack/less-loader): Loads and compiles a less file
 * [`sass`](https://github.com/jtangelder/sass-loader): Loads and compiles a scss file
