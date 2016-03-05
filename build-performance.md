@@ -52,7 +52,7 @@ Only use optimization plugins in production builds.
 
 # Dynamic linked library
 
-If you have a bunch of rarly changing modules (i. e. vendor libs) and chunking doesn't give you enough performance (CommonsChunkPlugin), there are two plugins to create a bundle of these modules in a **separate** build step while still referencing these modules from the app bundle.
+If you have a bunch of rarely changing modules (i. e. vendor libs) and chunking doesn't give you enough performance (CommonsChunkPlugin), there are two plugins to create a bundle of these modules in a **separate** build step while still referencing these modules from the app bundle.
 
 To create the DLL bundle beforehand you need to use the `DllPlugin`. Here is an [example](https://github.com/webpack/webpack/tree/master/examples/dll). This emits a public bundle and a private manifest file.
 
