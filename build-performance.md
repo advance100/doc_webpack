@@ -1,6 +1,6 @@
 # Incremental builds
 
-Make sure you don't do a full rebuild. Webpack has a great caching layer that allows you to keep already compiled modules in memory. There are some tools that help to use it:
+Make sure you don't do a full rebuild. webpack has a great caching layer that allows you to keep already compiled modules in memory. There are some tools that help to use it:
 
 * [[webpack-dev-server]]: Serves all webpack assets from memory. Best performance.
 * [[webpack-dev-middleware]]: The same performance as webpack-dev-server for advanced users.
