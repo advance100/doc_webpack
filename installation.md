@@ -1,6 +1,6 @@
 ## node.js
 
-Install [node.js](http://nodejs.org).
+安装 [node.js](http://nodejs.org).
 
 node.js comes with a package manager called `npm`.
 
@@ -14,7 +14,7 @@ $ npm install webpack -g
 
 webpack is now installed globally and the `webpack` command is available.
 
-## Use webpack in a project
+## 在项目中使用webpack
 
 It's the best to have webpack also as dependency in your project. Through this you can choose a local webpack version and will not be forced to use the single global one.
 
