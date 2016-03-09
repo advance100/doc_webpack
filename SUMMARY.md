@@ -11,10 +11,10 @@
   * [Usage](usage.md)
   * Require Modules
   * Vendor Modules
-  * [Using Loaders]
-  * [Using Plugins]
-  * [Dev Tools]
-  * [Troubleshooting]
+  * [Using Loaders](using-loaders.md)
+  * [Using Plugins](using-plugins.md)
+  * [Dev Tools](dev-tools.md)
+  * [Troubleshooting](troubleshooting.md)
 * 教程和实例
   * [Getting started](http://webpack.github.io/docs/tutorials/getting-started/)
   * [List of tutorials]
