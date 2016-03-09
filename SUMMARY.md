@@ -5,7 +5,7 @@
 * [官方首页](http://http://webpack.github.io/docs/)
 
 * 入门
-  * [Motivation]
+  * [Motivation](motivation)
   * [What is webpack? | What is webpack]
   * [Installation]
   * [Usage]
