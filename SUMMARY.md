@@ -5,10 +5,10 @@
 * [官方首页](http://http://webpack.github.io/docs/)
 
 * 入门
-  * [Motivation](motivation)
-  * [What is webpack? | What is webpack]
-  * [Installation]
-  * [Usage]
+  * [Motivation](motivation.md)
+  * [What is webpack?](what-is-webpack.md)
+  * [Installation](installation.md)
+  * [Usage](usage.md)
   * Require Modules
   * Vendor Modules
   * [Using Loaders]
